@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Spring configuration of the presentation layer. 
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:p="http://www.springframework.org/schema/p" 
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xsi:schemaLocation="
+				http://www.springframework.org/schema/beans 
+				http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+				http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context-3.2.xsd
+				http://www.springframework.org/schema/mvc 
+				http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+				http://www.springframework.org/schema/aop
+				http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+				">
+					
+	<import resource="tikron-validator.xml"/>
+	
+	<!-- Bean providing access to message resource boundles -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>de.tikron.webapp.mvc.common</value>
+				<value>de.tikron.webapp.mvc.error</value>
+				<value>de.tikron.webapp.mvc.exceptions</value>
+				<value>de.tikron.webapp.mvc.gallery</value>
+				<value>de.tikron.webapp.mvc.main</value>
+				<value>de.tikron.webapp.mvc.misc</value>
+				<value>de.tikron.webapp.mvc.user</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Set default locale for MVC frontend -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<!-- Use always Germany because no english translation as fallback supported yet. -->
+		<property name="defaultLocale" value="de_DE"></property>
+	</bean>
+	
+	<!-- Configure my localization context in request scope because properties like locale or time zone can change from request to request. -->
+	<!-- AOP proxy example: http://www.tikalk.com/java/injecting-request-scope-beans-singletons-resteasy-and-spring/ -->
+	<bean id="localizationContext" class="de.tikron.webapp.util.LocalizationContextImpl" scope="request">
+		<aop:scoped-proxy />
+		<property name="messageSource" ref="messageSource" />
+	</bean>
+	
+	<!-- Configure own exception handler. Currently no mapping of specific exceptions needed. -->
+<!-- Using @ControllerAdvice instead because we cannot handle Spring MVC exceptions like MissingServletRequestParameterException with SimpleMappingExceptionResolver.
+ 	<bean id="simpleMappingExceptionResolver" class="de.tikron.webapp.util.ExceptionHandler">
+		<property name="exceptionMappings">
+			<map>
+				<entry key="de.tikron.webapp.controller.common.ResourceNotFoundException" value="contentNotFound" />
+			</map>
+		</property>
+		<property name="defaultErrorView" value="displayError" />
+		<property name="exceptionAttribute" value="ex" />
+	</bean>	
+ -->
+	<!-- Register "Dozer" bean mapper instance -->
+<!-- 	<bean id="beanMapper" class="org.dozer.DozerBeanMapper" /> -->
+	
+	<!-- Enable autodetection of annotated controllers and interceptors -->
+	<context:component-scan base-package="de.tikron.webapp.controller" />
+	
+	<!-- Add Spring 3 MVC annotation handling -->
+	<mvc:annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources 
+			directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<!-- Register handler interceptors -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/contentNotFound.html" />
+			<mvc:exclude-mapping path="/captchaImage.html" />
+			<mvc:exclude-mapping path="/*display*Ajax.html" />
+			<ref bean="mainNavigationInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/contentNotFound.html" />
+			<mvc:exclude-mapping path="/captchaImage.html" />
+			<mvc:exclude-mapping path="/*display*Ajax.html" />
+			<ref bean="seoInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/contentNotFound.html" />
+			<mvc:exclude-mapping path="/captchaImage.html" />
+			<mvc:exclude-mapping path="/*display*Ajax.html" />
+			<ref bean="trackingInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- view resolver for JSP files -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/jsp/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- view resolver to redirect without model attributes -->
+	<bean id="redirectViewResolver" class="de.tikron.common.spring.RedirectViewResolver">
+	</bean>
+
+	<!-- Add captchaImageController to handler mapping here since @RequestMapping will not found by Spring (since upgrade to Spring 3.2) -->
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	   <property name="mappings">
+	      <props>
+	         <prop key="/captchaImage.html">captchaImageController</prop>
+	      </props>
+	   </property>
+	</bean>
+
+	<!-- view resolver for custom views (like Captcha image)-->
+	<bean id="customViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="order" value="0" />
+		<property name="location" value="/WEB-INF/tikron-views.xml" />
+	</bean>
+	
+	<!-- Controller generating a Captcha image -->
+	<bean id="captchaImageController" class="de.tikron.webapp.controller.common.CaptchaImageController">
+		<property name="contentType" value="image/jpeg" />
+		<property name="viewName" value="byteContentView" />
+	</bean>
+	
+	<!-- Set validators for input form controllers -->
+	<bean id="sendContactMessageController" class="de.tikron.webapp.controller.main.SendContactMessageController">
+		<property name="validator" ref="contactMessageValidator" />
+	</bean>
+	
+</beans>

@@ -1,0 +1,16 @@
+option batch off
+# Disable overwrite confirmations that conflict with the previous
+option confirm off
+# Connect using a password
+open freakworm@vs188239.vserver.de
+option transfer automatic
+option exclude "CVS; .cvsignore; .project; .settings; Thumbs.db"
+synchronize remote -delete D:\Titus\Entwicklung\Java\Workspace\freakworm-static\httpdocs\ /var/www/vhosts/freakworm.de/httpdocs
+synchronize remote -delete D:\Titus\Entwicklung\Java\Workspace\freakworm-static\subdomains\files\httpdocs\ /var/www/vhosts/freakworm.de/subdomains/files/httpdocs
+synchronize remote -delete D:\Titus\Entwicklung\Java\Workspace\freakworm-static\subdomains\images\httpdocs\ /var/www/vhosts/freakworm.de/subdomains/images/httpdocs
+synchronize remote -delete D:\Titus\Entwicklung\Java\Workspace\freakworm-static\subdomains\music\httpdocs\ /var/www/vhosts/freakworm.de/subdomains/music/httpdocs
+# Disconnect
+close
+# Exit WinSCP
+exit
+

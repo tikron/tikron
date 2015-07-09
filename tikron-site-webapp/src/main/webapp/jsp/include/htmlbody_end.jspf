@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	</div>
+</div>
+<div id="goup"></div>
+<script type="text/javascript">
+	$(document).tooltip();
+</script>
+<c:if test="${trackingEnabled and not param.disableTracking}">
+<%@ include file="/jsp/include/tracking.jspf"%>
+</c:if>

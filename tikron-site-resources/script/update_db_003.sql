@@ -1,0 +1,94 @@
+INSERT
+INTO
+    freakworm.gallery_category
+    (
+        id,
+        created_on,
+        long_description,
+        name,
+        rank,
+        short_description,
+        title,
+        version,
+        visible,
+        catalog_id,
+        on_teaser,
+        display_type,
+        image_name,
+        image_width,
+        image_height
+    )
+    VALUES
+    (
+        0,
+        CURRENT_TIMESTAMP,
+        'Schweden ist mein Lieblingsreiseziel geworden. Ich mag die Ruhe, die das Land und die Menschen ausstrahlen. Man kann sich in Schweden besonders gut von der Enge und der Hektik in Deutschland erholen. Die Natur bietet eine schöne Mischung aus endlosen Wäldern, vielen Seen und Felsen. Nicht zuletzt wegen dem „Allemansrätten“ ist Schweden ein beliebtes Ziel zum Campen, Paddeln und Wandern. Wir waren schon mehrmals dort. Hier eine Auswahl der Fotos vom Urlaub in Bjulebo bei Västervik an der Ostküste Schwedens.',
+        'sweden',
+        70,
+        'Schweden',
+        'Schweden',
+        0,
+        1,
+        1,
+        1,
+        0,
+        'sweden.gif',
+        200,
+        134
+    );
+UPDATE
+    freakworm.gallery_picture
+SET
+    category_id = 14
+WHERE
+    category_id = 1;
+INSERT
+INTO
+    freakworm.gallery_category
+    (
+        id,
+        created_on,
+        long_description,
+        name,
+        rank,
+        short_description,
+        title,
+        version,
+        visible,
+        catalog_id,
+        on_teaser,
+        display_type,
+        image_name,
+        image_width,
+        image_height
+    )
+    VALUES
+    (
+        0,
+        CURRENT_TIMESTAMP,
+        'Das Fusion-Festival findet jedes Jahr bei Lärz in Mecklenburg-Vorpommern statt. Es ist ein Festival für Musik, Theater, Performance-Kunst und vieles mehr. Dabei steht das Festival unter dem Motto, Künstlern und Anhänger vielfältiger elektronischer Musikstile zusammenzuführen. Bereits kurz nach dem Verlassen des russischen Militärs 1993 fanden erste Trance-Parties auf dem Gelände mit damals nicht einmal 1000 Besuchern statt. Abseits von der GOA-Schiene wollte man jedoch anderen Genres der elektronischen Musik einen Rahmen bieten. So wird 1997 erstmalig unter dem Namen U.Site Fusion ein Festival mit Künstlern veranstaltet, die dem allgemeinen Trend voraus oder abseits davon orientiert sind. Dieser offene Charakter, die Toleranz und nicht zuletzt die Location machen das Festival einzigartig. Trotz Verzicht auf Werbung und Presse ist das Festival bis heute auf über 50.000 Besucher angewachsen und bietet auf 18 Bühnen und Floors sein reichhaltiges Programm.',
+        'fusion',
+        20,
+        'Fusion-Festival',
+        'Fusion-Festival',
+        0,
+        1,
+        2,
+        1,
+        0,
+        'fusion.png',
+        120,
+        80
+    );
+DELETE
+FROM
+    freakworm.gallery_category
+WHERE
+    id IN (8, 12);
+UPDATE
+    freakworm.gallery_category
+SET
+    image_name = 'poland.png',
+    long_description = 'Damit der regelmäßige Gast bei Freakworm neue Bilder nicht lange suchen muss, gibts diese Rubrik. Toll, nur ein Klick und man ist sofort wieder auf dem Laufenden.\n\nDiesmal mit fantastischen Bildern aus Polen. Wir sind über Swinemünde entlang der Ostseeküste gefahren. Haben Sopot und Danzig besucht. Sind dann über Elblag ins Landesinnere gefahren um schließlich das wunderschöne Masuren kennen zu lernen.'
+WHERE
+    id = 1;

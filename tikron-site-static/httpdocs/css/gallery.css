@@ -1,0 +1,72 @@
+/* 
+* Tikron (Gallery-Stylesheet)
+* Copyright (c) 2009 by Titus Kruse
+*/
+
+/*** Component-Styles "Gallery" *************************/
+#galleryInfo {
+}
+
+/*** Catalog page *************************/
+#content.gallery.catalog ul.index div.thumbnail {
+	float:left;
+	width: 240px;
+}
+#content.gallery.catalog ul.index div.description {
+	margin-left: 240px;
+}
+
+
+/*** Category page *************************/
+/* Small thumbnails with thick border */
+#content.gallery.category ul.thumbs li {
+	float: left;
+}
+
+#content.gallery.category ul.thumbs div.wrap {
+	width: 100px;
+/*	height: 106px; */
+	height: 95px;
+	padding: 5px;
+	display: table-cell;
+/*	vertical-align: middle; not needed anymore since thumbs are all with same height 66px.*/
+	text-align: center;
+}
+
+#content.gallery.category ul.thumbs div.wrap:hover {
+	background-color: #52413A;
+}
+
+#content.gallery.category ul.thumbs img {
+	height: 66px;
+	display: block;
+	margin: 0 auto;
+}
+
+#content.gallery.category ul.thumbs a.caption {
+	margin-top: 5px;
+	height: 1.5em;
+	display: block;
+	line-height: 110%;
+	font-size: 0.7em;
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+
+/*** Picture page *************************/
+#content.gallery.picture figure {
+	width: 800px;
+	text-align: center;
+	min-height: 535px;
+}
+
+#content.gallery.picture figure img {
+/*	border: 6px solid #666666;*/
+	margin: 0 auto;
+	display: block;
+}
+
+#content.gallery.picture .ratingStars {
+	margin-bottom: 20px;
+} 

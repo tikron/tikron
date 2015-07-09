@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="categoryForm" displayName="category form">
+	<composite:attribute name="category" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="catalog" value="#{msg.labelCategoryCatalog}"></tcf:outputLabel>
+		<h:outputText id="catalog" value="#{cc.attrs.category.catalog.title}"></h:outputText>
+		<tcf:outputLabel for="name" value="#{msg.labelCategoryName}" required="true"
+			requiredClass="required"></tcf:outputLabel>
+		<h:inputText id="name" value="#{cc.attrs.category.name}" styleClass="text">
+			<f:validateRequired />
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="title" value="#{msg.labelCategoryTitle}"></tcf:outputLabel>
+		<h:inputText id="title" value="#{cc.attrs.category.title}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="shortTitle" value="#{msg.labelCategoryShortTitle}"></tcf:outputLabel>
+		<h:inputText id="shortTitle" value="#{cc.attrs.category.shortTitle}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="shortDescription" value="#{msg.labelCategoryShortDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="shortDescription" value="#{cc.attrs.category.shortDescription}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="longDescription" value="#{msg.labelCategoryLongDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="longDescription" value="#{cc.attrs.category.longDescription}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="imageName" value="#{msg.labelCategoryImageName}"></tcf:outputLabel>
+		<h:inputText id="imageName" value="#{cc.attrs.category.imageName}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="sequence" value="#{msg.labelCategorySequence}"></tcf:outputLabel>
+		<h:inputText id="sequence" value="#{cc.attrs.category.sequence}" styleClass="number">
+			<f:validateDoubleRange />
+		</h:inputText>
+		<tcf:outputLabel for="visible" value="#{msg.labelCategoryVisible}"></tcf:outputLabel>
+		<h:selectBooleanCheckbox id="visible" value="#{cc.attrs.category.visible}"></h:selectBooleanCheckbox>
+		<tcf:outputLabel for="onTeaser" value="#{msg.labelCategoryOnTeaser}"></tcf:outputLabel>
+		<h:selectBooleanCheckbox id="onTeaser" value="#{cc.attrs.category.onTeaser}"></h:selectBooleanCheckbox>
+		<tcf:outputLabel for="categoryType" value="#{msg.labelCategoryType}" required="true"
+			requiredClass="required"></tcf:outputLabel>
+		<h:selectOneMenu id="categoryType" value="#{cc.attrs.category.categoryType}" converter="#{categoryTypeConverter}" binding="#{categoryType}">
+			<f:validateRequired />
+			<f:selectItems value="#{categoryTypeBean.categoryTypes}" var="categoryType" itemValue="#{categoryType}" itemLabel="#{categoryType.description}" />
+		</h:selectOneMenu>
+		<tcf:outputLabel for="displayType" value="#{msg.labelCategoryDisplayType}"></tcf:outputLabel>
+		<h:selectOneMenu id="displayType" value="#{cc.attrs.category.displayType}">
+			<f:selectItem itemLabel="---" itemValue="#{null}" />
+			<f:selectItems value="#{displayTypeBean.displayTypes}" var="displayType" itemValue="#{displayType}" itemLabel="#{msg[displayType.label]}" />
+			<f:validator validatorId="displayTypeValidator" />
+			<f:attribute name="categoryType" value="#{categoryType}" />
+		</h:selectOneMenu>
+	</h:panelGrid>
+</composite:implementation>
+</html>

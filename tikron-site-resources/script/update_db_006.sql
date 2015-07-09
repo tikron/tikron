@@ -1,0 +1,2 @@
+update tikron.gallery_catalog set title = 'Fotoalbum', short_description = 'Fotoalbum' where id = 1;
+update tikron.gallery_catalog set title = 'Goa-Trance', short_description = 'Goa-Trance' where id = 2;

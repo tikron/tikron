@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:fw="http://java.sun.com/jsf/composite/components">
+<f:metadata>
+	<f:viewParam name="pictureId" value="#{pictureDetailBean.picture}"
+			converter="#{pictureConverter}" converterMessage="Bad request. Unknown picture."
+			required="true" requiredMessage="Bad request. Picture ID required."
+	/>
+	<f:event type="preRenderView" listener="#{pictureDetailBean.preRenderView}" />
+</f:metadata>
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<ui:include src="/include/navigation.xhtml" />
+				<div id="content">
+					<h:form id="editPicture">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.editPictureHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.editRecordDescription}"></h:outputText></p>
+						</div>
+						<div id="contentMain">
+							<fw:pictureForm picture="#{pictureDetailBean.picture}" />
+							<h:messages styleClass="messages" />
+							<div class="buttonBar">
+								<h:button outcome="/pages/gallery/editPicture.xhtml" value="#{msg.buttonPrevious}" rendered="#{not empty pictureDetailBean.previous.id}">
+									<f:param name="pictureId" value="#{pictureDetailBean.previous.id}"/>
+								</h:button>
+								<h:button outcome="/pages/gallery/editPicture.xhtml" value="#{msg.buttonNext}" rendered="#{not empty pictureDetailBean.next.id}">
+									<f:param name="pictureId" value="#{pictureDetailBean.next.id}"/>
+								</h:button>
+								<h:commandButton action="#{pictureDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
+								<h:commandButton action="#{pictureDetailBean.uploadImage}" value="#{msg.buttonUploadImage}"></h:commandButton>
+								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+							</div>
+						</div>
+					</h:form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

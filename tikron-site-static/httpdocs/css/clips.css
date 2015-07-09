@@ -1,0 +1,56 @@
+/* 
+* Tikron (Linkbase-Stylesheet)
+* Copyright (c) 2009 by Titus Kruse
+*/
+
+/*** Display video clip pages ************************************/
+.clips #contentLeft {
+/* 	width: 710px; */
+}
+
+.clips #contentSidebar {
+/* 	float: left; */
+}
+
+.clips video {
+/* 	width: 640px; */
+/* 	height: 360px; */
+/* 	text-align: center; */
+}
+
+.clips ul.buttonBar {
+	padding-top: 20px;
+}
+
+.clips ul.imageIndex a.image {
+	position: relative;
+}
+
+.clips ul.imageIndex a.image span.duration {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #FFFFFF;
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.7);
+	font-size: 0.9em;
+	padding: 0 3px;
+}
+
+.clips ul.imageIndex h2 {
+	float: left;
+}
+
+.clips ul.imageIndex span.date {
+	float: right;
+	color: #CE9C4A;
+	font-size: 0.8em;
+}
+
+.clips ul.imageIndex p {
+	float: left;
+}
+
+.clips ul.imageIndex div.ratingStars {
+	float: left;
+}

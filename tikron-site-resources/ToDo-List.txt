@@ -1,0 +1,37 @@
+
+Allgemein:
+
+- Images über attachment Tabelle referenzieren.
+- Images wirklich in Verzeichnis je Bereich/Kategorie speichern (Problem Verschieben zwischen Kategorien)?
+- Service-Layer in separates Projekt auslagern und von webapp/webman gemeinsam nutzen.  
+- iBase Bot zum Generieren von Eager Images bauen.
+- Auf Apache Commons 3 umstellen.
+
+
+Persistence:
+
+- FÜr Benutzer mehrere Rollen ermöglichen (n:m Beziehung)
+- Statt Album- und Picture Bilder getrennt zu speichern, diese in Attachment zusammenführen und darauf referenzieren.
+- CleanUp zum Löschen nicht mehr referenzierte Bilder (Attachments) ermöglichen.
+- @ManyToOne mit Fetch.LAZY versehen? Führt ansonsten zu großen SQL-Statements z.B. bei getComments().size()
+- Annotaionen @UniqueConstraint und @Index hinzufügen.
+- Statt visible im DAO zu filtern, dies im Service Layer per Java 8 Collection:removeIf().
+- Bidirektionale Beziehungen auflösen?
+ 
+
+Tikron Manager:
+
+- BaseBean sollte Serializable implementieren.
+- @Transient statt transient verwenden?  
+- Eventuell von JSF auf AngualarJS umstellen.
+
+
+Tikron WebApp:
+
+- Für Pager statt komplette EntityBeans kleine POJOs verwenden, die per JPQL-Konstruktor erstellt werden ("Java Persistence 2", Seite 202)
+- Statt ImageDTO.imagePathName generell Map mit Image-URIs oder -URLs verwenden. Für mögliche Template-Namen enum class verwenden.
+- buildCanonicalUrl() Objektorientiert realisieren.
+- Videos mit "Video for everybody" (http://camendesign.com/code/video_for_everybody) anzeigen.
+- Responsive Design zur besseren Darstellung auf kleinen Anzeigen umsetzen? (Google Tipps)
+- Größere Bilder und Paging evtl. per Ajax.
+

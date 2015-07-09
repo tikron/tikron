@@ -1,0 +1,318 @@
+/* 
+* Freakworm Manager basic stylesheets
+* Copyright (c) 2009 by Titus Kruse
+*/
+
+/*** HTML tag styles *************************************/
+
+/* Default settings for all tags and pages */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	font-family: Arial, sans-serif;
+/*  font-size: 100.01%;*/
+	color: #CCCCCC;
+/*  line-height: 1.166;*/
+	margin: 0px;
+	padding: 0px;
+	background-color: #333333;
+}
+
+/* Overrides decoration for headings */
+h1,h2,h3,h4,h5,h6 {
+	font-family: Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 2em;
+	color: #FFCC33;
+	padding: 10px 10px 10px 0px;
+}
+
+h2 {
+	font-size: 1.5em;
+	color: #FFCC33;
+	padding: 10px 10px 10px 0px;
+}
+
+h3 {
+	font-size: 1.1em;
+	color: #FF9900;
+	padding: 5px 5px 5px 0px;
+}
+
+h4 {
+	font-size: 1em;
+	font-weight: normal;
+	color: #FF9900;
+	padding: 5px 5px 5px 0px;
+}
+
+h5 {
+	font-size: 1em;
+	font-weight: normal;
+	color: #334d55;
+	padding: 5px 5px 5px 0px;
+}
+
+p {
+	font-size: 1em;
+}
+
+/* Overrides decoration from previous rule for hovered links */
+a:link,a:visited,a:hover {
+	color: #CE9C4A;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Show images and tables with no border */
+img {
+	border: 0;
+}
+
+table {
+	border: 0;
+}
+
+/*** Layout Divs *****************************************/
+.clear {
+	clear: both;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+}
+
+#container {
+	padding: 10px 20px;
+}
+
+#wrap {
+}
+
+#header .salutation a {
+	text-decoration: underline;
+}
+
+#navigation {
+	float: left;
+	width: 300px;
+	padding-right: 30px;
+}
+
+#breadcrumb {
+	padding-bottom: 20px;
+	color: #CE9C4A;
+	font-size: 0.8em;
+}
+#breadcrumb a {
+	text-decoration: underline;
+}
+
+#content {
+	float: left;
+	min-width: 500px;
+	min-height: 600px;
+}
+
+#contentHeader {
+	margin: 10px 0px;
+}
+
+#contentMain {
+	margin: 10px 0px;
+}
+
+#footer {
+	padding: 4px 0px;
+}
+
+/*** Miscelanious Components *****************************/
+
+/* Show file-size for downloadable files a little bit smaller */
+.filesize {
+	font-size: 0.7em;
+}
+
+.errorText {
+	color: #FF3333;
+}
+
+.attention {
+	color: #FF3333;
+}
+
+/*** Forms ***********************************************/
+
+table.form {
+	margin: 10px 0;
+	padding: 4px;
+	border: 1px solid #707070;
+	font-size: 1em;
+}
+
+table.form .columnLabel {
+	width: 120px;
+}
+
+table.form .columnData {
+}
+
+table.form table.inner {
+	border-collapse: collapse;
+}
+
+table.form table.inner .help {
+	padding-left: 10px;
+	font-size: 0.9em;
+}
+
+
+label {
+	font-weight: bold;
+	color: #FF9900;
+	font-size: 0.9em;
+}
+
+span.required {
+	margin-left: 3px;
+	color: #00CC00;
+}
+
+input, textarea {
+	font-family: Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+input.text {
+	width: 300px;
+}
+
+input.number {
+	width: 50px;
+}
+
+input.date {
+	width: 80px;
+}
+
+input.time {
+	width: 80px;
+}
+
+input.datetime {
+	width: 120px;
+}
+
+input.file {
+	width: 300px;
+}
+
+input.button {
+	padding: 0 10px;
+	margin-right: 5px;
+}
+
+textarea {
+	width: 600px;
+	height: 100px;
+}
+
+select {
+	width: 200px;
+}
+
+/*** Default content table ****************************/
+
+table.content {
+	margin: 10px 0;
+	padding: 4px;
+	border: 1px solid #707070;
+}
+
+table.content thead {
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FF9900;
+}
+
+table.content tfoot {
+	padding: 10px 0px;
+	font-size: 0.8em;
+}
+
+table.content tbody tr.odd {
+	background-color: #3A3D3F;
+}
+
+table.content tbody tr.even {
+	background-color: #3A3D3F;
+}
+
+table.content tbody td {
+	padding: 5px;
+/*  border: 1px dotted #707070;*/
+	font-size: 0.8em;
+}
+
+/*** Header ****************************/
+
+#header {
+	height: 80px;
+	padding: 4px 0px;
+}
+
+#header .logo {
+	float: left;
+}
+
+#header .salutation {
+	float: right;
+	margin-top:30px;
+}
+
+/*** Navigation ****************************/
+
+table.treeNav td.filler,
+table.treeNav td.expander,
+table.treeNav td.icon {
+	width: 19px;
+	height: 100%;
+}
+
+table.treeNav td {
+	font-size: 0.8em;
+/*  font-weight: bold;*/
+}
+
+/*** Miscelanious components ****************************/
+
+ul.messages {
+	margin: 10px 0px;
+	color: #FF0000;
+}
+
+.buttonBar {
+	margin: 10px 0px;
+}
+
+.linkBar {
+	font-size: 0.8em;
+}
+
+/*** Special page styles ****************************/
+
+#loginForm .text {
+	width: 150px;
+}

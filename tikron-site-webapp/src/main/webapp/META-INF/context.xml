@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<ResourceLink name="jdbc/tikron" global="jdbc/tikron" type="javax.sql.DataSource" />
+	<ResourceLink name="mail/tikron" global="mail/tikron" type="javax.mail.Session" />
+	<!-- Disable session persistence across Tomcat restarts -->
+	<Manager pathname="" />
+</Context>

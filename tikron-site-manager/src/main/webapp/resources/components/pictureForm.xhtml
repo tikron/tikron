@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="pictureForm" displayName="picture form">
+	<composite:attribute name="picture" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="category" value="#{msg.labelPictureCategory}"></tcf:outputLabel>
+		<h:outputText id="category" value="#{cc.attrs.picture.category.title}"></h:outputText>
+		<tcf:outputLabel for="name" value="#{msg.labelPictureName}" required="true"
+			requiredClass="required"></tcf:outputLabel>
+		<h:inputText id="name" value="#{cc.attrs.picture.name}" styleClass="text">
+			<f:validateRequired />
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="title" value="#{msg.labelPictureTitle}"></tcf:outputLabel>
+		<h:inputText id="title" value="#{cc.attrs.picture.title}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="description" value="#{msg.labelPictureDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="description" value="#{cc.attrs.picture.description}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="imageName" value="#{msg.labelPictureImageName}"></tcf:outputLabel>
+		<h:inputText id="imageName" value="#{cc.attrs.picture.imageName}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="image" value="#{msg.labelPictureImage}" rendered="#{not empty cc.attrs.picture.imageName}"></tcf:outputLabel>
+		<h:panelGroup rendered="#{not empty cc.attrs.picture.imageName}">
+			<img src="#{imageServerBean.contextPath}getImage.jsp?name=#{pictureImageBean.pictureImagePaths[cc.attrs.picture.category.id]}#{cc.attrs.picture.imageName}&amp;template=galleryEdit" />
+		</h:panelGroup>
+	</h:panelGrid>
+</composite:implementation>
+</html>

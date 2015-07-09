@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Configuration Tikron Manager</comment>
+	<entry key="imageServerUrl">https://images.tikron.de/ibase/</entry>
+	<entry key="imageServerUrl.pascal">https://images.tikron/ibase/</entry>
+	<entry key="imageServerUrl.zuse">https://images.tikron/ibase/</entry>
+	<entry key="imageServerUser">manager</entry>
+	<entry key="imageServerPassword">wurmAP#0</entry>
+</properties>

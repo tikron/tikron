@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:ice="http://www.icesoft.com/icefaces/component"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<div id="content">
+					<h:form id="loginForm" prependId="false">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.loginHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.loginDescription}"></h:outputText></p>
+						</div>
+						<div id="contentMain">
+							<ice:outputText value="Test"></ice:outputText>
+							<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+								<tcf:outputLabel for="j_username" value="#{msg.labelUserUsername}" required="true" requiredClass="required" />
+								<h:inputText id="j_username" class="text">
+									<f:validateRequired />
+									<f:validateLength maximum="255" />
+								</h:inputText>
+								<tcf:outputLabel for="j_password" value="#{msg.labelUserPassword}" required="true" requiredClass="required" />
+								<h:inputSecret id="j_password" class="text">
+									<f:validateRequired />
+									<f:validateLength maximum="255" />
+								</h:inputSecret>
+								<tcf:outputLabel for="_spring_security_remember_me" value="#{msg.loginLabelRemeberMe}" />
+								<h:selectBooleanCheckbox id="_spring_security_remember_me" />
+							</h:panelGrid>
+							<h:messages styleClass="messages" />
+							<div class="buttonBar">
+								<h:commandButton type="submit" id="login" action="#{loginBean.doLogin}" value="#{msg.loginButtonSubmit}" />
+							</div>
+						</div>
+					</h:form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

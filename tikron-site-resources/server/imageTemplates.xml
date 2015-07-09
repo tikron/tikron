@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<it:templates xmlns:it="http://www.tikron.de/imageTemplates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.tikron.de/imageTemplates ../../../ibase/ibase/target/classes/imageTemplates.xsd ">
+	<!-- *** Tikron Webapp -->
+	<template>
+		<name>galleryImage</name>
+		<limit>800</limit>
+		<signature>
+			<text>tikron.de</text>
+			<size>14</size>
+			<opacity>0.4</opacity>
+			<position>
+				<horizontal>10</horizontal>
+				<vertical>-10</vertical>
+			</position>
+		</signature>
+		<compressionQuality>1.0</compressionQuality>
+	</template>
+	<template>
+		<name>galleryThumbnail</name>
+		<dimension>
+			<height>66</height>
+		</dimension>
+	</template>
+	<template>
+		<name>galleryTeaser</name>
+		<dimension>
+			<height>150</height>
+		</dimension>
+	</template>
+	<template>
+		<name>galleryStory</name>
+		<dimension>
+			<height>200</height>
+		</dimension>
+	</template>
+	<!-- *** Tikron Manager -->
+	<template>
+		<name>galleryList</name>
+		<dimension>
+			<width>40</width>
+			<height>40</height>
+		</dimension>
+	</template>
+	<template>
+		<name>galleryEdit</name>
+		<limit>150</limit>
+	</template>
+	<template>
+		<name>albumList</name>
+		<dimension>
+			<width>40</width>
+			<height>40</height>
+		</dimension>
+	</template>
+	<template>
+		<name>albumEdit</name>
+		<dimension>
+			<width>150</width>
+			<height>150</height>
+		</dimension>
+	</template>
+</it:templates>

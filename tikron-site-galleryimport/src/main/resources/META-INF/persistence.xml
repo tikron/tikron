@@ -1,0 +1,32 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="tikron-data">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+		
+		<!-- Entity mapping -->
+		<class>de.tikron.persistence.model.gallery.Catalog</class>
+		<class>de.tikron.persistence.model.gallery.Category</class>
+		<class>de.tikron.persistence.model.gallery.CategoryType</class>
+		<class>de.tikron.persistence.model.gallery.Picture</class>
+		<class>de.tikron.persistence.model.user.CommentType</class>
+		<class>de.tikron.persistence.model.user.PictureComment</class>
+		<class>de.tikron.persistence.model.user.User</class>
+		<class>de.tikron.persistence.model.user.Role</class>
+		
+		<properties>
+			<!-- Connection to MYSQL database with InnoDB dialect-->
+			<!-- DB credentials will be set programatically -->			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+	
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+		
+			<!-- Validate database schema definition -->
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
+
+			<!-- Show SQL statements? -->
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

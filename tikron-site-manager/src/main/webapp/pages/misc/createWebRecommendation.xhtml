@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:fw="http://java.sun.com/jsf/composite/components">
+<f:metadata>
+	<f:event type="preRenderView" listener="#{webRecommendationDetailBean.preRenderView}" />
+</f:metadata>
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<ui:include src="/include/navigation.xhtml" />
+				<div id="content">
+					<h:form id="createWebRecommendation">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.createWebRecommendationHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.createRecordDescription}"></h:outputText></p>
+						</div>
+						<div id="contentMain">
+							<fw:webRecommendationForm webRecommendation="#{webRecommendationDetailBean.entity}" />
+							<h:messages styleClass="messages"/>
+							<div class="buttonBar">
+								<h:commandButton action="#{webRecommendationDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
+								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+							</div>
+						</div>
+					</h:form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

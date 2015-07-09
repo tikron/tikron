@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:tcf="http://tikron.de/tikron-common-faces"
+			xmlns:fw="http://java.sun.com/jsf/composite/components">
+<f:metadata>
+	<f:viewParam name="categoryId" value="#{pictureListBean.category}"
+			converter="#{categoryConverter}" converterMessage="Bad request. Unknown category."
+	/>
+	<f:event type="preRenderView" listener="#{pictureListBean.preRenderView}" />
+</f:metadata>
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<ui:include src="/include/navigation.xhtml" />
+				<div id="content">
+					<h:form id="managePictures">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.managePicturesHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
+						</div>
+						<div id="contentMain">
+							<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+								<tcf:outputLabel for="category" value="#{msg.labelCategoryName}"></tcf:outputLabel>
+								<h:outputText id="category" value="#{pictureListBean.category.title}"></h:outputText>
+							</h:panelGrid>
+							<fw:pictureList dataModel="#{pictureListBean.model}" selectedIds="#{pictureListBean.selectedIds}"></fw:pictureList>
+							<h:messages styleClass="messages" />
+							<div class="buttonBar">
+								<h:button outcome="/pages/gallery/createPicture.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
+										<f:param name="categoryId" value="#{pictureListBean.category.id}" />
+								</h:button>
+								<h:commandButton action="#{pictureListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
+								<h:commandButton action="#{pictureListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>
+								<h:commandButton action="#{pictureListBean.refresh}" value="#{msg.buttonRefresh}"></h:commandButton>
+								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}"></h:button>
+							</div>
+							<div class="buttonBar">
+								<h:selectOneMenu id="selectedCategory" value="#{pictureListBean.selectedCategory}" converter="#{categoryConverter}">
+									<f:selectItems value="#{pictureListBean.selectCategories}" />
+								</h:selectOneMenu> 
+								<h:commandButton action="#{pictureListBean.move}" value="#{msg.buttonMove}"></h:commandButton>
+							</div>
+						</div>
+					</h:form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

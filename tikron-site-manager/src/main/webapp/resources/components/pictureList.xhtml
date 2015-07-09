@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite">
+<composite:interface name="pictureList" displayName="picture list">
+	<composite:attribute name="dataModel" required="true" />
+	<composite:attribute name="selectedIds" required="false" />
+</composite:interface>
+<composite:implementation>
+	<h:dataTable id="pictures" var="picture" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
+		<h:column rendered="#{cc.attrs.selectedIds ne null}">
+			<h:selectBooleanCheckbox value="#{cc.attrs.selectedIds[picture.id]}" id="selectBox" />
+		</h:column>
+		<h:column>
+			<h:panelGroup rendered="#{not empty picture.imageName}">
+			<h:link outcome="/pages/gallery/editPicture.html">
+				<f:param name="pictureId" value="#{picture.id}" />
+				<img src="#{imageServerBean.contextPath}getImage.jsp?name=#{pictureImageBean.pictureImagePaths[picture.category.id]}#{picture.imageName}&amp;template=galleryList" />
+			</h:link>
+			</h:panelGroup>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.headerPictureName}"></h:outputText>
+			</f:facet>
+			<h:link outcome="/pages/gallery/editPicture.html" value="#{picture.name}">
+				<f:param name="pictureId" value="#{picture.id}" />
+			</h:link>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.headerPictureTitle}"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{picture.title}"></h:outputText>
+		</h:column>
+		<f:facet name="footer">
+			<h:outputText rendered="#{cc.attrs.dataModel.rowCount eq 0}" value="#{msg.textEmptyList}"></h:outputText>
+		</f:facet>
+	</h:dataTable>
+</composite:implementation>
+</html>

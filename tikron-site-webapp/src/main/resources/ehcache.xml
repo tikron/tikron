@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd"
+	updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+
+	<defaultCache maxElementsInMemory="1000" 
+		eternal="false" 
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="900"
+		overflowToDisk="false"
+		statistics="true" />
+		
+	<!--  http://tech.puredanger.com/2009/07/10/hibernate-query-cache/ -->
+	<!--  http://java.dzone.com/articles/pitfalls-hibernate-second-0 -->
+	<cache
+		name="org.hibernate.cache.StandardQueryCache"
+		maxElementsInMemory="10" 
+		eternal="false"
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="900" />
+</ehcache>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Configuration Tikron Web Application 2.0 (Development)</comment>
+	<entry key="imageServerUrl">http://images.tikron/</entry>
+	<entry key="fileArchiveUrl">http://files.tikron/</entry>
+	<entry key="email.enabled">false</entry>
+	<entry key="email.defaultSender">webmaster@tikron.de</entry>
+	<entry key="email.defaultRecipient">contact@tikron.de</entry>
+	<entry key="trackingEnabled">false</entry>
+	<entry key="validation.spamPhrases"><![CDATA[cheap,viagra,pills,cialis,online]]></entry>
+</properties>

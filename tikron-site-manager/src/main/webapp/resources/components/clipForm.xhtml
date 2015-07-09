@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="clipForm" displayName="clip form">
+	<composite:attribute name="clip" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="name" value="#{msg.labelClipName}" required="true"
+			requiredClass="required"></tcf:outputLabel>
+		<h:inputText id="name" value="#{cc.attrs.clip.name}" styleClass="text">
+			<f:validateRequired />
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="title" value="#{msg.labelClipTitle}"></tcf:outputLabel>
+		<h:inputText id="title" value="#{cc.attrs.clip.title}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="shortDescription" value="#{msg.labelClipShortDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="shortDescription" value="#{cc.attrs.clip.shortDescription}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="longDescription" value="#{msg.labelClipLongDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="longDescription" value="#{cc.attrs.clip.longDescription}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="imageName" value="#{msg.labelClipImageName}"></tcf:outputLabel>
+		<h:inputText id="imageName" value="#{cc.attrs.clip.imageName}" styleClass="file">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="videoName" value="#{msg.labelClipVideoName}"></tcf:outputLabel>
+		<h:inputText id="videoName" value="#{cc.attrs.clip.videoName}" styleClass="file">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="videoWidth" value="#{msg.labelClipVideoWidth}"></tcf:outputLabel>
+		<h:inputText id="videoWidth" value="#{cc.attrs.clip.videoWidth}" styleClass="number">
+			<f:validateLongRange minimum="1" maximum="65535" />
+			<f:convertNumber integerOnly="true" />
+		</h:inputText>
+		<tcf:outputLabel for="videoHeight" value="#{msg.labelClipVideoHeight}"></tcf:outputLabel>
+		<h:inputText id="videoHeight" value="#{cc.attrs.clip.videoHeight}" styleClass="number">
+			<f:validateLongRange minimum="1" maximum="65535" />
+			<f:convertNumber integerOnly="true" />
+		</h:inputText>
+		<tcf:outputLabel for="dateRecorded" value="#{msg.labelClipDateRecorded}"></tcf:outputLabel>
+		<h:inputText id="dateRecorded" value="#{cc.attrs.clip.dateRecorded}" styleClass="date">
+			<f:convertDateTime type="date" />
+		</h:inputText>
+		<tcf:outputLabel for="playtime" value="#{msg.labelClipPlaytime}"></tcf:outputLabel>
+		<h:inputText id="playtime" value="#{cc.attrs.clip.playtime}" styleClass="time">
+			<f:convertDateTime type="time" />
+		</h:inputText>
+	</h:panelGrid>
+</composite:implementation>
+</html>

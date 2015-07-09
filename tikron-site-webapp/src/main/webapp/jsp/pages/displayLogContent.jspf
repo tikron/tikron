@@ -1,0 +1,358 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<ul class="index">
+	<li class="first">
+		<article>
+		<header><h2>Analoge Fotos neu gescannt</h2><span class="date">23.04.2015</span></header>
+		<p>
+			Die Fotos aus der Zeit der Spiegelreflexkamera mit Kleinbildnegativ Nikon FE sollten in die digitale Welt gerettet werden.
+			Deshalb wurden alle diese Fotos mit aktuller Hardware neu gescannt.
+			Mit dem nötigen Know How in der Bildoptimierung mit Photoshop sind Staub und Krater entfernt, Farbstiche ausgeglichen oder die Helligkeit korrigiert worden. 
+			Natürlich wurden diese Bilder auch hier auf Tikron aktualisiert.
+			Die Qualität der Fotos könnt ihr nun unter anderem in "Natur", "Technik" oder "Open Air" bewundern.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Reisen und Events</h2><span class="date">7.01.2015</span></header>
+		<p>
+			Mit dem heutigen Update wird Tikron etwas umstrukturiert.
+			Neu ist die Kategorie "Reisen".
+			Immer häufiger geht es mit dem Auto oder dem Campingbus in andere Länder.
+			Und es ist kein Zufall, dass es darüber einiges zu berichten gibt.
+			Viele schöne Fotos geben einen Eindruck von Skandinavien, dem Baltikum oder den Balkan.
+			Ebenfalls neu ist die Rubrik "Events", in der über kleinere Veranstaltungen und Ausflüge berichtet wird.
+			Die Kategorien "Natur" und "Technik" sind eine Zusammenfassung des alten Fotoalbums.
+			Viel Spaß beim Lesen und Lernen.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Einmal um die Ostsee</h2><span class="date">20.09.2014</span></header>
+		<p>
+			In den vergangenen Jahren waren wir immer häufiger mit dem Campingbus auf Achse.
+			Skandinavien und der Balkan waren häufig das Ziel und Fotos aus diesen Regionen gibt hier schon zu sehen.
+			Schon lange aber wollten wir einmal eine Tour um die Ostsee machen.
+			Dieses Jahr hat es nun endlich geklappt.
+			In drei Monaten haben wir die Länder Dänemark, Schweden, Finnland, Estland, Lettland und Litauen besucht.
+			Und weil wir dabei besonders viel erlebt und gesehen haben, soll es der Auftakt für eine neue Reihe auf Tikron werden:
+			Der erste Reisebericht ist online.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Kurzfilmkino</h2><span class="date">28.05.2014</span></header>
+		<p>
+			Bereits im Oktober 2012 wurde hier das Kurzfilmkino eingerichtet.
+			Wegen der vielen anderen Projekte lief dort aber immer der gleiche Film: Ein Full Pull vom Team Hubraumteufel.
+			Wie schon angekündigt, soll das aber nicht so bleiben.
+			Deshalb gibt es nun gleich drei Neuerscheinungen.
+			Exklusiv hier auf Tikron ein Unterwasserfilm aus Kroatien, die Feuerwehr auf der Nation of Gondwana und ein Dokumentarfilm über nachtaktive Tiere.
+			Viel Spaß beim gucken.
+			Der Eintritt ist wie immer kostenlos und das Kino frei von Werbung.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Dugi Otok</h2><span class="date">27.02.2014</span></header>
+		<p>
+			Wir waren schon mehrfach in Kroatien.
+			Die "lange Insel" Dugi Otok hat aber den schönsten Eindruck hinterlassen.
+			Abwechslungsreiche Strände, eine tolle Unterwasserwelt, einige Hügel mit guter Aussicht auf Meer und Festland, der Naturpark Telašćica und viel, viel Ruhe.
+			Eine Auswahl meiner Fotos gibt es hier zu sehen.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Neues Design</h2><span class="date">23.11.2013</span></header>
+		<p>
+			Um sich Tikron auch gelockert auf der Couch mit dem Tablet anschauen zu können, wurde das Design der gesamten Site überarbeitet.
+			Die Schrift ist besser lesbar. 
+			Knöpfe und Links kann man nun auch mit dicken Fingern "touchen".
+			Oder wenn man zu später Stunde schon etwas verpeilt ist.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Tikron online</h2><span class="date">30.03.2013</span></header>
+		<p>
+			Nach nun fast 8 Jahren im Betrieb habe ich mich entschlossen, der Site einen neuen Namen zu geben.
+			Freakworm heißt nun Tikron!
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Meeting Point</h2><span class="date">24.03.2013</span></header>
+		<p>
+			 Seit vielen Monaten vermissen viele nun schon unseren Lieblingsradiosender "Sofaspace".
+			 Dies hat mich dazu bewogen, in dieser Richtung auch mal wieder was zu unternehmen.
+			 Dabei herausgekommen ist ein neuer Tribal- und Chillout-Mix "Meeting Point".
+			 Mit Musik unter anderem von Kaja Project, Vibrasphere, Nada, Ooze oder H.U.V.A. Network.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Spring Web</h2><span class="date">17.01.2013</span></header>
+		<p>
+			Es hat sich gezeigt, dass Apache Struts 2 keine Zukunft als Web Framework haben wird.
+			Und weil Spring bereits als Framework für den Logic Layer eingesetzt wird,
+			wurde nun auch das Frontend komplett auf Spring Web umgestellt.
+			Ihr werdet das (hoffentlich) nicht bemerken.
+			Die Weiterentwicklung der Website soll damit aber einfacher werden. 
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Schweden 2012</h2><span class="date">15.10.2012</span></header>
+		<p>
+			Am 16. September war ja wieder Trecker Treck in Kölzin. 
+			Dies soll auch der Auftakt zu einer neuen Serie auf Freakworm sein: 
+			In unregelmäßigen Abständen werde ich hier auch mal einen selbstgedrehten Kurzfilm zeigen.
+			Und das wie immer unkommerziell und frei von Werbung.
+			Viel Spaß also beim Full Pull vom Team "Hubraumteufel".
+			<br /><br />
+			Sehr viel ruhiger ging es hingegen auf unserer Campingtour Schweden 2012 zu.
+			Wir sind über Dänemark, Göteborg, entlang der Westküste hinauf bis Norwegen und schließlich um den Vändern herum gefahren.
+			Dabei sind wir durch Nationalparks gewandert und auf Seen gepaddelt.
+			Die schönsten Fotos der Reise gibt es hier zu sehen.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Bunte Mischung</h2><span class="date">26.08.2012</span></header>
+		<p>
+			Lange ist es her, seit dem es auf Freakworm Neues gab.
+			Wir haben in der Zwischenzeit vieles erlebt und gesehen.
+			Vor allem auch deshalb ist die Website etwas zu Kurz gekommen.
+			Bis im Winter Zeit zur Umsetzung neuer Ideen ist, möchte ich mal wieder ein paar neue Fotos der vergangenen Monate präsentieren.
+			Dabei unter anderem Indian Spirit und at.tension Festival 2011, Paddeln im Spreewald, Winter auf Rügen und an der Nordsee sowie weitere Eindrücke von der Kulturellen Landpartie.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Image Server</h2><span class="date">8.03.2012</span></header>
+		<p>
+			Mit diesem Update gibt es zwei Änderungen unter der Haube:
+			Die Fotos und Album-Cover auf Freakworm werden nun nicht mehr per Bildbearbeitung vorbereitet und mit Texten versehen.
+			Sondern ein eigens entwickelter &quot;Image-Server&quot; beherbergt nun die Bilder und zeigt sie an.
+			Außerdem wurden die trüben Tage genutzt, um das Tool zur Pflege der dynamischen Inhalte der Website komplett umzubauen.
+			Dadurch soll es künftig möglich sein, schneller und einfacher Inhalte zu veröffentlichen. 
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Privacy</h2><span class="date">15.12.2011</span></header>
+		<p>
+			Von der Gier nach persönlichen Daten zur Verwertung für kommerzielle Interessen sind auch wir langsam ziemlich abgenervt.
+			Die Spähprogramme von Yasni, Facebook oder des kranken Pillen-, Penis- und Casinogewerbes versuchen natürlich auch auf Freakworm, an Namen und Adressen zu gelangen.
+			Deshalb wurden diese Daten nun für solche Programme möglichst unleserlich gemacht.
+			Auch eure E-Mail-Adressen, die Ihr zum Beispiel im Gästebuch eingetragen habt, werden nun nicht mehr veröffentlicht.
+			Kraftfahrzeugkennzeichen wurden schon immer übergetüncht. Und eure Gesichter? Auf Wunsch auch das. :-) 
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Polen</h2><span class="date">30.08.2011</span></header>
+		<p>
+			Fast ein Jahr ist es her, seit dem sich das letzte Mal bei Freakworm etwas tat.
+			Es ist leider schwierig, neben Arbeit, Haus und Hof noch eine Website zu betreiben.
+			Vielleicht klappt es ja diesen Winter, die Site mit neuen Impulsen zu beleben.
+			Die Inhalte werden sich jedenfalls von reinem Bezug zu Art &amp; Culture weiteren Themen öffnen müssen.
+			Dieses Mal gibt es zunächst einen kleinen Bericht aus Polen.
+			Wir haben eine überraschend angenehme Reise entlang der Ostseeküste und durch Masuren unternommen und dabei wieder sehr viele Fotos gemacht.
+			Hier gibt es eine kleine Auswahl zu sehen.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Hübsche neue Buttons</h2><span class="date">19.10.2010</span></header>
+		<p>
+			Erst kürzlich hatten wir hier über die Schärenküste von Bjulebo berichtet und dazu einige schöne Fotos geliefert.
+			Nun wurde auch an dem Desgin der Website wieder etwas gearbeitet.
+			So wurden alle Buttons neu gestaltet.
+			Die Navigation zum Blättern zwischen den Bildern wurde verbessert.
+			Und die Anzeige der Alben selbst wurde überarbeitet.
+			Das ist doch mal was.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Bjulebo</h2><span class="date">5.10.2010</span></header>
+		<p>
+			Ein Highlight diesen Jahres war natürlich wieder der Sommerurlaub.
+			Diesmal ging es nach Schweden.
+			Genau genommen nach Bjulebo.
+			Das liegt in den Schären einige Kilometer nördlich von Oskarshamn an der Ostküste Smålands.
+			Neben dem Genuss der Ruhe, schönen Landschaft und den freundlichen Menschen gab es natürlich auch wieder unzählige Gelegenheiten, den Auslöser zu betätigen.
+			Aus den ursprünglich 400 Fotos wurden für euch die besten ausgewählt.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Wunder.punkte</h2><span class="date">17.08.2010</span></header>
+		<p>
+			Von Himmelfahrt bis Pfingsten gab es dieses Jahr im Wendland wieder die Kulturelle Landpartie.  
+			Während dieser Zeit öffnen Künstler und Handwerker ihre Hoftore und präsentieren ihre Arbeiten: von fast vergessenen Handwerkstechniken bis hin zu Avantgarde-Kunst. Rund 600 Künstler erwarten sie an 100 Ausstellungspunkten verteilt auf über 80 Dörfer im und um den Landkreis Lüchow-Dannenberg.
+			Wir haben auch diese Jahr wieder einige der Wunder.punkte besucht.
+			Hier gibt es einen kleinen Einblick zu sehen.  
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Neue E-Mail-Adresse</h2><span class="date">22.06.2010</span></header>
+		<p>
+			Weil die E-Mail-Adresse mal wieder von den Spam-Robotern ausspioniert wurde, mussten neue Maßnahmen ergriffen werden.
+			Zum einen gibt es natürlich eine neue Kontakt-Adresse. Zum anderen wurde die Adresse kodiert und die Spam-Prüfung erweitert.
+			Beim Abschicken einer Anfrage an Freakworm oder Hinterlassen eines Gästebucheintrags wird nun auch dieses lustige Bild mit den schwer lesbaren Zeichen angezeigt.  
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>RSS-Feed eingebaut</h2><span class="date">25.02.2010</span></header>
+		<p>
+			Wer nicht so häufig auf Freakworm unterwegs ist, aber trotzdem immer auf dem Laufenden bleiben möchte, wird sich über ein neues Feature freuen:
+			Wie auf vielen anderen Websites, gibt es auch hier nun die Möglichkeit, einen RSS-Feed zu abonieren.
+			Dadurch werdet ihr immer automatisch über Neuigkeiten informiert.
+			Vorraussetzung ist ein Feed-Reeder wie z.B. "RSS Bandit", Thunderbird oder Outlook 2007.
+			Einfach auf das orangene Symbol unten rechts klicken und Feed abonieren.  
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Neuer Trance-Mix "Spirit Support"</h2><span class="date">11.02.2010</span></header>
+		<p>
+			Die kreative Arbeit der vergangenen Monate hat nach längerer Zeit mal wieder ein musikalisches Werk hervorgebracht. So wurde intensiv nach brauchbaren Tracks gesucht und das Ergebnis zu einem neuen Trance-Mix verschmolzen. Groovy Morning-Trance vom Feinsten. Find your spirit support...!
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Vorwärts immer, Rückwärts nimmer</h2><span class="date">15.11.2009</span></header>
+		<p>
+			In den vergangen Monaten gab es wenig Neues auf Freakworm. Ein Grund war der mal wieder sehr fette Sommer. Ein anderer eine gewisse Perspektivlosigkeit bezüglich neuer Inhalte. Auch ursprüngliche Ziele, wie zum Beispiel mindestens einmal im Monat eine gute CD vorzustellen, wurden kaum erreicht. Für die redaktionelle Arbeit steht momentan einfach zu wenig Zeit zur Verfügung.<br /><br />
+			So ist es verständlich, dass das Interesse an dem Angebot hier vergleichsweise gering sein mag. Nicht nur ein neues Design, eigentlich auch ein neues Konzept müsste her. Wir richten den Blick nach Vorn und bleiben auf der Suche nach neuen Ideen. In diesem Sinne: Vorwärts immer, Rückwärts nimmer.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Fotos kommentieren</h2><span class="date">9.07.2009</span></header>
+		<p>
+			Jede freie Minute wurde in den letzten Tagen daran gearbeitet, auf Freakworm mal wieder ein neues Feature anbieten zu können: Und so kann man in der Fotogallerie nun ebenfalls Kommentare hinterlassen. Einfach bei dem Bild, dass man total öde oder qualitativ miserabel findet, auf den Link klicken und mal so richtig die Meinung geigen. Der Text erscheint dann zur Freude aller neben dem Bild.<br /><br />Außerdem waren wir wieder auf dem Fusion-Festival und sind dort 3 Tage in den Ferienkommunismus abgetaucht. Ein paar Impressionen in Form von Fotografien gibt es hier zu sehen...
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Paul Neaves interaktive Computergrafik</h2><span class="date">10.04.2009</span></header>
+		<p>
+			Die Linkpage fristet ein gewisses Schattendasein. Ein unangemesser Zustand, wie manche zu Recht meinen. Denn gibt es dort nicht nur Verweise zu interessanten und nützlichen Internetangeboten, sondern auch zu künstlerisch attraktiven Präsentationen. Kürzlich ist dort wieder ein neuer Link hinzugekommen. Auf der Homepage des Designers Paul Neave gibt es interaktive Computergrafik zu betrachten, die zum mitmachen animieren. Aber auch optische Täuschungen mit Folgen: Click it to get trippy...!
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Schweden-Fotos</h2><span class="date">22.01.2009</span></header>
+		<p>
+			Endlich haben wir es geschafft, die wunderschönen Bilder aus dem letzten Urlaub in Schweden zu sortieren und zu beschriften. Unter der Rubrik Neue Bilder gibt es einige nette Naturaufnahmen überwiegend aus der Gegend um Växjö, aber auch Öland und Jönköping. Ein neues Feature gibt es auch wieder auf Freakworm: Hier auf der Startseite wird nun bei jedem Aufruf ein zufällig ausgewählten Bild angezeigt. Wer auf dieses Fundstück klickt, kann es auch in voller Pracht betrachten.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Foto-Gallerie nun Datenbank-gestützt</h2><span class="date">8.11.2008</span></header>
+		<p>
+			Der technische Umbau der Website schreitet voran und so ist nun auch die Bildergalerie "Datenbankgestützt". Der Vorteil: Um neue Bilder anbieten zu können, müssen die Seiten nun nicht jedes Mal alle neu generiert und auf den Server geladen werden. Davon abgesehen wurde wie bereits bei den CD-Tipps nun auch hier der Wechsel von sogenanntem statischem HTML zu JSP vollzogen und damit ein wesentlicher Schritt zu dem so tollen Web 2.0 begangen. Denn auch Freakworm möchte sich den modernen Design-Möglichkeiten öffnen. Mal sehen, was da so geht.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Neuer Server</h2><span class="date">20.10.2008</span></header>
+		<p>
+			Juhu, wir sind auf einen neuen Server umgezogen. Das bedeutet mehr Speicher, mehr Funktionen und überhaupt. Vielleicht klappt es ja nun auch endlich bald mit dem neuen Design für Freakworm. Falls irgendwo Probleme auftauchen, bitte mailen. Für technisch interessierte: Die Website läuft auf einem virtuellen Root-Server mit Debian Linux 4, Apache Webserver, Tomcat 6 und Java JDK 5.0.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Tracktor-Pulling in Kölzin und "Freiheit statt Angst"</h2><span class="date">27.09.2008</span></header>
+		<p>
+			Nicht unbedingt auf der Spur von Freakworm, aber dennoch ein optischer und akustischer Leckerbissen war dieses Jahr wieder das Tracktor-Pulling in Kölzin. Aus diesem Grund gibt es wieder ein Special und viele neue Fotos von diesem Event. Danke für dieses reichhaltige Motorsportereignis.<br /><br />
+			Bürgerrechtlerinnen und Bürgerrechtler rufen bundesweit zur Teilnahme an einer Demonstration gegen die ausufernde Überwachung durch Wirtschaft und Staat auf. An diesem Aufruf will sich auch Freakworm beteiligen. Denn was heute noch eine kritische, tolerierte Meinung ist, kann morgen schon verdächtig sein. Wer heute noch sagt, was er denkt und damit zur Vielfalt in der Gesellschaft beiträgt, traut sich morgen vielleicht nicht mehr. Was noch in Händen vertrauenswürdiger, gemeinnütziger Institutionen zu sein scheint, kann bald auch in den Zugriff ganz anderer Interessen gelangen. Oder sei es, dass immer mehr Überwachung und Kontrolle auch immer mehr Misstrauen schürt. Eine Entwicklung, deren Bedeutung unangemessen wenig Beachtung findet. Deshalb: Freiheit statt Angst. 11. Oktober in Berlin. Weitere Infos gibt es hier.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Vorhörtresen, Spam-Schutz und "Kulturelle Landpartie"</h2><span class="date">13.08.2008</span></header>
+		<p>
+			Der Sommer ist wieder Mal so fett, dass die künstlerischen Ambitionen derzeit etwas gedämpft sind und Outdoor-Aktivitäten eher im Vordergrund stehen. Aber Freakworm geht weiter, keine Frage.<br /><br />
+			Auf vielfachen Wunsch hin wurde ein kleines Feature realisiert: Am Vorhörtresen hat man nun die Wahl zwischen Vorkosten und gleich mitnehmen. Also lasst es euch schmecken. Um der Spam-Mafia Einhalt zu gebieten, kann im Gästebuch erst dann ein Eintrag hinzugefügt werden, nach dem eine kleiner "Intelligenztest" bewältigt wurde. Aus selbigem Grund gibt es auch mal wieder eine neue Kontakt-Adresse.<br /><br />
+			Neben einigen neuen Fotos, die Land und Leute darstellen, gibt es auch wieder ein interessantes Special: Und zwar zur Kulturellen Landpartie. Jedes Jahr präsentieren Künstler im Landkreis Lüchow-Dannenberg ihre  Arbeiten aus fast vergessenen Handwerkstechniken bis hin zu  Avantgarde-Kunst. Eine spannende Mischung, die alternatives Leben und freies Denken für alle zugänglich macht und so auch dem sonst eher uniform orientierten Menschen näher bringt. Dieses Vorhaben möchten wir natürlich auf unsere Weise unterstützen.<br /><br />
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Newslist</h2><span class="date">20.04.2008</span></header>
+		<p>
+			Das aktuelle Update auf Freakworm bringt nur einige technische Korrekturen mit sich. So wurden zum Beispiel Fehler in der Darstellung bei den Party-Flyern behoben. Wer die letzten inhaltenlichen Erweiterungen verpasst haben sollte, schaut einfach in das News-Protokoll.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>CD-Reviews kommentieren</h2><span class="date">13.03.2008</span></header>
+		<p>
+			Der Vorrat empfehlenswerter Musik-CDs wächst derzeit kontinuierlich. Davon abgesehen gibt es in diesem Teil des Angebots von Freakworm ein neues Feature: Besucher der Site können mitmachen und dort Kommentare zu den vorgestellten Alben eingeben. Diese werden dann allen Interessierten angezeigt. Wer also seine Zustimmung geben möchte oder auch einfach anderer Meinung ist, kann dies direkt kundtun.<br /><br />
+			Eine andere Erweiterung ist das News-Protokoll. Wer Freakworm nicht so häufig besucht, kann dort auch Neuigkeiten nachlesen, die vielleicht schon etwas länger her sind. Leider wurden diese Einträge nicht von Anfang an aufgewahrt. Sonst wäre sogar ein Blick zurück zu den ersten Gehversuchen der Site möglich gewesen. Aber immerhin, mit dem neuen Protokoll ist auch in diese Richtung ein wichtiger Schritt getan.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Trance-Mix "Vollwertkost"</h2><span class="date">30.01.2008</span></header>
+		<p>
+			Die zurzeit langen Tage gestatten es, musikalisch wieder verstärkt aktiv zu sein. Der neue Psychedelic-Trance-Mix "Vollwertkost" ist ein Produkt dieser Bemühungen. Seit dem letzten Mix ist es auch schon ein Weile her. Doch nur mit Geduld war es möglich, aus einer Vielzahl von Veröffentlichungen die besten Tracks auszuwählen. Vom Style her geht's diesmal schon schwer Richtung Full On. Wer also schon mal etwas Anschub für die bevorstehende Open-Air-Saison braucht, klickt hier.<br /><br />
+			In der CD-Ecke soll es auch weitergehen. Es ist das Ziel, zumindest einmal im Monat eine herausragende Veröffentlichung im Genre Ambient, Elektro oder psychedelic Trance empfehlen zu können. Wer also gelegentlich mal reinschaut, findet hier vielleicht noch die eine oder andere Perle, die ihm im Überangebot an massenkompatibler Unterhaltungsmusik sonst unbeachtet geblieben wäre.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>CD-Ecke aufgepeppt</h2><span class="date">14.12.2007</span></header>
+		<p>
+			Wie dem langjährigen Gast bei Freakworm sicher aufgefallen ist, fristet die CD-Ecke eher ein Schattendasein. Diesem völlig unangemessenen Zustand wurde der Kampf angesagt. Und so wurde dieser Bereich zunächst einmal technisch auf neue Beine gestellt. Wie bereits im Gästebuch heißt es hier nun ebenfalls nicht mehr einfach HTML. Sondern alles basiert nun auf feinste Java-Technik mit JSF, Hibernate und Datenbank. Das nur zur Information für technisch interessierte.<br /><br />
+			Inhaltlich soll es natürlich auch weitergehen. Und so ist das Ziel, zumindest einmal im Monat eine herausragende Veröffentlichung im Genre Ambient, Elektro oder psychedelic Trance empfehlen zu können. Wer also gelegentlich mal reinschaut, findet hier vielleicht noch die eine oder andere Perle, die ihm im Ãoberangebot an massenkompatibler Unterhaltungsmusik sonst unbeachtet geblieben wäre.
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
+		<header><h2>Tractorpulling in Kölzin</h2><span class="date">15.10.2007</span></header>
+		<p>
+			Eine aussergewöhnliche Veranstaltung ganz am Rande von Beats und Bytes war wieder das alljährliche Tractorpulling in Kölzin. Aus diesem Grunde gibt's exklusiv und nur für begrenzte Dauer eine kleine Foto-Serie hier bei Freakworm zu sehen. Weil das Reporter-Team am Sonntag nicht so recht aus den Federn gekommen ist, sind leider nicht alle Fahrzeuge in voller Action zu sehen. Das ganze ist aber trotzdem ein Klick wert...
+		</p>
+		</article>
+	</li>
+</ul>

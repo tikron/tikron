@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="teaserForm" displayName="teaser form">
+	<composite:attribute name="teaser" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="name" value="#{msg.labelTeaserName}" required="true"
+			requiredClass="required"></tcf:outputLabel>
+		<h:inputText id="name" value="#{cc.attrs.teaser.name}" styleClass="text">
+			<f:validateRequired />
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="title" value="#{msg.labelTeaserTitle}"></tcf:outputLabel>
+		<h:inputText id="title" value="#{cc.attrs.teaser.title}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="imageName" value="#{msg.labelTeaserImageName}"></tcf:outputLabel>
+		<h:inputText id="imageName" value="#{cc.attrs.teaser.imageName}" styleClass="file">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="imageAlternate" value="#{msg.labelTeaserImageAlternate}"></tcf:outputLabel>
+		<h:inputText id="imageAlternate" value="#{cc.attrs.teaser.imageAlternate}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="picture" value="#{msg.labelTeaserPicture}"></tcf:outputLabel>
+		<h:inputText id="picture" value="#{cc.attrs.teaser.picture}" styleClass="number" converter="#{pictureConverter}">
+		</h:inputText>
+		<tcf:outputLabel for="caption" value="#{msg.labelTeaserCaption}"></tcf:outputLabel>
+		<h:inputText id="caption" value="#{cc.attrs.teaser.caption}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="subTitle" value="#{msg.labelTeaserSubtitle}"></tcf:outputLabel>
+		<h:inputText id="subTitle" value="#{cc.attrs.teaser.subTitle}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="targetUrl" value="#{msg.labelTeaserTargetUrl}"></tcf:outputLabel>
+		<h:inputText id="targetUrl" value="#{cc.attrs.teaser.targetUrl}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="sequence" value="#{msg.labelTeaserSequence}"></tcf:outputLabel>
+		<h:inputText id="sequence" value="#{cc.attrs.teaser.sequence}" styleClass="number">
+			<f:validateDoubleRange />
+		</h:inputText>
+		<tcf:outputLabel for="startDate" value="#{msg.labelTeaserStartDate}"></tcf:outputLabel>
+		<h:panelGrid columns="2" styleClass="inner" columnClasses=",help">
+			<h:inputText id="startDate" value="#{cc.attrs.teaser.startDate}" styleClass="datetime">
+				<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+			</h:inputText>
+			<h:outputText value="#{msg.formatDateTime}" />
+		</h:panelGrid>
+		<tcf:outputLabel for="endDate" value="#{msg.labelTeaserEndDate}"></tcf:outputLabel>
+		<h:panelGrid columns="2" styleClass="inner" columnClasses=",help">
+			<h:inputText id="endDate" value="#{cc.attrs.teaser.endDate}" styleClass="datetime">
+				<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+			</h:inputText>
+			<h:outputText value="#{msg.formatDateTime}" />
+		</h:panelGrid>
+		<tcf:outputLabel for="visible" value="#{msg.labelTeaserVisible}"></tcf:outputLabel>
+		<h:selectBooleanCheckbox id="visible" value="#{cc.attrs.teaser.visible}"></h:selectBooleanCheckbox>
+	</h:panelGrid>
+</composite:implementation>
+</html>

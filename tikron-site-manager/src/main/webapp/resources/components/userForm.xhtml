@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="userForm" displayName="user form">
+	<composite:attribute name="user" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="name" value="#{msg.labelUserName}" required="true"
+			requiredClass="required"></tcf:outputLabel>
+		<h:inputText id="name" value="#{cc.attrs.user.name}" styleClass="text">
+			<f:validateRequired />
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="password" value="#{msg.labelUserPassword}"></tcf:outputLabel>
+		<h:inputSecret id="password" value="#{cc.attrs.user.password}" styleClass="text" redisplay="true">
+			<f:validateLength maximum="255" />
+			<f:converter converterId="passwordConverter" />
+		</h:inputSecret>
+		<tcf:outputLabel for="role" value="#{msg.labelUserRoles}"></tcf:outputLabel>
+		<h:selectManyListbox id="roles" value="#{cc.attrs.user.roles}" converter="#{roleConverter}" collectionType="java.util.HashSet">
+			<f:selectItems value="#{roleBean.roles}" var="role" itemValue="#{role}" itemLabel="#{role.description}" />
+		</h:selectManyListbox>
+		<tcf:outputLabel for="email" value="#{msg.labelUserEmail}"></tcf:outputLabel>
+		<h:inputText id="email" value="#{cc.attrs.user.email}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="url" value="#{msg.labelUserUrl}"></tcf:outputLabel>
+		<h:inputText id="url" value="#{cc.attrs.user.url}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+	</h:panelGrid>
+</composite:implementation>
+</html>

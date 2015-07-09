@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite">
+<composite:interface name="catalogList" displayName="catalog list">
+	<composite:attribute name="dataModel" required="true" />
+	<composite:attribute name="selectedIds" required="false" />
+</composite:interface>
+<composite:implementation>
+	<h:dataTable id="catalogs" var="catalog" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
+		<h:column rendered="#{cc.attrs.selectedIds ne null}">
+			<h:selectBooleanCheckbox value="#{cc.attrs.selectedIds[catalog.id]}" id="selectBox" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.headerCatalogName}"></h:outputText>
+			</f:facet>
+			<h:link outcome="/pages/gallery/editCatalog.html" value="#{catalog.name}">
+				<f:param name="catalogId" value="#{catalog.id}" />
+			</h:link>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.headerCatalogTitle}"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{catalog.title}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{msg.headerCatalogCreatedOn}"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{catalog.createdOn}">
+				<f:convertDateTime type="date" />
+			</h:outputText>
+		</h:column>
+		<f:facet name="footer">
+			<h:outputText rendered="#{cc.attrs.dataModel.rowCount eq 0}" value="#{msg.textEmptyList}"></h:outputText>
+		</f:facet>
+	</h:dataTable>
+	<!-- 
+	<h:panelGroup rendered="#{cc.attrs.selectedIds ne null}">
+		<script type="text/javascript">
+			// <![CDATA[
+			addOnclickToDatatableRows('#{cc.clientId}:catalogs');
+			//]]>
+		</script>
+	</h:panelGroup>
+	-->
+</composite:implementation>
+</html>

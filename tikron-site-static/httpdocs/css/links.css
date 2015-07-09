@@ -1,0 +1,23 @@
+/* 
+* Tikron (Linkbase-Stylesheet)
+* Copyright (c) 2009 by Titus Kruse
+*/
+
+/*** Links Index Page ************************************/
+.links div#contentHeader img {
+	width: 120px;
+	height: 97px;	
+}
+
+.links ul.imageIndex li .image {
+	width: 115px;
+}
+
+.links ul.imageIndex li .description {
+	margin-left: 115px;
+}
+
+.links ul.imageIndex li .description p {
+	padding-top: 0;
+/*	font-size: 85%;*/
+}

@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="catalogForm" displayName="catalog form">
+	<composite:attribute name="catalog" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="name" value="#{msg.labelCatalogName}" required="true" requiredClass="required"></tcf:outputLabel>
+		<h:inputText id="name" value="#{cc.attrs.catalog.name}" styleClass="text">
+			<f:validateLength maximum="255" />
+			<f:validateRequired />
+		</h:inputText>
+		<tcf:outputLabel for="title" value="#{msg.labelCatalogTitle}"></tcf:outputLabel>
+		<h:inputText id="title" value="#{cc.attrs.catalog.title}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="shortDescription" value="#{msg.labelCatalogShortDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="shortDescription" value="#{cc.attrs.catalog.shortDescription}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="longDescription" value="#{msg.labelCatalogLongDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="longDescription" value="#{cc.attrs.catalog.longDescription}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="sequence" value="#{msg.labelCatalogSequence}"></tcf:outputLabel>
+		<h:inputText id="sequence" value="#{cc.attrs.catalog.sequence}" styleClass="number">
+			<f:validateDoubleRange />
+		</h:inputText>
+		<tcf:outputLabel for="visible" value="#{msg.labelCatalogVisible}"></tcf:outputLabel>
+		<h:selectBooleanCheckbox id="visible" value="#{cc.attrs.catalog.visible}"></h:selectBooleanCheckbox>
+	</h:panelGrid>
+</composite:implementation>
+</html>

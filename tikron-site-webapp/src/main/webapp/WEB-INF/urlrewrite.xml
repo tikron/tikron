@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+				"http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<!--
+		Configuration file for UrlRewriteFilter
+		http://tuckey.org/urlrewrite/
+-->
+<urlrewrite>
+	<!-- Incoming URLs for static  pages -->
+	<rule>
+		<name>Homepage</name>
+		<from>^/$</from>
+		<to last="true">/displayHomepage.html</to>
+	</rule>
+	<rule>
+		<name>Clips</name>
+		<from>^/kurzfilme\.html$</from>
+		<to last="true">/clips/displayClips.html</to>
+	</rule>
+	<rule>
+		<name>Web Recommendations</name>
+		<from>^/surftipps\.html$</from>
+		<to last="true">/webRecommendations/displayEntries.html</to>
+	</rule>
+	<rule>
+		<name>Send Contact Message</name>
+		<from>^/kontakt\.html$</from>
+		<to last="true">/sendContactMessage.html</to>
+	</rule>
+	<!-- Incoming URLs for dynamic pages -->
+	<rule>
+		<name>Display Catalog</name>
+		<from>^/g/(.*)?,([0-9]+)\.html$</from>
+		<to last="true">/gallery/displayCatalog.html?catalogId=$2</to>
+	</rule>
+	<rule>
+		<name>Display Category</name>
+		<from>^/c/(.*)?,([0-9]+)\.html$</from>
+		<to last="true">/gallery/displayCategory.html?categoryId=$2</to>
+	</rule>
+	<rule>
+		<name>Display Picture</name>
+		<from>^/p/(.*)?,([0-9]+)\.html$</from>
+		<to last="true">/gallery/displayPicture.html?pictureId=$2</to>
+	</rule>
+	<rule>
+		<name>Display Travel Report</name>
+		<from>^/t/(.*)?,([0-9]+)\.html$</from>
+		<to last="true">/travels/displayTravel.html?categoryId=$2</to>
+	</rule>
+	<rule>
+		<name>Display Video Clip</name>
+		<from>^/m/(.*)?,([0-9]+)\.html$</from>
+		<to last="true">/clips/displayClip.html?clipId=$2</to>
+	</rule>
+	<!-- Incoming URLs for other display pages-->
+	<rule>
+		<name>Other display pages</name>
+		<from>^(/.*)?/display(.*)\.html(\?[^#]*)?(#.*)?$</from>
+		<to last="true">$1/display$2.html$3$4</to>
+	</rule>
+	<!-- Outgoing URLs for static pages -->
+	<outbound-rule>
+		<name>Homepage</name>
+		<from>^/webapp/displayHomepage\.html$</from>
+		<to last="true">/</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Clips</name>
+		<from>^/webapp/clips/displayClips\.html$</from>
+		<to last="true">%{context-path}/kurzfilme.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Web Recommendations</name>
+		<from>^/webapp/webRecommendations/displayEntries\.html$</from>
+		<to last="true">%{context-path}/surftipps.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Send Contact Message</name>
+		<from>^/webapp/sendContactMessage\.html$</from>
+		<to last="true">%{context-path}/kontakt.html</to>
+	</outbound-rule>
+	<!-- Outgoing URLs for dynamic pages -->
+	<outbound-rule>
+		<name>Display Catalog</name>
+		<from>^/webapp/gallery/displayCatalog\.html\?catalogId=([0-9]+)&amp;name=(.*)$</from>
+		<to last="true">%{context-path}/g/$2,$1.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Display Category</name>
+		<from>^/webapp/gallery/displayCategory\.html\?categoryId=([0-9]+)&amp;name=(.*)$</from>
+		<to last="true">%{context-path}/c/$2,$1.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Display Picture</name>
+		<from>^/webapp/gallery/displayPicture\.html\?pictureId=([0-9]+)&amp;name=(.*)$</from>
+<!-- 		<to last="true">%{context-path}/p/${escape:utf8:$2},$1.html</to> -->
+		<to last="true">%{context-path}/p/$2,$1.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Display Travel Report</name>
+		<from>^/webapp/travels/displayTravel\.html\?categoryId=([0-9]+)&amp;name=(.*)$</from>
+		<to last="true">%{context-path}/t/$2,$1.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Display Video Clip</name>
+		<from>^/webapp/clips/displayClip\.html\?clipId=([0-9]+)&amp;name=(.*)$</from>
+		<to last="true">%{context-path}/m/$2,$1.html</to>
+	</outbound-rule>
+	<!-- Outgoing URLs for other display pages-->
+	<outbound-rule>
+		<name>Other display pages</name>
+		<from>^/webapp(/.*)?/display(.*).html(\?[^#]*)?(#.*)?$</from>
+		<to last="true">%{context-path}$1/display$2.html$3$4</to>
+	</outbound-rule>
+</urlrewrite>
+

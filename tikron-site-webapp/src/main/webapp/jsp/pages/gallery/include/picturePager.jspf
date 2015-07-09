@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<nav>
+	<ul class="pager"><%--
+		<li>
+			<c:choose>
+			<c:when test="${pager.size gt 0 and not pager.isFirst}">
+				<c:url var="firstPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.first.id}"/><c:param name="name" value="${pager.first.seoName}"/></c:url>
+				<a href="${firstPictureUrl}" rel="nofollow" class="button button_green" title="<spring:message code="gallery.displayPicture.pager.first"/>"><i class="fa fa-fast-backward"></i></a>
+			</c:when>
+			<c:otherwise>
+				<span class="button button_green disabled"><i class="fa fa-fast-backward"></i></span>
+			</c:otherwise>
+			</c:choose>
+		</li> --%>
+		<li>
+			<c:choose>
+			<c:when test="${pager.size gt 0 and pager.hasPrevious}">
+				<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
+				<a href="${previousPictureUrl}" rel="nofollow" class="button button_green" title="<spring:message code="gallery.displayPicture.pager.previous"/>"><i class="fa fa-chevron-left"></i></a>
+			</c:when>
+			<c:otherwise>
+				<span class="button button_green disabled"><i class="fa fa-chevron-left"></i></span>
+			</c:otherwise>
+			</c:choose>
+		</li>
+		<li class="counter"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></li>
+		<li>
+			<c:choose>
+			<c:when test="${pager.size gt 0 and pager.hasNext}">
+				<c:url var="nextPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
+				<a href="${nextPictureUrl}" rel="nofollow" class="button button_green" title="<spring:message code="gallery.displayPicture.pager.next"/>"><i class="fa fa-chevron-right"></i></a>
+			</c:when>
+			<c:otherwise>
+				<span class="button button_green disabled"><i class="fa fa-chevron-right"></i></span>
+			</c:otherwise>
+			</c:choose>
+		</li><%--
+		<li>
+			<c:choose>
+			<c:when test="${pager.size gt 0 and not pager.isLast}">
+				<c:url var="lastPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.last.id}"/><c:param name="name" value="${pager.last.seoName}"/></c:url>
+				<a href="${lastPictureUrl}" rel="nofollow" class="button button_green" title="<spring:message code="gallery.displayPicture.pager.last"/>"><i class="fa fa-fast-forward"></i></a>
+			</c:when>
+			<c:otherwise>
+				<span class="button button_green disabled"><i class="fa fa-fast-forward"></i></span>
+			</c:otherwise>
+			</c:choose>
+		</li> --%>
+	</ul>
+</nav>

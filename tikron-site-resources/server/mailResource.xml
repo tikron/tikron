@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Mail resource to Tikron SMTP server -->
+<!-- Copy this to the "GlobalNamingResources" section of Tomcat server.xml -->
+<Resource name="mail/tikron"
+	auth="Container"
+	type="javax.mail.Session"
+	mail.smtp.host="mail.tikron.de"
+	mail.smtp.auth="true"
+	username="contact@tikron.de"
+	password="********"
+	mail.user="contact@tikron.de"
+	mail.password="********"
+	mail.port="25"
+	mail.transport.protocol="smtp"
+	mail.debug="false"/>
+		

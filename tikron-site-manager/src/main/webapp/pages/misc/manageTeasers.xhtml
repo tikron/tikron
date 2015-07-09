@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:tcf="http://tikron.de/tikron-common-faces"
+			xmlns:fw="http://java.sun.com/jsf/composite/components">
+<f:metadata>
+	<f:event type="preRenderView" listener="#{teaserListBean.preRenderView}" />
+</f:metadata>
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<ui:include src="/include/navigation.xhtml" />
+				<div id="content">
+					<h:form id="manageTeasers">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.manageTeasersHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
+						</div>
+						<div id="contentMain">
+							<fw:teaserList dataModel="#{teaserListBean.model}" selectedIds="#{teaserListBean.selectedIds}"></fw:teaserList>
+							<h:messages styleClass="messages" />
+							<div class="buttonBar">
+								<h:button outcome="/pages/misc/createTeaser.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}"></h:button>
+								<h:commandButton action="#{teaserListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
+								<h:commandButton action="#{teaserListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>
+								<h:commandButton action="#{teaserListBean.refresh}" value="#{msg.buttonRefresh}"></h:commandButton>
+								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}"></h:button>
+							</div>
+						</div>
+					</h:form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

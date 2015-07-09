@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:fw="http://java.sun.com/jsf/composite/components">
+<f:metadata>
+	<f:viewParam name="commentId" value="#{commentDetailBean.comment}"
+			converter="#{commentConverter}" converterMessage="Bad request. Unknown comment."
+			required="true" requiredMessage="Bad request. Comment ID required."
+	/>
+	<f:event type="preRenderView" listener="#{commentDetailBean.preRenderView}" />
+</f:metadata>
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<ui:include src="/include/navigation.xhtml" />
+				<div id="content">
+					<h:form id="editComment">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.editCommentHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.editRecordDescription}"></h:outputText></p>
+						</div>
+						<div id="contentMain">
+							<fw:commentForm comment="#{commentDetailBean.comment}" />
+							<h:messages styleClass="messages" />
+							<div class="buttonBar">
+								<h:commandButton action="#{commentDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
+								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+							</div>
+						</div>
+					</h:form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

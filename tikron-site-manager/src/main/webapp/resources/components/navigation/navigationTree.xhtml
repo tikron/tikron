@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:fw="http://java.sun.com/jsf/composite/components/navigation">
+<composite:interface name="navigationTree" displayName="Navigation tree">
+	<composite:attribute name="treeNavigationBean" required="true" />
+</composite:interface>
+<composite:implementation>
+<h:form>
+<h:commandButton actionListener="#{cc.attrs.treeNavigationBean.init}" image="/resources/components/navigation/images/repeat.png"></h:commandButton>
+<table class="treeNav">
+	<tbody>
+		<ui:repeat value="#{cc.attrs.treeNavigationBean.root.children}" var="level1" varStatus="level1Status">
+			<fw:navigationNode treeNavigationBean="#{cc.attrs.treeNavigationBean}" node="#{level1}" level="1" index="0#{level1Status.index}" last="#{level1Status.last}" />
+			<h:panelGroup rendered="#{level1.expanded}">
+				<ui:repeat value="#{level1.children}" var="level2" varStatus="level2Status">
+					<fw:navigationNode treeNavigationBean="#{cc.attrs.treeNavigationBean}" node="#{level2}" level="2" index="#{level1Status.index}:#{level2Status.index}" last="#{level2Status.last}" />
+					<h:panelGroup rendered="#{level2.expanded}">
+						<ui:repeat value="#{level2.children}" var="level3" varStatus="level3Status">
+							<fw:navigationNode treeNavigationBean="#{cc.attrs.treeNavigationBean}" node="#{level3}" level="3" index="#{level1Status.index}:#{level2Status.index}:#{level3Status.index}" last="#{level3Status.last}" />
+							<h:panelGroup rendered="#{level3.expanded}">
+								<ui:repeat value="#{level3.children}" var="level4" varStatus="level4Status">
+									<fw:navigationNode treeNavigationBean="#{cc.attrs.treeNavigationBean}" node="#{level4}" level="4" index="#{level1Status.index}:#{level2Status.index}:#{level3Status.index}:#{level4Status.index}" last="#{level4Status.last}" />
+									<h:panelGroup rendered="#{level4.expanded}">
+										<ui:repeat value="#{level4.children}" var="level5" varStatus="level5Status">
+											<fw:navigationNode treeNavigationBean="#{cc.attrs.treeNavigationBean}" node="#{level5}" level="5" index="#{level1Status.index}:#{level2Status.index}:#{level3Status.index}:#{level4Status.index}:#{level5Status.index}" last="#{level5Status.last}" />
+											<h:panelGroup rendered="#{level5.expanded}">
+												<ui:repeat value="#{level5.children}" var="level6" varStatus="level6Status">
+													<fw:navigationNode treeNavigationBean="#{cc.attrs.treeNavigationBean}" node="#{level6}" level="6" index="#{level1Status.index}:#{level2Status.index}:#{level3Status.index}:#{level4Status.index}:#{level5Status.index}:#{level6Status.index}" last="#{level6Status.last}" />
+												</ui:repeat>
+											</h:panelGroup>
+										</ui:repeat>
+									</h:panelGroup>
+								</ui:repeat>
+							</h:panelGroup>
+						</ui:repeat>
+					</h:panelGroup>
+				</ui:repeat>
+			</h:panelGroup>
+		</ui:repeat>
+	</tbody>
+</table>
+</h:form>
+</composite:implementation>
+</html>

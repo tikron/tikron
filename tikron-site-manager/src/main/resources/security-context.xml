@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spring security configuration file. -->
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<http use-expressions="true">
+		<intercept-url pattern="/pages/common/**" access="isAuthenticated()" />
+		<intercept-url pattern="/pages/gallery/**" access="isAuthenticated()" />
+		<intercept-url pattern="/pages/user/**" access="isAuthenticated()" />
+		<intercept-url pattern="/pages/**" access="permitAll"/>
+		<intercept-url pattern="/**" access="permitAll"/>
+		<form-login login-page="/pages/login.html"/>
+		<logout logout-url="/pages/logout.html" logout-success-url="/pages/logoutSuccess.html"></logout>
+	</http>
+    
+    <authentication-manager>
+		<authentication-provider user-service-ref="userDetailsService">
+			<password-encoder hash="sha" />
+		</authentication-provider>
+    </authentication-manager> 
+    
+    <global-method-security pre-post-annotations="enabled"/>
+</beans:beans>

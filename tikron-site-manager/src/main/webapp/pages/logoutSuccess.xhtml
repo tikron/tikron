@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<div id="content">
+					<div id="contentHeader">
+						<h2><h:outputText value="#{msg.logoutSuccessHeader}"></h:outputText></h2>
+						<p><h:outputText value="#{msg.logoutSuccessDescription}"></h:outputText></p>
+					</div>
+					<div id="contentMain">
+						<h:outputLink value="../index.jsp"><h:outputText value="#{msg.logoutSuccessLogin}" /></h:outputLink>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>

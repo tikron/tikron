@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:composite="http://java.sun.com/jsf/composite"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<composite:interface name="webRecommendationForm" displayName="web recommendation form">
+	<composite:attribute name="webRecommendation" required="true" />
+</composite:interface>
+<composite:implementation>
+	<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
+		<tcf:outputLabel for="title" value="#{msg.labelWebRecommendationTitle}"></tcf:outputLabel>
+		<h:inputText id="title" value="#{cc.attrs.webRecommendation.title}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="description" value="#{msg.labelWebRecommendationDescription}"></tcf:outputLabel>
+		<h:inputTextarea id="description" value="#{cc.attrs.webRecommendation.description}">
+			<f:validateLength maximum="3000" />
+		</h:inputTextarea>
+		<tcf:outputLabel for="imageName" value="#{msg.labelWebRecommendationImageName}"></tcf:outputLabel>
+		<h:inputText id="imageName" value="#{cc.attrs.webRecommendation.imageName}" styleClass="file">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="url" value="#{msg.labelWebRecommendationUrl}"></tcf:outputLabel>
+		<h:inputText id="url" value="#{cc.attrs.webRecommendation.url}" styleClass="text">
+			<f:validateLength maximum="255" />
+		</h:inputText>
+		<tcf:outputLabel for="sequence" value="#{msg.labelWebRecommendationSequence}"></tcf:outputLabel>
+		<h:inputText id="sequence" value="#{cc.attrs.webRecommendation.sequence}" styleClass="number">
+			<f:convertNumber />
+		</h:inputText>
+	</h:panelGrid>
+</composite:implementation>
+</html>

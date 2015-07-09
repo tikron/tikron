@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /plesk-stat/
+Disallow: /webapp/kontakt.html
+Disallow: /webapp/displayImprint.html
+Disallow: /webapp/displayLog.html
+Disallow: /webapp/displayLogAjax.html
+Disallow: /webapp/gallery/addComment.html
+Disallow: /webapp/gallery/displayTeaser.html
+Disallow: /webapp/gallery/displayTeaserAjax.html

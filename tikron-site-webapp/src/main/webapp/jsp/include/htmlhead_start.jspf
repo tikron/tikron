@@ -1,0 +1,2 @@
+<html lang="${pageContext.response.locale.language}">
+<head>

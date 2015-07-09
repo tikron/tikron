@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Spring configuration of the persistence layer. 
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+<!-- 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" /> -->
+
+	<!-- http://piotrnowicki.com/2012/11/types-of-entitymanagers-application-managed-entitymanager/ -->
+	<!-- http://www.byteslounge.com/tutorials/spring-change-transaction-isolation-level-example -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="tikron-persistence" />
+		<property name="dataSource" ref="dataSource" />
+		<!-- Using an enhanced JPA dialect to enable setting an isolation level per transaction -->
+		<property name="jpaDialect">
+    		<bean class="de.tikron.webapp.util.CustomHibernateJpaDialect" />
+  		</property>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="database" value="MYSQL" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/tikron" />
+	</bean>
+
+	<bean id="jpaTemplate" class="org.springframework.orm.jpa.JpaTemplate">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- Generic data access helper -->
+	<bean id="dataAccessHelper" class="de.tikron.jpa.dao.DataAccessHelper" />
+
+	<!-- DAOs of type JPA for package Gallery -->
+	<bean id="catalogDao" class="de.tikron.persistence.dao.gallery.CatalogDaoJpaImpl" />
+	<bean id="categoryDao" class="de.tikron.persistence.dao.gallery.CategoryDaoJpaImpl" />
+	<bean id="pictureDao" class="de.tikron.persistence.dao.gallery.PictureDaoJpaImpl" />
+
+	<!-- DAOs of type JPA for package User -->
+	<bean id="commentDao" class="de.tikron.persistence.dao.user.CommentDaoJpaImpl" />
+	<bean id="commentTypeDao" class="de.tikron.persistence.dao.user.CommentTypeDaoJpaImpl" />
+	<bean id="userDao" class="de.tikron.persistence.dao.user.UserDaoJpaImpl" />
+	<bean id="ratingDao" class="de.tikron.persistence.dao.user.RatingDaoJpaImpl" />
+
+	<!-- Miscelanious JPA DAOs -->
+	<bean id="clipDao" class="de.tikron.persistence.dao.misc.ClipDaoJpaImpl" />
+	<bean id="teaserDao" class="de.tikron.persistence.dao.misc.TeaserDaoJpaImpl" />
+	<bean id="webRecommendationDao" class="de.tikron.persistence.dao.misc.WebRecommendationDaoJpaImpl" />
+	
+	<!-- Monitoring EHCache with JConsole -->
+	<!-- https://khushroomistry.wordpress.com/2013/09/24/monitoring-ehcache-spring/ -->
+	<bean id="managementService" class="net.sf.ehcache.management.ManagementService" init-method="init"
+		destroy-method="dispose">
+		<constructor-arg ref="cacheManager" />
+		<constructor-arg ref="mbeanServer" />
+		<constructor-arg index="2" value="true" />
+		<constructor-arg index="3" value="true" />
+		<constructor-arg index="4" value="true" />
+		<constructor-arg index="5" value="true" />
+	</bean>
+
+	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache.xml" />
+		<property name="shared" value="true" />
+	</bean>
+
+	<bean id="mbeanServer" class="org.springframework.jmx.support.MBeanServerFactoryBean">
+		<property name="locateExistingServerIfPossible" value="true" />
+	</bean>
+
+</beans>

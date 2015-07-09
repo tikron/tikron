@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:f="http://java.sun.com/jsf/core"
+			xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:tcf="http://tikron.de/tikron-common-faces">
+<h:head>
+	<ui:include src="/include/title.xhtml" />
+	<ui:include src="/include/head.xhtml" />
+</h:head>
+<h:body>
+	<f:view contentType="text/html">
+		<f:loadBundle basename="de.tikron.manager.messages" var="msg" />
+		<div id="container">
+			<div id="wrap">
+				<ui:include src="/include/header.xhtml" />
+				<ui:include src="/include/navigation.xhtml" />
+				<div id="content">
+					<h:form id="uploadImage">
+						<div id="contentHeader">
+							<h2><h:outputText value="#{msg.uploadImageHeader}"></h:outputText></h2>
+							<p><h:outputText value="#{msg.uploadImageDescription}"></h:outputText></p>
+						</div>
+					</h:form>
+					<!-- HTML form calling iBase servlet on submit to store image file -->
+					<form action="#{imageServerBean.contextPath}putSourceImage.jsp" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="name" value="#{sessionScope.imagePath}"/>
+						<input type="hidden" name="redirectUrl" value="#{sessionScope.redirectUrl}"/>
+						<table class="form">
+							<tbody>
+								<tr>
+									<td class="columnLabel"><label><h:outputText value="#{msg.uploadImageLabelFile}" /></label></td>
+									<td class="columnData"><input type="file" name="name" size="50" required="required"/></td>
+								</tr>
+								<tr>
+									<td> </td>
+									<td><button type="submit"><h:outputText value="#{msg.uploadImageButtonUpload}" /></button></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+				<div class="clear"></div>
+				<ui:include src="/include/footer.xhtml" />
+			</div>
+		</div>
+	</f:view>
+</h:body>
+</html>
