@@ -30,13 +30,13 @@
 					<c:choose>
 					<c:when test="${category.displayType eq 'OVERLAY'}">
 						<%-- Show image with "fancybox" --%>
-						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" title="${picture.title}">
+						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
 							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
 						</a>
 					</c:when>
 					<c:otherwise>
 						<%-- Show image in new page --%>
-						<a href="${displayPictureUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" /></a>
+						<a href="${displayPictureUrl}" title="<spring:message code='gallery.thumnail.description'/>"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" /></a>
 					</c:otherwise>
 					</c:choose>
 					<a class="caption" href="${displayPictureUrl}"><c:out value="${picture.title}"></c:out></a>
@@ -58,7 +58,7 @@
 		<c:if test="${category.catalog.id eq 1 or category.catalog.id eq 2}">
 			<ul class="buttonBar vt">
 				<c:url var="goBackUrl" value="/gallery/displayCatalog.html"><c:param name="catalogId" value="${category.catalog.id}" /><c:param name="name" value="${category.catalog.seoName}" /></c:url>
-				<li><a href="${goBackUrl}" class="button button_green"><i class="fa fa-hand-o-right"></i><spring:message code="button.allTypes" arguments="${category.catalog.title}" /></a></li>
+				<li><a href="${goBackUrl}" class="button button_green" title="<spring:message code='button.allTypes.description' arguments='${category.catalog.title}' />"><i class="fa fa-hand-o-right"></i><spring:message code="button.allTypes" arguments="${category.catalog.title}" /></a></li>
 				<c:remove var="goBackUrl" />
 			</ul>
 		</c:if>
@@ -72,7 +72,7 @@
 	<script type="text/javascript" src="/lib/jquery.colorbox-min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('a.colorbox').colorbox({photo:true, rel:'colorbox', current: '<spring:message code="colorbox.current"/>'});
+			$('a.colorbox').colorbox({photo:true, rel:'colorbox', current: '<spring:message code="colorbox.current"/>', title: function(){return $(this).attr('data-caption');}});
 		});
 	</script>
 </c:if>

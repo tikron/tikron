@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ include file="/jsp/include/doctype.jspf"%>
 <%@ include file="/jsp/include/environment.jspf" %>
 <%@ include file="/jsp/include/htmlhead_start.jspf" %>
@@ -33,7 +34,9 @@
 				<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
 					<article>
 					<figure>
-						<a href="${webRecommendation.url}" rel="nofollow" class="image"><img src="/images/links/thumbs/${webRecommendation.imageName}" alt="${webRecommendation.title}" /></a>
+						<a href="${webRecommendation.url}" rel="nofollow" class="image" title="<spring:message code='webRecommendations.icon.description'/>">
+							<img src="/images/links/thumbs/${webRecommendation.imageName}" alt="${webRecommendation.title}" />
+						</a>
 					</figure>
 					<div class="description">
 							<header><h2 class="link"><a href="${webRecommendation.url}" rel="nofollow">${webRecommendation.title}</a></h2></header>

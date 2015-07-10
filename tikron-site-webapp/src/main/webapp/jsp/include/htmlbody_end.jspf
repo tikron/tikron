@@ -3,7 +3,7 @@
 </div>
 <div id="goup"></div>
 <script type="text/javascript">
-	$(document).tooltip();
+	$(document).tooltip({track: true});
 </script>
 <c:if test="${trackingEnabled and not param.disableTracking}">
 <%@ include file="/jsp/include/tracking.jspf"%>

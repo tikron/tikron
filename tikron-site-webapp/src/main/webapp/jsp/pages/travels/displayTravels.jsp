@@ -21,7 +21,7 @@
 		<section id="contentMain">
 			<ul class="imageIndex">
 			<li class="first">
-				<a href="${displayBalticSea2014Url}" class="image"><img src="/images/travels/balticsee.png" alt="Einmal um die Ostsee" title="Einmal um die Ostsee" /></a>
+				<a href="${displayBalticSea2014Url}" class="image"><img src="/images/travels/balticsee.png" alt="Einmal um die Ostsee" /></a>
 				<div class="description">
 					<article>
 						<header><h2><a href="${displayBalticSea2014Url}">Einmal um die Ostsee</a></h2></header>
@@ -40,7 +40,7 @@
 					<li<c:if test="${listStatus.last}"> class="last"</c:if>>
 						<article>
 							<figure>
-								<a href="${displayCategoryUrl}" class="image"><img src="/images/gallery/catalog_${catalog.id}/${category.imageName}" alt="${category.title}" title="${category.title}"/></a>
+								<a href="${displayCategoryUrl}" class="image"><img src="/images/gallery/catalog_${catalog.id}/${category.imageName}" alt="${category.title}"/></a>
 							</figure>
 							<div class="description">
 									<header><h2><a href="${displayCategoryUrl}"><c:out value="${category.title}" /></a></h2></header>

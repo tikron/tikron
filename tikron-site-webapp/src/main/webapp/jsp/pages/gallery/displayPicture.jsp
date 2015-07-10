@@ -28,7 +28,7 @@
 <article id="content" class="gallery picture">
 	<section id="contentLeft">
 		<figure>
-			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" title="${picture.title}" /></a>
+			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
 		</figure>
 		<section class="commentBox">
 			<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
@@ -53,7 +53,7 @@
 			<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
 			<%@ include file="include/picturePager.jspf" %>
 			<ul class="buttonBar vt afterPager">
-				<li><a href="${displayCategoryUrl}" class="button button_green"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
+				<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
 			</ul>
 		</div>
 	</section>

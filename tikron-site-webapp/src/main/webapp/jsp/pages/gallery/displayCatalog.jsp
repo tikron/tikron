@@ -38,7 +38,7 @@
 				<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
 					<article>
 						<figure>
-							<a href="${displayCategoryUrl}" class="image"><img src="/images/gallery/catalog_${catalog.id}/${category.imageName}" alt="${category.title}" title="${category.title}"/></a>
+							<a href="${displayCategoryUrl}" class="image" title="<spring:message code='gallery.displayCatalog.figure.description' />"><img src="/images/gallery/catalog_${catalog.id}/${category.imageName}" alt="${category.title}"/></a>
 						</figure>
 						<div class="description">
 							<header>

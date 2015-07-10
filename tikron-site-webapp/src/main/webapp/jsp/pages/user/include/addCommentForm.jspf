@@ -31,7 +31,7 @@
 	</fieldset>
 	<div class="clear"></div>
 	<ul class="buttonBar">
-		<li><button type="submit" class="button button_green"><i class="fa fa-check-square-o"></i><spring:message code="addComment.button.save" /></button></li>
+		<li><button type="submit" class="button button_green" title="<spring:message code='addComment.button.save.description' />"><i class="fa fa-check-square-o"></i><spring:message code="addComment.button.save" /></button></li>
 <%-- 		<li><button type="button" class="button button_green" onclick="location.href='${servletContextPath}${successView}';"><i class="fa fa-reply"></i><spring:message code="button.cancel" /></button></li> --%>
 	</ul>
 	<div class="clear"></div>

@@ -25,17 +25,17 @@
 		<article class="news">
 			<h2><spring:message code="displayHomepage.news.headline" /></h2>
 			<p>
-				Nur eine Woche ist seit dem letzten Update vergangen.
-				Dieses Mal gibt es wieder ein neues Feature auf Tikron:
-				Fotos und Filme könnt ihr nun auch bewerten.
-				Wer also keine Lust hat, einen Kommentar zu verfassen, aber doch irgendwie seine Begeisterung zum Ausdruck bringen möchte, klickt einfach auf die Sternchen.
-				Je mehr Sternchen, des besser die Bewertung. 
+				Für die Anzeige von Fotos auf Tikron wird nun ein neues technisches Verfahren verwendet. 
+				Die Bildqualität konnte dadurch erheblich gesteigert werden.
+				Vielen Dank an Morten Nobel für seine phantastische <a href="http://blog.nobel-joergensen.com/tag/image-scaling/">Image-Scaling-Library<i class="fa fa-external-link"></i></a>.
+				<br />
+				Eine weitere Neuerung sind sogenannte "Tooltips": Bewegst Du den Mauszeiger über einen Link oder Button, werden dazu hilfreiche Informationen angezeigt. 
 			</p>
 		</article>
 		<section class="log">
-			<a id="showLog" href="javascript:void(0);" class="arrow log"><spring:message code="displayHomepage.link.log" /></a>
+			<a id="showLog" href="javascript:void(0);" class="arrow log" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 			<div id="logResponse" class="timestamp">
-				Letzte Aktualisierung: 3.05.2015
+				Letzte Aktualisierung: 10.07.2015
 			</div>
 		</section>
 	</section>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <header id="main">
 	<a href="${displayHomepageUrl}">
-		<img id="title" src="/images/header_logo_tr.png" alt="<spring:message code='header.logo.alt'/>" title="<spring:message code='header.logo.alt'/>" />
+		<img id="title" src="/images/header_logo_tr.png" alt="<spring:message code='header.logo.alt'/>" />
 	</a>
 	<c:if test="${not empty topNavAction and topNavAction ne 'displayHomepage'}"><img id="logo" src="/images/rtts_270_72.png" alt="<spring:message code='header.logo.alt'/>" /></c:if>
 </header>

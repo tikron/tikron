@@ -39,8 +39,8 @@
 			</article>
 			<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
 			<ul class="buttonBar vt">
-				<li><a href="${fileArchiveUrl}${clip.videoUris['mp4']}" class="button button_green"><i class="fa fa-film"></i><spring:message code="button.videoPlayer"/></a></li>
-				<li><a href="${displayClipsUrl}" class="button button_green"><i class="fa fa-hand-o-right"></i><spring:message code="button.allVideos"/></a></li>
+				<li><a href="${fileArchiveUrl}${clip.videoUris['mp4']}" class="button button_green" title="<spring:message code='button.videoPlayer.description'/>"><i class="fa fa-film"></i><spring:message code="button.videoPlayer"/></a></li>
+				<li><a href="${displayClipsUrl}" class="button button_green" title="<spring:message code='button.allVideos.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allVideos"/></a></li>
 			</ul>
 		</section>
 	</div>

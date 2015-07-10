@@ -1,3 +1,5 @@
 			<c:if test="${not browserLowerIE9}">
-			<div class="ratingStars" data-id="${rating.id}" data-count="${rating.count}" data-avarage="${rating.avarage}"><div id="stars_${rating.id}" class="stars"></div><span class="text"></span></div>
+			<div class="ratingStars" data-id="${rating.id}" data-count="${rating.count}" data-avarage="${rating.avarage}">
+				<div id="stars_${rating.id}" class="stars" title="<spring:message code='rating.icons.description'/>"></div><span class="text"></span>
+			</div>
 			</c:if>

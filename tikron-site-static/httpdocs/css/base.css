@@ -676,7 +676,7 @@ footer#main ul#goodies .icon_monitoring {
 /*** Default content **********************************************/
 #contentHeader {
 	margin-bottom: 40px;
-	width: 810px;
+	width: 840px;
 }
 
 #contentHeader img {
@@ -686,14 +686,14 @@ footer#main ul#goodies .icon_monitoring {
 
 #contentMain {
 	clear: left;
-	width: 810px;
+	width: 840px;
 }
 
 /*** Content divided in left/right section *****************************/
 
 #contentLeft {
 	float: left;
-	width: 810px;
+	width: 840px;
 }
 
 #contentRight {
@@ -769,14 +769,16 @@ aside.teaserbar .teaser figcaption span.sub {
 /*	font-style: italic;*/
 }
 
+.story a.left, 
 .story img.left {
 	float: left;
-	padding: 0 30px 20px 0;
+	margin: 0 30px 15px 0;
 }
 
+.story a.right,
 .story img.right {
 	float: right;
-	padding: 0 0 20px 30px;
+	margin: 0 0 15px 30px;
 }
 
 /*** Add comment pages ************************************/

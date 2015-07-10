@@ -7,7 +7,7 @@
 		<language>de</language>
 		<copyright>Titus Kruse</copyright>
 		<managingEditor>Titus Kruse</managingEditor>
-		<lastBuildDate>Sun, 3 May 2015 18:19:00 +0200</lastBuildDate>
+		<lastBuildDate>Fri, 10 Jul 2015 13:28:00 +0200</lastBuildDate>
 		<category>Reisen</category>
 		<category>Skandinavien</category>
 		<category>Baltikum</category>
@@ -24,9 +24,16 @@
 		<category>Goa-Trance</category>
 		<category>Techno</category>
 		<item>
+			<title>Bessere Bildqualität</title>
+			<link>http://www.tikron.de/</link>
+			<description><![CDATA[Für die Anzeige von Fotos auf Tikron wird nun ein neues technisches Verfahren verwendet. Die Bildqualität konnte dadurch erheblich gesteigert werden. Vielen Dank an Morten Nobel für seine phantastische Image-Scaling-Library. Eine weitere Neuerung sind sogenannte "Tooltips": Bewegst Du den Mauszeiger über einen Link oder Button, werden dazu hilfreiche Informationen angezeigt.]]></description>
+			<pubDate>Fri, 10 Jul 2015 13:28:00 +0200</pubDate>
+			<guid isPermaLink="false">92020E30-8054-4481-9D3D-3C68BD8CA9CC</guid>
+		</item>
+		<item>
 			<title>Fotos und Filme bewerten</title>
 			<link>http://www.tikron.de/</link>
-			<description><![CDATA[Nur eine Woche ist seit dem letzten Update vergangen.	Dieses Mal gibt es wieder ein neues Feature auf Tikron:	Fotos und Filme könnt ihr nun auch bewerten. Wer also keine Lust hat, einen Kommentar zu verfassen, aber doch irgendwie seine Begeisterung zum Ausdruck bringen möchte, klickt einfach auf die Sternchen. Je mehr Sternchen, des besser die Bewertung.]]></description>
+			<description><![CDATA[Nur eine Woche ist seit dem letzten Update vergangen.	Dieses Mal gibt es wieder ein neues Feature auf Tikron:	Fotos und Filme könnt ihr nun auch bewerten. Wer also keine Lust hat, einen Kommentar zu verfassen, aber doch irgendwie seine Begeisterung zum Ausdruck bringen möchte, klickt einfach auf die Sternchen. Je mehr Sternchen, desto besser die Bewertung.]]></description>
 			<pubDate>Sun, 3 May 2015 18:19:00 +0200</pubDate>
 			<guid isPermaLink="false">92020E30-8054-4481-9D3D-3C68BD8CA9CB</guid>
 		</item>
