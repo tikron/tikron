@@ -120,12 +120,12 @@ public abstract class AbstractController {
 	/**
 	 * Checks whether the request was submitted by an Internet Explorer version lower then 9.
 	 *   
-	 * @return True, if MS IE 8, 7 or 8.
+	 * @return True, if MS IE 6, 7 or 8.
 	 */
 	@ModelAttribute("browserLowerIE9")
 	public boolean isLowerIE9() {
 		String userAgent = getHttpServletRequest().getHeader("User-Agent");
-		return userAgent.contains("MSIE 8.0") || userAgent.contains("MSIE 7.0") || userAgent.contains("MSIE 6.0");
+		return userAgent != null && (userAgent.contains("MSIE 8.0") || userAgent.contains("MSIE 7.0") || userAgent.contains("MSIE 6.0"));
 	}
 
 	@ModelAttribute("actionPath")
