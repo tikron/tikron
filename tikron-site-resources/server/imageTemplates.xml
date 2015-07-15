@@ -4,7 +4,12 @@
 	<!-- *** Tikron Webapp -->
 	<template>
 		<name>galleryImage</name>
-		<limit>800</limit>
+		<creationType>EAGER</creationType>
+		<scaling>
+			<mode>LIMITTED</mode>
+			<width>840</width>
+			<height>600</height>
+		</scaling>
 		<signature>
 			<text>tikron.de</text>
 			<size>14</size>
@@ -18,46 +23,41 @@
 	</template>
 	<template>
 		<name>galleryThumbnail</name>
-		<dimension>
+		<creationType>EAGER</creationType>
+		<scaling>
+			<mode>ABSOLUTE</mode>
 			<height>66</height>
-		</dimension>
+		</scaling>
 	</template>
 	<template>
 		<name>galleryTeaser</name>
-		<dimension>
+		<scaling>
+			<mode>ABSOLUTE</mode>
 			<height>150</height>
-		</dimension>
+		</scaling>
 	</template>
 	<template>
 		<name>galleryStory</name>
-		<dimension>
+		<scaling>
+			<mode>ABSOLUTE</mode>
 			<height>200</height>
-		</dimension>
+		</scaling>
 	</template>
 	<!-- *** Tikron Manager -->
 	<template>
 		<name>galleryList</name>
-		<dimension>
+		<scaling>
+			<mode>ABSOLUTE</mode>
 			<width>40</width>
 			<height>40</height>
-		</dimension>
+		</scaling>
 	</template>
 	<template>
 		<name>galleryEdit</name>
-		<limit>150</limit>
-	</template>
-	<template>
-		<name>albumList</name>
-		<dimension>
-			<width>40</width>
-			<height>40</height>
-		</dimension>
-	</template>
-	<template>
-		<name>albumEdit</name>
-		<dimension>
+		<scaling>
+			<mode>LIMITTED</mode>
 			<width>150</width>
 			<height>150</height>
-		</dimension>
+		</scaling>
 	</template>
 </it:templates>
