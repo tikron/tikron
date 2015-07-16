@@ -71,7 +71,7 @@ public abstract class AbstractEntityConverter<T extends Entity<ID>, ID extends S
 
 	@Override
 	public String getAsString(FacesContext context, UIComponent component, Object value) {
-		if (!clazz.isInstance(value)) {
+		if (value != null && !clazz.isInstance(value)) {
 			throw new IllegalArgumentException(MessageFormat.format("Object {0} not of type {1}.", value, clazz));
 		}
 		T entity = clazz.cast(value);
