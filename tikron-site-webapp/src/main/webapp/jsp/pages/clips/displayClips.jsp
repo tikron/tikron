@@ -32,6 +32,8 @@
 		<section id="contentMain">
 			<ul class="imageIndex">
 				<c:forEach var="clip" items="${clips}" varStatus="listStatus">
+				<c:set var="dateRecordedHtml"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="yyyy-MM" /></c:set>
+				<c:set var="playtimeHtml"><fmt:formatDate value="${clip.playtime}" type="time" pattern="'PT'm'M'ss'S'" /></c:set>
 				<%@ include file="/jsp/include/list_border.jspf" %>
 				<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
 					<c:url var="displayClipUrl" value="/clips/displayClip.html">
@@ -42,13 +44,13 @@
 						<figure>
 							<a href="${displayClipUrl}" class="image block">
 								<img src="/images/clips/${clip.name}.png" alt="${clip.title}"/>
-								<span class="duration"><fmt:formatDate value="${clip.playtime}" type="time" pattern="m:ss" /></span>
+								<span class="duration"><time datetime="${playtimeHtml}"><fmt:formatDate value="${clip.playtime}" type="time" pattern="m:ss" /></time></span>
 							</a>
 						</figure>
 						<div class="description">
 							<header>
 								<h2><a href="${displayClipUrl}"><c:out value="${clip.title}" /></a></h2>
-								<span class="date"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="MMM. yyyy" /></span>
+								<span class="date"><time datetime="${dateRecordedHtml}"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="MMM. yyyy" /></time></span>
 							</header>
 							<p><c:out value="${clip.shortDescription}" /></p>
 							<c:set var="rating" value="${ratings[clip.id]}" />

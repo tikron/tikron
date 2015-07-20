@@ -22,7 +22,7 @@
 		<header id="contentHeader">
 			<h1>Einmal um die Ostsee</h1>
 			<p><strong>Ein Reisebericht über eine 3-monatige Campingtour Skandinavien und Baltikum</strong></p>
-			<p>20.09.2014</p>
+			<p><time datetime="2014-09-20">20.09.2014</time></p>
 		</header>
 		<section id="contentMain">
 			<p>Wir waren schon mehrmals in Dänemark und <a class="arrow" href="<c:url value="${displayCategoryURLs['sweden']}" />">Schweden</a>. Auch den <a class="arrow" href="<c:url value="${displayCategoryURLs['poland']}" />">Norden Polens</a> hatten wir 2011 mit dem Campingbus erkundet. Es schwirrte aber schon lange Zeit die Vorstellung in meinen Kopf, einmal um die Ostsee zu fahren. Damit würden wir auch mal Finnland sehen. Und einen Teil der baltischen Länder. Über Estland und der Kurischen Nehrung hatten wir schon einige Reportagen im Fernsehen gesehen und für interessant befunden.</p>

@@ -35,7 +35,7 @@
 		<section class="log">
 			<a id="showLog" href="javascript:void(0);" class="arrow log" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 			<div id="logResponse" class="timestamp">
-				Letzte Aktualisierung: 10.07.2015
+				Letzte Aktualisierung: <time datetime="2015-07-10">10.07.2015</time>
 			</div>
 		</section>
 	</section>
