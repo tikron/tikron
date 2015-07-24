@@ -60,7 +60,7 @@ aside.teaserbar .teaser#finding figure img {
 }
 
 .imprint iframe.optOut {
-	width: 810px;
+	width: 100%;
 	height: 200px;
 	border: none;
 	background-color: #2C2523;
