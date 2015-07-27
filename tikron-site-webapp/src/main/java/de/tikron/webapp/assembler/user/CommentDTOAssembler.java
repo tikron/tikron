@@ -14,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import de.tikron.common.FormattedTextCompiler;
-import de.tikron.common.FormattedTextCompiler.Attribute;
-import de.tikron.common.FormattedTextCompiler.AttributeMap;
 import de.tikron.persistence.model.user.CategoryComment;
 import de.tikron.persistence.model.user.Comment;
 import de.tikron.persistence.model.user.PictureComment;
@@ -41,10 +39,6 @@ public class CommentDTOAssembler {
 	private CategoryDTOAssembler categoryDTOAssembler;
 	
 	private PictureDTOAssembler pictureDTOAssembler;
-	
-	private static final AttributeMap TC_ATTRIBUTES = new AttributeMap(){{
-		put(Attribute.CONVERT_NEWLINE, Boolean.TRUE);
-	}};
 	
 	/**
 	 * Returns a {@link de.tikron.persistence.model.user.Comment} mapped from the given
@@ -81,7 +75,8 @@ public class CommentDTOAssembler {
 	 */
 	public <D extends CommentDTO, E extends Comment> D toDTO(E comment, Class<D> type, LocalizationConverter localConverter) throws IllegalArgumentException {
 		User user = comment.getUser();
-		String text = FormattedTextCompiler.getInstance().compile(comment.getText(), TC_ATTRIBUTES);
+		// Compile new line only to avoid possible code injection attack by a user having knowledge about text compiler commands.
+		String text = FormattedTextCompiler.getInstance().compile(comment.getText(), FormattedTextCompiler.CONVERT_NEWLINE);
 		LocalDate localCreatedOn = comment.getCreatedOn().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		String createdOn = localConverter.getDateFormatter(FormatStyle.SHORT).format(localCreatedOn);
 		if (type.equals(CategoryCommentDTO.class)) {
