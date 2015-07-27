@@ -6,6 +6,8 @@ package de.tikron.webapp.util;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.WordUtils;
 
+import de.tikron.common.FormattedTextCompiler;
+
 /**
  * Utility class providing some SEO methods.
  *
@@ -34,13 +36,19 @@ public class SeoUtils {
 	}
 
 	public String formatMetaDescription(String text) {
-		// Remove HTML (http://stackoverflow.com/questions/240546/removing-html-from-a-java-string) and crop to maximum
-		// length.
-		return WordUtils.abbreviate(removeHtml(text), 120, -1, "...");
+		// Remove HTML and crop to maximum length.
+		return WordUtils.abbreviate(removeTextCommands(text), 120, -1, "...");
 	}
 
+	/*
 	private static String removeHtml(String text) {
+		// see http://stackoverflow.com/questions/240546/removing-html-from-a-java-string
 		return text == null ? null : text.replaceAll("\\<.*?>", "");
+	}
+	*/
+	
+	private static String removeTextCommands(String text) {
+		return FormattedTextCompiler.getInstance().compile(text, FormattedTextCompiler.DISCARD_ALL);
 	}
 
 }
