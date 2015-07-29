@@ -13,6 +13,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 import javax.faces.model.SelectItem;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.common.ImageService;
@@ -76,7 +78,11 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/gallery/editPicture.xhtml?pictureId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/editPicture.xhtml")
+			.queryParam("pictureId",  selectedItems.get(0).getId())
+			.queryParam("successView", successUri())
+			.queryParam("faces-redirect", "true")
+			.build().encode().toString();
 	}
 
 	/**
@@ -96,7 +102,8 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 			}
 			pictureService.delete(picture);
 		}
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_DELETE", new Object[] {});
+		return successUri() + "&faces-redirect=true";
 	}
 
 	/**
@@ -121,7 +128,8 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 				pictureService.update(picture);
 			}
 		}
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_MOVE", new Object[] {});
+		return successUri() + "&faces-redirect=true";
 	}
 
 	public Category getCategory() {
@@ -147,6 +155,11 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 			}
 		}
 		return selectCategories;
+	}
+	
+	private String successUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/managePictures.xhtml")
+				.queryParam("categoryId", getCategory().getId()).build().toString();
 	}
 
 	public Category getSelectedCategory() {

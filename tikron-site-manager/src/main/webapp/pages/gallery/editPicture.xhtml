@@ -10,6 +10,7 @@
 			converter="#{pictureConverter}" converterMessage="Bad request. Unknown picture."
 			required="true" requiredMessage="Bad request. Picture ID required."
 	/>
+	<f:viewParam name="successView" value="#{pictureDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{pictureDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>

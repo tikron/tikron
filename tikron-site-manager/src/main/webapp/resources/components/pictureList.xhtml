@@ -16,6 +16,7 @@
 			<h:panelGroup rendered="#{not empty picture.imageName}">
 			<h:link outcome="/pages/gallery/editPicture.html">
 				<f:param name="pictureId" value="#{picture.id}" />
+				<f:param name="successView" value="/pages/gallery/managePictures.xhtml?categoryId=#{picture.category.id}" />
 				<img src="#{imageServerBean.contextPath}getImage.jsp?name=#{pictureImageBean.pictureImagePaths[picture.category.id]}#{picture.imageName}&amp;template=galleryList" />
 			</h:link>
 			</h:panelGroup>
@@ -26,6 +27,7 @@
 			</f:facet>
 			<h:link outcome="/pages/gallery/editPicture.html" value="#{picture.name}">
 				<f:param name="pictureId" value="#{picture.id}" />
+				<f:param name="successView" value="/pages/gallery/managePictures.xhtml?categoryId=#{picture.category.id}" />
 			</h:link>
 		</h:column>
 		<h:column>
