@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.gallery.CatalogService;
@@ -38,17 +40,6 @@ public class CatalogListBean extends AbstractSelectableListBean<Catalog, Long> i
 	}
 
 	/**
-	 * Anzeige aktualisieren
-	 * 
-	 * @return Faces-Navigation.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Eintrag editieren.
 	 * 
 	 * @return Faces-Navigation.
@@ -59,7 +50,11 @@ public class CatalogListBean extends AbstractSelectableListBean<Catalog, Long> i
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/gallery/editCatalog.xhtml?catalogId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/editCatalog.xhtml")
+				.queryParam("catalogId",  selectedItems.get(0).getId())
+				.queryParam("successView", getNavigationUri())
+				.queryParam("faces-redirect", "true")
+				.build().encode().toString();
 	}
 
 	/**
@@ -76,11 +71,20 @@ public class CatalogListBean extends AbstractSelectableListBean<Catalog, Long> i
 		for (Catalog catalog : selectedItems) {
 			catalogService.delete(catalog);
 		}
-		return "/pages/common/confirmation.xhtml";
+		return refresh();
 	}
 
 	public void setCatalogService(CatalogService catalogService) {
 		this.catalogService = catalogService;
+	}
+	
+	/**
+	 * Liefert die URI zur aktuellen View.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/manageCatalogs.xhtml").build().toString();
 	}
 
 }

@@ -10,6 +10,7 @@
 	<f:viewParam name="categoryId" value="#{pictureDetailBean.category}"
 			converter="#{categoryConverter}" converterMessage="Bad request. Unknown category."
 	/>
+	<f:viewParam name="successView" value="#{pictureDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{pictureDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>
@@ -35,7 +36,7 @@
 							<div class="buttonBar">
 								<h:commandButton action="#{pictureDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
 								<h:commandButton action="#{pictureDetailBean.uploadImage}" value="#{msg.buttonUploadImage}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{pictureDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

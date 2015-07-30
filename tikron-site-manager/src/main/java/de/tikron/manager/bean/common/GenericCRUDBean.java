@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import javax.faces.event.ComponentSystemEvent;
 
+import de.tikron.faces.util.Message;
 import de.tikron.jpa.domain.Entity;
 import de.tikron.manager.service.common.CRUDService;
 
@@ -45,7 +46,8 @@ public abstract class GenericCRUDBean<T extends Entity<ID>, ID extends Serializa
 	 */
 	public String save() {
 		service.save(entity);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -55,7 +57,8 @@ public abstract class GenericCRUDBean<T extends Entity<ID>, ID extends Serializa
 	 */
 	public String delete() {
 		service.delete(entity);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_DELETE", null);
+		return getSuccessWithRedirect();
 	}
 
 	public T getEntity() {

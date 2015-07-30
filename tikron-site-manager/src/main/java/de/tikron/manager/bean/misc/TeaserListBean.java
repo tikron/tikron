@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.misc.TeaserService;
@@ -36,17 +38,6 @@ public class TeaserListBean extends AbstractSelectableListBean<Teaser, Long> imp
 	}
 
 	/**
-	 * Refresh view.
-	 * 
-	 * @return Faces outcome.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Edit entry.
 	 * 
 	 * @return Faces outcome.
@@ -57,7 +48,11 @@ public class TeaserListBean extends AbstractSelectableListBean<Teaser, Long> imp
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/misc/editTeaser.xhtml?teaserId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/misc/editTeaser.xhtml")
+				.queryParam("teaserId",  selectedItems.get(0).getId())
+				.queryParam("successView", getNavigationUri())
+				.queryParam("faces-redirect", "true")
+				.build().encode().toString();
 	}
 
 	/**
@@ -74,7 +69,16 @@ public class TeaserListBean extends AbstractSelectableListBean<Teaser, Long> imp
 		for (Teaser teaser : selectedItems) {
 			teaserService.delete(teaser);
 		}
-		return "/pages/common/confirmation.xhtml";
+		return refresh();
+	}
+	
+	/**
+	 * Returns the navigation URI for the current view.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/misc/manageTeasers.xhtml").build().toString();
 	}
 
 	public void setTeaserService(TeaserService teaserService) {

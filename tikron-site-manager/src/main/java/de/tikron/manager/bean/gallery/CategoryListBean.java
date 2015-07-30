@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.gallery.CategoryService;
@@ -41,17 +43,6 @@ public class CategoryListBean extends AbstractSelectableListBean<Category, Long>
 	}
 
 	/**
-	 * Anzeige aktualisieren
-	 * 
-	 * @return Faces-Navigation.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Eintrag editieren.
 	 * 
 	 * @return Faces-Navigation.
@@ -62,7 +53,11 @@ public class CategoryListBean extends AbstractSelectableListBean<Category, Long>
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/gallery/editCategory.xhtml?categoryId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/editCategory.xhtml")
+				.queryParam("categoryId",  selectedItems.get(0).getId())
+				.queryParam("successView", getNavigationUri())
+				.queryParam("faces-redirect", "true")
+				.build().encode().toString();
 	}
 
 	/**
@@ -79,7 +74,17 @@ public class CategoryListBean extends AbstractSelectableListBean<Category, Long>
 		for (Category category : selectedItems) {
 			categoryService.delete(category);
 		}
-		return "/pages/common/confirmation.xhtml";
+		return refresh();
+	}
+	
+	/**
+	 * Liefert die URI zur aktuellen View.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/manageCategories.xhtml")
+				.queryParam("catalogId", getCatalog().getId()).build().toString();
 	}
 
 	public Catalog getCatalog() {

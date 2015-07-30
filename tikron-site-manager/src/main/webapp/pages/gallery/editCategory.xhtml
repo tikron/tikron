@@ -10,6 +10,7 @@
 			converter="#{categoryConverter}" converterMessage="Bad request. Unknown category."
 			required="true" requiredMessage="Bad request. Category ID required."
 	/>
+	<f:viewParam name="successView" value="#{categoryDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{categoryDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>
@@ -34,7 +35,7 @@
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:commandButton action="#{categoryDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{categoryDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

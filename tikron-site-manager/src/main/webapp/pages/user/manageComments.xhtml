@@ -27,7 +27,7 @@
 							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
 						</div>
 						<div id="contentMain">
-							<fw:commentList dataModel="#{commentListBean.model}" selectedIds="#{commentListBean.selectedIds}"></fw:commentList>
+							<fw:commentList dataModel="#{commentListBean.model}" selectedIds="#{commentListBean.selectedIds}" successView="#{commentListBean.navigationUri}"></fw:commentList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:commandButton action="#{commentListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>

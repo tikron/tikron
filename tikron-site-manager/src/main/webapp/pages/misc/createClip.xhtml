@@ -6,6 +6,7 @@
 			xmlns:ui="http://java.sun.com/jsf/facelets"
 			xmlns:fw="http://java.sun.com/jsf/composite/components">
 <f:metadata>
+	<f:viewParam name="successView" value="#{clipDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{clipDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>
@@ -30,7 +31,7 @@
 							<h:messages styleClass="messages"/>
 							<div class="buttonBar">
 								<h:commandButton action="#{clipDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{clipDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

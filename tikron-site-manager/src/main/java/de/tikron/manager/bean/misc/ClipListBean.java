@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.misc.ClipService;
@@ -35,17 +37,6 @@ public class ClipListBean extends AbstractSelectableListBean<Clip, Long> impleme
 	}
 
 	/**
-	 * Refresh view.
-	 * 
-	 * @return Faces outcome.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Edit entry.
 	 * 
 	 * @return Faces outcome.
@@ -56,7 +47,11 @@ public class ClipListBean extends AbstractSelectableListBean<Clip, Long> impleme
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/misc/editClip.xhtml?clipId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/editClip.xhtml")
+				.queryParam("clipId",  selectedItems.get(0).getId())
+				.queryParam("successView", getNavigationUri())
+				.queryParam("faces-redirect", "true")
+				.build().encode().toString();
 	}
 
 	/**
@@ -73,7 +68,17 @@ public class ClipListBean extends AbstractSelectableListBean<Clip, Long> impleme
 		for (Clip clip : selectedItems) {
 			clipService.delete(clip);
 		}
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_DELETE", new Object[] {});
+		return refresh();
+	}
+	
+	/**
+	 * Returns the navigation URI for the current view.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/misc/manageClips.xhtml").build().toString();
 	}
 
 	public void setClipService(ClipService clipService) {

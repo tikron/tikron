@@ -14,7 +14,6 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 
-import de.tikron.common.URLCoder;
 import de.tikron.faces.util.FacesParameter;
 import de.tikron.faces.util.FacesUtil;
 import de.tikron.faces.util.Message;
@@ -40,8 +39,6 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 
 	private Picture nextPicture;
 	
-	private String successView;
-
 	@ManagedProperty(value = "#{pictureService}")
 	private PictureService pictureService;
 
@@ -66,7 +63,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 	public String save() {
 		pictureService.save(picture);
 		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
-		return getSuccessView() + "&faces-redirect=true";
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -76,7 +73,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 	 */
 	public String delete() {
 		pictureService.delete(picture);
-		return getSuccessView() + "&faces-redirect=true";
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -135,13 +132,5 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 
 	public void setPictureImageBean(PictureImageBean pictureImageBean) {
 		this.pictureImageBean = pictureImageBean;
-	}
-
-	public String getSuccessView() {
-		return successView;
-	}
-
-	public void setSuccessView(String successView) {
-		this.successView = URLCoder.decode(successView);
 	}
 }

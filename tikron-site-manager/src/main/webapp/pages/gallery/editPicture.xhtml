@@ -36,13 +36,15 @@
 							<div class="buttonBar">
 								<h:button outcome="/pages/gallery/editPicture.xhtml" value="#{msg.buttonPrevious}" rendered="#{not empty pictureDetailBean.previous.id}">
 									<f:param name="pictureId" value="#{pictureDetailBean.previous.id}"/>
+									<f:param name="successView" value="#{pictureDetailBean.successView}"/>
 								</h:button>
 								<h:button outcome="/pages/gallery/editPicture.xhtml" value="#{msg.buttonNext}" rendered="#{not empty pictureDetailBean.next.id}">
 									<f:param name="pictureId" value="#{pictureDetailBean.next.id}"/>
+									<f:param name="successView" value="#{pictureDetailBean.successView}"/>
 								</h:button>
 								<h:commandButton action="#{pictureDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
 								<h:commandButton action="#{pictureDetailBean.uploadImage}" value="#{msg.buttonUploadImage}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{pictureDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

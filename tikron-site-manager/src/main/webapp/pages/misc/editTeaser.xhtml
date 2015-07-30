@@ -10,6 +10,7 @@
 			converter="#{teaserConverter}" converterMessage="Bad request. Unknown teaser."
 			required="true" requiredMessage="Bad request. Teaser ID required."
 	/>
+	<f:viewParam name="successView" value="#{teaserDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{teaserDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>
@@ -34,7 +35,7 @@
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:commandButton action="#{teaserDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{teaserDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

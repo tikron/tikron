@@ -27,10 +27,12 @@
 							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
 						</div>
 						<div id="contentMain">
-							<fw:teaserList dataModel="#{teaserListBean.model}" selectedIds="#{teaserListBean.selectedIds}"></fw:teaserList>
+							<fw:teaserList dataModel="#{teaserListBean.model}" selectedIds="#{teaserListBean.selectedIds}" successView="#{teaserListBean.navigationUri}"></fw:teaserList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
-								<h:button outcome="/pages/misc/createTeaser.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}"></h:button>
+								<h:button outcome="/pages/misc/createTeaser.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
+									<f:param name="successView" value="#{teaserListBean.navigationUri}" />
+								</h:button>
 								<h:commandButton action="#{teaserListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
 								<h:commandButton action="#{teaserListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>
 								<h:commandButton action="#{teaserListBean.refresh}" value="#{msg.buttonRefresh}"></h:commandButton>

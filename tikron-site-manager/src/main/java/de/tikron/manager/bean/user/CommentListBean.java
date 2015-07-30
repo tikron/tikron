@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.user.CommentService;
@@ -35,17 +37,6 @@ public class CommentListBean extends AbstractSelectableListBean<Comment, Long> i
 	}
 
 	/**
-	 * Anzeige aktualisieren
-	 * 
-	 * @return Faces-Navigation.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Eintrag editieren.
 	 * 
 	 * @return Faces-Navigation.
@@ -56,7 +47,11 @@ public class CommentListBean extends AbstractSelectableListBean<Comment, Long> i
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/user/editComment.xhtml?commentId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/user/editComment.xhtml")
+				.queryParam("commentId",  selectedItems.get(0).getId())
+				.queryParam("successView", getNavigationUri())
+				.queryParam("faces-redirect", "true")
+				.build().encode().toString();
 	}
 
 	/**
@@ -73,7 +68,16 @@ public class CommentListBean extends AbstractSelectableListBean<Comment, Long> i
 		for (Comment comment : selectedItems) {
 			commentService.delete(comment);
 		}
-		return "/pages/common/confirmation.xhtml";
+		return refresh();
+	}
+	
+	/**
+	 * Returns the navigation URI for the current view.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/user/manageComments.xhtml").build().toString();
 	}
 
 	public void setCommentService(CommentService commentService) {

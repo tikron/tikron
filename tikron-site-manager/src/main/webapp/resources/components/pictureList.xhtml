@@ -6,6 +6,7 @@
 <composite:interface name="pictureList" displayName="picture list">
 	<composite:attribute name="dataModel" required="true" />
 	<composite:attribute name="selectedIds" required="false" />
+	<composite:attribute name="successView" required="true" />
 </composite:interface>
 <composite:implementation>
 	<h:dataTable id="pictures" var="picture" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
@@ -16,7 +17,7 @@
 			<h:panelGroup rendered="#{not empty picture.imageName}">
 			<h:link outcome="/pages/gallery/editPicture.html">
 				<f:param name="pictureId" value="#{picture.id}" />
-				<f:param name="successView" value="/pages/gallery/managePictures.xhtml?categoryId=#{picture.category.id}" />
+				<f:param name="successView" value="#{cc.attrs.successView}" />
 				<img src="#{imageServerBean.contextPath}getImage.jsp?name=#{pictureImageBean.pictureImagePaths[picture.category.id]}#{picture.imageName}&amp;template=galleryList" />
 			</h:link>
 			</h:panelGroup>
@@ -27,7 +28,7 @@
 			</f:facet>
 			<h:link outcome="/pages/gallery/editPicture.html" value="#{picture.name}">
 				<f:param name="pictureId" value="#{picture.id}" />
-				<f:param name="successView" value="/pages/gallery/managePictures.xhtml?categoryId=#{picture.category.id}" />
+				<f:param name="successView" value="#{cc.attrs.successView}" />
 			</h:link>
 		</h:column>
 		<h:column>

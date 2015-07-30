@@ -57,4 +57,14 @@ public class AbstractSelectableListBean<T extends Entity<ID>, ID extends Seriali
 		return selectedIds;
 	}
 
+	/**
+	 * Default action method to refresh the current list.
+	 * 
+	 * @return Faces-Navigation.
+	 */
+	public String refresh() {
+		selectNone();
+		return super.refresh();
+	}
+
 }

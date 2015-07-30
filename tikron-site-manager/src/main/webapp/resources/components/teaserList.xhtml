@@ -7,6 +7,7 @@
 <composite:interface name="teaserList" displayName="teaser list">
 	<composite:attribute name="dataModel" required="true" />
 	<composite:attribute name="selectedIds" required="false" />
+	<composite:attribute name="successView" required="true" />
 </composite:interface>
 <composite:implementation>
 	<h:dataTable id="teasers" var="teaser" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
@@ -19,6 +20,7 @@
 			</f:facet>
 			<h:link outcome="/pages/misc/editTeaser.html" value="#{teaser.name}">
 				<f:param name="teaserId" value="#{teaser.id}" />
+				<f:param name="successView" value="#{cc.attrs.successView}" />
 			</h:link>
 		</h:column>
 		<h:column>

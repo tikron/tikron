@@ -38,4 +38,14 @@ public abstract class AbstractListBean<T> extends BaseBean {
 		return model;
 	}
 
+	/**
+	 * Default action method to refresh the current list.
+	 * 
+	 * @return Faces-Navigation.
+	 */
+	public String refresh() {
+		setList(null);
+		return null;
+	}
+
 }

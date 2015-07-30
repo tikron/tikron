@@ -34,11 +34,12 @@
 								<tcf:outputLabel for="category" value="#{msg.labelCategoryName}"></tcf:outputLabel>
 								<h:outputText id="category" value="#{pictureListBean.category.title}"></h:outputText>
 							</h:panelGrid>
-							<fw:pictureList dataModel="#{pictureListBean.model}" selectedIds="#{pictureListBean.selectedIds}"></fw:pictureList>
+							<fw:pictureList dataModel="#{pictureListBean.model}" selectedIds="#{pictureListBean.selectedIds}" successView="#{pictureListBean.navigationUri}"></fw:pictureList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:button outcome="/pages/gallery/createPicture.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
 										<f:param name="categoryId" value="#{pictureListBean.category.id}" />
+										<f:param name="successView" value="#{pictureListBean.navigationUri}" />
 								</h:button>
 								<h:commandButton action="#{pictureListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
 								<h:commandButton action="#{pictureListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>

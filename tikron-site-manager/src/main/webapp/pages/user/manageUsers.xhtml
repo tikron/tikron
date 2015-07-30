@@ -27,10 +27,12 @@
 							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
 						</div>
 						<div id="contentMain">
-							<fw:userList dataModel="#{userListBean.model}" selectedIds="#{userListBean.selectedIds}"></fw:userList>
+							<fw:userList dataModel="#{userListBean.model}" selectedIds="#{userListBean.selectedIds}" successView="#{userListBean.navigationUri}"></fw:userList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
-								<h:button outcome="/pages/user/createUser.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}"></h:button>
+								<h:button outcome="/pages/user/createUser.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
+									<f:param name="successView" value="#{userListBean.navigationUri}" />
+								</h:button>
 								<h:commandButton action="#{userListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
 								<h:commandButton action="#{userListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>
 								<h:commandButton action="#{userListBean.refresh}" value="#{msg.buttonRefresh}"></h:commandButton>

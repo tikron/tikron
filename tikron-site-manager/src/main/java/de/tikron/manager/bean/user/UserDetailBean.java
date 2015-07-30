@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.converter.user.PasswordConverter;
 import de.tikron.manager.service.user.UserService;
@@ -53,7 +54,8 @@ public class UserDetailBean extends AbstractDetailBean<User> {
 		}
 		// Save user
 		userService.save(user);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -63,7 +65,8 @@ public class UserDetailBean extends AbstractDetailBean<User> {
 	 */
 	public String delete() {
 		userService.delete(user);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_DELETE", null);
+		return getSuccessWithRedirect();
 	}
 
 	public User getUser() {

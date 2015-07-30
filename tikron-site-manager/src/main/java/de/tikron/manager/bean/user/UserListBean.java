@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.user.UserService;
@@ -35,17 +37,6 @@ public class UserListBean extends AbstractSelectableListBean<User, Long> impleme
 	}
 
 	/**
-	 * Anzeige aktualisieren
-	 * 
-	 * @return Faces-Navigation.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Eintrag editieren.
 	 * 
 	 * @return Faces-Navigation.
@@ -56,7 +47,11 @@ public class UserListBean extends AbstractSelectableListBean<User, Long> impleme
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/user/editUser.xhtml?userId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/user/editUser.xhtml")
+				.queryParam("userId",  selectedItems.get(0).getId())
+				.queryParam("successView", getNavigationUri())
+				.queryParam("faces-redirect", "true")
+				.build().encode().toString();
 	}
 
 	/**
@@ -73,7 +68,16 @@ public class UserListBean extends AbstractSelectableListBean<User, Long> impleme
 		for (User user : selectedItems) {
 			userService.delete(user);
 		}
-		return "/pages/common/confirmation.xhtml";
+		return refresh();
+	}
+	
+	/**
+	 * Returns the navigation URI for the current view.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/user/manageUsers.xhtml").build().toString();
 	}
 
 	public void setUserService(UserService userService) {
