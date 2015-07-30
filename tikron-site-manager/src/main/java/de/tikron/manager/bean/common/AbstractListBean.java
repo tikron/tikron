@@ -28,6 +28,7 @@ public abstract class AbstractListBean<T> extends BaseBean {
 
 	public void setList(List<T> list) {
 		this.list = list;
+		this.model = null;
 	}
 
 	public DataModel<T> getModel() {
