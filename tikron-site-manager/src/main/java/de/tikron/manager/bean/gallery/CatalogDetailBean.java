@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.service.gallery.CatalogService;
 import de.tikron.persistence.model.gallery.Catalog;
@@ -39,7 +40,8 @@ public class CatalogDetailBean extends AbstractDetailBean<Catalog> {
 	 */
 	public String save() {
 		catalogService.save(catalog);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -49,7 +51,7 @@ public class CatalogDetailBean extends AbstractDetailBean<Catalog> {
 	 */
 	public String delete() {
 		catalogService.delete(catalog);
-		return "/pages/common/confirmation.xhtml";
+		return getSuccessWithRedirect();
 	}
 
 	public Catalog getCatalog() {

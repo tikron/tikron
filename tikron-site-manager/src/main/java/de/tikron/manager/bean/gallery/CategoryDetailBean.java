@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.service.gallery.CategoryService;
 import de.tikron.persistence.model.gallery.Catalog;
@@ -25,7 +26,7 @@ public class CategoryDetailBean extends AbstractDetailBean<Category> {
 	private Category category;
 
 	private Catalog catalog;
-
+	
 	@ManagedProperty(value = "#{categoryService}")
 	private CategoryService categoryService;
 
@@ -45,7 +46,8 @@ public class CategoryDetailBean extends AbstractDetailBean<Category> {
 	 */
 	public String save() {
 		categoryService.save(category);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -55,7 +57,7 @@ public class CategoryDetailBean extends AbstractDetailBean<Category> {
 	 */
 	public String delete() {
 		categoryService.delete(category);
-		return "/pages/common/confirmation.xhtml";
+		return getSuccessWithRedirect();
 	}
 
 	public Category getCategory() {

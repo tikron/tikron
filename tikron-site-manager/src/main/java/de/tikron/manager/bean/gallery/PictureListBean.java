@@ -13,6 +13,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 import javax.faces.model.SelectItem;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.common.ImageService;
@@ -55,17 +57,6 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 	}
 
 	/**
-	 * Anzeige aktualisieren
-	 * 
-	 * @return Faces-Navigation.
-	 */
-	public String refresh() {
-		setList(null);
-		selectNone();
-		return null;
-	}
-
-	/**
 	 * Eintrag editieren.
 	 * 
 	 * @return Faces-Navigation.
@@ -76,7 +67,11 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 			Message.sendMessage(null, "de.tikron.manager.ERROR_NO_ENTRIES_SELECTED", new Object[] {});
 			return null;
 		}
-		return "/pages/gallery/editPicture.xhtml?pictureId=" + selectedItems.get(0).getId() + "&faces-redirect=true";
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/editPicture.xhtml")
+			.queryParam("pictureId",  selectedItems.get(0).getId())
+			.queryParam("successView", getNavigationUri())
+			.queryParam("faces-redirect", "true")
+			.build().encode().toString();
 	}
 
 	/**
@@ -96,7 +91,8 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 			}
 			pictureService.delete(picture);
 		}
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_DELETE", new Object[] {});
+		return refresh();
 	}
 
 	/**
@@ -121,7 +117,8 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 				pictureService.update(picture);
 			}
 		}
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_MOVE", new Object[] {});
+		return refresh();
 	}
 
 	public Category getCategory() {
@@ -147,6 +144,16 @@ public class PictureListBean extends AbstractSelectableListBean<Picture, Long> i
 			}
 		}
 		return selectCategories;
+	}
+	
+	/**
+	 * Liefert die URI zur aktuellen View.
+	 * 
+	 * @return Die Faces-URI.
+	 */
+	public String getNavigationUri() {
+		return UriComponentsBuilder.newInstance().path("/pages/gallery/managePictures.xhtml")
+				.queryParam("categoryId", getCategory().getId()).build().toString();
 	}
 
 	public Category getSelectedCategory() {

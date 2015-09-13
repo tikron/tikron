@@ -3,9 +3,15 @@
  */
 package de.tikron.manager.bean.gallery;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 
 import de.tikron.faces.util.FacesParameter;
@@ -32,7 +38,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 	private Picture previousPicture;
 
 	private Picture nextPicture;
-
+	
 	@ManagedProperty(value = "#{pictureService}")
 	private PictureService pictureService;
 
@@ -57,7 +63,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 	public String save() {
 		pictureService.save(picture);
 		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
-		return null;
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -67,7 +73,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 	 */
 	public String delete() {
 		pictureService.delete(picture);
-		return "/pages/common/confirmation.xhtml";
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -79,8 +85,11 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 		// Entity Daten speichern, um später Name des hochgeladenen Bildes hinzufügen zu können. 
 		pictureService.save(picture);
 		// Build redirect URL to get back to current domain and context after succuessful upload
-		String contextURI = FacesUtil.getContextURI().toString();
-		String redirectUrl = contextURI + "/pages/common/uploadPictureImageConfirm.html?pictureId=" + picture.getId();
+		FacesContext context = FacesContext.getCurrentInstance();
+		Map<String, List<String>> parameters = new HashMap<String, List<String>>();
+		parameters.put("pictureId", new ArrayList<String>(){{add(picture.getId().toString());}});
+		String redirectUrl = FacesUtil.getServerURI()
+				+ context.getApplication().getViewHandler().getRedirectURL(context, "/pages/common/uploadPictureImageConfirm.html", parameters, false);
 		// Pass picture image path and redirect URL to common image upload view
 		FacesParameter.setSessionMapValue("imagePath", this.pictureImageBean.getPictureImagePath(picture.getCategory()));
 		FacesParameter.setSessionMapValue("redirectUrl", redirectUrl);

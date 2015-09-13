@@ -27,10 +27,12 @@
 							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
 						</div>
 						<div id="contentMain">
-							<fw:clipList dataModel="#{clipListBean.model}" selectedIds="#{clipListBean.selectedIds}"></fw:clipList>
+							<fw:clipList dataModel="#{clipListBean.model}" selectedIds="#{clipListBean.selectedIds}" successView="#{clipListBean.navigationUri}"></fw:clipList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
-								<h:button outcome="/pages/misc/createClip.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}"></h:button>
+								<h:button outcome="/pages/misc/createClip.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
+										<f:param name="successView" value="#{clipListBean.navigationUri}" />
+								</h:button>
 								<h:commandButton action="#{clipListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
 								<h:commandButton action="#{clipListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>
 								<h:commandButton action="#{clipListBean.refresh}" value="#{msg.buttonRefresh}"></h:commandButton>

@@ -28,6 +28,7 @@ public abstract class AbstractListBean<T> extends BaseBean {
 
 	public void setList(List<T> list) {
 		this.list = list;
+		this.model = null;
 	}
 
 	public DataModel<T> getModel() {
@@ -35,6 +36,16 @@ public abstract class AbstractListBean<T> extends BaseBean {
 			model = new ListDataModel<T>(getList());
 		}
 		return model;
+	}
+
+	/**
+	 * Default action method to refresh the current list.
+	 * 
+	 * @return Faces-Navigation.
+	 */
+	public String refresh() {
+		setList(null);
+		return null;
 	}
 
 }

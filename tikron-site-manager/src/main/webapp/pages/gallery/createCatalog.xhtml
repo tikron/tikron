@@ -6,6 +6,7 @@
 			xmlns:ui="http://java.sun.com/jsf/facelets"
 			xmlns:fw="http://java.sun.com/jsf/composite/components">
 <f:metadata>
+	<f:viewParam name="successView" value="#{catalogDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{catalogDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>
@@ -30,7 +31,7 @@
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:commandButton action="#{catalogDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{catalogDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

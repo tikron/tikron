@@ -27,10 +27,12 @@
 							<p><h:outputText value="#{msg.manageRecordsDescription}"></h:outputText></p>
 						</div>
 						<div id="contentMain">
-							<fw:webRecommendationList dataModel="#{webRecommendationListBean.model}" selectedIds="#{webRecommendationListBean.selectedIds}"></fw:webRecommendationList>
+							<fw:webRecommendationList dataModel="#{webRecommendationListBean.model}" selectedIds="#{webRecommendationListBean.selectedIds}" successView="#{webRecommendationListBean.navigationUri}"></fw:webRecommendationList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
-								<h:button outcome="/pages/misc/createWebRecommendation.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}"></h:button>
+								<h:button outcome="/pages/misc/createWebRecommendation.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
+										<f:param name="successView" value="#{webRecommendationListBean.navigationUri}" />
+								</h:button>
 								<h:commandButton action="#{webRecommendationListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
 								<h:commandButton action="#{webRecommendationListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>
 								<h:commandButton action="#{webRecommendationListBean.refresh}" value="#{msg.buttonRefresh}"></h:commandButton>

@@ -7,6 +7,7 @@
 <composite:interface name="commentList" displayName="comment list">
 	<composite:attribute name="dataModel" required="true" />
 	<composite:attribute name="selectedIds" required="false" />
+	<composite:attribute name="successView" required="true" />
 </composite:interface>
 <composite:implementation>
 	<h:dataTable id="comments" var="comment" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
@@ -19,6 +20,7 @@
 			</f:facet>
 			<h:link outcome="/pages/user/editComment.html" value="#{comment.user.name}">
 				<f:param name="commentId" value="#{comment.id}" />
+				<f:param name="successView" value="#{cc.attrs.successView}" />
 			</h:link>
 		</h:column>
 		<h:column>

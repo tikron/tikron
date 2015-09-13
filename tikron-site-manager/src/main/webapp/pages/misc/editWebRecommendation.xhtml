@@ -10,6 +10,7 @@
 			converter="#{webRecommendationConverter}" converterMessage="Bad request. Unknown webRecommendation."
 			required="true" requiredMessage="Bad request. WebRecommendation ID required."
 	/>
+	<f:viewParam name="successView" value="#{webRecommendationDetailBean.successView}" />
 	<f:event type="preRenderView" listener="#{webRecommendationDetailBean.preRenderView}" />
 </f:metadata>
 <h:head>
@@ -34,7 +35,7 @@
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:commandButton action="#{webRecommendationDetailBean.save}" value="#{msg.buttonSave}"></h:commandButton>
-								<h:button outcome="/pages/common/home.xhtml" value="#{msg.buttonClose}" immediate="true"></h:button>
+								<h:commandButton action="#{webRecommendationDetailBean.cancel}" value="#{msg.buttonClose}" immediate="true"></h:commandButton>
 							</div>
 						</div>
 					</h:form>

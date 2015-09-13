@@ -34,11 +34,12 @@
 								<tcf:outputLabel for="catalog" value="#{msg.labelCatalogName}"></tcf:outputLabel>
 								<h:outputText id="catalog" value="#{categoryListBean.catalog.title}"></h:outputText>
 							</h:panelGrid>
-							<fw:categoryList dataModel="#{categoryListBean.model}" selectedIds="#{categoryListBean.selectedIds}"></fw:categoryList>
+							<fw:categoryList dataModel="#{categoryListBean.model}" selectedIds="#{categoryListBean.selectedIds}" successView="#{categoryListBean.navigationUri}"></fw:categoryList>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">
 								<h:button outcome="/pages/gallery/createCategory.xhtml" value="#{msg.buttonCreate}" rendered="#{securityBean.authorityUpdate}">
 										<f:param name="catalogId" value="#{categoryListBean.catalog.id}" />
+										<f:param name="successView" value="#{categoryListBean.navigationUri}" />
 								</h:button>
 								<h:commandButton action="#{categoryListBean.edit}" value="#{msg.buttonUpdate}" rendered="#{securityBean.authorityUpdate}"></h:commandButton>
 								<h:commandButton action="#{categoryListBean.delete}" value="#{msg.buttonDelete}" rendered="#{securityBean.authorityUpdate}" onclick="return confirmDelete();"></h:commandButton>

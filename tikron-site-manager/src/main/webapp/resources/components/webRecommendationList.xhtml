@@ -7,6 +7,7 @@
 <composite:interface name="webRecommendationList" displayName="web recommendation list">
 	<composite:attribute name="dataModel" required="true" />
 	<composite:attribute name="selectedIds" required="false" />
+	<composite:attribute name="successView" required="true" />
 </composite:interface>
 <composite:implementation>
 	<h:dataTable id="webRecommendations" var="webRecommendation" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
@@ -19,6 +20,7 @@
 			</f:facet>
 			<h:link outcome="/pages/misc/editWebRecommendation.html" value="#{webRecommendation.title}">
 				<f:param name="webRecommendationId" value="#{webRecommendation.id}" />
+				<f:param name="successView" value="#{cc.attrs.successView}" />
 			</h:link>
 		</h:column>
 		<h:column>

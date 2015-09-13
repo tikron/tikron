@@ -6,6 +6,7 @@
 <composite:interface name="catalogList" displayName="catalog list">
 	<composite:attribute name="dataModel" required="true" />
 	<composite:attribute name="selectedIds" required="false" />
+	<composite:attribute name="successView" required="true" />
 </composite:interface>
 <composite:implementation>
 	<h:dataTable id="catalogs" var="catalog" value="#{cc.attrs.dataModel}" styleClass="content" rowClasses="odd, even">
@@ -18,6 +19,7 @@
 			</f:facet>
 			<h:link outcome="/pages/gallery/editCatalog.html" value="#{catalog.name}">
 				<f:param name="catalogId" value="#{catalog.id}" />
+				<f:param name="successView" value="#{cc.attrs.successView}" />
 			</h:link>
 		</h:column>
 		<h:column>

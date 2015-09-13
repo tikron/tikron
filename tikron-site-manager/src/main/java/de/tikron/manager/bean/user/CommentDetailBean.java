@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
+import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.service.common.SecurityService;
 import de.tikron.manager.service.user.CommentService;
@@ -74,7 +75,8 @@ public class CommentDetailBean extends AbstractDetailBean<Comment> {
 	 */
 	public String save() {
 		commentService.save(comment);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_SAVE", null);
+		return getSuccessWithRedirect();
 	}
 
 	/**
@@ -84,7 +86,8 @@ public class CommentDetailBean extends AbstractDetailBean<Comment> {
 	 */
 	public String delete() {
 		commentService.delete(comment);
-		return "/pages/common/confirmation.xhtml";
+		Message.sendMessage(null, "de.tikron.manager.INFO_SUCCESSFUL_DELETE", null);
+		return getSuccessWithRedirect();
 	}
 
 	public Comment getComment() {
