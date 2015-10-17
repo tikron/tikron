@@ -36,7 +36,7 @@ import de.tikron.persistence.model.user.PictureComment;
 		@NamedQuery(name = Picture.NQ_FIND_BY_CATEGORY_ORDERBY_NAME, query = "SELECT o FROM Picture o WHERE o.category = :category ORDER BY o.name"),
 		@NamedQuery(name = Picture.NQ_FIND_BY_NAME, query = "SELECT o FROM Picture o WHERE o.name = :name") })
 @Table(name = "gallery_picture", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class Picture extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class Picture extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Picture.findAll";
 	public static final String NQ_FIND_BY_CATEGORY = "Picture.findByCategory";

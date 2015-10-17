@@ -84,7 +84,7 @@ public class ClipEntityBean extends BaseEntityBean<Clip> {
 	
 	// Delegate methods
 
-	public Long getId() {
+	public Number getId() {
 		return entity.getId();
 	}
 

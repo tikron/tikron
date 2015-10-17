@@ -40,7 +40,7 @@ import de.tikron.jpa.validation.ValidationConstants;
 	@NamedEntityGraph(name = User.NEG_ROLES, attributeNodes={@NamedAttributeNode("roles")})
 })
 @Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class User extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class User extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "User.findAll";
 	public static final String NQ_FIND_BY_NAME = "User.findByName";

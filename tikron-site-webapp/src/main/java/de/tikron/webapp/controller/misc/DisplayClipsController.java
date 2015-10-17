@@ -44,7 +44,7 @@ public class DisplayClipsController extends AbstractPageController {
 		List<ClipEntityBean> clipBeans = entityBeanHelper.toList(ClipEntityBean.NAME, clips);
 		model.addAttribute("clips", clipBeans);
 		List<RatingResult> ratings = ratingService.getClipResults();
-		Map<Long, RatingResult> ratingsMap = toDefaultedMap(ratings, RatingTypeId.CLIP);
+		Map<Number, RatingResult> ratingsMap = toDefaultedMap(ratings, RatingTypeId.CLIP);
 		model.addAttribute("ratings", ratingsMap);
 	}
 
@@ -56,14 +56,14 @@ public class DisplayClipsController extends AbstractPageController {
 	 * @param defaultType The default rating type ID for missing entries.
 	 * @return A map of entity IDs and rating results.
 	 */
-	private Map<Long, RatingResult> toDefaultedMap(List<RatingResult> ratings, RatingTypeId defaultType) {
-		Map<Long, RatingResult> ratingsMap = new HashMap<Long, RatingResult>(ratings.size());
+	private Map<Number, RatingResult> toDefaultedMap(List<RatingResult> ratings, RatingTypeId defaultType) {
+		Map<Number, RatingResult> ratingsMap = new HashMap<Number, RatingResult>(ratings.size());
 		for (RatingResult rating : ratings) {
 			ratingsMap.put(rating.getId(), rating);
 		}
-		Map<Long, RatingResult> ratingsDefaultedMap = DefaultedMap.defaultedMap(ratingsMap, new Transformer<Long, RatingResult>() {
+		Map<Number, RatingResult> ratingsDefaultedMap = DefaultedMap.defaultedMap(ratingsMap, new Transformer<Number, RatingResult>() {
 			@Override
-			public RatingResult transform(Long key) {
+			public RatingResult transform(Number key) {
 				return new RatingResult(defaultType, key);
 			}
 		});

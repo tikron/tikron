@@ -18,20 +18,20 @@ public class RatingResult {
 	
 	private RatingTypeId type;
 	
-	private Long id;
+	private Number id;
 	
 	private Long count;
 	
 	private Double avarage;
 
-	public RatingResult(RatingTypeId type, Long id, Long count, Double avarage) {
+	public RatingResult(RatingTypeId type, Number id, Long count, Double avarage) {
 		this.type = type;
 		this.id = id;
 		this.count = count;
 		this.avarage = avarage;
 	}
 
-	public RatingResult(RatingTypeId type, Long id) {
+	public RatingResult(RatingTypeId type, Number id) {
 		this(type, id, NumberUtils.LONG_ZERO, null);
 	}
 
@@ -39,7 +39,7 @@ public class RatingResult {
 		return type;
 	}
 
-	public Long getId() {
+	public Number getId() {
 		return id;
 	}
 

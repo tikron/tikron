@@ -39,7 +39,7 @@ import de.tikron.jpa.domain.ShowableEntity;
 		@NamedQuery(name = Category.NQ_FIND_BY_CATALOG_AND_VISIBILITY_ORDERBY_NAME, query = "SELECT o FROM Category o WHERE o.catalog = :catalog AND o.visible IN(true, :visibleOnly) ORDER BY o.name"),
 		@NamedQuery(name = Category.NQ_FIND_BY_NAME, query = "SELECT o FROM Category o WHERE o.name = :name") })
 @Table(name = "gallery_category", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class Category extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class Category extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Category.findAll";
 	public static final String NQ_FIND_BY_VISIBILITY = "Category.findByVisibility";

@@ -25,7 +25,7 @@ import de.tikron.jpa.domain.ShowableEntity;
 	@NamedQuery(name = WebRecommendation.NQ_FIND_ALL, query = "SELECT o FROM WebRecommendation o"),
 	@NamedQuery(name = WebRecommendation.NQ_FIND_ALL_ORDERBY_SEQUENCE, query = "SELECT o FROM WebRecommendation o ORDER BY o.sequence")})
 @Table(name = "web_recommendation")
-public class WebRecommendation extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class WebRecommendation extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "WebRecommendation.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_SEQUENCE = "WebRecommendation.findAllOrderBySequence";

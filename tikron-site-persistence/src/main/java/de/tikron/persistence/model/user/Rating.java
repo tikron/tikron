@@ -30,7 +30,7 @@ import de.tikron.jpa.domain.GeneratedKeyEntity;
 		@NamedQuery(name = Rating.NQ_FIND_BY_RATINGTYPE, query = "SELECT o FROM Rating o WHERE o.ratingType = :ratingType")
 })
 @Table(name = "rating")
-public abstract class Rating extends GeneratedKeyEntity {
+public abstract class Rating extends GeneratedKeyEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Rating.findAll";
 	public static final String NQ_FIND_BY_RATINGTYPE = "Rating.findByRatingType";

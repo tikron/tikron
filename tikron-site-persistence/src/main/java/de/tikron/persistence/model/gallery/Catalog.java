@@ -42,7 +42,7 @@ import de.tikron.jpa.domain.ShowableEntity;
 		@NamedEntityGraph(name = Catalog.NEG_CATEGORIES, attributeNodes={@NamedAttributeNode("categories")})
 })
 @Table(name = "gallery_catalog", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class Catalog extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class Catalog extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Catalog.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_NAME = "Catalog.findAllOrderByName";

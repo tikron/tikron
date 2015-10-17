@@ -34,7 +34,7 @@ import de.tikron.persistence.model.gallery.Picture;
 		@NamedQuery(name = Teaser.NQ_FIND_VISIBLE_ORDERBY_SEQUENCE, query = "SELECT o FROM Teaser o WHERE o.visible = true AND (o.startDate = NULL or o.startDate <= CURRENT_TIMESTAMP) AND (o.endDate = NULL or o.endDate >= CURRENT_TIMESTAMP) ORDER BY o.sequence, o.startDate"),
 		@NamedQuery(name = Teaser.NQ_FIND_BY_NAME, query = "SELECT o FROM Teaser o WHERE o.name = :name") })
 @Table(name = "teaser", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class Teaser extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class Teaser extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Teaser.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_NAME = "Teaser.findAllOrderByName";

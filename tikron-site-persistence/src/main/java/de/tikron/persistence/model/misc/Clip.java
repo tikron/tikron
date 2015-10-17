@@ -36,7 +36,7 @@ import de.tikron.persistence.model.user.ClipComment;
 	@NamedQuery(name = Clip.NQ_FIND_ALL_ORDERBY_DATERECORDED, query = "SELECT o FROM Clip o ORDER BY o.dateRecorded"),
 	@NamedQuery(name = Clip.NQ_FIND_BY_NAME, query = "SELECT o FROM Clip o WHERE o.name = :name") })
 @Table(name = "clip", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
-public class Clip extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public class Clip extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Clip.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_DATERECORDED = "Clip.findAllOrderByDateRecorded";

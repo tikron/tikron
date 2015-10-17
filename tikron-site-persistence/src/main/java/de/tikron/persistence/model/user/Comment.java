@@ -40,7 +40,7 @@ import de.tikron.jpa.validation.NotSpam;
 		@NamedQuery(name = Comment.NQ_FIND_BY_COMMENTTYPE, query = "SELECT o FROM Comment o WHERE o.commentType = :commentType"),
 		@NamedQuery(name = Comment.NQ_FIND_BY_COMMENTTYPE_AND_VISIBILITY, query = "SELECT o FROM Comment o WHERE o.commentType = :commentType AND o.visible in (true, :visibleOnly)") })
 @Table(name = "comment")
-public abstract class Comment extends GeneratedKeyEntity implements ShowableEntity<Long> {
+public abstract class Comment extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Comment.findAll";
 	public static final String NQ_FIND_BY_COMMENTTYPE = "Comment.findByCommentType";
