@@ -52,7 +52,7 @@ public class CommentForm implements Serializable {
 		@Pattern(regexp = ValidationConstants.URL_MASK, message = "{user.url.Pattern}"),
 //		@Pattern(regexp = ValidationConstants.URL_MASK_DE, message = "{user.url.NotSpam}")
 	})
-	@AllowedDomain(value = {".de", ".at", ".ch"})
+	@AllowedDomain(value = {".de", ".at", ".ch"}, message = "{user.url.AllowedDomain}")
 	private String url;
 
 	public CommentForm() {
