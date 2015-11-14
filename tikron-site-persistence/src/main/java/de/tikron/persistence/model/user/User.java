@@ -26,6 +26,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 import de.tikron.jpa.domain.GeneratedKeyEntity;
 import de.tikron.jpa.domain.ShowableEntity;
+import de.tikron.jpa.validation.AllowedDomain;
 import de.tikron.jpa.validation.ValidationConstants;
 
 /**
@@ -61,12 +62,12 @@ public class User extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 	@Pattern(regexp = ValidationConstants.EMAIL_MASK, message = "{user.email.Pattern}")
 	private String email;
 
-	@Column
 	@Size(max = 255, message = "{user.url.Size}")
 	@Pattern.List({
 		@Pattern(regexp = ValidationConstants.URL_MASK, message = "{user.url.Pattern}"),
-		@Pattern(regexp = ValidationConstants.URL_MASK_DE, message = "{user.url.NotSpam}")
+//		@Pattern(regexp = ValidationConstants.URL_MASK_DE, message = "{user.url.NotSpam}")
 	})
+	@AllowedDomain(value = {".de", ".at", ".ch"})
 	private String url;
 	
 	@ManyToMany(cascade = CascadeType.PERSIST)

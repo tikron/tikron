@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import de.tikron.jpa.validation.AllowedDomain;
 import de.tikron.jpa.validation.NotSpam;
 import de.tikron.jpa.validation.ValidationConstants;
 import de.tikron.persistence.model.user.CommentTypeId;
@@ -49,8 +50,9 @@ public class CommentForm implements Serializable {
 	@Size(max = 255, message = "{user.url.Size}")
 	@Pattern.List({
 		@Pattern(regexp = ValidationConstants.URL_MASK, message = "{user.url.Pattern}"),
-		@Pattern(regexp = ValidationConstants.URL_MASK_DE, message = "{user.url.NotSpam}")
+//		@Pattern(regexp = ValidationConstants.URL_MASK_DE, message = "{user.url.NotSpam}")
 	})
+	@AllowedDomain(value = {".de", ".at", ".ch"})
 	private String url;
 
 	public CommentForm() {
