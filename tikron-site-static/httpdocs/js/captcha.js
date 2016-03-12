@@ -25,20 +25,20 @@ function TikronCaptcha(options) {
 		_reloadImage();
 	}
 
-	_bindUIActions = function() {
+	var _bindUIActions = function() {
 		_bindCaptchaImages();
 	}
 	
 	/**
 	 * Requests a new captcha code image on click event.
 	 */
-	_bindCaptchaImages = function() {
+	var _bindCaptchaImages = function() {
 		_ui.groupImage.find('a, img').click(function() {
 			_reloadImage();
 		})
 	}
 	
-	_reloadImage = function() {
+	var _reloadImage = function() {
 		var requestUrl = _cfg.captchaImageUrl + Math.floor(Math.random() * 1000);
 		_ui.groupImage.find('img').attr('src', requestUrl);
 		_ui.groupCode.find('input').val('');

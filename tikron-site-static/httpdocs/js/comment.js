@@ -24,7 +24,7 @@ function TikronComment(options) {
 		_bindUIActions();
 	}
 
-	_bindUIActions = function() {
+	var _bindUIActions = function() {
 		_ui.form.bind('submit', function(e) {
 			var url = _ui.form.attr('action');
 			// Collect entered data from form fields
@@ -59,7 +59,7 @@ function TikronComment(options) {
 	 * 
 	 * @param The comment to add.
 	 */
-	_addListEntry = function(comment) {
+	var _addListEntry = function(comment) {
 		var $li = $('<li>');
 		var $text = $('<span>', {
 			'class': 'text',
@@ -85,7 +85,7 @@ function TikronComment(options) {
 	/**
 	 * Updates the comment list.
 	 */
-	_updateList = function() {
+	var _updateList = function() {
 		var $li = _ui.list.find('li');
 		$li.removeClass('first last');
 		$li.first().addClass('first');

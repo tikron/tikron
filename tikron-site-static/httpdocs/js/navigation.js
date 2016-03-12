@@ -23,7 +23,7 @@ function TikronNav(options) {
 //		console.log(_cfg);
 	}
 
-	_bindUIActions = function() {
+	var _bindUIActions = function() {
 		// Handle hover events on main top navigation items
 		_ui.topNav.find('ul li.hasSubNav').hover(function() {
 			_switchSubNav(this, true);
@@ -41,7 +41,7 @@ function TikronNav(options) {
 	 *          If true, the sub navigation will be shown, otherwise it will be
 	 *          hidden.
 	 */
-	_switchSubNav = function(hoverElement, enter) {
+	var _switchSubNav = function(hoverElement, enter) {
 		var hoverId = $(hoverElement).attr('id');
 		// console.log(enter + '/' + hoverId);
 		if (hoverId) {
@@ -84,7 +84,7 @@ function TikronNav(options) {
 	 * @param identifier
 	 *          The identifier of the navigation (catalog) to load.
 	 */
-	_loadSubNav = function(container, identifier) {
+	var _loadSubNav = function(container, identifier) {
 		if (!$.trim($(container).html())) {
 			$.ajax({
 				url : _cfg.loadSubNavUrl + identifier,

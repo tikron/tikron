@@ -24,7 +24,7 @@ function TikronContact(options) {
 		_bindUIActions();
 	}
 
-	_bindUIActions = function() {
+	var _bindUIActions = function() {
 		_ui.form.bind('submit', function(e) {
 			var url = _ui.form.attr('action');
 			// Collect entered data from form fields

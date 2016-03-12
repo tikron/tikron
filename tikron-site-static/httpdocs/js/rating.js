@@ -24,7 +24,7 @@ function TikronRating(options) {
 		_bindUIActions();
 	}
 
-	_bindUIActions = function() {
+	var _bindUIActions = function() {
 		_ui.ratingStars.each(function() {
 			// Fetch unique entity ID from HTML element
 			var entityId = $(this).attr('data-id');
@@ -54,7 +54,7 @@ function TikronRating(options) {
 	 * @param e The DOM element of the rating event.
 	 * @param value The rating value chosen by the user.
 	 */
-	_handleRating = function(e, value) {
+	var _handleRating = function(e, value) {
 		var entityId = e.parent().parent().attr('data-id');
 		var requestUrl = _buildRequestUrl(entityId, value)
 		$.ajax({
@@ -73,7 +73,7 @@ function TikronRating(options) {
 	 * @param entityId The entity ID, of the object to be rated.
 	 * @param value The rating value chosen by the user.
 	 */
-	_buildRequestUrl = function(entityId, value) {
+	var _buildRequestUrl = function(entityId, value) {
 		return _cfg.addRatingUrl.replace('Id=', 'Id=' + entityId).replace('ratingValue=', 'ratingValue=' + value)
 	}
 	
@@ -83,7 +83,7 @@ function TikronRating(options) {
 	 * @param rating The rating result.
 	 * @raturn The formatted text.
 	 */
-	_composeRatingText = function(ratingCount) {
+	var _composeRatingText = function(ratingCount) {
 		if (ratingCount > 0) {
 			return tikronUtil.substitute(_cfg.msg.ratingCount, [ratingCount]);
 		} else {

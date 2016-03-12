@@ -26,20 +26,20 @@ function Tikron(options) {
 //		console.log(_cfg);
 	}
 	
-	_updateUI = function() {
+	var _updateUI = function() {
 		$('div.address').append(_getAddressHtml());
 		$('a.email_link').attr('href', _getContactEmailLink());
 		$('a.email_link').html(_getContactEmailText());
 	}
 
-	_bindUIActions = function() {
+	var _bindUIActions = function() {
 		// "Go Up" scrolling button
 		_bindGoUpButton();
 		// Form elements
 		_bindForms();
 	}
 	
-	_bindGoUpButton = function() {
+	var _bindGoUpButton = function() {
 		// Calculate percentage horizontal position relative to window dimensions. Unfortunally a percentage value is expected by the plugin.
 		var windowWidth = $(window).innerWidth();
 		var containerWidth = $('#container').width();
@@ -52,7 +52,7 @@ function Tikron(options) {
 		});
 	}
 	
-	_bindForms = function() {
+	var _bindForms = function() {
 		$('form input.url').change(function() {
 			_formatUrl(this);
 		});
@@ -63,7 +63,7 @@ function Tikron(options) {
 	 * 
 	 * @returns {String} The email address link.
 	 */
-	_getContactEmailLink = function() {
+	var _getContactEmailLink = function() {
 		return 'mailto:' + _text.email.address + '?subject=' + _text.email.subject;
 	}
 
@@ -72,7 +72,7 @@ function Tikron(options) {
 	 * 
 	 * @returns {String} The email address.
 	 */
-	_getContactEmailText = function() {
+	var _getContactEmailText = function() {
 		return _text.email.address;
 	}
 
@@ -81,7 +81,7 @@ function Tikron(options) {
 	 * 
 	 * @returns Postal address object.
 	 */
-	_getPostalAddress = function() {
+	var _getPostalAddress = function() {
 		return _text.postal;
 	}
 
@@ -90,13 +90,13 @@ function Tikron(options) {
 	 * 
 	 * @returns {String} The HTML code.
 	 */
-	_getAddressHtml = function() {
+	var _getAddressHtml = function() {
 		var pa = _getPostalAddress();
 		var headline = tikronUtil.substitute(_text.address.headline, [pa.name]);
 		return '<p>' + headline + '</p>' + '<address>'
 				+ pa.name + '<br />' + pa.address + '<br />' + pa.city + '<br />'
 				+ pa.country + '</address>';
-	},
+	}
 
 	/**
 	 * Formats an URL input field value.
@@ -104,7 +104,7 @@ function Tikron(options) {
 	 * @param field
 	 *          The input field.
 	 */
-	_formatUrl = function(field) {
+	var _formatUrl = function(field) {
 		var value = $(field).val();
 		if (value.length > 0 && value.indexOf('http:') != 0
 				&& value.indexOf('https:') != 0) {
