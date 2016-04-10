@@ -2,7 +2,7 @@
 
 	<!-- Copy this to the Tomcat context.xml -->
 	<!-- Configure image archive location for development environment -->
-    <Parameter name="ibaseArchiveLocation" value="D:/Benutzer/Titus/AppData/Local/ibase/"/>
+    <Parameter name="ibaseArchiveLocation" value="C:/Users/Titus/AppData/Local/ibase/"/>
 	<!-- Configure image archive location for live environment -->
 	<Parameter name="ibaseArchiveLocation" value="/var/opt/ibase/"/>
     <!-- Unsharp scaled images fo better quality-->

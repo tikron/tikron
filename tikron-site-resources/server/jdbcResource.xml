@@ -16,5 +16,5 @@
 	username="tikron"
 	password="********"
 	driverClassName="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhost:3306/tikron?useUnicode=yes&amp;characterEncoding=UTF-8&amp;relaxAutoCommit=true"/>
+	url="jdbc:mysql://localhost:3306/tikron?useSSL=false&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;relaxAutoCommit=true"/>
 		
