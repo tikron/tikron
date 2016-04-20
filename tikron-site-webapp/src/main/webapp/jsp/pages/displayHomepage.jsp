@@ -25,17 +25,18 @@
 		<article class="news">
 			<h2><spring:message code="displayHomepage.news.headline" /></h2>
 			<p>
-				Für die Anzeige von Fotos auf Tikron wird nun ein neues technisches Verfahren verwendet. 
-				Die Bildqualität konnte dadurch erheblich gesteigert werden.
-				Vielen Dank an Morten Nobel für seine phantastische <a href="http://blog.nobel-joergensen.com/tag/image-scaling/">Image-Scaling-Library<i class="fa fa-external-link"></i></a>.
-				<br />
-				Eine weitere Neuerung sind sogenannte "Tooltips": Bewegst Du den Mauszeiger über einen Link oder Button, werden dazu hilfreiche Informationen angezeigt. 
+				In letzter Zeit ist es etwas ruhiger hier geworden.
+				Die Umstellung von Debian auf Ubuntu Linux mit self managed Domain und Mail-Server war ein großer Schritt im vergangen Winter. 
+				Weitere neue Herausforderungen ließen die Arbeit an der Tikron Website etwas in den Hintergrund geraten.
+				Deshalb gibt es mit diesem Update auch nur kleinere Anpassungen.
+				Grundsätzlich soll es aber weiter gehen!
+				Die sogenannte "responsive Darstellung" der gesamten Site ist ein Ziel, das nicht vergessen wird...
 			</p>
 		</article>
 		<section class="log">
 			<a id="showLog" href="#" class="arrow log" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 			<div id="logResponse" class="timestamp">
-				Letzte Aktualisierung: <time datetime="2015-07-10">10.07.2015</time>
+				Letzte Aktualisierung: <time datetime="2016-04-19">19.04.2016</time>
 			</div>
 		</section>
 	</section>

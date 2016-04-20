@@ -11,8 +11,8 @@ public class CategoryDTO extends BasicCategoryDTO {
 	private final String imageName;
 	
 	public CategoryDTO(Long id, BasicCatalogDTO catalog, String name, String title, String shortTitle,
-			String shortDescription, String longDescription, String imageName, Double sequence, String categoryType, DisplayType displayType, String seoName) {
-		super(id, catalog, name, title, shortTitle, sequence, categoryType, displayType, seoName);
+			String shortDescription, String longDescription, String imageName, Double sequence, String categoryType, DisplayType displayType, Boolean commentable, Boolean rateable, String seoName) {
+		super(id, catalog, name, title, shortTitle, sequence, categoryType, displayType, commentable, rateable, seoName);
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 		this.imageName = imageName;

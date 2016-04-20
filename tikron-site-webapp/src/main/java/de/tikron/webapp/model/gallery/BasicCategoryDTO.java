@@ -23,12 +23,16 @@ public class BasicCategoryDTO extends EntityDTO<Long> {
 	
 	private final DisplayType displayType;
 	
+	private final Boolean commentable;
+	
+	private final Boolean rateable;
+	
 	private final List<PictureDTO> pictures;
 	
 	private final String seoName;
 
 	public BasicCategoryDTO(Long id, BasicCatalogDTO catalog, String name, String title, String shortTitle, Double sequence,
-			String categoryType, DisplayType displayType, String seoName) {
+			String categoryType, DisplayType displayType, Boolean commentable, Boolean rateable, String seoName) {
 		super(id);
 		this.catalog = catalog;
 		this.name = name;
@@ -37,6 +41,8 @@ public class BasicCategoryDTO extends EntityDTO<Long> {
 		this.sequence = sequence;
 		this.categoryType = categoryType;
 		this.displayType = displayType;
+		this.commentable = commentable;
+		this.rateable = rateable;
 		this.pictures = new ArrayList<PictureDTO>();
 		this.seoName = seoName;
 	}
@@ -67,6 +73,14 @@ public class BasicCategoryDTO extends EntityDTO<Long> {
 
 	public DisplayType getDisplayType() {
 		return displayType;
+	}
+
+	public Boolean getCommentable() {
+		return commentable;
+	}
+
+	public Boolean getRateable() {
+		return rateable;
 	}
 
 	public void addPicture(PictureDTO picture) {

@@ -55,6 +55,12 @@ public class AddCommentController extends AbstractAjaxFormController {
 	 */
 	@RequestMapping(value="/addComment.json", method = RequestMethod.POST)
 	public @ResponseBody AjaxResponse processSubmit(@Valid @ModelAttribute(MODEL_ATTR_COMMENT_FORM) CommentForm commentForm, BindingResult result) {
+		// Validate if commenting the related category or picture ist allowed 
+		if (commentForm.getRelatedEntityType().equals(CommentTypeId.CATEGORY) && !galleryService.getCategory(commentForm.getRelatedEntityId()).getCommentable()) {
+			result.reject("comment.error.disallowed");
+		} else if (commentForm.getRelatedEntityType().equals(CommentTypeId.PICTURE) && !galleryService.getPicture(commentForm.getRelatedEntityId()).getCategory().getCommentable()) {
+			result.reject("comment.error.disallowed");
+		}
 		if (!result.hasErrors()) {
 			// Create domain model beans from CommentForm DTO. Should be moved to DTO assembler or service layer.
 			User user = new User(commentForm.getAuthor());

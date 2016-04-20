@@ -3,6 +3,17 @@
 <ul class="index">
 	<li class="first">
 		<article>
+		<header><h2>Bessere Bildqualität</h2><span class="date">10.07.2015</span></header>
+		<p>
+			Für die Anzeige von Fotos auf Tikron wird nun ein neues technisches Verfahren verwendet.
+			Die Bildqualität konnte dadurch erheblich gesteigert werden.
+			Vielen Dank an Morten Nobel für seine phantastische Image-Scaling-Library.
+			Eine weitere Neuerung sind sogenannte "Tooltips": Bewegst Du den Mauszeiger über einen Link oder Button, werden dazu hilfreiche Informationen angezeigt. 
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
 		<header><h2>Fotos und Filme bewerten</h2><span class="date">3.05.2015</span></header>
 		<p>
 			Nur eine Woche ist seit dem letzten Update vergangen.

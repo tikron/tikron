@@ -30,12 +30,12 @@
 		<figure>
 			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
 		</figure>
+		<c:if test="${picture.category.commentable}">
 		<section class="commentBox">
-		<c:if test="${picture.id ne 731}">
 			<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
-		</c:if>
 			<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
 		</section>
+		</c:if>
 	</section>
 	<section id="contentRight" class="intro">
 		<div id="galleryInfo" class="teaser">
@@ -48,11 +48,15 @@
 						<c:when test="${not empty picture.description}"><c:out value="${picture.description}" escapeXml="false" /></c:when>
 						<c:otherwise><spring:message code="gallery.displayPicture.emptyDescription" /></c:otherwise>
 					</c:choose>
-					<br /><br />
-					<a id="addComment" href="#" class="arrow"><spring:message code="link.addPictureComment"/></a>
+					<c:if test="${picture.category.commentable}">
+						<br /><br />
+						<a id="addComment" href="#" class="arrow"><spring:message code="link.addPictureComment"/></a>
+					</c:if>
 				</p>
 			</div>
+			<c:if test="${picture.category.rateable and not browserLowerIE9}">
 			<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
+			</c:if>
 			<%@ include file="include/picturePager.jspf" %>
 			<ul class="buttonBar vt afterPager">
 				<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
@@ -63,8 +67,7 @@
 </article>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
-<c:if test="${not browserLowerIE9}">
-<c:url var="addRatingUrl" value="/gallery/addPictureRating.json"><c:param name="pictureId" value=""/><c:param name="ratingValue" value=""/></c:url>
+<c:if test="${picture.category.commentable}">
 <script type="text/javascript">
 	$(document).ready(function() {
 		// Bind placeholder plugin
@@ -78,6 +81,13 @@
 		// Init. comment form handler
 		var tikronComment = new TikronComment({'msg' : {author:'<spring:message code="comments.author"/>', date: '<spring:message code="comments.date"/>'}});
 		tikronComment.init();
+	});
+</script>
+</c:if>
+<c:if test="${picture.category.rateable and not browserLowerIE9}">
+<c:url var="addRatingUrl" value="/gallery/addPictureRating.json"><c:param name="pictureId" value=""/><c:param name="ratingValue" value=""/></c:url>
+<script type="text/javascript">
+	$(document).ready(function() {
 		// Init. rating box
 		var tikronRating = new TikronRating({'addRatingUrl': '${addRatingUrl}',	'msg' : 
 			{ratingCount:'<spring:message code="rating.count"/>', ratingEmpty: '<spring:message code="rating.empty"/>'}});

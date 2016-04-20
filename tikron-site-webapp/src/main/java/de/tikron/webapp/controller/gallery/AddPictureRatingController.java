@@ -46,6 +46,10 @@ public class AddPictureRatingController extends AddRatingController {
 		if (picture == null) {
 			throw new ResourceNotFoundException("exception.pictureNotFound", new Object[]{pictureId});
 		}
+		// Validate for allowed rating
+		if (!picture.getCategory().getRateable()) {
+			throw new ApplicationException("exception.objectNotRateable");
+		}
 		// Persist rating
 		PictureRating rating = new PictureRating(picture, value);
 		return ratingService.addRating(rating);

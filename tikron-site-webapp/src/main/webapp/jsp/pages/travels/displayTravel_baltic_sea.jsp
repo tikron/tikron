@@ -94,10 +94,12 @@
 			<p>Es ist kurz vor zehn Uhr, als wir nach einem ärgerlichen Zwischenfall mit einem hektischen und sehr ungehaltenen Einweiser das Autodeck verlassen. Wir fahren auf der A7 zurück nach Hamburg und haben es geschafft. Irgendwie ist es schade, dass auch dieser lange Urlaub schon wieder zu Ende ist. Wir sind aber glücklich, so viele kleine Abenteuer erlebt und schöne Ort gesehen zu haben. 4000 Kilometer im Auto liegen hinter uns. Wir haben 300 Liter Diesel getankt. Durch 6 Länder sind wir gefahren. 350 Fotos wurden geschossen und 2 Filme gedreht. Dem Bus geht es inzwischen wieder besser. Das rechte untere Traggelenk war defekt.</p>
 			<a href="<c:url value="${displayCatalogURLs['travels']}" />" class="arrow"><spring:message code="button.backToOverview"/></a>
 		</section>
+		<c:if test="${category.commentable}">
 		<section class="commentBox">
 			<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
 			<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
 		</section>
+		</c:if>
 	</article>
 	<div class="clear"></div>
 </section>

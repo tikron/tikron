@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import de.tikron.persistence.model.gallery.CategoryType;
 import de.tikron.persistence.model.gallery.DisplayType;
 import de.tikron.webapp.model.common.EntityDTO;
 
@@ -42,8 +43,8 @@ public class BasicCatalogDTO extends EntityDTO<Long> {
 	}
 	
 	public void addCategory(Long id, String name, String title, String shortTitle,
-			String shortDescription, String longDescription, String imageName, Double sequence, DisplayType displayType, String seoName) {
-		this.categories.add(new CategoryDTO(id, this, name, title, shortTitle, shortDescription, longDescription, imageName, sequence, null, displayType, seoName));
+			String shortDescription, String longDescription, String imageName, Double sequence, CategoryType categoryType, DisplayType displayType, Boolean commentable, Boolean rateable, String seoName) {
+		this.categories.add(new CategoryDTO(id, this, name, title, shortTitle, shortDescription, longDescription, imageName, sequence, categoryType.toString(), displayType, commentable, rateable, seoName));
 	}
 	
 	public void addCategory(BasicCategoryDTO category) {

@@ -77,6 +77,10 @@ public class Category extends GeneratedKeyEntity<Long> implements ShowableEntity
 	@Column(name = "display_type")
 	@Enumerated
 	private DisplayType displayType;
+	@Column(columnDefinition = ("smallint"))
+	private Boolean commentable;
+	@Column(columnDefinition = ("smallint"))
+	private Boolean rateable;
 
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Picture> pictures = new HashSet<Picture>();
@@ -193,6 +197,22 @@ public class Category extends GeneratedKeyEntity<Long> implements ShowableEntity
 
 	public void setDisplayType(DisplayType displayType) {
 		this.displayType = displayType;
+	}
+
+	public Boolean getCommentable() {
+		return commentable;
+	}
+
+	public void setCommentable(Boolean commentable) {
+		this.commentable = commentable;
+	}
+
+	public Boolean getRateable() {
+		return rateable;
+	}
+
+	public void setRateable(Boolean rateable) {
+		this.rateable = rateable;
 	}
 
 	public Set<Picture> getPictures() {

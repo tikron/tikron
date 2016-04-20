@@ -14,14 +14,9 @@
 			<dt><%--<form:label path="author"><spring:message code="addComment.label.author" />&nbsp;*:</form:label> --%></dt>
 			<dd><form:input path="author" placeholder="${msgLabelAuthor}" /><span class="error"><form:errors path="author" /></span></dd>
 		</dl>
-		<div class="clear"></div>
-		<dl id="email">
+		<dl id="email" class="right">
 			<dt><%--<form:label path="email"><spring:message code="addComment.label.email" /></form:label> --%></dt>
 			<dd><form:input path="email" type="email" placeholder="${msgLabelEmail}" /><span class="error"><form:errors path="email" /></span></dd>
-		</dl>
-		<dl id="url" class="right">
-			<dt><%--<form:label path="url"><spring:message code="addComment.label.url" /></form:label> --%></dt>
-			<dd><form:input path="url" cssClass="url" placeholder="${msgLabelUrl}" type="url" /><span class="error"><form:errors path="url" /></span></dd>
 		</dl>
 		<div class="clear"></div>
 		<dl id="text">

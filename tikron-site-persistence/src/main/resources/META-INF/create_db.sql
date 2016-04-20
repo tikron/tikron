@@ -100,6 +100,8 @@ CREATE TABLE gallery_category (
 	on_teaser smallint(6),
 	display_type int(11),
 	categorytype_id char(64) NOT NULL,
+	commentable smallint(6) DEFAULT '0',
+	rateable smallint(6) DEFAULT '0',
 	PRIMARY KEY (id),
 	UNIQUE KEY K_gallery_category_1 (name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

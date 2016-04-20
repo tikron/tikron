@@ -7,7 +7,7 @@
 		<language>de</language>
 		<copyright>Titus Kruse</copyright>
 		<managingEditor>Titus Kruse</managingEditor>
-		<lastBuildDate>Fri, 10 Jul 2015 13:28:00 +0200</lastBuildDate>
+		<lastBuildDate>Tue, 19 Apr 2016 19:37:00 +0200</lastBuildDate>
 		<category>Reisen</category>
 		<category>Skandinavien</category>
 		<category>Baltikum</category>
@@ -23,6 +23,13 @@
 		<category>Open-Air</category>
 		<category>Goa-Trance</category>
 		<category>Techno</category>
+		<item>
+			<title>Ubuntu Linux</title>
+			<link>http://www.tikron.de/</link>
+			<description><![CDATA[In letzter Zeit ist es etwas ruhiger hier geworden. Die Umstellung von Debian auf Ubuntu Linux mit self managed Domain und Mail-Server war ein großer Schritt im vergangen Winter. Weitere neue Herausforderungen ließen die Arbeit an der Tikron Website etwas in den Hintergrund geraten. Deshalb gibt es mit diesem Update auch nur kleinere Anpassungen. Grundsätzlich soll es aber weiter gehen! Die sogenannte "responsive Darstellung" der gesamten Site ist ein Ziel, das nicht vergessen wird...]]></description>
+			<pubDate>Tue, 19 Apr 2016 19:37:00 +0200</pubDate>
+			<guid isPermaLink="false">92020E30-8054-4481-9D3D-3C68BD8CA9CD</guid>
+		</item>
 		<item>
 			<title>Bessere Bildqualität</title>
 			<link>http://www.tikron.de/</link>

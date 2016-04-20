@@ -58,6 +58,10 @@
 			<f:validator validatorId="displayTypeValidator" />
 			<f:attribute name="categoryType" value="#{categoryType}" />
 		</h:selectOneMenu>
+		<tcf:outputLabel for="commentable" value="#{msg.labelCategoryCommentable}"></tcf:outputLabel>
+		<h:selectBooleanCheckbox id="commentable" value="#{cc.attrs.category.commentable}"></h:selectBooleanCheckbox>
+		<tcf:outputLabel for="rateable" value="#{msg.labelCategoryRateable}"></tcf:outputLabel>
+		<h:selectBooleanCheckbox id="rateable" value="#{cc.attrs.category.rateable}"></h:selectBooleanCheckbox>
 	</h:panelGrid>
 </composite:implementation>
 </html>

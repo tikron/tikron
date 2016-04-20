@@ -36,7 +36,7 @@ public class CategoryDTOAssembler {
 		BasicCatalogDTO catalogDTO = catalogDTOAssembler.toBasicDTO(category.getCatalog(), false);
 		String seoName = seoUtils.adjustRequestParameterValue(category.getDisplayName());
 		return new BasicCategoryDTO(category.getId(), catalogDTO, category.getName(), category.getTitle(),
-				category.getShortTitle(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), seoName);
+				category.getShortTitle(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), category.getCommentable(), category.getRateable(), seoName);
 	}
 
 	public CategoryDTO toDTO(Category category) {
@@ -45,7 +45,7 @@ public class CategoryDTOAssembler {
 		String seoName = seoUtils.adjustRequestParameterValue(category.getDisplayName());
 		return new CategoryDTO(category.getId(), catalogDTO, category.getName(), category.getTitle(),
 				category.getShortTitle(), category.getShortDescription(), longDescription,
-				category.getImageName(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), seoName);
+				category.getImageName(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), category.getCommentable(), category.getRateable(), seoName);
 	}
 	
 	public <T extends BasicCategoryDTO> T toDTO(Category category, Class<T> type) {
@@ -55,12 +55,12 @@ public class CategoryDTOAssembler {
 			String seoName = seoUtils.adjustRequestParameterValue(category.getDisplayName());
 			return type.cast(new CategoryDTO(category.getId(), catalogDTO, category.getName(), category.getTitle(),
 					category.getShortTitle(), category.getShortDescription(), longDescription,
-					category.getImageName(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), seoName));
+					category.getImageName(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), category.getCommentable(), category.getRateable(), seoName));
 		}	else if (type.equals(BasicCategoryDTO.class)) {
 			BasicCatalogDTO catalogDTO = catalogDTOAssembler.toBasicDTO(category.getCatalog(), false);
 			String seoName = seoUtils.adjustRequestParameterValue(category.getDisplayName());
 			return type.cast(new BasicCategoryDTO(category.getId(), catalogDTO, category.getName(), category.getTitle(),
-					category.getShortTitle(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), seoName));
+					category.getShortTitle(), category.getSequence(), category.getCategoryType().getId().name(), category.getDisplayType(), null, null, seoName));
 		} else {
 			throw new IllegalArgumentException("Unsupported subclass of type BasicCategoryDTO.");
 		}

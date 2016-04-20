@@ -6,7 +6,6 @@
 		<span class="text"><c:out value="${comment.text}" escapeXml="false"></c:out></span>
 		<div class="attributes">
 			<spring:message code="comments.author" />&nbsp;<strong><c:out value="${comment.author}" /></strong>&nbsp;<spring:message code="comments.createdOn" arguments="${comment.createdOn}" />
-			<c:if test="${not empty comment.url}">,&nbsp;Site:&nbsp;<a href="${comment.url}" rel="nofollow"><c:out value="${comment.urlDomain}" /><i class="fa fa-external-link"></i></a></c:if>
 		</div>
 	</li>
 	<c:remove var="liClass"/>
