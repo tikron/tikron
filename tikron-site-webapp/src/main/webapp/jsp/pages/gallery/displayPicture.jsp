@@ -30,7 +30,7 @@
 		<figure>
 			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
 		</figure>
-		<c:if test="${picture.category.commentable}">
+		<c:if test="${picture.category.commentable and picture.id ne 731}">
 		<section class="commentBox">
 			<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
 			<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
