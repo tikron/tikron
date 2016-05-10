@@ -23,7 +23,7 @@
 	float: left;
 }
 
-#content.gallery.category ul.thumbs div.wrap {
+#content.gallery.category ul.thumbs figure {
 	width: 100px;
 /*	height: 106px; */
 	height: 95px;
@@ -33,8 +33,12 @@
 	text-align: center;
 }
 
-#content.gallery.category ul.thumbs div.wrap:hover {
+#content.gallery.category ul.thumbs figure:hover {
 	background-color: #52413A;
+}
+
+#content.gallery.category ul.thumbs a {
+	text-decoration: none;
 }
 
 #content.gallery.category ul.thumbs img {
@@ -43,14 +47,13 @@
 	margin: 0 auto;
 }
 
-#content.gallery.category ul.thumbs a.caption {
+#content.gallery.category ul.thumbs figcaption {
 	margin-top: 5px;
 	height: 1.5em;
 	display: block;
 	line-height: 110%;
 	font-size: 0.7em;
 	color: #CCCCCC;
-	text-decoration: none;
 }
 
 

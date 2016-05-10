@@ -26,21 +26,23 @@
 			</c:url>
 			<%@ include file="/jsp/include/list_border.jspf" %>
 			<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
-				<div class="wrap">
-					<c:choose>
-					<c:when test="${category.displayType eq 'OVERLAY'}">
-						<%-- Show image with "fancybox" --%>
-						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
-							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
-						</a>
-					</c:when>
-					<c:otherwise>
-						<%-- Show image in new page --%>
-						<a href="${displayPictureUrl}" title="<spring:message code='gallery.thumnail.description'/>"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" /></a>
-					</c:otherwise>
-					</c:choose>
-					<a class="caption" href="${displayPictureUrl}"><c:out value="${picture.title}"></c:out></a>
-				</div>
+				<figure>
+				<c:choose>
+				<c:when test="${category.displayType eq 'OVERLAY'}">
+					<%-- Show image with "fancybox" --%>
+					<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
+						<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
+					</a>
+				</c:when>
+				<c:otherwise>
+					<%-- Show image in new page --%>
+					<a href="${displayPictureUrl}" title="<spring:message code='gallery.thumnail.description'/>">
+						<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
+					</a>
+				</c:otherwise>
+				</c:choose>
+					<figcaption><c:out value="${picture.title}"></c:out></figcaption>
+				</figure>
 			</li>
 			<c:remove var="liClass"/>
 			<c:remove var="displayPictureUrl" />
