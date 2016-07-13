@@ -15,8 +15,8 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="clips clear">
-	<div id="contentWrap">
+<section id="content" class="clips row">
+	<div class="col-lg-12 col-md-12 col-xs-12">
 		<article id="contentHeader">
 			<header><h1>Kurzfilme</h1></header>
 			<p>

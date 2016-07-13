@@ -11,8 +11,8 @@
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
 <c:url var="displayBalticSea2014Url" value="/travels/displayBalticSea2014.html" />
-<section id="content" class="travels index clear">
-	<div id="contentWrap">
+<section id="content" class="travels index row">
+	<div class="col-lg-9 col-md-12 col-xs-12">
 		<article id="contentHeader">
 			<header><h1>Reisen</h1></header>
 			<p>So oft es geht, fahren wir mit dem Campingmobil raus und schauen uns andere Länder an. Meistens geht es nach Skandinavien, weil man sich dort am besten von dem hektischen Leben in Deutschland erholen kann. Auch Polen und das Baltikum wurden schon erkundet. Hier gibt es als westlich geprägten Europäer noch viel zu entdecken. In südlicher Himmelsrichtung waren wir nun schon drei Mal in Kroatien. Die dalmatinischen Inseln sind sehr schön, das Mittelmeer auch im Spätsommer noch warm und die Strände nicht so zugebaut wie in Frankreich oder Italien.</p>

@@ -567,7 +567,11 @@ dl.captchaImage img {
 
 [class*="col-"] {
 	float: left;
-	padding: 15px;
+	padding: 0 15px 0 15px;
+}
+
+.row {
+	padding: 15px 0 15px 0;
 }
 
 .row::after {
@@ -733,7 +737,6 @@ footer#main ul#goodies .icon_monitoring {
 /*** Default content **********************************************/
 #contentHeader {
 	margin-bottom: 40px;
-	width: 840px;
 }
 
 #contentHeader img {
@@ -743,44 +746,29 @@ footer#main ul#goodies .icon_monitoring {
 
 #contentMain {
 	clear: left;
-	width: 840px;
-}
-
-/*** Content divided in left/right section *****************************/
-
-#contentLeft {
-	float: left;
-	width: 840px;
-}
-
-#contentRight {
-	float: right;
-	width: 235px;
-/*	min-height: 300px;
-	border-left: 1px solid #707070; */
 }
 
 /*** Right content showing an introduction *****************************/
 
-#contentRight.intro h1 {
+.intro h1 {
 	font-size: 1.3em;
 	margin-bottom: 0.5em;
 }
 
-#contentRight.intro .description {
+.intro .description {
 	margin-bottom: 30px;
 }
 
-#contentRight.intro .description.box {
+.intro .description.box {
 	min-height: 376px;
 	margin-bottom: 10px;
 }
 
-#contentRight.intro ul.pager {
+.intro ul.pager {
 	margin-bottom: 12px;
 }
 
-#contentRight.intro ul.buttonBar.afterPager .button {
+.intro ul.buttonBar.afterPager .button {
 	width: 156px; /* like pager box */
 }
 

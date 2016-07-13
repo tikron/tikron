@@ -16,8 +16,8 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="gallery category clear">
-	<section id="contentLeft">
+<section id="content" class="gallery category row">
+	<section class="col-lg-9 col-md-12 col-xs-12">
 		<ul class="thumbs">
 		<c:forEach var="picture" items="${pictures}" varStatus="listStatus">
 			<c:url var="displayPictureUrl" value="/gallery/displayPicture.html">
@@ -47,7 +47,7 @@
 		</c:forEach>
 		</ul>
 	</section>
-	<section id="contentRight" class="intro">
+	<section class="col-lg-3 col-md-12 col-xs-12 intro">
 		<div class="description">
 			<article>
 				<header><h1><c:out value="${category.title}" /></h1></header>

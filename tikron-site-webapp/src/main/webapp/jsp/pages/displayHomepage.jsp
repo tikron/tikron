@@ -12,7 +12,7 @@
 <%@ include file="/jsp/include/header.jspf"%>
 <%@ include file="/jsp/include/nav_main.jspf"%>
 <c:url var="displayLogAjaxUrl" value="/displayLogAjax.html"/>
-<section id="content" class="homepage row clear">
+<section id="content" class="homepage row">
 	<section class="col-lg-9 col-md-12 col-xs-12">
 		<h1><spring:message code="displayHomepage.headline" /></h1>
 		<article class="feature">

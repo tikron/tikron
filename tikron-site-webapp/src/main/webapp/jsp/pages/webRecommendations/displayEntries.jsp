@@ -12,11 +12,11 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="links clear">
-	<div id="contentWrap">
+<section id="content" class="links row">
+	<div class="col-lg-9 col-md-12 col-xs-12">
 		<article id="contentHeader">
 			<figure><img src="/images/links/btx.jpg" alt="Wegweiser" /></figure>
-			<header><h1>Surftipps</h1></header>
+			<header class="content"><h1>Surftipps</h1></header>
 			<p>
 				Das Bildungsangebot von "Tikron" soll hier durch Verweise auf weitere Angebote zu Kunst, Kultur und Internet ergänzt werden.
 				Denn es mehren sich Anzeichen, dass es deisbezüglich bei dem einen oder anderen Nachholbedarf gibt.

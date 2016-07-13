@@ -16,8 +16,8 @@
 <%@ include file="/jsp/include/nav_main.jspf" %>
 <c:url var="sendContactMessageUrl" value="/sendContactMessage.json" />
 <c:url var="captchaImageUrl" value="/captchaImage.html"><c:param name="random" /></c:url>
-<section id="content" class="clear">
-	<div id="contentWrap">
+<section id="content" class="row">
+	<div class="col-lg-12 col-md-12 col-xs-12">
 		<section id="contentHeader">
 			<header><h1><spring:message code="sendContactMessage.headline" /></h1></header>
 			<p><spring:message code="sendContactMessage.featureText" /></p>

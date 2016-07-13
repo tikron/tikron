@@ -20,11 +20,13 @@
 <body>
 	<div id="container">
 		<div id="wrap">
-			<section id="content">
-				<h1><fmt:message key="error.headline" bundle="${msg}" /></h1>
-				<p><fmt:message key="error.info" bundle="${msg}" /></p>
-				<br />
-				<a href="/"><fmt:message key="link.homepage" bundle="${msg}" /></a>
+			<section id="content" class="row">
+				<div class="col-lg-12 col-md-12 col-xs-12">
+					<h1><fmt:message key="error.headline" bundle="${msg}" /></h1>
+					<p><fmt:message key="error.info" bundle="${msg}" /></p>
+					<br />
+					<a href="/"><fmt:message key="link.homepage" bundle="${msg}" /></a>
+				</div>
 			</section>
 		</div>
 	</div>

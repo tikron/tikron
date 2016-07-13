@@ -11,8 +11,8 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="gallery catalog clear">
-	<div id="contentWrap">
+<section id="content" class="gallery catalog row">
+	<div class="col-lg-9 col-md-12 col-xs-12">
 		<article id="contentHeader">
 			<header><h1><c:out value="${catalog.title}" /></h1></header>
 			<p><c:out value="${catalog.longDescription}" escapeXml="false"/></p>

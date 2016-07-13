@@ -17,8 +17,8 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf"%>
 <%@ include file="/jsp/include/header.jspf"%>
 <%@ include file="/jsp/include/nav_main.jspf"%>
-<section id="content" class="travel story clear">
-	<article id="contentWrap">
+<section id="content" class="travel story row">
+	<article class="col-lg-12 col-md-12 col-xs-12">
 		<header id="contentHeader">
 			<h1>Einmal um die Ostsee</h1>
 			<p><strong>Ein Reisebericht über eine 3-monatige Campingtour Skandinavien und Baltikum</strong></p>

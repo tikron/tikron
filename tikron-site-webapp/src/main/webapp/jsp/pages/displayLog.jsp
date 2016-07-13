@@ -11,8 +11,8 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="log clear">
-	<div id="contentWrap">
+<section id="content" class="log row">
+	<div class="col-lg-12 col-md-12 col-xs-12">
 		<section id="contentHeader" class="clear">
 			<figure><img src="/images/log.gif" alt="Was bisher geschah" /></figure>
 			<header><h1>Was bisher geschah...</h1></header>

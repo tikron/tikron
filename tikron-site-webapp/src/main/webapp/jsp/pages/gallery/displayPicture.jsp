@@ -25,8 +25,8 @@
 <c:url var="addCommentUrl" value="/gallery/addComment.html">
 	<c:param name="pictureId" value="${picture.id}"/>
 </c:url>
-<article id="content" class="gallery picture clear">
-	<section id="contentLeft">
+<article id="content" class="gallery picture row">
+	<section class="col-lg-9 col-md-12 col-xs-12">
 		<figure>
 			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
 		</figure>
@@ -37,7 +37,7 @@
 		</section>
 		</c:if>
 	</section>
-	<section id="contentRight" class="intro">
+	<section class="col-lg-3 col-md-12 col-xs-12 intro">
 		<div id="galleryInfo" class="teaser">
 			<div class="description box">
 				<header>
