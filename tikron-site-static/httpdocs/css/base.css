@@ -567,7 +567,13 @@ dl.captchaImage img {
 
 [class*="col-"] {
 	float: left;
-	padding: 0 15px 0 15px;
+	padding: 0 10px 0 10px;
+}
+
+@media only screen and (min-width: 1224px) {
+	[class*="col-"] {
+		padding: 0 15px 0 15px;
+	}
 }
 
 .row {
@@ -585,7 +591,7 @@ dl.captchaImage img {
 header#main {
 	background: url('img/bg/brown1742.jpg');
 	border-bottom: 1px solid #bbbbbb;
-	padding: 0 60px;
+	padding: 0 45px;
 	height: 72px;
 }
 
@@ -687,14 +693,20 @@ nav#main div.sub > ul > li.current > a {
 /*** Footer ************************************/
 
 footer#main {
-	padding: 8px 60px;
+	padding: 8px 45px;
 	border-top: 1px solid #bbbbbb;
 	background: url('img/bg/brown1742.jpg');
 }
 
 footer#main ul#siteInfo {
+	text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+footer#main ul#siteInfo {
 	float: left;
 	margin-top: 3px; /* position in vertical middle of footer */
+}
 }
 
 footer#main ul#siteInfo li {
@@ -706,9 +718,22 @@ footer#main ul#siteInfo span {
 	margin-right: 25px;
 	white-space: nowrap;
 }
+footer#main ul#siteInfo li:last-child a,
+footer#main ul#siteInfo li:last-child span {
+	margin-right: 0;
+}
 
 footer#main ul#goodies {
-	float: right;
+	margin: 20px auto 0;
+	width: 220px;
+}
+	
+@media only screen and (min-width: 768px) {
+	footer#main ul#goodies {
+		float: right;
+		margin: 0;
+		width: auto;
+	}
 }
 
 footer#main ul#goodies li {
@@ -717,6 +742,10 @@ footer#main ul#goodies li {
 
 footer#main ul#goodies a {
 	margin-left: 25px;
+}
+
+footer#main ul#goodies li:first-child a {
+	margin-left: 0;
 }
 
 footer#main ul#goodies .icon_feed {
