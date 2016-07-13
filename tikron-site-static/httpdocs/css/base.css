@@ -158,15 +158,10 @@ ul.index {
 ul.index li {
 	margin-left: -15px;
 	padding: 15px;
+}
+
+ul.index li:not(:first-child) {
 	border-top: 2px solid #4A3232;
-}
-
-ul.index li:first-child {
-	border-top: none;
-}
-
-ul.index li:last-child {
-/*	border-bottom: none;*/
 }
 
 ul.imageIndex li {
@@ -190,11 +185,10 @@ ul.imageIndex li .image img {
 ul.imageIndex li .description {
 	margin-left: 230px;
 	padding: 0 20px 10px 0;
-	border-bottom: 2px solid #4A3232;
 }
 
-ul.imageIndex li:last-child .description {
-	border-bottom: 0;
+ul.imageIndex li:not(:last-child) .description {
+	border-bottom: 2px solid #4A3232;
 }
 
 ul.imageIndex li.last .description {
@@ -670,7 +664,6 @@ nav#main div.sub > ul > li {
 }
 
 nav#main div.sub > ul > li > a {
-	border-left: 1px solid #887766;
 	color: #B1A68C;
 	display: block;
 	padding: 0 10px;
@@ -682,8 +675,8 @@ nav#main div.sub > ul > li > a:hover {
 	text-decoration: none;
 }
 
-nav#main div.sub > ul > li:first-child > a {
-	border: 0 none;
+nav#main div.sub > ul > li:not(:first-child) > a {
+	border-left: 1px solid #887766;
 }
 
 nav#main div.sub > ul > li.current > a {
@@ -715,12 +708,11 @@ footer#main ul#siteInfo li {
 
 footer#main ul#siteInfo a,
 footer#main ul#siteInfo span {
-	margin-right: 25px;
 	white-space: nowrap;
 }
-footer#main ul#siteInfo li:last-child a,
-footer#main ul#siteInfo li:last-child span {
-	margin-right: 0;
+footer#main ul#siteInfo li:not(:last-child) a,
+footer#main ul#siteInfo li:not(:last-child) span {
+	margin-right: 25px;
 }
 
 footer#main ul#goodies {
@@ -740,12 +732,8 @@ footer#main ul#goodies li {
 	display: inline;
 }
 
-footer#main ul#goodies a {
+footer#main ul#goodies li:not(:first-child) a {
 	margin-left: 25px;
-}
-
-footer#main ul#goodies li:first-child a {
-	margin-left: 0;
 }
 
 footer#main ul#goodies .icon_feed {
