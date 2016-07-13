@@ -16,7 +16,6 @@
 		</c:when>
 	</c:choose>
 	<c:set var="displayCategoryTitle" value="${category.shortTitle != null ? category.shortTitle : category.title}" />
-	<c:if test="${subNavStatus.first}"><c:set var="subClass" value="${subClass} first" /></c:if>
 	<c:if test="${topNavCategoryId eq category.id}"><c:set var="subClass" value="${subClass} current" /></c:if>
 	<li<c:if test="${not empty subClass}"><c:out value=" class=\"${fn:trim(subClass)}\"" escapeXml="false"/></c:if>><a href="${displayCategoryUrl}"><c:out value="${displayCategoryTitle}" /></a></li>
 	<c:remove var="subClass"/>

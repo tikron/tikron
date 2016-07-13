@@ -5,7 +5,7 @@
 <%@ include file="/jsp/include/environment.jspf"%>
 <c:url var="displaySubNavAjaxUrl" value="/displaySubNavAjax.html"><c:param name="catalogId" /></c:url>
 <nav id="main">
-	<div class="top">
+	<div class="top clear">
 		<ul>
 			<%-- HOMEPAGE --%>
 			<li<c:if test="${topNavAction eq 'displayHomepage'}"><c:out value=" class=\"current\"" escapeXml="false"/></c:if>>
@@ -64,10 +64,8 @@
 				<a id="navTop_contact" href="${sendContactMessageUrl}"><spring:message code="navMain.contact"/></a>
 			</li>
 		</ul>
-		<div class="clear"></div>
 	</div>
 </nav>
-<div class="clear"></div>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var tikronNav = new TikronNav({"loadSubNavUrl": "${displaySubNavAjaxUrl}"});

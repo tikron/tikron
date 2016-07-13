@@ -10,14 +10,14 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="imprint">
+<section id="content" class="imprint clear">
 	<div id="contentWrap">
 		<article id="contentLeft">
 			<header id="contentHeader">
 				<h1>Impressum</h1>
 				<p>Auch hier geht es nicht ganz ohne rechtliche Feinheiten ab. Deshalb an dieser Stelle Angaben zum Verantwortlichen der Website.</p>
 			</header>
-			<section id="contentMain">
+			<section id="contentMain" class="clear">
 				<div class="address"></div>
 				<p>Diese Adresse ist jedoch nur für Schriftverkehr vorgesehen, der nicht anders als auf postalischem Weg abgewickelt werden kann. Für alle anderen Fälle steht unter <a href="${sendContactMessageUrl}">Kontakt</a> eine E-Mail-Adresse zur Verfügung.</p>
 				<p>Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Alle Inhalte meiner Seiten unterliegen - soweit nicht anders gekennzeichnet - meinem Urheberrecht. Es ist nicht gestattet, Texte oder Grafiken meiner Seite ohne meine schriftliche Einwilligung ganz oder in Teilen zu verwenden. Ebenfalls ist es nicht gestattet, eine Verlinkung von Bild-, Ton- oder Videodateien auf andereren Websites vorzunehmen.</p>
@@ -38,7 +38,6 @@
 				    </p>  
 				</div>
 				 --%>
-				<div class="clear"></div>
 			</section>
 		</article>
 		<section id="contentRight">
@@ -51,7 +50,6 @@
 			</aside>
 		</section>
 	</div>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

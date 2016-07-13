@@ -14,7 +14,7 @@
 <%@ include file="/jsp/include/header.jspf"%>
 <%@ include file="/jsp/include/nav_main.jspf"%>
 <c:url var="displayClipsUrl" value="/clips/displayClips.html"></c:url>
-<section id="content" class="clips">
+<section id="content" class="clips clear">
 	<div id="contentWrap">
 		<section id="contentLeft">
 			<video<c:if test='${not empty clip.videoWidth}'> width="${clip.videoWidth}"</c:if><c:if test='${not empty clip.videoHeight}'> height="${clip.videoHeight}"</c:if> controls="controls">
@@ -44,7 +44,6 @@
 			</ul>
 		</section>
 	</div>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf"%>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

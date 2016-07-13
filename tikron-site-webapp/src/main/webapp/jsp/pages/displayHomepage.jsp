@@ -12,8 +12,8 @@
 <%@ include file="/jsp/include/header.jspf"%>
 <%@ include file="/jsp/include/nav_main.jspf"%>
 <c:url var="displayLogAjaxUrl" value="/displayLogAjax.html"/>
-<section id="content" class="homepage">
-	<section id="contentLeft">
+<section id="content" class="homepage row clear">
+	<section class="col-lg-9 col-md-12 col-xs-12">
 		<h1><spring:message code="displayHomepage.headline" /></h1>
 		<article class="feature">
 			<figure>
@@ -40,10 +40,9 @@
 			</div>
 		</section>
 	</section>
-	<section id="contentRight">
+	<section class="col-lg-3 col-md-12 col-xs-12">
 		<%@ include file="/jsp/include/teaserbar.jspf" %>
 	</section>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf"%>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

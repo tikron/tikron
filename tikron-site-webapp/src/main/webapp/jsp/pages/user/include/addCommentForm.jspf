@@ -5,29 +5,26 @@
 <spring:message code="addComment.label.text" var="msgLabelText" />
 <h2><spring:message code="addComment.header" /></h2>
 <c:url var="addCommentUrl" value="/addComment.json" />
-<form:form modelAttribute="comment" action="${addCommentUrl}" id="addComment">
+<form:form modelAttribute="comment" action="${addCommentUrl}" id="addComment" class="clear">
 	<form:hidden path="relatedEntityType" />
 	<form:hidden path="relatedEntityId" />
 	<ul class="globalMsg"><form:errors element="li" cssClass="error"/></ul>
-	<fieldset>
+	<fieldset class="clear">
 		<dl id="author">
 			<dt><%--<form:label path="author"><spring:message code="addComment.label.author" />&nbsp;*:</form:label> --%></dt>
 			<dd><form:input path="author" placeholder="${msgLabelAuthor}" /><span class="error"><form:errors path="author" /></span></dd>
 		</dl>
-		<dl id="email" class="right">
+		<dl id="email" class="right clear">
 			<dt><%--<form:label path="email"><spring:message code="addComment.label.email" /></form:label> --%></dt>
 			<dd><form:input path="email" type="email" placeholder="${msgLabelEmail}" /><span class="error"><form:errors path="email" /></span></dd>
 		</dl>
-		<div class="clear"></div>
 		<dl id="text">
 			<dt><%--<form:label path="text"><spring:message code="addComment.label.text" />&nbsp;*:</form:label> --%></dt>
 			<dd><form:textarea path="text" placeholder="${msgLabelText}" /><span class="error"><form:errors path="text" /></span></dd>
 		</dl>
 	</fieldset>
-	<div class="clear"></div>
 	<ul class="buttonBar">
 		<li><button type="submit" class="button button_green" title="<spring:message code='addComment.button.save.description' />"><i class="fa fa-check-square-o"></i><spring:message code="addComment.button.save" /></button></li>
 <%-- 		<li><button type="button" class="button button_green" onclick="location.href='${servletContextPath}${successView}';"><i class="fa fa-reply"></i><spring:message code="button.cancel" /></button></li> --%>
 	</ul>
-	<div class="clear"></div>
 </form:form>

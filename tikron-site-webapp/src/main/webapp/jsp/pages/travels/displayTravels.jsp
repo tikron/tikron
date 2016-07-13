@@ -11,7 +11,7 @@
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
 <c:url var="displayBalticSea2014Url" value="/travels/displayBalticSea2014.html" />
-<section id="content" class="travels index">
+<section id="content" class="travels index clear">
 	<div id="contentWrap">
 		<article id="contentHeader">
 			<header><h1>Reisen</h1></header>
@@ -20,14 +20,13 @@
 		</article>
 		<section id="contentMain">
 			<ul class="imageIndex">
-			<li class="first">
+			<li>
 				<a href="${displayBalticSea2014Url}" class="image"><img src="/images/travels/balticsee.png" alt="Einmal um die Ostsee" /></a>
-				<div class="description">
+				<div class="description clear">
 					<article>
 						<header><h2><a href="${displayBalticSea2014Url}">Einmal um die Ostsee</a></h2></header>
 						<p>Im Jahr 2014 sind wir mit dem VW-Bus einmal um die Ostsee gefahren. Naja, nicht ganz herum. Lappland und Russland wären dann doch etwas zu weit gewesen. Trotzdem sind wir durch 6 Länder gefahren und haben eine für uns bis dahin unbekannte Gegend erkundet. Besonders Estland war so schön wie einsam. Der Bericht beschreibt die Tour mit vielen Erlebnissen.</p>
 					</article>
-					<div class="clear"></div>
 				</div>
 			</li>
 			<c:if test="${not empty catalog}">
@@ -37,15 +36,14 @@
 						<c:param name="categoryId" value="${category.id}"/>
 						<c:param name="name" value="${category.seoName}"/>
 					</c:url>
-					<li<c:if test="${listStatus.last}"> class="last"</c:if>>
+					<li>
 						<article>
 							<figure>
 								<a href="${displayCategoryUrl}" class="image"><img src="/images/gallery/catalog_${catalog.id}/${category.imageName}" alt="${category.title}"/></a>
 							</figure>
-							<div class="description">
+							<div class="description clear">
 									<header><h2><a href="${displayCategoryUrl}"><c:out value="${category.title}" /></a></h2></header>
 									<p><c:out value="${category.shortDescription}" escapeXml="false"/></p>
-								<div class="clear"></div>
 							</div>
 						</article>
 					</li>
@@ -56,7 +54,6 @@
 			</ul>
 		</section>
 	</div>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

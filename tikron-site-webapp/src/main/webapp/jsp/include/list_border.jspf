@@ -1,3 +1,0 @@
-<c:if test="${listStatus.first}"><c:set var="liClass" value="${liClass} first" /></c:if>
-<c:if test="${listStatus.last}"><c:set var="liClass" value="${liClass} last" /></c:if>
-<c:set var="liClass" value="${fn:trim(liClass)}" />

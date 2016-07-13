@@ -16,7 +16,7 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="gallery category">
+<section id="content" class="gallery category clear">
 	<section id="contentLeft">
 		<ul class="thumbs">
 		<c:forEach var="picture" items="${pictures}" varStatus="listStatus">
@@ -24,8 +24,7 @@
 				<c:param name="pictureId" value="${picture.id}"></c:param>
 				<c:param name="name" value="${picture.seoName}"/>
 			</c:url>
-			<%@ include file="/jsp/include/list_border.jspf" %>
-			<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
+			<li>
 				<figure>
 				<c:choose>
 				<c:when test="${category.displayType eq 'OVERLAY'}">
@@ -44,7 +43,6 @@
 					<figcaption><c:out value="${picture.title}"></c:out></figcaption>
 				</figure>
 			</li>
-			<c:remove var="liClass"/>
 			<c:remove var="displayPictureUrl" />
 		</c:forEach>
 		</ul>
@@ -65,7 +63,6 @@
 			</ul>
 		</c:if>
 	</section>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

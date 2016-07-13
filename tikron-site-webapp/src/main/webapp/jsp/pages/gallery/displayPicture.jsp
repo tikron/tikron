@@ -25,7 +25,7 @@
 <c:url var="addCommentUrl" value="/gallery/addComment.html">
 	<c:param name="pictureId" value="${picture.id}"/>
 </c:url>
-<article id="content" class="gallery picture">
+<article id="content" class="gallery picture clear">
 	<section id="contentLeft">
 		<figure>
 			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
@@ -63,7 +63,6 @@
 			</ul>
 		</div>
 	</section>
-	<div class="clear"></div>
 </article>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

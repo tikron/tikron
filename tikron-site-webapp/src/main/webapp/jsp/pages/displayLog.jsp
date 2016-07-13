@@ -11,19 +11,17 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="log">
+<section id="content" class="log clear">
 	<div id="contentWrap">
-		<section id="contentHeader">
+		<section id="contentHeader" class="clear">
 			<figure><img src="/images/log.gif" alt="Was bisher geschah" /></figure>
 			<header><h1>Was bisher geschah...</h1></header>
 			<p>Wer Tikron nicht so häufig besucht, kann auf dieser Seite auch Neuigkeiten nachlesen, die vielleicht schon etwas länger her sind. Leider sind <strong>nicht mehr alle Protokolleinträge vorhanden</strong>, so dass diese nur bis in's Jahr 2007 zurück reichen.</p>
-			<div class="clear"></div>
 		</section>
 		<section id="contentMain">
 			<%@ include file="displayLogContent.jspf" %>
 		</section>
 	</div>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

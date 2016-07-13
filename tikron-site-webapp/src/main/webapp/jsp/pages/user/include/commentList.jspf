@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <ul class="comments">
 <c:forEach var="comment" items="${comments}" varStatus="listStatus">
-	<%@ include file="/jsp/include/list_border.jspf" %>
-	<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
+	<li>
 		<span class="text"><c:out value="${comment.text}" escapeXml="false"></c:out></span>
 		<div class="attributes">
 			<spring:message code="comments.author" />&nbsp;<strong><c:out value="${comment.author}" /></strong>&nbsp;<spring:message code="comments.createdOn" arguments="${comment.createdOn}" />
 		</div>
 	</li>
-	<c:remove var="liClass"/>
 </c:forEach>
 </ul>

@@ -15,7 +15,7 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="clips">
+<section id="content" class="clips clear">
 	<div id="contentWrap">
 		<article id="contentHeader">
 			<header><h1>Kurzfilme</h1></header>
@@ -34,8 +34,7 @@
 				<c:forEach var="clip" items="${clips}" varStatus="listStatus">
 				<c:set var="dateRecordedHtml"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="yyyy-MM" /></c:set>
 				<c:set var="playtimeHtml"><fmt:formatDate value="${clip.playtime}" type="time" pattern="'PT'm'M'ss'S'" /></c:set>
-				<%@ include file="/jsp/include/list_border.jspf" %>
-				<li<c:if test="${not empty liClass}"> class="${liClass}"</c:if>>
+				<li>
 					<c:url var="displayClipUrl" value="/clips/displayClip.html">
 						<c:param name="clipId" value="${clip.id}"/>
 						<c:param name="name" value="${clip.seoName}"/>
@@ -47,7 +46,7 @@
 								<span class="duration"><time datetime="${playtimeHtml}"><fmt:formatDate value="${clip.playtime}" type="time" pattern="m:ss" /></time></span>
 							</a>
 						</figure>
-						<div class="description">
+						<div class="description clear">
 							<header>
 								<h2><a href="${displayClipUrl}"><c:out value="${clip.title}" /></a></h2>
 								<span class="date"><time datetime="${dateRecordedHtml}"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="MMM. yyyy" /></time></span>
@@ -55,17 +54,14 @@
 							<p><c:out value="${clip.shortDescription}" /></p>
 							<c:set var="rating" value="${ratings[clip.id]}" />
 							<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
-							<div class="clear"></div>
 						</div>
 					</article>
 					<c:remove var="displayClipUrl"/>
 				</li>
-				<c:remove var="liClass"/>
 				</c:forEach>
 			</ul>
 		</section>
 	</div>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>

@@ -17,7 +17,7 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf"%>
 <%@ include file="/jsp/include/header.jspf"%>
 <%@ include file="/jsp/include/nav_main.jspf"%>
-<section id="content" class="travel story">
+<section id="content" class="travel story clear">
 	<article id="contentWrap">
 		<header id="contentHeader">
 			<h1>Einmal um die Ostsee</h1>
@@ -60,8 +60,7 @@
 			<h2>Saaremaa</h2>
 			<p>Am Abend gibt es noch ein weiteres kurzes Übersetzen per Fähre. Diese Mal auf die kleine Insel Muhu, die der estnischen Ostseeinsel <a href="http://www.saaremaa.ee/" rel="nofollow">Saaremaa<i class="fa fa-external-link"></i></a> vorgelagert ist. Schließlich erreichen wir unser nächstens Etappenziel, das <a href="http://www.puhkaeestis.ee/et/rukkilille-talu" rel="nofollow">Ferienhaus Rukkilille Talu<i class="fa fa-external-link"></i></a>. Ein liebevoll restaurierter alter Stall mit Feldsteinmauern und Reetdach, umgeben von Wald, Wiesen und Wacholderhain. Die Besitzer begrüßen uns freundlich. Alles ist so, wie wir es uns gewünscht hatten. Dennoch fällt es mir sehr schwer, unsere Ausstattung aus dem VW-Bus ins Haus zu tragen.</p>
 			<a class="storyImage right" href="<c:out value="${imageServerUrl}${pictures['p1406163'].image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${pictures['p1406163'].title}"><img alt="${pictures['p1406163'].title}" src="<c:out value="${imageServerUrl}${pictures['p1406163'].image.imageUris['galleryStory']}" />" /></a>
-			<p>Die nächsten Wochen wollen wir nutzen, um die Insel zu erkunden. Weil das Wetter noch nicht wieder richtig aufgedreht hat, besuchen wir die Hauptstadt der Insel Kuressaare und dort die Bischofsburg Arensburg. Zunächst zaudern wir beim Eintrittspreis, kommen aber voll auf unsere Kosten. Man kann die Burg fast vollständig besichtigen. Es gibt sehr viele Räume und kleine Gänge zu erforschen. Man gelangt in den letzten Winkel bis hinauf auf die trutzigen Schutzwälle. Im Inneren der Burg befindet sich das Saaremaa-Museum, das zurzeit eine sehr vielfältige Ausstellung von Landwirtschaft und Technik des vergangenen Jahrhunderts zeigt.</p>
-			<div class="clear"></div>
+			<p class="clear">Die nächsten Wochen wollen wir nutzen, um die Insel zu erkunden. Weil das Wetter noch nicht wieder richtig aufgedreht hat, besuchen wir die Hauptstadt der Insel Kuressaare und dort die Bischofsburg Arensburg. Zunächst zaudern wir beim Eintrittspreis, kommen aber voll auf unsere Kosten. Man kann die Burg fast vollständig besichtigen. Es gibt sehr viele Räume und kleine Gänge zu erforschen. Man gelangt in den letzten Winkel bis hinauf auf die trutzigen Schutzwälle. Im Inneren der Burg befindet sich das Saaremaa-Museum, das zurzeit eine sehr vielfältige Ausstellung von Landwirtschaft und Technik des vergangenen Jahrhunderts zeigt.</p>
 			<a class="storyImage left" href="<c:out value="${imageServerUrl}${pictures['p1406204'].image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${pictures['p1406204'].title}"><img alt="${pictures['p1406204'].title}" src="<c:out value="${imageServerUrl}${pictures['p1406204'].image.imageUris['galleryStory']}" />" /></a>
 			<p>In den folgenenden Tagen wird es draußen auch wieder wärmer. Wir sehen den Strand Pammana, die Steilküste Panga Pank, viele Bockmühlen, Buswartehäuschen mit Gardinen und bestaunen die Kaali-Meteoritenkrater. Wir treffen die wie unsere Vermieter ebenfalls deutschen Auswanderer und Senf-Produzenten <a href="http://www.mustjala-mustard.de/" rel="nofollow">Mustjala Mustard<i class="fa fa-external-link"></i></a> in Pahapilli. Mit dem VW-Bus streifen wir durch Waldwege des Nationalparks Vilsandi um irgendwo im Nirgendwo anzukommen. Wäre das Wasser nicht so kalt, könnte man begleitet vom sanften Rauschen des Windes und dem unablässigem Gezwitscher der vielen kleinen Vögel durch das flache Wasser waten und die Insel Vilsandi erreichen. Verharrt man eine Weile und lässt den Blick über die ebene, öde und trotzdem irgendwie schöne Landschaft gleiten, glaubt man, der erste Mensch hier zu sein.</p>
 			<a class="storyImage right" href="<c:out value="${imageServerUrl}${pictures['p1406217'].image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${pictures['p1406217'].title}"><img alt="${pictures['p1406217'].title}" src="<c:out value="${imageServerUrl}${pictures['p1406217'].image.imageUris['galleryStory']}" />" /></a>
@@ -101,7 +100,6 @@
 		</section>
 		</c:if>
 	</article>
-	<div class="clear"></div>
 </section>
 <%@ include file="/jsp/include/footer.jspf"%>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
