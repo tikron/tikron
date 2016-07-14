@@ -683,6 +683,27 @@ nav#main div.sub > ul > li.current > a {
 	color: #FFFFFF;
 }
 
+nav#main #toggleNav {
+	margin-left: 55px;
+	padding: 5px 0;
+	color: #B1A68C;
+}
+
+@media only screen and (max-width: 959px) {
+	nav#main div.top ul {
+		display: none;
+	}
+	nav#main div.sub {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	nav#main #toggleNav {
+		display: none;
+	}
+}
+
 /*** Footer ************************************/
 
 footer#main {

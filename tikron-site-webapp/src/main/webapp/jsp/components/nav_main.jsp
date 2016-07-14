@@ -64,6 +64,7 @@
 				<a id="navTop_contact" href="${sendContactMessageUrl}"><spring:message code="navMain.contact"/></a>
 			</li>
 		</ul>
+		<i id="toggleNav" class="fa fa-bars fa-2x" aria-hidden="true"></i>
 	</div>
 </nav>
 <script type="text/javascript">
