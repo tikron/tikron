@@ -11,18 +11,20 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="log row">
-	<div class="col-lg-12 col-md-12 col-xs-12">
-		<section id="contentHeader" class="clear">
-			<figure><img src="/images/log.gif" alt="Was bisher geschah" /></figure>
-			<header><h1>Was bisher geschah...</h1></header>
-			<p>Wer Tikron nicht so häufig besucht, kann auf dieser Seite auch Neuigkeiten nachlesen, die vielleicht schon etwas länger her sind. Leider sind <strong>nicht mehr alle Protokolleinträge vorhanden</strong>, so dass diese nur bis in's Jahr 2007 zurück reichen.</p>
-		</section>
-		<section id="contentMain">
-			<%@ include file="displayLogContent.jspf" %>
-		</section>
+<div id="content" class="log">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<section id="contentHeader" class="clear">
+				<figure><img src="/images/log.gif" alt="Was bisher geschah" /></figure>
+				<header><h1>Was bisher geschah...</h1></header>
+				<p>Wer Tikron nicht so häufig besucht, kann auf dieser Seite auch Neuigkeiten nachlesen, die vielleicht schon etwas länger her sind. Leider sind <strong>nicht mehr alle Protokolleinträge vorhanden</strong>, so dass diese nur bis in's Jahr 2007 zurück reichen.</p>
+			</section>
+			<section id="contentMain">
+				<%@ include file="displayLogContent.jspf" %>
+			</section>
+		</div>
 	</div>
-</section>
+</div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <%@ include file="/jsp/include/html_end.jspf" %>

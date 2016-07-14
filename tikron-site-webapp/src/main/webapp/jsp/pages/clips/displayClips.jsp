@@ -15,54 +15,56 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<section id="content" class="clips row">
-	<div class="col-lg-12 col-md-12 col-xs-12">
-		<article id="contentHeader">
-			<header><h1>Kurzfilme</h1></header>
-			<p>
-				In unregelmäßigen Abständen wird hier im Kurzfilmkino ein neuer Film gezeigt.
-				Mit der <a href="http://www.nikon.de/de_DE/product/digital-cameras/coolpix/all-weather/coolpix-aw110" rel="nofollow">Nikon Coolpix AW110<i class="fa fa-external-link"></i></a> kann man, wie mit vielen anderen Kompaktkameras auch, Filme in HD-Qualität drehen.
-				Weil sie Staub- und Wasserdicht ist, sind auch Aufnahmen in ungewöhnlichem Terrain möchlich.
-				So war sie einige Male beim Schnorcheln dabei.
-				Auch Staub und Qualm beim Tracktor Pulling sind kein Problem.
-				Viel Spaß beim gucken.
-				Der Eintritt ist wie immer kostenlos und das Kino frei von Werbung.
-			</p>
-		</article>
-		<section id="contentMain">
-			<ul class="imageIndex">
-				<c:forEach var="clip" items="${clips}" varStatus="listStatus">
-				<c:set var="dateRecordedHtml"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="yyyy-MM" /></c:set>
-				<c:set var="playtimeHtml"><fmt:formatDate value="${clip.playtime}" type="time" pattern="'PT'm'M'ss'S'" /></c:set>
-				<li>
-					<c:url var="displayClipUrl" value="/clips/displayClip.html">
-						<c:param name="clipId" value="${clip.id}"/>
-						<c:param name="name" value="${clip.seoName}"/>
-					</c:url>
-					<article>
-						<figure>
-							<a href="${displayClipUrl}" class="image block">
-								<img src="/images/clips/${clip.name}.png" alt="${clip.title}"/>
-								<span class="duration"><time datetime="${playtimeHtml}"><fmt:formatDate value="${clip.playtime}" type="time" pattern="m:ss" /></time></span>
-							</a>
-						</figure>
-						<div class="description clear">
-							<header>
-								<h2><a href="${displayClipUrl}"><c:out value="${clip.title}" /></a></h2>
-								<span class="date"><time datetime="${dateRecordedHtml}"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="MMM. yyyy" /></time></span>
-							</header>
-							<p><c:out value="${clip.shortDescription}" /></p>
-							<c:set var="rating" value="${ratings[clip.id]}" />
-							<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
-						</div>
-					</article>
-					<c:remove var="displayClipUrl"/>
-				</li>
-				</c:forEach>
-			</ul>
-		</section>
+<div id="content" class="clips">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<article id="contentHeader">
+				<header><h1>Kurzfilme</h1></header>
+				<p>
+					In unregelmäßigen Abständen wird hier im Kurzfilmkino ein neuer Film gezeigt.
+					Mit der <a href="http://www.nikon.de/de_DE/product/digital-cameras/coolpix/all-weather/coolpix-aw110" rel="nofollow">Nikon Coolpix AW110<i class="fa fa-external-link"></i></a> kann man, wie mit vielen anderen Kompaktkameras auch, Filme in HD-Qualität drehen.
+					Weil sie Staub- und Wasserdicht ist, sind auch Aufnahmen in ungewöhnlichem Terrain möchlich.
+					So war sie einige Male beim Schnorcheln dabei.
+					Auch Staub und Qualm beim Tracktor Pulling sind kein Problem.
+					Viel Spaß beim gucken.
+					Der Eintritt ist wie immer kostenlos und das Kino frei von Werbung.
+				</p>
+			</article>
+			<section id="contentMain">
+				<ul class="imageIndex">
+					<c:forEach var="clip" items="${clips}" varStatus="listStatus">
+					<c:set var="dateRecordedHtml"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="yyyy-MM" /></c:set>
+					<c:set var="playtimeHtml"><fmt:formatDate value="${clip.playtime}" type="time" pattern="'PT'm'M'ss'S'" /></c:set>
+					<li>
+						<c:url var="displayClipUrl" value="/clips/displayClip.html">
+							<c:param name="clipId" value="${clip.id}"/>
+							<c:param name="name" value="${clip.seoName}"/>
+						</c:url>
+						<article>
+							<figure>
+								<a href="${displayClipUrl}" class="image block">
+									<img src="/images/clips/${clip.name}.png" alt="${clip.title}"/>
+									<span class="duration"><time datetime="${playtimeHtml}"><fmt:formatDate value="${clip.playtime}" type="time" pattern="m:ss" /></time></span>
+								</a>
+							</figure>
+							<div class="description clear">
+								<header>
+									<h2><a href="${displayClipUrl}"><c:out value="${clip.title}" /></a></h2>
+									<span class="date"><time datetime="${dateRecordedHtml}"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="MMM. yyyy" /></time></span>
+								</header>
+								<p><c:out value="${clip.shortDescription}" /></p>
+								<c:set var="rating" value="${ratings[clip.id]}" />
+								<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
+							</div>
+						</article>
+						<c:remove var="displayClipUrl"/>
+					</li>
+					</c:forEach>
+				</ul>
+			</section>
+		</div>
 	</div>
-</section>
+</div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <c:if test="${not browserLowerIE9}">

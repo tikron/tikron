@@ -10,16 +10,18 @@
 <%@ include file="/jsp/include/htmlhead_end.jspf"%>
 <%@ include file="/jsp/include/htmlbody_start.jspf"%>
 <%@ include file="/jsp/include/header.jspf"%>
-<section id="content" class="row">
-	<div class="col-lg-12 col-md-12 col-xs-12">
-		<article>
-			<h1><spring:message code="displaySystemError.headline"/></h1>
-			<p><spring:message code="displaySystemError.info"/></p>
-			<br />
-			<a href="/"><spring:message code="link.homepage"/>UPS</a>
-		</article>
+<div id="content">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<article>
+				<h1><spring:message code="displaySystemError.headline"/></h1>
+				<p><spring:message code="displaySystemError.info"/></p>
+				<br />
+				<a href="/"><spring:message code="link.homepage"/>UPS</a>
+			</article>
+		</div>
 	</div>
-</section>
+</div>
 <%@ include file="/jsp/include/footer.jspf"%>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <%@ include file="/jsp/include/html_end.jspf" %>

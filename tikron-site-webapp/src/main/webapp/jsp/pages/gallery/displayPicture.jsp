@@ -25,45 +25,47 @@
 <c:url var="addCommentUrl" value="/gallery/addComment.html">
 	<c:param name="pictureId" value="${picture.id}"/>
 </c:url>
-<article id="content" class="gallery picture row">
-	<section class="col-lg-9 col-md-12 col-xs-12">
-		<figure>
-			<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
-		</figure>
-		<c:if test="${picture.category.commentable and picture.id ne 731}">
-		<section class="commentBox">
-			<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
-			<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
-		</section>
-		</c:if>
-	</section>
-	<section class="col-lg-3 col-md-12 col-xs-12 intro">
-		<div id="galleryInfo" class="teaser">
-			<div class="description box">
-				<header>
-					<h1><c:out value="${not empty picture.title ? picture.title : picture.category.title}" /></h1>
-				</header>
-				<p>
-					<c:choose>
-						<c:when test="${not empty picture.description}"><c:out value="${picture.description}" escapeXml="false" /></c:when>
-						<c:otherwise><spring:message code="gallery.displayPicture.emptyDescription" /></c:otherwise>
-					</c:choose>
-					<c:if test="${picture.category.commentable}">
-						<br /><br />
-						<a id="addComment" href="#" class="arrow"><spring:message code="link.addPictureComment"/></a>
-					</c:if>
-				</p>
-			</div>
-			<c:if test="${picture.category.rateable and not browserLowerIE9}">
-			<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
+<div id="content" class="gallery picture">
+	<div class="row">
+		<section class="col-lg-9 col-md-12 col-xs-12">
+			<figure>
+				<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
+			</figure>
+			<c:if test="${picture.category.commentable and picture.id ne 731}">
+			<section class="commentBox">
+				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
+				<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
+			</section>
 			</c:if>
-			<%@ include file="include/picturePager.jspf" %>
-			<ul class="buttonBar vt afterPager">
-				<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
-			</ul>
-		</div>
-	</section>
-</article>
+		</section>
+		<section class="col-lg-3 col-md-12 col-xs-12 intro">
+			<div id="galleryInfo" class="teaser">
+				<article class="description box">
+					<header>
+						<h1><c:out value="${not empty picture.title ? picture.title : picture.category.title}" /></h1>
+					</header>
+					<p>
+						<c:choose>
+							<c:when test="${not empty picture.description}"><c:out value="${picture.description}" escapeXml="false" /></c:when>
+							<c:otherwise><spring:message code="gallery.displayPicture.emptyDescription" /></c:otherwise>
+						</c:choose>
+						<c:if test="${picture.category.commentable}">
+							<br /><br />
+							<a id="addComment" href="#" class="arrow"><spring:message code="link.addPictureComment"/></a>
+						</c:if>
+					</p>
+				</article>
+				<c:if test="${picture.category.rateable and not browserLowerIE9}">
+				<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
+				</c:if>
+				<%@ include file="include/picturePager.jspf" %>
+				<ul class="buttonBar vt afterPager">
+					<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <c:if test="${picture.category.commentable}">
