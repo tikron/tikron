@@ -6,6 +6,7 @@
 <c:url var="displaySubNavAjaxUrl" value="/displaySubNavAjax.html"><c:param name="catalogId" /></c:url>
 <nav id="main">
 	<div class="top clear">
+		<div id="toggleNav" class="clear"><i class="fa fa-bars fa-2x" aria-hidden="true"></i><span>Menü</span></div>
 		<ul>
 			<%-- HOMEPAGE --%>
 			<li<c:if test="${topNavAction eq 'displayHomepage'}"><c:out value=" class=\"current\"" escapeXml="false"/></c:if>>
@@ -64,7 +65,6 @@
 				<a id="navTop_contact" href="${sendContactMessageUrl}"><spring:message code="navMain.contact"/></a>
 			</li>
 		</ul>
-		<i id="toggleNav" class="fa fa-bars fa-2x" aria-hidden="true"></i>
 	</div>
 </nav>
 <script type="text/javascript">

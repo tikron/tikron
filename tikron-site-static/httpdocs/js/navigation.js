@@ -24,12 +24,19 @@ function TikronNav(options) {
 	}
 
 	var _bindUIActions = function() {
+		// Show/Hide mobile menu
+		_ui.topNav.find('#toggleNav').on('click', function() {
+			_ui.topNav.find('ul').toggleClass('show');
+		});
 		// Handle hover events on main top navigation items
 		_ui.topNav.find('ul li.hasSubNav').hover(function() {
 			_switchSubNav(this, true);
 		}, function() {
 			_switchSubNav(this, false);
 		});
+	}
+	
+	var _bindMainNavToggle = function() {
 	}
 
 	/**
@@ -42,9 +49,10 @@ function TikronNav(options) {
 	 *          hidden.
 	 */
 	var _switchSubNav = function(hoverElement, enter) {
+		var viewportMobile = (window.innerWidth < 960); 
 		var hoverId = $(hoverElement).attr('id');
 		// console.log(enter + '/' + hoverId);
-		if (hoverId) {
+		if (hoverId && !viewportMobile) {
 			var hoverName = hoverId.replace(/navTop_/, '')
 			// Hide sub nav on leave or already shown current
 			_ui.subNav.each(function() {

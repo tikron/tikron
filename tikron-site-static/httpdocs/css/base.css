@@ -606,17 +606,21 @@ nav#main div.top {
 }
 
 nav#main div.top > ul {
-	margin-left: 42px;
+	margin-left: 35px;
 	font-size: 1.2em;
+	overflow: hidden; /* removes scroll bar at max-height in mobile/desktopn transition */
+	transition: max-height 0.5s;
+}
+
+@media only screen and (min-width: 1224px) {
+	nav#main div.top > ul {
+		margin-left: 40px;
+	}
 }
 
 nav#main div.top > ul > li {
 	float: left;
 	list-style: none outside none;
-}
-
-nav#main div.top > ul > li.current {
-	background: url("img/nav/nav_cap_lf.gif") no-repeat scroll left center #52413A;
 }
 
 nav#main div.top > ul > li > a {
@@ -631,9 +635,24 @@ nav#main div.top > ul > li > a:hover {
 	text-decoration: none;
 }
 
+nav#main div.top > ul > li.hasSubNav i.fa-caret-down {
+	display: none;
+}
+
 nav#main div.top > ul > li.current > a {
-	background: url("img/nav/nav_cap_rt.gif") no-repeat scroll right center transparent;
 	color: #FFFFFF;
+}
+
+@media only screen and (min-width: 960px) {
+	nav#main div.top > ul > li.hasSubNav i.fa-caret-down {
+		display: inline;
+	}
+	nav#main div.top > ul > li.current {
+		background: url("img/nav/nav_cap_lf.gif") no-repeat scroll left center #52413A;
+	}
+	nav#main div.top > ul > li.current > a {
+		background: url("img/nav/nav_cap_rt.gif") no-repeat scroll right center transparent;
+	}
 }
 
 nav#main div.sub {
@@ -644,17 +663,26 @@ nav#main div.sub {
 /* 	margin-top: 5px; */
 	/* fill gap between top and sub navigation to avoid firing of two events when moving the mouse from top to sub navigation */
     border-top: 5px solid #52413A;
-	display: none;
+	display: block;
 	clear: left;
 }
 
-nav#main div.sub.active {
-	display: block;
+/* On mobile override element-style display:block set by _switchSubNav() in navigation.js */
+@media only screen and (max-width: 959px) {
+	nav#main div.sub {
+		display: none !important;
+	}
 }
 
 nav#main div.sub > ul {
 	font-size: 0.75em;
-	margin-left: 52px; /* 42 + 20 - 10 */
+	margin-left: 45px; /* 35 + 20 - 10 */
+}
+
+@media only screen and (min-width: 1224px) {
+	nav#main div.sub > ul {
+		margin-left: 50px; /* 40 + 20 - 10 */
+	}
 }
 
 nav#main div.sub > ul > li {
@@ -684,14 +712,31 @@ nav#main div.sub > ul > li.current > a {
 }
 
 nav#main #toggleNav {
-	margin-left: 55px;
-	padding: 5px 0;
+	width: 100%;
+	padding: 5px 0 5px 55px;
 	color: #B1A68C;
+	cursor: pointer;
+}
+
+nav#main #toggleNav i {
+	float: left;
+}
+
+nav#main #toggleNav span {
+	float: left;
+	margin: 4px 0 0 20px;
+	font-size: 1.2em;
 }
 
 @media only screen and (max-width: 959px) {
-	nav#main div.top ul {
-		display: none;
+	nav#main div.top > ul {
+		max-height: 0;
+	}
+	nav#main div.top > ul.show {
+		max-height: 20em;
+	}
+	nav#main div.top > ul > li {
+		width: 100%;
 	}
 	nav#main div.sub {
 		display: none;
@@ -707,7 +752,7 @@ nav#main #toggleNav {
 /*** Footer ************************************/
 
 footer#main {
-	padding: 8px 45px;
+	padding: 10px 45px;
 	border-top: 1px solid #bbbbbb;
 	background: url('img/bg/brown1742.jpg');
 }
