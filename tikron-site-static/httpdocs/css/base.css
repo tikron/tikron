@@ -607,6 +607,7 @@ nav#main div.top {
 
 nav#main div.top > ul {
 	margin-left: 35px;
+	margin-right: 35px;
 	font-size: 1.2em;
 	overflow: hidden; /* removes scroll bar at max-height in mobile/desktopn transition */
 	transition: max-height 0.5s;
@@ -623,6 +624,10 @@ nav#main div.top > ul > li {
 	list-style: none outside none;
 }
 
+nav#main div.top > ul > li:not(:last-child) {
+	border-bottom: 1px solid #3e3331;
+}
+	
 nav#main div.top > ul > li > a {
 	color: #B1A68C;
 	display: block;
@@ -644,6 +649,9 @@ nav#main div.top > ul > li.current > a {
 }
 
 @media only screen and (min-width: 960px) {
+	nav#main div.top > ul > li {
+		border-bottom: none;
+	}
 	nav#main div.top > ul > li.hasSubNav i.fa-caret-down {
 		display: inline;
 	}
