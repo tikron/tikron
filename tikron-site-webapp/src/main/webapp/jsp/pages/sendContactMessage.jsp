@@ -28,48 +28,50 @@
 				<form:form commandName="contactMessage" action="${sendContactMessageUrl}" id="contact" class="clear">
 					<ul class="globalMsg"><form:errors element="li" cssClass="error"/></ul>
 					<fieldset>
-						<div class="row">
-							<div class="col-lg-4 col-md-4 col-xs-12 left">
+						<div class="row inner form-control" id="name">
+							<div class="col-lg-4 col-md-4 col-xs-12">
 								<form:label path="name"><spring:message code="sendContactMessage.label.name" arguments="*"/></form:label>
 							</div>
 							<div class="col-lg-6 col-md-8 col-xs-12">
 								<form:input path="name" /><span class="error"><form:errors path="name" /></span>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-4 col-md-4 col-xs-12 left">
+						<div class="row inner form-control" id="email">
+							<div class="col-lg-4 col-md-4 col-xs-12">
 								<form:label path="email"><spring:message code="sendContactMessage.label.email" arguments="*"/></form:label>
 							</div>
 							<div class="col-lg-6 col-md-8 col-xs-12">
 								<form:input path="email" type="email" /><span class="error"><form:errors path="email" /></span>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-4 col-md-4 col-xs-12 left">
+						<div class="row inner form-control" id="message">
+							<div class="col-lg-4 col-md-4 col-xs-12">
 								<form:label path="message"><spring:message code="sendContactMessage.label.message" arguments="*"/></form:label>
 							</div>
-							<div class="col-lg-6 col-md-8 col-xs-12">
+							<div class="col-lg-8 col-md-8 col-xs-12">
 								<form:textarea path="message" rows="5" cols="60" /><span class="error"><form:errors path="message" /></span>
 							</div>
 						</div>
-						<div class="row captchaImage">
-							<div class="col-lg-4 col-md-4 col-xs-12 left">
+						<div class="row inner captchaImage">
+							<div class="col-lg-4 col-md-4 col-xs-12">
 							</div>
 							<div class="col-lg-6 col-md-8 col-xs-12">
 								<a href="#" class="arrow" title="<spring:message code='captchaCode.link.reload.description' />"><spring:message code="captchaCode.link.reload" /></a>
 								<img src="${captchaImageUrl}" alt="<spring:message code="captchaCode.image.alt" />" />
 							</div>
 						</div>
-						<div class="row captchaCode">
-							<div class="col-lg-4 col-md-4 col-xs-12 left">
+						<div class="row inner captchaCode form-control" id="captchaCode">
+							<div class="col-lg-4 col-md-4 col-xs-12">
 								<form:label path="captchaCode"><spring:message code="captchaCode.label" arguments="*"/></form:label>
 							</div>
 							<div class="col-lg-6 col-md-8 col-xs-12">
 								<form:input path="captchaCode" /><span class="error"><form:errors path="captchaCode" /></span>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-12 col-md-12 col-xs-12">
+						<div class="row inner">
+							<div class="col-lg-4 col-md-4 col-xs-12">
+							</div>
+							<div class="col-lg-8 col-md-8 col-xs-12">
 								<ul class="buttonBar">
 									<li><button type="submit" class="button button_green" title="<spring:message code='sendContactMessage.button.sendMessage.description'/>"><i class="fa fa-send-o"></i><spring:message code="sendContactMessage.button.sendMessage" /></button></li>
 			<%-- 					<li><button type="button" class="button button_green" onclick="location.href='/';"><i class="fa fa-reply"></i><spring:message code="button.cancel" /></button></li> --%>

@@ -58,7 +58,7 @@ function TikronUtil(options) {
 	 */
 	this.resetErrors = function(form) {
 		form.find('ul.globalMsg').empty();
-		form.find('dl').removeClass('error');
+		form.find('div.form-control').removeClass('error');
 		form.find('span.error').empty();
 	}
 	
@@ -76,7 +76,7 @@ function TikronUtil(options) {
 		// Handle field errors
 		for (var i = 0; i < response.fieldErrors.length; i++) {
 			var error = response.fieldErrors[i];
-			var $controlGroup = form.find('dl[id="' + error.field + '"]');
+			var $controlGroup = form.find('div.form-control[id="' + error.field + '"]');
 			$controlGroup.addClass('error');
 			$controlGroup.find('span.error').html(error.message);
 		}

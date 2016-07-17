@@ -206,7 +206,6 @@ ul.imageIndex li .buttonbar a {
 /*** Button bar ***********************************************/
 
 ul.buttonBar {
-	padding: 4px 0;
 }
 
 ul.buttonBar li {
@@ -254,8 +253,9 @@ ul.pager i {
 /* 	font-family: Helvetica,Arial,sans-serif; */
 /* 	font-size: 14px; */
 /* 	font-weight: bold; */
-	height: 2em;
-	line-height: 2em;
+	height: 2.5em;
+	line-height: 2.5em;
+	font-size: 1.2em;
 	padding: 0 1em;
 	text-align: center;
 	vertical-align: middle;
@@ -344,6 +344,7 @@ fieldset {
 label {
 	width: 100%;
 	color: #EE7A38;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
@@ -352,11 +353,12 @@ label.long {
 }
 
 input, select, textarea {
+	padding: 5px 10px;
+	box-sizing: border-box;
 	border: 1px solid #898989;
 	border-radius: 4px;
 	background-color: #383838;
 	color: #EAEAEA;
-	padding: 2px 4px;
 	font-size: 1.2em;
 }
 
@@ -376,17 +378,9 @@ textarea {
 	height: 7em;
 }
 
-form .col-xs-12 {
-	padding-left: 0;
-}
-
-form .col-xs-12.left {
-	padding-bottom: 0;
-}
-
 form ul.globalMsg {
-/* 	height: 1em; */
-	margin-bottom: 15px;
+	margin-bottom: 25px;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
@@ -400,8 +394,8 @@ form ul.globalMsg li.info {
 
 form p.error,
 form span.error {
-	margin-top: 2px;
-	padding-top: 0;
+	display: block;
+	padding-top: 4px;
 	color: #EF1C1C;
 	font-weight: bold;
 }
@@ -556,8 +550,16 @@ ul.comments div.attributes a {
 	}
 }
 
+.row.inner [class*="col-"] {
+	padding-left: 0;
+	padding-top: 0;
+}
+
 .row {
-/*	padding: 15px 0 15px 0;*/
+}
+
+.row.inner {
+	padding-bottom: 15px;
 }
 
 .row::after {
