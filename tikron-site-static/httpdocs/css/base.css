@@ -577,8 +577,8 @@ header#main {
 }
 
 header#main [class*="col-"] {
-	padding-top: 4px;
-	padding-bottom: 4px;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 header#main img#title {
@@ -616,8 +616,10 @@ nav#main div.top > ul > li {
 	list-style: none outside none;
 }
 
-nav#main div.top > ul > li:not(:last-child) {
-	border-bottom: 1px solid #3e3331;
+@media only screen and (max-width: 959px) {
+	nav#main div.top > ul > li:not(:last-child) {
+		border-bottom: 1px solid #3e3331;
+	}
 }
 	
 nav#main div.top > ul > li > a {
