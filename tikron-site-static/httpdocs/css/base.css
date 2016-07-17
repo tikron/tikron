@@ -216,10 +216,12 @@ ul.buttonBar li {
 ul.buttonBar.vt li {
 	margin-right: 0;
 	margin-bottom: 12px;
+	display: block;
 }
 
 ul.buttonBar.vt li .button {
-	width: 200px;
+	width: 100%;
+	box-sizing: border-box;
 	text-align: left;
 }
 
@@ -404,7 +406,6 @@ form span.error {
 
 .commentBox {
 	margin-top: 20px;
-	width: 810px;
 }
 
 ul.comments {
@@ -851,10 +852,6 @@ footer#main ul#goodies .icon_monitoring {
 
 .intro ul.pager {
 	margin-bottom: 12px;
-}
-
-.intro ul.buttonBar.afterPager .button {
-	width: 156px; /* like pager box */
 }
 
 /*** Sidebar showing teasers ****************************************/
