@@ -335,31 +335,6 @@ a.button::-moz-focus-inner {boder: 0;}
 /*** Forms *********************************/
 
 form {
-	margin: 20px 0px 4px 0px;
-/* 	padding: 15px; */
-/*	width: 600px;*/
-/* 	background-color: #2A2C2D; */
-}
-
-form dl {
-	display: inline;
-	float: left;
-	margin: 0 34px 19px 0;
-	position: relative;
-	width: 304px;
-}
-
-form dl.right {
-	margin-right: 0;
-}
-
-form dl dt, dl dd {
-	float: left;
-	margin: 0;
-}
-
-form dl dt {
-	margin-bottom: 2px;
 }
 
 fieldset {
@@ -393,13 +368,20 @@ button {
 	padding: 0 10px;
 }
 
-input {
-	width: 300px;
+input, textarea {
+	width: 100%;
 }
 
 textarea {
-	width: 638px;
 	height: 7em;
+}
+
+form .col-xs-12 {
+	padding-left: 0;
+}
+
+form .col-xs-12.left {
+	padding-bottom: 0;
 }
 
 form ul.globalMsg {
@@ -468,7 +450,11 @@ ul.comments div.attributes a {
 	color: #DD291C;
 }
 
-dl.captchaImage img {
+.captchaImage a {
+	display: block;
+}
+
+.captchaImage img {
 	width: 225px;
 	height: 50px;
 }
@@ -586,7 +572,11 @@ header#main {
 	background: url('img/bg/brown1742.jpg');
 	border-bottom: 1px solid #bbbbbb;
 	padding: 0 45px;
-	height: 72px;
+}
+
+header#main [class*="col-"] {
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 header#main img#title {

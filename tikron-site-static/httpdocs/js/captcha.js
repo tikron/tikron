@@ -15,8 +15,8 @@ function TikronCaptcha(options) {
 		_root = this;
 		_cfg = this.config;
 		_ui = {
-				groupImage: $('dl#captchaImage'),
-				groupCode: $('dl#captchaCode')
+				groupImage: $('.captchaImage'),
+				groupCode: $('.captchaCode')
 		};
 		_bindUIActions();
 	}
