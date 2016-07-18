@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <link rel="stylesheet" type="text/css" href="/lib/jquery-ui-1.11.4.custom/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="/lib/font-awesome-4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/scrollup-2.0/css/themes/image.css">
 <link rel="stylesheet" type="text/css" href="/css/base.css${contentVersionParam}" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
@@ -18,7 +19,7 @@
 </c:if>
 <script type="text/javascript" src="/lib/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="/lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/lib/jquery.goup.min.js"></script>
+<script type="text/javascript" src="/lib/scrollup-2.0/jquery.scrollUp.min.js"></script>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script type="text/javascript" src="/js/base.js" ></script>
 <script type="text/javascript" src="/js/navigation.js${contentVersionParam}" ></script>

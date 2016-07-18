@@ -40,16 +40,16 @@ function Tikron(options) {
 	}
 	
 	var _bindGoUpButton = function() {
-		// Calculate percentage horizontal position relative to window dimensions. Unfortunally a percentage value is expected by the plugin.
-		var windowWidth = $(window).innerWidth();
-		var containerWidth = $('#container').width();
-		var containerPadding = 60;
-		var marginX = Math.max((100 - ((containerWidth - containerPadding * 2) * 100 / windowWidth)) / 2, 0);
-		_ui.goup.goup({
-			marginX : marginX,
-			marginY : 10,
-			scrolltime : 500
-		});
+		// https://markgoodyear.com/2013/01/scrollup-jquery-plugin/
+		$.scrollUp({
+			animation: 'fade',
+			activeOverlay: false,
+			scrollImg: {
+				active: true,
+				type: 'background',
+				src: 'img/top.png'
+			}
+		}); 
 	}
 	
 	var _bindForms = function() {
