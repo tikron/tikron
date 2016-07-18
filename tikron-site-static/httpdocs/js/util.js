@@ -93,6 +93,15 @@ function TikronUtil(options) {
 		var $globalErrors = form.find('ul.globalMsg');
 		$globalErrors.append($('<li>', {'class': clazz, html: message}));
 	}
+	
+	/**
+	 * Detect (decides) for mobile window size.
+	 * 
+	 * @return true, if mobile view port.
+	 */
+	this.viewPortMobile = function() {
+		return window.innerWidth < 768;
+	}
 
 };
 

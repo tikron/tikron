@@ -108,7 +108,13 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		// Bind image box
-		$('a.storyImage').colorbox({photo:true, rel:'storyImage', current: '<spring:message code="colorbox.current"/>', title: function(){return $(this).attr('data-caption');}});
+		if (!tikronUtil.viewPortMobile()) {
+			$('a.storyImage').colorbox({photo:true, rel:'storyImage', current: '<spring:message code="colorbox.current"/>', title: function(){return $(this).attr('data-caption');}});
+		} else {
+			$('a.storyImage').on('click', function(e){e.preventDefault();});
+			$('a.storyImage').removeAttr('title');
+			$('a.storyImage').css('cursor', 'auto');
+		}
 		// Bind placeholder plugin
 		$('input, textarea').placeholder();
 		// Init. comment form handler

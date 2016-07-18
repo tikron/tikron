@@ -49,10 +49,10 @@ function TikronNav(options) {
 	 *          hidden.
 	 */
 	var _switchSubNav = function(hoverElement, enter) {
-		var viewportMobile = (window.innerWidth < 960); 
+		var dropDownNav = (window.innerWidth < 960); 
 		var hoverId = $(hoverElement).attr('id');
 		// console.log(enter + '/' + hoverId);
-		if (hoverId && !viewportMobile) {
+		if (hoverId && !dropDownNav) {
 			var hoverName = hoverId.replace(/navTop_/, '')
 			// Hide sub nav on leave or already shown current
 			_ui.subNav.each(function() {
