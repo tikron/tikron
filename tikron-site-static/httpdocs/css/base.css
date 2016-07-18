@@ -173,18 +173,22 @@ ul.imageIndex li:first-child {
 }
 
 ul.imageIndex li .image {
-	display: block;
-	float: left;
-	width: 200px;
-}
-
-ul.imageIndex li .image img {
-	float: left; /* avoid extra space in parrent a-tag. */
+/*	display: block;*/
 }
 
 ul.imageIndex li .description {
-	margin-left: 230px;
-	padding: 0 20px 10px 0;
+	padding: 20px 0 10px 0;
+}
+
+@media only screen and (min-width: 768px) {
+	ul.imageIndex li .image img {
+		float: left;
+	}
+	
+	ul.imageIndex li .description {
+		margin-left: 230px;
+		padding: 0 20px 10px 0;
+	}
 }
 
 ul.imageIndex li:not(:last-child) .description {

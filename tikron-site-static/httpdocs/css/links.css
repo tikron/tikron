@@ -13,8 +13,10 @@
 	width: 115px;
 }
 
-.links ul.imageIndex li .description {
-	margin-left: 115px;
+@media only screen and (min-width: 768px) {
+	.links ul.imageIndex li .description {
+		margin-left: 115px;
+	}
 }
 
 .links ul.imageIndex li .description p {

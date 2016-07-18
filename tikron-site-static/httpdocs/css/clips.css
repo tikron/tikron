@@ -4,14 +4,6 @@
 */
 
 /*** Display video clip pages ************************************/
-.clips #contentLeft {
-/* 	width: 710px; */
-}
-
-.clips #contentSidebar {
-/* 	float: left; */
-}
-
 .clips video {
 /* 	width: 640px; */
 /* 	height: 360px; */
@@ -23,6 +15,7 @@
 }
 
 .clips ul.imageIndex a.image {
+	float: left;
 	position: relative;
 }
 
@@ -35,6 +28,16 @@
 	background: rgba(0, 0, 0, 0.7);
 	font-size: 0.9em;
 	padding: 0 3px;
+}
+
+.clips ul.imageIndex li .description {
+	clear: left;
+}
+
+@media only screen and (min-width: 768px) {
+	.clips ul.imageIndex li .description {
+		clear: none;
+	}
 }
 
 .clips ul.imageIndex h2 {
