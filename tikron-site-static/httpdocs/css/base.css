@@ -897,15 +897,25 @@ aside.teaserbar .teaser figcaption span.sub {
 }
 
 .story a.left, 
-.story img.left {
-	float: left;
-	margin: 0 30px 15px 0;
-}
-
+.story img.left,
 .story a.right,
 .story img.right {
-	float: right;
-	margin: 0 0 15px 30px;
+	margin-bottom: 15px;
+	display: block;
+}
+	
+@media only screen and (min-width: 768px) {
+	.story a.left, 
+	.story img.left {
+		float: left;
+		margin: 0 30px 15px 0;
+	}
+	
+	.story a.right,
+	.story img.right {
+		float: right;
+		margin: 0 0 15px 30px;
+	}
 }
 
 /*** Add comment pages ************************************/
