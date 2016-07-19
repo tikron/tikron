@@ -17,7 +17,7 @@
 <c:url var="sendContactMessageUrl" value="/sendContactMessage.json" />
 <c:url var="captchaImageUrl" value="/captchaImage.html"><c:param name="random" /></c:url>
 <div id="content">
-	<div class="row">
+	<div class="contact row">
 		<div class="col-lg-9 col-md-9 col-xs-12">
 			<section id="contentHeader">
 				<header><h1><spring:message code="sendContactMessage.headline" /></h1></header>
@@ -53,19 +53,17 @@
 							</div>
 						</div>
 						<div class="row inner captchaImage">
-							<div class="col-lg-4 col-md-4 col-xs-12">
-							</div>
-							<div class="col-lg-6 col-md-8 col-xs-12">
-								<a href="#" class="arrow" title="<spring:message code='captchaCode.link.reload.description' />"><spring:message code="captchaCode.link.reload" /></a>
-								<img src="${captchaImageUrl}" alt="<spring:message code="captchaCode.image.alt" />" />
-							</div>
 						</div>
-						<div class="row inner captchaCode form-control" id="captchaCode">
+						<div class="row inner form-control captchaCode" id="captchaCode">
 							<div class="col-lg-4 col-md-4 col-xs-12">
 								<form:label path="captchaCode"><spring:message code="captchaCode.label" arguments="*"/></form:label>
 							</div>
-							<div class="col-lg-6 col-md-8 col-xs-12">
+							<div class="col-lg-4 col-md-4 col-xs-12 captchaInput">
 								<form:input path="captchaCode" /><span class="error"><form:errors path="captchaCode" /></span>
+							</div>
+							<div class="col-lg-4 col-md-6 col-xs-12 captchaImage">
+								<img src="${captchaImageUrl}" alt="<spring:message code="captchaCode.image.alt" />" />
+								<a href="#" class="arrow" title="<spring:message code='captchaCode.link.reload.description' />"><spring:message code="captchaCode.link.reload" /></a>
 							</div>
 						</div>
 						<div class="row inner">

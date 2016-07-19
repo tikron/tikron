@@ -42,6 +42,21 @@ aside.teaserbar .teaser#finding figure img {
 	height: 150px;
 }
 
+/*** Send Contact Message ****************************/
+@media only screen and (min-width: 1224px) {
+	.contact .captchaInput {
+		padding-right: 25px;
+	}
+}
+
+.contact .captchaImage img {
+	display: block;
+}
+
+.contact .captchaImage a {
+	margin-top: 3px;
+}
+
 /*** Imprint Page ************************************/
 .imprint #contentHeader {
 	margin-bottom: 0px;
