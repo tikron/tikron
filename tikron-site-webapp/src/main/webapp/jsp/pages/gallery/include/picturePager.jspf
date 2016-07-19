@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <nav>
-	<ul class="pager"><%--
+	<ul class="pager clear"><%--
 		<li>
 			<c:choose>
 			<c:when test="${pager.size gt 0 and not pager.isFirst}">
@@ -14,7 +14,7 @@
 			</c:otherwise>
 			</c:choose>
 		</li> --%>
-		<li>
+		<li class="previous">
 			<c:choose>
 			<c:when test="${pager.size gt 0 and pager.hasPrevious}">
 				<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
@@ -26,7 +26,7 @@
 			</c:choose>
 		</li>
 		<li class="counter"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></li>
-		<li>
+		<li class="next">
 			<c:choose>
 			<c:when test="${pager.size gt 0 and pager.hasNext}">
 				<c:url var="nextPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>

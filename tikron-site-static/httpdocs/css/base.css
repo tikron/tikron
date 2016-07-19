@@ -237,13 +237,26 @@ ul.pager li {
 	display: inline-block;
 }
 
+ul.pager li.previous {
+	float: left;
+}
+
+ul.pager li.next {
+	float: right;
+}
+
 ul.pager li.counter {
-	width: 100px;
-	height: 2em;
+	width: 80px;
+	height: 2.5em;
 	text-align: center;
 	vertical-align: middle;
-	line-height: 2em;
+	line-height: 2.5em;
+	font-size: 1.2em;
 	font-weight: bold;
+}
+
+ul.pager a.button {
+	width: 50px;
 }
 
 ul.pager i {
