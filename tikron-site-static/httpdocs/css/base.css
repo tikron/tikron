@@ -225,6 +225,7 @@ ul.buttonBar.vt li {
 
 ul.buttonBar.vt li .button {
 	width: 100%;
+	max-width: 18em;
 	box-sizing: border-box;
 	text-align: left;
 }

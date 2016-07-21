@@ -26,19 +26,21 @@
 	<c:param name="pictureId" value="${picture.id}"/>
 </c:url>
 <div id="content" class="gallery picture">
-	<div class="row">
+	<div class="row base-line">
 		<section class="col-lg-9 col-md-12 col-xs-12">
 			<figure>
-				<a href="${displayCategoryUrl}"><img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /></a>
+				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" />
+				<c:if test="${pager.size gt 0 and pager.hasPrevious}">
+					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
+					<a href="${previousPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.previous"/>" --%> class="nav nav-left"></a>
+				</c:if>
+				<c:if test="${pager.size gt 0 and pager.hasNext}">
+					<c:url var="nextPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
+					<a href="${nextPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.next"/>" --%> class="nav nav-right"></a>
+				</c:if>
 			</figure>
-			<c:if test="${picture.category.commentable and picture.id ne 731}">
-			<section class="commentBox">
-				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
-				<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
-			</section>
-			</c:if>
 		</section>
-		<section class="col-lg-3 col-md-12 col-xs-12 intro">
+		<section class="col-lg-3 col-md-9 col-xs-12 intro">
 			<div id="galleryInfo" class="teaser">
 				<article class="description box">
 					<header>
@@ -55,14 +57,26 @@
 						</c:if>
 					</p>
 				</article>
-				<c:if test="${picture.category.rateable and not browserLowerIE9}">
-				<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
-				</c:if>
-				<%@ include file="include/picturePager.jspf" %>
-				<ul class="buttonBar vt afterPager">
-					<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
-				</ul>
+				<section id="galleryControls">
+					<c:if test="${picture.category.rateable and not browserLowerIE9}">
+					<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
+					</c:if>
+					<%-- <%@ include file="include/picturePager.jspf" %> --%>
+					<ul class="buttonBar vt">
+						<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
+					</ul>
+				</section>
 			</div>
+		</section>
+	</div>
+	<div class="row">
+		<section class="col-lg-9 col-md-9 col-xs-12">
+			<c:if test="${picture.category.commentable and picture.id ne 731}">
+			<section class="commentBox">
+				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
+				<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
+			</section>
+			</c:if>
 		</section>
 	</div>
 </div>

@@ -59,16 +59,76 @@
 
 /*** Picture page *************************/
 #content.gallery.picture figure {
-	width: 840px;
-	text-align: center;
-	min-height: 570px;
+	position: relative;
+	float: left;
+	/* display: inline-block;*/
+}
+
+#content.gallery.picture figure::after {
+	content: "";
+	clear: left;
 }
 
 #content.gallery.picture figure img {
-/*	border: 6px solid #666666;*/
-	margin: 0 auto;
-	display: block;
+	width: 100%;
+	height: auto;
 }
+
+@keyframes nav-fade-out {
+	from {opacity: 0.8;}
+	to {opacity: 0;}
+}
+
+#content.gallery.picture .nav {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	opacity: 0;
+	animation: nav-fade-out 3s ease-out;
+}
+
+/*
+#content.gallery.picture .nav:hover {
+	opacity: 0.8;
+}
+*/
+
+#content.gallery.picture .nav-left {
+	left: 0;
+	background-image: url("img/buttons/chevron-left-small.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+#content.gallery.picture .nav-right {
+	right: 0;
+	background-image: url("img/buttons/chevron-right-small.png");
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.intro .description.box {
+	min-height: 0;
+}
+
+@media only screen and (min-width: 1224px) {
+	.intro .description.box {
+		min-height: 360px;
+	}
+}
+
+/* Disabled because nice but out of sight with vertical oriented image on small screens  
+#content.gallery.picture .row.base-line {
+	position: relative;
+}
+
+#content.gallery.picture #galleryControls {
+	position: absolute;
+	bottom: 20px;
+}
+*/
 
 #content.gallery.picture .ratingStars {
 	margin-bottom: 20px;
