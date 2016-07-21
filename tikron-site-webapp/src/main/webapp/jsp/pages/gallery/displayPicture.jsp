@@ -30,6 +30,7 @@
 		<section class="col-lg-9 col-md-12 col-xs-12">
 			<figure>
 				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" />
+				<nav>
 				<c:if test="${pager.size gt 0 and pager.hasPrevious}">
 					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
 					<a href="${previousPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.previous"/>" --%> class="nav nav-left"></a>
@@ -38,6 +39,7 @@
 					<c:url var="nextPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
 					<a href="${nextPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.next"/>" --%> class="nav nav-right"></a>
 				</c:if>
+				</nav>
 			</figure>
 		</section>
 		<section class="col-lg-3 col-md-9 col-xs-12 intro">
