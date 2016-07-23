@@ -109,13 +109,20 @@
 	background-repeat: no-repeat;
 	background-position: right center;
 }
-.intro .description.box {
+#content.gallery.picture .intro .description.box {
 	min-height: 0;
 }
 
+#content.gallery.picture a#addComment {
+	display: none;
+}
+
 @media only screen and (min-width: 1224px) {
-	.intro .description.box {
+	#content.gallery.picture .intro .description.box {
 		min-height: 360px;
+	}
+	#content.gallery.picture a#addComment {
+		display: inline;
 	}
 }
 
