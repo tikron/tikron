@@ -40,6 +40,7 @@
 					<a href="${nextPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.next"/>" --%> class="nav nav-right"></a>
 				</c:if>
 				</nav>
+				<span class="counter"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></span>
 			</figure>
 		</section>
 		<section class="col-lg-3 col-md-9 col-xs-12 intro">

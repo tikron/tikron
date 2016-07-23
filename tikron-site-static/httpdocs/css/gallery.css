@@ -109,6 +109,15 @@
 	background-repeat: no-repeat;
 	background-position: right center;
 }
+
+#content.gallery.picture .counter {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	font-weight: bold;
+	opacity: 0.6;
+}
+
 #content.gallery.picture .intro .description.box {
 	min-height: 0;
 }
