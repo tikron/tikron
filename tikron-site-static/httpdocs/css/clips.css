@@ -5,9 +5,14 @@
 
 /*** Display video clip pages ************************************/
 .clips video {
-/* 	width: 640px; */
-/* 	height: 360px; */
-/* 	text-align: center; */
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (min-width: 800px) {
+	.clips video {
+		width: 640px;
+	}
 }
 
 .clips ul.buttonBar {

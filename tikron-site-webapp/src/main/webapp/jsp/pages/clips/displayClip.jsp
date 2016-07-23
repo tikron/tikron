@@ -32,7 +32,7 @@
 			</object>
 			-->
 		</section>
-		<section class="col-lg-3 col-md-12 col-xs-12 intro">
+		<section class="col-lg-3 col-md-9 col-xs-12 intro">
 			<article class="description">
 				<header><h1><c:out value="${clip.title}" /></h1></header>
 				<p><c:out value="${clip.formattedLongDescription}" escapeXml="false" /></p>
