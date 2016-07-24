@@ -5,16 +5,16 @@
 
 /*** Display video clip pages ************************************/
 .clips video {
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 }
-
+/*
 @media only screen and (min-width: 800px) {
 	.clips video {
 		width: 640px;
 	}
 }
-
+*/
 .clips ul.buttonBar {
 	padding-top: 20px;
 }
