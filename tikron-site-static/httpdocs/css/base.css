@@ -498,13 +498,6 @@ ul.comments div.attributes a {
 	background-color: #2C2523;
 }
 
-@media only screen and (min-width: 768px) {
-	#container {
-		width: 95%;
-		max-width: 1240px;
-	}
-}
-
 #wrap {
 	position: relative;
 	width: 100%;
@@ -513,13 +506,24 @@ ul.comments div.attributes a {
 #content {
 /*	margin-top: 70px;*/
 	min-height: 550px; /* reduce "jumping" of footer while page load. */
-	padding: 35px 45px 25px 45px;
+	padding: 35px 20px 25px 20px;
 	line-height: 150%;
 }
 
 #contentWrap {
 /*  float: left;*/
 	width: 100%
+}
+
+@media only screen and (min-width: 768px) {
+	#container {
+		width: 95%;
+		max-width: 1240px;
+	}
+	#content {
+		padding-left: 45px;
+		padding-right: 45px;
+	}
 }
 
 /*** Repsonsive design ******************************/
@@ -592,7 +596,7 @@ ul.comments div.attributes a {
 header#main {
 	background: url('img/bg/brown1742.jpg');
 	border-bottom: 1px solid #bbbbbb;
-	padding: 0 45px;
+	padding: 0 20px;
 }
 
 header#main [class*="col-"] {
@@ -606,6 +610,12 @@ header#main img#title {
 
 header#main img#logo {
 	float:right;
+}
+
+@media only screen and (min-width: 768px) {
+	header#main {
+		padding: 0 45px;
+	}
 }
 
 /*** Top navigation ************************************/
@@ -773,9 +783,15 @@ nav#main #toggleNav span {
 /*** Footer ************************************/
 
 footer#main {
-	padding: 0 45px;
+	padding: 0 20px;
 	border-top: 1px solid #bbbbbb;
 	background: url('img/bg/brown1742.jpg');
+}
+
+@media only screen and (min-width: 768px) {
+	footer#main {
+		padding: 0 45px;
+	}
 }
 
 footer#main ul#siteInfo {
