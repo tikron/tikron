@@ -7,7 +7,7 @@
 		<language>de</language>
 		<copyright>Titus Kruse</copyright>
 		<managingEditor>Titus Kruse</managingEditor>
-		<lastBuildDate>Tue, 19 Apr 2016 19:37:00 +0200</lastBuildDate>
+		<lastBuildDate>Thu, 28 Jul 2016 20:29:21 +0200</lastBuildDate>
 		<category>Reisen</category>
 		<category>Skandinavien</category>
 		<category>Baltikum</category>
@@ -23,6 +23,13 @@
 		<category>Open-Air</category>
 		<category>Goa-Trance</category>
 		<category>Techno</category>
+		<item>
+			<title>Responsive Design</title>
+			<link>http://www.tikron.de/</link>
+			<description><![CDATA[Immerhin jeder dritte Gast auf Tikron ist mobil, also mit seinem Smartphone unterwegs. Deshalb wurde nun für alle Seiten eine passende Darstellung programmiert. Also kein lästiges Fingerspreizen und Augenblinzeln mehr. Das ganze nennt sich übrigens responsive Design und ist aktueller Stand der Technik. Schönes Ding.]]></description>
+			<pubDate>Thu, 28 Jul 2016 20:29:21 +0200</pubDate>
+			<guid isPermaLink="false">92020E30-8054-4481-9D3D-3C68BD8CA9CE</guid>
+		</item>
 		<item>
 			<title>Ubuntu Linux</title>
 			<link>http://www.tikron.de/</link>

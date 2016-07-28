@@ -26,18 +26,17 @@
 			<article class="news">
 				<h2><spring:message code="displayHomepage.news.headline" /></h2>
 				<p>
-					In letzter Zeit ist es etwas ruhiger hier geworden.
-					Die Umstellung von Debian auf Ubuntu Linux mit self managed Domain und Mail-Server war ein großer Schritt im vergangen Winter. 
-					Weitere neue Herausforderungen ließen die Arbeit an der Tikron Website etwas in den Hintergrund geraten.
-					Deshalb gibt es mit diesem Update auch nur kleinere Anpassungen.
-					Grundsätzlich soll es aber weiter gehen!
-					Die sogenannte "responsive Darstellung" der gesamten Site ist ein Ziel, das nicht vergessen wird...
+					Immerhin jeder dritte Gast auf Tikron ist mobil, also mit seinem Smartphone unterwegs.
+					Deshalb wurde nun für alle Seiten eine passende Darstellung programmiert.
+					Also kein lästiges Fingerspreizen und Augenblinzeln mehr.
+					Das ganze nennt sich übrigens responsive Design und ist aktueller Stand der Technik.
+					Schönes Ding.
 				</p>
 			</article>
 			<section class="log">
 				<a id="showLog" href="#" class="arrow log" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 				<div id="logResponse" class="timestamp">
-					Letzte Aktualisierung: <time datetime="2016-04-19">19.04.2016</time>
+					Letzte Aktualisierung: <time datetime="2016-07-28">28.07.2016</time>
 				</div>
 			</section>
 		</section>

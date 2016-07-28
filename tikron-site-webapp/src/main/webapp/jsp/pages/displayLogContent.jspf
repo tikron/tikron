@@ -3,6 +3,19 @@
 <ul class="index">
 	<li>
 		<article>
+		<header><h2>Ubuntu Linux</h2><span class="date">19.04.2016</span></header>
+		<p>
+			In letzter Zeit ist es etwas ruhiger hier geworden.
+			Die Umstellung von Debian auf Ubuntu Linux mit self managed Domain und Mail-Server war ein großer Schritt im vergangen Winter. 
+			Weitere neue Herausforderungen ließen die Arbeit an der Tikron Website etwas in den Hintergrund geraten.
+			Deshalb gibt es mit diesem Update auch nur kleinere Anpassungen.
+			Grundsätzlich soll es aber weiter gehen!
+			Die sogenannte "responsive Darstellung" der gesamten Site ist ein Ziel, das nicht vergessen wird...
+		</p>
+		</article>
+	</li>
+	<li>
+		<article>
 		<header><h2>Bessere Bildqualität</h2><span class="date">10.07.2015</span></header>
 		<p>
 			Für die Anzeige von Fotos auf Tikron wird nun ein neues technisches Verfahren verwendet.
