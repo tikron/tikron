@@ -11,8 +11,10 @@
 <%@ include file="/jsp/include/head.jspf" %>
 <script type="text/javascript" src="/lib/jquery.placeholder.min.js"></script>
 <script type="text/javascript" src="/lib/jRate.min.js" ></script>
+<script type="text/javascript" src="/lib/hammer.min.js" ></script>
 <script type="text/javascript" src="/js/rating.js" ></script>
 <script type="text/javascript" src="/js/comment.js" ></script>
+<script type="text/javascript" src="/js/touch.js" ></script>
 <link rel="stylesheet" type="text/css" href="/css/gallery.css${contentVersionParam}" />
 <%@ include file="/jsp/include/htmlhead_end.jspf" %>
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
@@ -28,8 +30,9 @@
 <div id="content" class="gallery picture">
 	<div class="row base-line">
 		<section class="col-lg-9 col-md-12 col-xs-12">
-			<figure>
-				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" />
+			<figure id="picturePan">
+				<%-- <img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" /> --%>
+				<img src="http://dummyimage.com/830x533" alt="${picture.title}" />
 				<nav>
 				<c:if test="${pager.size gt 0 and pager.hasPrevious}">
 					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
@@ -85,6 +88,12 @@
 </div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
+<script>
+  var panSettings = {elementId: 'picturePan'};
+  <c:if test="${pager.size gt 0 and pager.hasPrevious}">panSettings['urlPrevious'] = '${previousPictureUrl}';</c:if>
+  <c:if test="${pager.size gt 0 and pager.hasNext}">panSettings['urlNext'] = '${nextPictureUrl}';</c:if>
+  bindTouchHandler(panSettings);
+</script>
 <c:if test="${picture.category.commentable}">
 <script type="text/javascript">
 	$(document).ready(function() {
