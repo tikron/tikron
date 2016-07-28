@@ -19,7 +19,7 @@
 <%@ include file="/jsp/include/nav_main.jspf"%>
 <div id="content" class="travel story">
 	<div class="row">
-		<article class="col-lg-12 col-md-12 col-xs-12">
+		<article class="col-lg-9 col-md-10 col-xs-12">
 			<header id="contentHeader">
 				<h1>Einmal um die Ostsee</h1>
 				<p><strong>Ein Reisebericht über eine 3-monatige Campingtour Skandinavien und Baltikum</strong></p>
