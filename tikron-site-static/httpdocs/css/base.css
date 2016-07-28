@@ -13,8 +13,7 @@
 
 body {
 	color: #CCCCCC;
-	background-color: #333333;
-	background: url("img/bg/dgrey0094.jpg") repeat fixed left top;
+	background: #333333 url("img/bg/dgrey0094.jpg") repeat fixed left top;
 	padding-bottom: 15px;
 	font-size: 85%;
 }
