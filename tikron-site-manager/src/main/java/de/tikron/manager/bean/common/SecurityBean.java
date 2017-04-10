@@ -53,7 +53,7 @@ public class SecurityBean {
 	 * @return true, falls der Benutzer die Berechtigung zum Ändern hat.
 	 */
 	public boolean isAuthorityUpdate() {
-		return securityService.hasAuthorityRole(RoleId.MANAGE.toString());
+		return securityService.hasAuthorityRole(RoleId.ROLE_MANAGE.toString());
 	}
 
 	public void setSecurityService(SecurityService securityService) {

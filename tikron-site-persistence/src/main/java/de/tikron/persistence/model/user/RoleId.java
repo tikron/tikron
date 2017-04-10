@@ -14,5 +14,5 @@ public enum RoleId {
 	// We have to use (upper case) enumerarion values as persistent values, because Hibernate uses getValue() to determine it.
 	// Only possible solution to use alternate values is implementing a org.hibernate.usertype.UserType.
 	// see https://developer.jboss.org/wiki/UserTypeforpersistingaTypesafeEnumerationwithaVARCHARcolumn
-	ADMINISTRATE, MANAGE, USE, ROLE_GUEST;
+	ROLE_ADMIN, ROLE_MANAGE, ROLE_USE;
 }

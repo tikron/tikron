@@ -30,9 +30,9 @@ public class Role extends EnumeratedKeyEntity<RoleId> {
 	public static final String NQ_FIND_ALL = "Role.findAll";
 	public static final String NQ_FIND_BY_ID = "Role.findById";
 	
-	public static final Role ADMINISTRATE = new Role(RoleId.ADMINISTRATE);
-	public static final Role MANAGE = new Role(RoleId.MANAGE);
-	public static final Role USE = new Role(RoleId.USE);
+	public static final Role ADMINISTRATE = new Role(RoleId.ROLE_ADMIN);
+	public static final Role MANAGE = new Role(RoleId.ROLE_MANAGE);
+	public static final Role USE = new Role(RoleId.ROLE_USE);
 
 	@Column
 	private String description;

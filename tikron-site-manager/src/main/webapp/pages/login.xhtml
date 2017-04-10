@@ -4,7 +4,6 @@
 			xmlns:h="http://java.sun.com/jsf/html"
 			xmlns:f="http://java.sun.com/jsf/core"
 			xmlns:ui="http://java.sun.com/jsf/facelets"
-			xmlns:ice="http://www.icesoft.com/icefaces/component"
 			xmlns:tcf="http://tikron.de/tikron-common-faces">
 <h:head>
 	<ui:include src="/include/title.xhtml" />
@@ -23,20 +22,19 @@
 							<p><h:outputText value="#{msg.loginDescription}"></h:outputText></p>
 						</div>
 						<div id="contentMain">
-							<ice:outputText value="Test"></ice:outputText>
 							<h:panelGrid columns="2" styleClass="form" columnClasses="columnLabel, columnData">
-								<tcf:outputLabel for="j_username" value="#{msg.labelUserUsername}" required="true" requiredClass="required" />
-								<h:inputText id="j_username" class="text">
+								<tcf:outputLabel for="username" value="#{msg.labelUserUsername}" required="true" requiredClass="required" />
+								<h:inputText id="username" class="text">
 									<f:validateRequired />
 									<f:validateLength maximum="255" />
 								</h:inputText>
-								<tcf:outputLabel for="j_password" value="#{msg.labelUserPassword}" required="true" requiredClass="required" />
-								<h:inputSecret id="j_password" class="text">
+								<tcf:outputLabel for="password" value="#{msg.labelUserPassword}" required="true" requiredClass="required" />
+								<h:inputSecret id="password" class="text">
 									<f:validateRequired />
 									<f:validateLength maximum="255" />
 								</h:inputSecret>
-								<tcf:outputLabel for="_spring_security_remember_me" value="#{msg.loginLabelRemeberMe}" />
-								<h:selectBooleanCheckbox id="_spring_security_remember_me" />
+								<tcf:outputLabel for="remember-me" value="#{msg.loginLabelRemeberMe}" />
+								<h:selectBooleanCheckbox id="remember-me" />
 							</h:panelGrid>
 							<h:messages styleClass="messages" />
 							<div class="buttonBar">

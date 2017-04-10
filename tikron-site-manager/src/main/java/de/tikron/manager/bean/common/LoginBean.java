@@ -45,7 +45,7 @@ public class LoginBean {
 		ExternalContext facesContext = FacesContext.getCurrentInstance().getExternalContext();
 
 		RequestDispatcher dispatcher = ((ServletRequest) facesContext.getRequest())
-				.getRequestDispatcher("/j_spring_security_check");
+				.getRequestDispatcher("/login");
 
 		dispatcher.forward((ServletRequest) facesContext.getRequest(), (ServletResponse) facesContext.getResponse());
 
