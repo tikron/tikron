@@ -12,6 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
+import javax.persistence.NamedEntityGraphs;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -39,12 +42,17 @@ import de.tikron.jpa.validation.NotSpam;
 		@NamedQuery(name = Comment.NQ_FIND_ALL, query = "SELECT o FROM Comment o"),
 		@NamedQuery(name = Comment.NQ_FIND_BY_COMMENTTYPE, query = "SELECT o FROM Comment o WHERE o.commentType = :commentType"),
 		@NamedQuery(name = Comment.NQ_FIND_BY_COMMENTTYPE_AND_VISIBILITY, query = "SELECT o FROM Comment o WHERE o.commentType = :commentType AND o.visible in (true, :visibleOnly)") })
+@NamedEntityGraphs({
+	@NamedEntityGraph(name = Comment.NEG_USER, attributeNodes={@NamedAttributeNode("user")})
+})
 @Table(name = "comment")
 public abstract class Comment extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
 	public static final String NQ_FIND_ALL = "Comment.findAll";
 	public static final String NQ_FIND_BY_COMMENTTYPE = "Comment.findByCommentType";
 	public static final String NQ_FIND_BY_COMMENTTYPE_AND_VISIBILITY = "Comment.findByCommentTypeAndVisibility";
+
+	public static final String NEG_USER = "Comment.includeUser";
 
 	@ManyToOne
 	@JoinColumn(name = "commenttype_id", insertable = false, updatable = false)

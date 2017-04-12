@@ -24,6 +24,8 @@ import de.tikron.persistence.model.user.User;
 public class UserDetailBean extends AbstractDetailBean<User> {
 
 	private User user;
+	
+	private Long userId;
 
 	private String oldPassword;
 
@@ -34,8 +36,10 @@ public class UserDetailBean extends AbstractDetailBean<User> {
 	 * Bean initialisieren.
 	 */
 	public void preRenderView(ComponentSystemEvent e) {
-		if (user == null) {
+		if (userId == null) {
 			user = new User();
+		} else {
+			user = userService.getWithRoles(userId);
 		}
 		if (oldPassword == null) {
 			oldPassword = user.getPassword();
@@ -75,6 +79,14 @@ public class UserDetailBean extends AbstractDetailBean<User> {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public void setUserService(UserService userService) {

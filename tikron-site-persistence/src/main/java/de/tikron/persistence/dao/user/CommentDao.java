@@ -16,12 +16,12 @@ import de.tikron.persistence.model.user.PictureComment;
 public interface CommentDao extends GenericDao<Comment, Long> {
 	
 	/**
-	 * Holt einen Kommentar inklusive des kommentierten Objekts.
+	 * Holt einen Kommentar inklusive des kommentierten Objekts und des Benutzers.
 	 * 
 	 * @param id Die ID des Kommentars.
 	 * @return Der Kommentar oder null, falls er nicht existiert.
 	 */
-	public Comment findByIdFetchCommented(Long id);
+	public Comment findByIdFetchUserAndCommented(Long id);
 
 	/**
 	 * Liste der Kommentare vom Typ commentType.

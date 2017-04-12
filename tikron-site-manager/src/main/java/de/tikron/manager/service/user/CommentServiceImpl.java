@@ -28,7 +28,7 @@ public class CommentServiceImpl extends CRUDServiceImpl<Comment, Long> implement
 
 	@Override
 	public Comment get(Long id) {
-		return getCommentDao().findByIdFetchCommented(id);
+		return getCommentDao().findByIdFetchUserAndCommented(id);
 	}
 
 	public List<ClipComment> getComments(Clip clip) {
