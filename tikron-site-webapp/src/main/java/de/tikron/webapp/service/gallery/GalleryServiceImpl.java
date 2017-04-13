@@ -11,7 +11,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -150,13 +149,13 @@ public class GalleryServiceImpl implements GalleryService {
 	}
 
 	@Override
-	@Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_UNCOMMITTED, readOnly = true)
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
 	public URI getImageUri(Picture picture, String template) {
 		return imageService.getSeoImageUri(IMAGE_SECTIONPATH, picture.getCategory().getName(), picture.getImageName(), template);
 	}
 
 	@Override
-	@Transactional(propagation = Propagation.SUPPORTS, isolation = Isolation.READ_UNCOMMITTED, readOnly = true)
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
 	public Map<String, URI> getImageUris(Picture picture) {
 		Map<String, URI> imageUris = new HashMap<>(IMAGE_TEMPLATES.length);
 		for (String template : IMAGE_TEMPLATES) {
