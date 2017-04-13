@@ -7,14 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
 import de.tikron.jpa.dao.GenericJpaDao;
-import de.tikron.jpa.dao.JpaUtil;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikron.persistence.model.misc.Clip;
@@ -50,14 +48,11 @@ public class CommentDaoJpaImpl extends GenericJpaDao<Comment, Long> implements C
 
 	@Override
 	public Comment findByIdFetchUserAndCommented(Long id) {
-		final EntityGraph<?> entityGraph = entityManager.getEntityGraph(Comment.NEG_USER);
 		Map<String, Object> hints = new HashMap<String, Object>();
-		hints.put(QueryHints.HINT_FETCHGRAPH, entityGraph);
-		Comment comment = entityManager.find(Comment.class, id, hints);
-		// Initialize lazy associated object while session is open.
-		// A joined query is not helpful because we don't know the comment type and thus the associated object type when the query is created.
-		JpaUtil.initialize(entityManager, comment.getRelatedEntity());
-		return comment;
+		hints.put(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(Comment.NEG_USER));
+		hints.put(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(ClipComment.NEG_CLIP));
+		hints.put(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(PictureComment.NEG_PICTURE));
+		return entityManager.find(Comment.class, id, hints);
 	}
 
 	@Override

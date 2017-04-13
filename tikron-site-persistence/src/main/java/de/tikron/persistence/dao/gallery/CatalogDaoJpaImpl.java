@@ -14,7 +14,6 @@ import javax.persistence.TypedQuery;
 import org.hibernate.jpa.QueryHints;
 
 import de.tikron.jpa.dao.GenericJpaDao;
-import de.tikron.jpa.dao.JpaUtil;
 import de.tikron.persistence.model.gallery.Catalog;
 
 /**
@@ -48,12 +47,7 @@ public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements C
 		hints.put(QueryHints.HINT_FETCHGRAPH, entityGraph); // Fetch eagerly attributes specified in entity graph and in entity 
 		// hints.put(QueryHints.HINT_LOADGRAPH, entityGraph); Fetch eagerly ONLY attributes specified in entity graph
 		hints.put(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
-		Catalog catalog = entityManager.find(Catalog.class, id, hints);
-		if (catalog != null) {
-			// Fetch collections to prevent LazyInizitializationExcpeption with query cache and join query
-			JpaUtil.initialize(entityManager, catalog.getCategories());
-		}
-		return catalog;
+		return entityManager.find(Catalog.class, id, hints);
 	}
 
 	@Override
@@ -101,12 +95,7 @@ public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements C
 		query.setParameter("visibleOnly", visibleOnly);
 		query.setHint(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(Catalog.NEG_CATEGORIES));
 		query.setHint(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
-		List<Catalog> resultList = query.getResultList();
-		// Fetch collections to prevent LazyInizitializationExcpeption with query cache and join query
-		for (Catalog catalog : resultList) {
-			JpaUtil.initialize(entityManager, catalog.getCategories());
-		}
-		return resultList;
+		return query.getResultList();
 	}
 
 }

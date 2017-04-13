@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
+import javax.persistence.NamedEntityGraphs;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -24,10 +27,15 @@ import de.tikron.persistence.model.gallery.Picture;
 @NamedQueries({
 		@NamedQuery(name = PictureComment.NQ_FIND_BY_PICTURE, query = "SELECT o FROM PictureComment o WHERE o.picture = :picture"),
 		@NamedQuery(name = PictureComment.NQ_FIND_VISIBLE_BY_PICTURE, query = "SELECT o FROM PictureComment o WHERE o.picture = :picture AND o.visible = true") })
+@NamedEntityGraphs({
+	@NamedEntityGraph(name = PictureComment.NEG_PICTURE, attributeNodes={@NamedAttributeNode("picture")})
+})
 public class PictureComment extends Comment {
 
 	public static final String NQ_FIND_BY_PICTURE = "Comment.findByPicture";
 	public static final String NQ_FIND_VISIBLE_BY_PICTURE = "Comment.findVisibleByPicture";
+	
+	public static final String NEG_PICTURE = "Comment.includePicture";
 
 	@ManyToOne(fetch = FetchType.LAZY) 	// Typically the picture is not used for each comment in a list
 	@JoinColumn(name = "picture_id")
