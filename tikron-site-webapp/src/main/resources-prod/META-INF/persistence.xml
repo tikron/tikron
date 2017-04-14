@@ -15,6 +15,8 @@
 			<property name="hibernate.show_sql" value="false" /> 
 			<property name="hibernate.format_sql" value="false" />
 			<property name="hibernate.use_sql_comments" value="false" /> 
+			<!-- https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.3/html/Migration_Guide/Preserve_the_Existing_Behavior_of_the_Hibernate_Identity_Auto_Generated_Value1.html -->
+			<property name="hibernate.id.new_generator_mappings" value="false" />
 		</properties>
 	</persistence-unit>
 </persistence>

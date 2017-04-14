@@ -32,9 +32,8 @@ public abstract class AbstractDetailBean<T> extends BaseBean {
 	 * @return The URI.
 	 */
 	public String getSuccessWithRedirect() {
-		return UriComponentsBuilder.newInstance().path(getSuccessView())
-			.queryParam("faces-redirect", "true")
-			.build().encode().toString();
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(getSuccessView());
+		return builder.queryParam("faces-redirect", "true").buildAndExpand().toUriString();
 	}
 
 	public String getSuccessView() {
