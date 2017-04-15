@@ -17,7 +17,7 @@
 				<h1><spring:message code="displaySystemError.headline"/></h1>
 				<p><spring:message code="displaySystemError.info"/></p>
 				<br />
-				<a href="/"><spring:message code="link.homepage"/>UPS</a>
+				<a href="/"><spring:message code="link.homepage"/></a>
 			</article>
 		</div>
 	</div>
