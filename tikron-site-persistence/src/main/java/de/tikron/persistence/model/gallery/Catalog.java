@@ -37,7 +37,9 @@ import de.tikron.jpa.domain.ShowableEntity;
 		@NamedQuery(name = Catalog.NQ_FIND_ALL_ORDERBY_NAME, query = "SELECT o FROM Catalog o ORDER BY o.name"),
 		@NamedQuery(name = Catalog.NQ_FIND_BY_VISIBILITY, query = "SELECT DISTINCT o FROM Catalog o WHERE o.visible IN(true, :visibleOnly)"),
 		@NamedQuery(name = Catalog.NQ_FIND_BY_VISIBILITY_ORDERBY_NAME, query = "SELECT o FROM Catalog o WHERE o.visible IN(true, :visibleOnly) ORDER BY o.name"),
-		@NamedQuery(name = Catalog.NQ_FIND_BY_NAME, query = "SELECT o FROM Catalog o WHERE o.name = :name") })
+		@NamedQuery(name = Catalog.NQ_FIND_BY_NAME, query = "SELECT o FROM Catalog o WHERE o.name = :name"),
+		@NamedQuery(name = Catalog.NQ_FIND_BY_ID_FETCH_CATEGORIES, query = "SELECT DISTINCT o FROM Catalog o JOIN FETCH o.categories WHERE o.id = :id")
+})
 @NamedEntityGraphs({
 		@NamedEntityGraph(name = Catalog.NEG_CATEGORIES, attributeNodes={@NamedAttributeNode("categories")})
 })
@@ -49,6 +51,7 @@ public class Catalog extends GeneratedKeyEntity<Long> implements ShowableEntity<
 	public static final String NQ_FIND_BY_VISIBILITY = "Catalog.findByVisibility";
 	public static final String NQ_FIND_BY_VISIBILITY_ORDERBY_NAME = "Catalog.findByVisibilityOrderByName";
 	public static final String NQ_FIND_BY_NAME = "Catalog.findByName";
+	public static final String NQ_FIND_BY_ID_FETCH_CATEGORIES = "Catalog.findByIdFetchCategories";
 
 	public static final String NEG_CATEGORIES = "Catalog.includeCategories";
 
@@ -68,7 +71,7 @@ public class Catalog extends GeneratedKeyEntity<Long> implements ShowableEntity<
 	// http://stackoverflow.com/questions/4655392/which-java-type-do-you-use-for-jpa-collections-and-why
 	@OneToMany(mappedBy = "catalog", cascade = CascadeType.ALL, orphanRemoval = true)
 	// Cache collections to prevent LazyInizitializationExcpeption with query cache and join query
-	@Cache( usage=CacheConcurrencyStrategy.READ_WRITE )  
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	private Set<Category> categories = new HashSet<Category>();
 
 	/**

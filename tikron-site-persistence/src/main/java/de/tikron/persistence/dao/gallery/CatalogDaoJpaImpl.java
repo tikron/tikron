@@ -3,14 +3,12 @@
  */
 package de.tikron.persistence.dao.gallery;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.hibernate.Hibernate;
 import org.hibernate.jpa.QueryHints;
 
 import de.tikron.jpa.dao.GenericJpaDao;
@@ -42,19 +40,31 @@ public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements C
 
 	@Override
 	public Catalog findByIdFetchCategories(Long id) {
+		/*
 		final EntityGraph<?> entityGraph = entityManager.getEntityGraph(Catalog.NEG_CATEGORIES);
 		Map<String, Object> hints = new HashMap<String, Object>();
 		hints.put(QueryHints.HINT_FETCHGRAPH, entityGraph); // Fetch eagerly attributes specified in entity graph and in entity 
 		// hints.put(QueryHints.HINT_LOADGRAPH, entityGraph); Fetch eagerly ONLY attributes specified in entity graph
 		hints.put(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
-		return entityManager.find(Catalog.class, id, hints);
+		Catalog catalog = entityManager.find(Catalog.class, id, hints);
+		// Fetch collection to prevent LazyInizitializationExcpeption with query cache and join query
+		if (catalog != null) {
+			Hibernate.initialize(catalog.getCategories());
+		}
+		*/
+		TypedQuery<Catalog> query = entityManager.createNamedQuery(Catalog.NQ_FIND_BY_ID_FETCH_CATEGORIES, Catalog.class);
+		query.setParameter("id", id);
+		query.setHint(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
+		Catalog catalog = singleResultOrNull(query);
+		return catalog;
 	}
 
 	@Override
 	public Catalog findByName(String name) {
 		TypedQuery<Catalog> query = entityManager.createNamedQuery(Catalog.NQ_FIND_BY_NAME, Catalog.class);
 		query.setParameter("name", name);
-		return singleResultOrNull(query);
+		Catalog catalog = singleResultOrNull(query);
+		return catalog;
 	}
 
 	@Override
@@ -95,7 +105,11 @@ public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements C
 		query.setParameter("visibleOnly", visibleOnly);
 		query.setHint(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(Catalog.NEG_CATEGORIES));
 		query.setHint(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
-		return query.getResultList();
+		List<Catalog> resultList = query.getResultList();
+		// Fetch collections to prevent LazyInizitializationExcpeption with query cache and join query
+		for (Catalog catalog : resultList) {
+			Hibernate.initialize(catalog.getCategories());
+		}
+		return resultList;
 	}
-
 }
