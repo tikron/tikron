@@ -3,8 +3,11 @@
  */
 package de.tikron.persistence.dao.gallery;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -40,7 +43,6 @@ public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements C
 
 	@Override
 	public Catalog findByIdFetchCategories(Long id) {
-		/*
 		final EntityGraph<?> entityGraph = entityManager.getEntityGraph(Catalog.NEG_CATEGORIES);
 		Map<String, Object> hints = new HashMap<String, Object>();
 		hints.put(QueryHints.HINT_FETCHGRAPH, entityGraph); // Fetch eagerly attributes specified in entity graph and in entity 
@@ -51,11 +53,12 @@ public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements C
 		if (catalog != null) {
 			Hibernate.initialize(catalog.getCategories());
 		}
-		*/
+		/*
 		TypedQuery<Catalog> query = entityManager.createNamedQuery(Catalog.NQ_FIND_BY_ID_FETCH_CATEGORIES, Catalog.class);
 		query.setParameter("id", id);
 		query.setHint(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
 		Catalog catalog = singleResultOrNull(query);
+		*/
 		return catalog;
 	}
 
