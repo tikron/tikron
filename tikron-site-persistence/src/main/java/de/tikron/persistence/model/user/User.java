@@ -70,7 +70,7 @@ public class User extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 	@AllowedDomain(value = {".de", ".at", ".ch"}, message = "{user.url.AllowedDomain}")
 	private String url;
 	
-	@ManyToMany(cascade = CascadeType.PERSIST)
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinTable(name = "user_role", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
 	private Set<Role> roles;
 
