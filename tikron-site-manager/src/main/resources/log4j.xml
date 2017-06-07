@@ -22,31 +22,34 @@
 
 	<!-- Hibernate-->
 	<logger name="org.hibernate">
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.SQL"><!-- Log all SQL DML statements as they are executed -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
-	<logger name="org.hibernate.type"><!-- Log all JDBC parameters -->
-		<level value="warn" />
+	<logger name="org.hibernate.type.descriptor.sql"><!-- Set this to trace to log JDBC parameters and result -->
+		<level value="info" />
+	</logger>
+	<logger name="org.hibernate.stat"><!-- Execution time and the retrieved number of rows -->
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.tool.hbm2ddl"><!-- Log all SQL DDL statements as they are executed -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.pretty"><!-- Log the state of all entities (max 20 entities) associated with the session at flush time -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.cache"><!-- Log all second-level cache activity -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.transaction"><!-- Log transaction related activity -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.engine.jdbc"><!-- Log all JDBC resource acquisition -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 	<logger name="org.hibernate.hql.ast.AST"><!-- Log HQL and SQL ASTs during query parsing  -->
-		<level value="warn" />
+		<level value="info" />
 	</logger>
 
 	<!-- Spring -->
