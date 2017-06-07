@@ -28,10 +28,12 @@ function TikronNav(options) {
 		_ui.topNav.find('#toggleNav').on('click', function() {
 			_ui.topNav.find('ul').toggleClass('show');
 		});
-		// Handle hover events on main top navigation items
-		_ui.topNav.find('ul li.hasSubNav').hover(function() {
+		// Handle mouse enter and leave on main top navigation items having a sub navigation
+		var elSubNav = _ui.topNav.find('ul li.hasSubNav');
+		elSubNav.mouseenter(function() {
 			_switchSubNav(this, true);
-		}, function() {
+		});
+		elSubNav.mouseleave(function() {
 			_switchSubNav(this, false);
 		});
 	}
