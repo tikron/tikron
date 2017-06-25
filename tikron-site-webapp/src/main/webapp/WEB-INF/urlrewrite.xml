@@ -63,55 +63,62 @@
 	<outbound-rule>
 		<name>Homepage</name>
 		<from>^/webapp/displayHomepage\.html$</from>
-		<to last="true">/</to>
+		<to last="true">http://%{server-name}/</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Clips</name>
 		<from>^/webapp/clips/displayClips\.html$</from>
-		<to last="true">%{context-path}/kurzfilme.html</to>
+		<to last="true">http://%{server-name}%{context-path}/kurzfilme.html</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Web Recommendations</name>
 		<from>^/webapp/webRecommendations/displayEntries\.html$</from>
-		<to last="true">%{context-path}/surftipps.html</to>
+		<to last="true">http://%{server-name}%{context-path}/surftipps.html</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Send Contact Message</name>
 		<from>^/webapp/sendContactMessage\.html$</from>
-		<to last="true">%{context-path}/kontakt.html</to>
+		<to last="true">https://%{server-name}%{context-path}/kontakt.html</to>
 	</outbound-rule>
 	<!-- Outgoing URLs for dynamic pages -->
 	<outbound-rule>
 		<name>Display Catalog</name>
 		<from>^/webapp/gallery/displayCatalog\.html\?catalogId=([0-9]+)&amp;name=(.*)$</from>
-		<to last="true">%{context-path}/g/$2,$1.html</to>
+		<to last="true">http://%{server-name}%{context-path}/g/$2,$1.html</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Display Category</name>
 		<from>^/webapp/gallery/displayCategory\.html\?categoryId=([0-9]+)&amp;name=(.*)$</from>
-		<to last="true">%{context-path}/c/$2,$1.html</to>
+		<to last="true">http://%{server-name}%{context-path}/c/$2,$1.html</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Display Picture</name>
 		<from>^/webapp/gallery/displayPicture\.html\?pictureId=([0-9]+)&amp;name=(.*)$</from>
-<!-- 		<to last="true">%{context-path}/p/${escape:utf8:$2},$1.html</to> -->
-		<to last="true">%{context-path}/p/$2,$1.html</to>
+<!-- 		<to>%{context-path}/p/${escape:utf8:$2},$1.html</to> -->
+		<to last="true">http://%{server-name}%{context-path}/p/$2,$1.html</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Display Travel Report</name>
 		<from>^/webapp/travels/displayTravel\.html\?categoryId=([0-9]+)&amp;name=(.*)$</from>
-		<to last="true">%{context-path}/t/$2,$1.html</to>
+		<to last="true">http://%{server-name}%{context-path}/t/$2,$1.html</to>
 	</outbound-rule>
 	<outbound-rule>
 		<name>Display Video Clip</name>
 		<from>^/webapp/clips/displayClip\.html\?clipId=([0-9]+)&amp;name=(.*)$</from>
-		<to last="true">%{context-path}/m/$2,$1.html</to>
+		<to last="true">http://%{server-name}%{context-path}/m/$2,$1.html</to>
+	</outbound-rule>
+	<outbound-rule>
+		<name>Display Imprint</name>
+		<from>^/webapp/displayImprint\.html$</from>
+		<to last="true">http://%{server-name}%{context-path}/displayImprint.html</to>
 	</outbound-rule>
 	<!-- Outgoing URLs for other display pages-->
+	<!-- 
 	<outbound-rule>
 		<name>Other display pages</name>
 		<from>^/webapp(/.*)?/display(.*).html(\?[^#]*)?(#.*)?$</from>
-		<to last="true">%{context-path}$1/display$2.html$3$4</to>
+		<to>%{context-path}$1/display$2.html$3$4</to>
 	</outbound-rule>
+	 -->
 </urlrewrite>
 
