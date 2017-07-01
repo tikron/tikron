@@ -4,16 +4,13 @@
 package de.tikron.webapp.util;
 
 import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.TemporalAccessor;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,10 +30,6 @@ public class LocalizationContextImpl implements LocalizationContext {
 	private HttpServletRequest request;
 	
 	private MessageSource messageSource;
-	
-	private Map<FormatStyle, DateTimeFormatter> dateFormatters = new HashMap<FormatStyle, DateTimeFormatter>();
-	
-	private Map<FormatStyle, DateTimeFormatter> timeFormatters = new HashMap<FormatStyle, DateTimeFormatter>();
 
 	public void setMessageSource(MessageSource messageSource) {
 		this.messageSource = messageSource;
@@ -66,9 +59,10 @@ public class LocalizationContextImpl implements LocalizationContext {
 
 	@Override
 	public ZoneId getTimeZone() {
-		// Use always German time zone unless it cannot be selected by user.
+		// Use always German time zone unless it cannot be selected by the user.
 		return ZoneId.of("Europe/Berlin");
-	}
+		//return ZoneId.of("Australia/Broken_Hill");
+	} 
 	
 	@Override
 	public Instant getSystemTime() {
@@ -77,7 +71,32 @@ public class LocalizationContextImpl implements LocalizationContext {
 
 	@Override
 	public LocalDateTime getLocalSystemTime() {
-		return LocalDateTime.ofInstant(getSystemTime(), getTimeZone());
+		return LocalDateTime.ofInstant(getSystemTime(), ZoneId.systemDefault());
+	}
+
+	@Override
+	public FormattedDate getFormattedDate(TemporalAccessor temporalAccessor) {
+		return new FormattedDate(temporalAccessor, this); 
+	}
+
+	@Override
+	public FormattedTime getFormattedTime(TemporalAccessor temporalAccessor) {
+		return new FormattedTime(temporalAccessor, this); 
+	}
+
+	@Override
+	public FormattedDate getFormattedCurrentDate() {
+		return getFormattedDate(getLocalSystemTime().toLocalDate()); 
+	}
+
+	@Override
+	public FormattedTime getFormattedCurrentTime() {
+		return getFormattedTime(getLocalSystemTime().toLocalTime()); 
+	}
+
+	@Override
+	public ZonedDateTime convertToZonedDateTime(LocalDateTime localDateTime) {
+		return ZonedDateTime.of(localDateTime, ZoneId.systemDefault()).withZoneSameInstant(getTimeZone());
 	}
 
 	@Override
@@ -87,17 +106,7 @@ public class LocalizationContextImpl implements LocalizationContext {
 
 	@Override
 	public DateTimeFormatter getDateFormatter(FormatStyle style) {
-		synchronized (dateFormatters) {
-			if (!dateFormatters.containsKey(style)) {
-				dateFormatters.put(style, DateTimeFormatter.ofLocalizedDate(style).withLocale(getLocale()));
-			}
-		}
-		return dateFormatters.get(style);
-	}
-
-	@Override
-	public FormattedDate getFormattedCurrentDate() {
-		return new FormattedDate(getLocalSystemTime().toLocalDate(), this); 
+		return DateTimeFormatter.ofLocalizedDate(style).withLocale(getLocale()).withZone(getTimeZone());
 	}
 
 	@Override
@@ -107,80 +116,6 @@ public class LocalizationContextImpl implements LocalizationContext {
 
 	@Override
 	public DateTimeFormatter getTimeFormatter(FormatStyle style) {
-		synchronized (timeFormatters) {
-			if (!timeFormatters.containsKey(style)) {
-				timeFormatters.put(style, DateTimeFormatter.ofLocalizedTime(style).withLocale(getLocale()));
-			}
-		}
-		return timeFormatters.get(style);
+		return DateTimeFormatter.ofLocalizedTime(style).withLocale(getLocale()).withZone(getTimeZone());
 	}
-
-	@Override
-	public FormattedTime getFormattedCurrentTime() {
-		return new FormattedTime(getLocalSystemTime().toLocalTime(), this); 
-	}
-	
-	/**
-	 * A class representing a formatted date according to the given localization context.
-	 *
-	 * @date 09.02.2015
-	 * @author Titus Kruse
-	 */
-	public class FormattedDate {
-		
-		private final LocalDate date;
-		
-		private final LocalizationContext context;
-
-		public FormattedDate(LocalDate date, LocalizationContext context) {
-			this.date = date;
-			this.context = context;
-		}
-
-		@Override
-		public String toString() {
-			return context.getDateFormatter().format(date);
-		}
-	}
-	
-	/**
-	 * A class representing a formatted time according to the given localization context.
-	 *
-	 * @date 09.02.2015
-	 * @author Titus Kruse
-	 */
-	public class FormattedTime {
-		
-		private final LocalTime time;
-		
-		private final LocalizationContext context;
-
-		public FormattedTime(LocalTime time, LocalizationContext context) {
-			this.time = time;
-			this.context = context;
-		}
-
-		@Override
-		public String toString() {
-			return context.getTimeFormatter().format(time);
-		}
-	}
-	
-	public class DateConverter {
-		
-		private final DateTimeFormatter formatter;
-		
-		public DateConverter(DateTimeFormatter formatter) {
-			this.formatter = formatter;
-		}
-
-		public String toString(TemporalAccessor temporal) {
-			return formatter.format(temporal);
-		}
-		
-		public TemporalAccessor fromString(String text) {
-			return formatter.parse(text);
-		}
-	}
-
 }

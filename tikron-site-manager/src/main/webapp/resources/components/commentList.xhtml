@@ -33,7 +33,10 @@
 			<f:facet name="header">
 				<h:outputText value="#{msg.headerCommentCreatedOn}"></h:outputText>
 			</f:facet>
-			<h:outputText value="#{comment.createdOn}"></h:outputText>
+			<h:outputText value="#{comment.createdOn}">
+				<f:converter converterId="localDateTimeConverter" />
+				<f:attribute name="pattern" value="dd.MM.yyyy" />
+			</h:outputText>
 		</h:column>
 		<h:column>
 			<f:facet name="header">

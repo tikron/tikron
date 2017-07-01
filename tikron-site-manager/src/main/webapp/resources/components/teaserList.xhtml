@@ -39,13 +39,19 @@
 			<f:facet name="header">
 				<h:outputText value="#{msg.headerTeaserStartDate}"></h:outputText>
 			</f:facet>
-			<h:outputText value="#{teaser.startDate}"><f:convertDateTime type="date" /></h:outputText>
+			<h:outputText value="#{teaser.startDate}">
+				<f:converter converterId="localDateTimeConverter" />
+				<f:attribute name="timeStyle" value="short" />
+			</h:outputText>
 		</h:column>
 		<h:column>
 			<f:facet name="header">
 				<h:outputText value="#{msg.headerTeaserEndDate}"></h:outputText>
 			</f:facet>
-			<h:outputText value="#{teaser.endDate}"><f:convertDateTime type="date" /></h:outputText>
+			<h:outputText value="#{teaser.endDate}">
+				<f:converter converterId="localDateTimeConverter" />
+				<f:attribute name="timeStyle" value="short" />
+			</h:outputText>
 		</h:column>
 		<f:facet name="footer">
 			<h:outputText rendered="#{cc.attrs.dataModel.rowCount eq 0}" value="#{msg.textEmptyList}"></h:outputText>

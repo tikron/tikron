@@ -3,13 +3,11 @@ package de.tikron.webapp.util;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.temporal.TemporalAccessor;
 import java.util.Locale;
 
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.NoSuchMessageException;
-
-import de.tikron.webapp.util.LocalizationContextImpl.FormattedDate;
-import de.tikron.webapp.util.LocalizationContextImpl.FormattedTime;
 
 /**
  * Context providing localized messages and formatted dates and times based on locale and time zone properties.
@@ -37,7 +35,7 @@ public interface LocalizationContext extends LocalizationConverter {
 	public Locale getLocale();
 
 	/**
-	 * Returns the time zone to use for dates and times in the front end.
+	 * Returns the time zone to use for dates and times in the presentation layer.
 	 * 
 	 * @return The zone ID.
 	 */
@@ -46,6 +44,10 @@ public interface LocalizationContext extends LocalizationConverter {
 	public Instant getSystemTime();
 
 	public LocalDateTime getLocalSystemTime();
+	
+	public FormattedDate getFormattedDate(TemporalAccessor temporalAccessor);
+	
+	public FormattedTime getFormattedTime(TemporalAccessor temporalAccessor);
 
 	/**
 	 * Returns the current system date formatted according to context properties.  

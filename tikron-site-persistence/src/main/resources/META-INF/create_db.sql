@@ -187,8 +187,8 @@ CREATE TABLE teaser (
 	id bigint NOT NULL auto_increment,
 	name varchar(255) NOT NULL,
 	sequence double,
-	start_date timestamp NULL,
-	end_date timestamp NULL,
+	start_date datetime NULL,
+	end_date datetime NULL,
 	visible smallint(6) DEFAULT '0',
 	title varchar(255),
 	image_name varchar(255),
@@ -315,36 +315,36 @@ ALTER TABLE web_recommendation
 
 -- initialize data
 
-INSERT INTO role (id, description, created_on)
-	VALUE('ADMINISTRATE', 'Administrate Application', current_timestamp);
-INSERT INTO role (id, description, created_on)
-	VALUE('MANAGE', 'Manage Data', current_timestamp);
-INSERT INTO role (id, description, created_on)
-	VALUE('USE', 'Using Application', current_timestamp);
+INSERT INTO role (id, description)
+	VALUE('ADMINISTRATE', 'Administrate Application');
+INSERT INTO role (id, description)
+	VALUE('MANAGE', 'Manage Data');
+INSERT INTO role (id, description)
+	VALUE('USE', 'Using Application');
 
-INSERT INTO user (name, password, created_on)
-	VALUE('manager', '1a8565a9dc72048ba03b4156be3e569f22771f23', current_timestamp);
+INSERT INTO user (name, password)
+	VALUE('manager', '1a8565a9dc72048ba03b4156be3e569f22771f23');
 
 INSERT INTO user_role (user_id, role_id)
 	SELECT user.id, 'MANAGE' FROM user WHERE user.name = 'manager';
 INSERT INTO user_role (user_id, role_id)
 	SELECT user.id, 'USE' FROM user WHERE user.name = 'manager';
 
-INSERT INTO comment_type (id, description, created_on)
-	VALUE('GUESTBOOK', 'Guestbook', current_timestamp); 
-INSERT INTO comment_type (id, description, created_on)
-	VALUE('CLIP', 'Video Clip', current_timestamp); 
-INSERT INTO comment_type (id, description, created_on)
-	VALUE('CATEGORY', 'Category', current_timestamp); 
-INSERT INTO comment_type (id, description, created_on)
-	VALUE('PICTURE', 'Gallery Picture', current_timestamp); 
+INSERT INTO comment_type (id, description)
+	VALUE('GUESTBOOK', 'Guestbook'); 
+INSERT INTO comment_type (id, description)
+	VALUE('CLIP', 'Video Clip'); 
+INSERT INTO comment_type (id, description)
+	VALUE('CATEGORY', 'Category'); 
+INSERT INTO comment_type (id, description)
+	VALUE('PICTURE', 'Gallery Picture'); 
 
-INSERT INTO rating_type (id, description, created_on)
-	VALUE('CLIP', 'Video Clip', current_timestamp); 
-INSERT INTO rating_type (id, description, created_on)
-	VALUE('PICTURE', 'Gallery Picture', current_timestamp); 
+INSERT INTO rating_type (id, description)
+	VALUE('CLIP', 'Video Clip'); 
+INSERT INTO rating_type (id, description)
+	VALUE('PICTURE', 'Gallery Picture'); 
 
-INSERT INTO category_type (id, description, created_on)
-	VALUE('GALLERY', 'Picture Gallery', current_timestamp); 
-INSERT INTO category_type (id, description, created_on)
-	VALUE('REPORT', 'Report', current_timestamp); 
+INSERT INTO category_type (id, description)
+	VALUE('GALLERY', 'Picture Gallery'); 
+INSERT INTO category_type (id, description)
+	VALUE('REPORT', 'Report'); 

@@ -3,7 +3,7 @@
  */
 package de.tikron.webapp.model.misc;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.apache.log4j.Logger;
 
@@ -83,11 +83,11 @@ public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 		return entity.getSequence();
 	}
 
-	public Date getStartDate() {
+	public LocalDateTime getStartDate() {
 		return entity.getStartDate();
 	}
 
-	public Date getEndDate() {
+	public LocalDateTime getEndDate() {
 		return entity.getEndDate();
 	}
 

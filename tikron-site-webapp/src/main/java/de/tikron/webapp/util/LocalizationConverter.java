@@ -3,6 +3,8 @@
  */
 package de.tikron.webapp.util;
 
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
@@ -43,5 +45,14 @@ public interface LocalizationConverter {
 	 * @return The time formatter.
 	 */
 	public DateTimeFormatter getTimeFormatter(FormatStyle style);
+	
+	
+	/**
+	 * Converts a date and time in server time zone into the presentation layers local time zone.
+	 *   
+	 * @param localDateTime local time.
+	 * @return remote time.
+	 */
+	public ZonedDateTime convertToZonedDateTime(LocalDateTime localDateTime);
 
 }

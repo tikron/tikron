@@ -49,14 +49,16 @@
 		<tcf:outputLabel for="startDate" value="#{msg.labelTeaserStartDate}"></tcf:outputLabel>
 		<h:panelGrid columns="2" styleClass="inner" columnClasses=",help">
 			<h:inputText id="startDate" value="#{cc.attrs.teaser.startDate}" styleClass="datetime">
-				<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+				<f:converter converterId="localDateTimeConverter" />
+				<f:attribute name="timeStyle" value="short" />
 			</h:inputText>
 			<h:outputText value="#{msg.formatDateTime}" />
 		</h:panelGrid>
 		<tcf:outputLabel for="endDate" value="#{msg.labelTeaserEndDate}"></tcf:outputLabel>
 		<h:panelGrid columns="2" styleClass="inner" columnClasses=",help">
 			<h:inputText id="endDate" value="#{cc.attrs.teaser.endDate}" styleClass="datetime">
-				<f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+				<f:converter converterId="localDateTimeConverter" />
+				<f:attribute name="timeStyle" value="short" />
 			</h:inputText>
 			<h:outputText value="#{msg.formatDateTime}" />
 		</h:panelGrid>

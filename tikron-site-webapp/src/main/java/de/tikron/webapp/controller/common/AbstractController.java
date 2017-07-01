@@ -10,9 +10,6 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
-
-
-
 //import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.NoSuchMessageException;
@@ -24,9 +21,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import de.tikron.webapp.facade.common.EntityBeanHelper;
 import de.tikron.webapp.service.common.FileArchiveService;
 import de.tikron.webapp.service.common.ImageService;
+import de.tikron.webapp.util.FormattedDate;
+import de.tikron.webapp.util.FormattedTime;
 import de.tikron.webapp.util.LocalizationContext;
-import de.tikron.webapp.util.LocalizationContextImpl.FormattedDate;
-import de.tikron.webapp.util.LocalizationContextImpl.FormattedTime;
 
 /**
  * Base class for all controllers providing helper methods.

@@ -4,6 +4,7 @@
 package de.tikron.webapp.model.misc;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Map;
 
@@ -88,7 +89,7 @@ public class ClipEntityBean extends BaseEntityBean<Clip> {
 		return entity.getId();
 	}
 
-	public Date getCreatedOn() {
+	public LocalDateTime getCreatedOn() {
 		return entity.getCreatedOn();
 	}
 

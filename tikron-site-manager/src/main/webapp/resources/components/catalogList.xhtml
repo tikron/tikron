@@ -33,7 +33,8 @@
 				<h:outputText value="#{msg.headerCatalogCreatedOn}"></h:outputText>
 			</f:facet>
 			<h:outputText value="#{catalog.createdOn}">
-				<f:convertDateTime type="date" />
+				<f:converter converterId="localDateTimeConverter" />
+				<f:attribute name="pattern" value="dd.MM.yyyy" />
 			</h:outputText>
 		</h:column>
 		<f:facet name="footer">

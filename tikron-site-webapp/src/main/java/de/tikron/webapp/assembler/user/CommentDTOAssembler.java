@@ -3,8 +3,6 @@
  */
 package de.tikron.webapp.assembler.user;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -77,8 +75,7 @@ public class CommentDTOAssembler {
 		User user = comment.getUser();
 		// Compile new line only to avoid possible code injection attack by a user having knowledge about text compiler commands.
 		String text = FormattedTextCompiler.getInstance().compile(comment.getText(), FormattedTextCompiler.CONVERT_NEWLINE);
-		LocalDate localCreatedOn = comment.getCreatedOn().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		String createdOn = localConverter.getDateFormatter(FormatStyle.SHORT).format(localCreatedOn);
+		String createdOn = localConverter.getDateFormatter(FormatStyle.SHORT).format(comment.getCreatedOn());
 		if (type.equals(CategoryCommentDTO.class)) {
 			CategoryDTO categoryDTO = categoryDTOAssembler.toDTO(((CategoryComment) comment).getCategory());
 			return type.cast(new CategoryCommentDTO(comment.getId(), createdOn, user.getName(), text,
@@ -88,9 +85,6 @@ public class CommentDTOAssembler {
 			return type.cast(new PictureCommentDTO(comment.getId(), createdOn, user.getName(), text,
 					user.getEmail(), user.getUrl(), pictureDTO));
 		} else if (type.equals(CommentDTO.class)) {
-		// Experimental: Could be replaced by Spring 4 java.time support later 
-//		LocalDate createdOn = createdOn.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-//		String createdOnStr = localConverter.getDateFormatter().format(createdOn);
 			return type.cast(new CommentDTO(comment.getId(), createdOn, user.getName(), text,
 					user.getEmail(), user.getUrl()));
 		} else {

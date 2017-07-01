@@ -17,7 +17,7 @@
 		<h:outputText id="author" value="#{cc.attrs.comment.user.name}"></h:outputText>
 		<tcf:outputLabel for="createdOn" value="#{msg.labelCommentCreatedOn}"></tcf:outputLabel>
 		<h:outputText id="createdOn" value="#{cc.attrs.comment.createdOn}">
-			<f:convertDateTime type="both" />
+			<f:converter converterId="localDateTimeConverter" />
 		</h:outputText>
 		<tcf:outputLabel for="text" value="#{msg.labelCommentText}" required="true"
 			requiredClass="required"></tcf:outputLabel>
