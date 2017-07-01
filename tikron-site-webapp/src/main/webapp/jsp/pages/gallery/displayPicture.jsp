@@ -77,9 +77,11 @@
 	</div>
 	<div class="row">
 		<section class="col-lg-9 col-md-9 col-xs-12">
-			<c:if test="${picture.category.commentable and picture.id ne 731}">
+			<c:if test="${picture.category.commentable}">
 			<section class="commentBox">
+			<c:if test="${picture.id ne 731}">
 				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
+			</c:if>
 				<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
 			</section>
 			</c:if>
