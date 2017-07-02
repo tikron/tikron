@@ -30,5 +30,7 @@ Tikron WebApp:
 - Für Pager statt komplette EntityBeans kleine POJOs verwenden, die per JPQL-Konstruktor erstellt werden ("Java Persistence 2", Seite 202)
 - buildCanonicalUrl() Objektorientiert realisieren.
 - Videos mit "Video for everybody" (http://camendesign.com/code/video_for_everybody) anzeigen.
-- Paging fpr Bilder evtl. per Ajax.
+- Paging für Bilder evtl. per Ajax.
+- Bilder lazy laden und Abmessungen entsprechend view port wählen.
+- Bilder mit CSS max-width/max-height formattieren.  
 
