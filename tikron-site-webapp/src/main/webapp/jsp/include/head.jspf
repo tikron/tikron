@@ -20,6 +20,8 @@
 <script type="text/javascript" src="/lib/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="/lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/lib/scrollup-2.0/jquery.scrollUp.min.js"></script>
+<script type="text/javascript" src="/lib/spin.min.js" ></script>
+<script type="text/javascript" src="/lib/jquery.spin.js" ></script>
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script type="text/javascript" src="/js/base.js" ></script>
 <script type="text/javascript" src="/js/navigation.js${contentVersionParam}" ></script>

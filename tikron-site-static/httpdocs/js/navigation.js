@@ -29,11 +29,11 @@ function TikronNav(options) {
 			_ui.topNav.find('ul').toggleClass('show');
 		});
 		// Handle mouse enter and leave on main top navigation items having a sub navigation
-		var elSubNav = _ui.topNav.find('ul li.hasSubNav');
-		elSubNav.mouseenter(function() {
+		var $subNav = _ui.topNav.find('ul li.hasSubNav');
+		$subNav.mouseenter(function() {
 			_switchSubNav(this, true);
 		});
-		elSubNav.mouseleave(function() {
+		$subNav.mouseleave(function() {
 			_switchSubNav(this, false);
 		});
 	}
@@ -44,42 +44,42 @@ function TikronNav(options) {
 	/**
 	 * Show or hide a a sub navigation.
 	 * 
-	 * @param hoverElement
+	 * @param elHover
 	 *          The DOM element of the top navigation list item.
 	 * @param enter
 	 *          If true, the sub navigation will be shown, otherwise it will be
 	 *          hidden.
 	 */
-	var _switchSubNav = function(hoverElement, enter) {
+	var _switchSubNav = function(elHover, enter) {
 		var dropDownNav = (window.innerWidth < 960); 
-		var hoverId = $(hoverElement).attr('id');
+		var hoverId = $(elHover).attr('id');
 		// console.log(enter + '/' + hoverId);
 		if (hoverId && !dropDownNav) {
 			var hoverName = hoverId.replace(/navTop_/, '')
 			// Hide sub nav on leave or already shown current
 			_ui.subNav.each(function() {
-				var subEl=$(this);
-				var subId = subEl.attr('id');
+				var $subNav=$(this);
+				var subId = $subNav.attr('id');
 				var subName = subId.replace(/navSub_/, '')
-				var isPermanent = subEl.hasClass('permanent');
+				var isPermanent = $subNav.hasClass('permanent');
 				var isHover = subName == hoverName;
 				if (!enter && isHover && !isPermanent || enter && !isHover && isPermanent) {
-					subEl.fadeOut(150, function() {
-						subEl.removeClass('active')
+					$subNav.fadeOut(150, function() {
+						$subNav.removeClass('active')
 					});
 				}
 			});
 			// Show sub nav on enter or already shown current
 			_ui.subNav.each(function() {
-				var subEl=$(this);
-				var subId = subEl.attr('id');
+				var $subNav=$(this);
+				var subId = $subNav.attr('id');
 				var subName = subId.replace(/navSub_/, '')
-				var isPermanent = subEl.hasClass('permanent');
+				var isPermanent = $subNav.hasClass('permanent');
 				var isHover = subName == hoverName;
 				if (enter && isHover && !isPermanent || !enter && !isHover && isPermanent) {
 					_loadSubNav(this, subName);
-					subEl.fadeIn(150, function() {
-						subEl.addClass('active')
+					$subNav.fadeIn(150, function() {
+						$subNav.addClass('active')
 					});
 				}
 			});
@@ -89,17 +89,17 @@ function TikronNav(options) {
 	/**
 	 * Lazy loads inner content of sub navigation.
 	 * 
-	 * @param container
+	 * @param elContainer
 	 *          The HTML element receiving the response.
 	 * @param identifier
 	 *          The identifier of the navigation (catalog) to load.
 	 */
-	var _loadSubNav = function(container, identifier) {
-		if (!$.trim($(container).html())) {
+	var _loadSubNav = function(elContainer, identifier) {
+		if (!$.trim($(elContainer).html())) {
 			$.ajax({
 				url : _cfg.loadSubNavUrl + identifier,
 				success : function(msg) {
-					$(container).html(msg);
+					$(elContainer).html(msg);
 				}
 			});
 		}

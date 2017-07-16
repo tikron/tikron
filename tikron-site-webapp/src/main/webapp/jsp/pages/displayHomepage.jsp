@@ -48,14 +48,14 @@
 <%@ include file="/jsp/include/footer.jspf"%>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <script type="text/javascript">
-	$("#showLog").click(function() {
+	$("#showLog").click(function(e) {
 		$.ajax({
 			url:'${displayLogAjaxUrl}',
-			success: function(msg) {
-				$("#logResponse").html( msg );
+			success: function(response) {
+				$("#logResponse").html(response);
 			}
 		});
-		return false;
+		e.preventDefault();
 	});
 </script>
 <%@ include file="/jsp/include/html_end.jspf"%>

@@ -26,31 +26,32 @@ function TikronContact(options) {
 
 	var _bindUIActions = function() {
 		_ui.form.bind('submit', function(e) {
-			var url = _ui.form.attr('action');
+			var url = $(this).attr('action');
 			// Collect entered data from form fields
-			var data = tikronUtil.collectFormData(_ui.form);
+			var data = $(this).serialize();
 			// Post data with URL request and JSON reponse
-			$.post(
-				url,
-				data,
-				function(response) {
-					tikronUtil.resetErrors(_ui.form);
+			$.ajax(url,	{
+				context: this,
+				data: data,
+				dataType: 'json',	
+				method: 'post',
+				success: function(response) {
+					var $form = $(this);
+					tikronUtil.resetErrors($form);
 					_cfg.reloadCaptcha();
 					if (response.status == 'ERROR') {
-						tikronUtil.showErrors(_ui.form, response);
+						tikronUtil.showErrors($form, response);
 					} else {
 						// Handle success
-						tikronUtil.showGlobalMsg(_ui.form, response.message, 'info');
-						_ui.form.trigger('reset');
+						tikronUtil.showGlobalMsg($form, response.message, 'info');
+						$form.trigger('reset');
 					}
-//					var $globalErrors = _ui.form.find('ul#globalErrors');
-//					_ui.form.tooltip({items: _ui.form, content: 'Hossa!'});
-//					_ui.form.tooltip('open');
-				},
-				'json'
-			);
+//					var $globalErrors = $form.find('ul#globalErrors');
+//					$form.tooltip({items: $form, content: 'Hossa!'});
+//					$form.tooltip('open');
+				}
+			});
 			e.preventDefault();
-			return false;
 		});
 	}
 

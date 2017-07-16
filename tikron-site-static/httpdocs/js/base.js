@@ -10,7 +10,7 @@ function Tikron(options) {
 			email: {address: 'contact@tikron.de', subject: 'Kontaktanfrage'},
 			address: {headline: '"Tikron" wird von {0} vertreten. Die Postanschrift lautet:'},
 			postal : {name: 'Titus Kruse', address: 'Birnweg 2', city: '22335 Hamburg', country: 'Germany'}
-	}
+	};
 
   this.config = $.extend({
   }, options);
@@ -37,6 +37,8 @@ function Tikron(options) {
 		_bindGoUpButton();
 		// Form elements
 		_bindForms();
+		// Bind default ajax spinner
+		_bindAjaxDefaultSpinner();
 	}
 	
 	var _bindGoUpButton = function() {
@@ -111,7 +113,18 @@ function Tikron(options) {
 			$(field).val('http://' + value);
 		}
 	}
-
+	
+	/**
+	 * Binds default spinner for all Ajax requests.
+	 */
+	var _bindAjaxDefaultSpinner = function() {
+		$(document).ajaxStart(function() {
+			$('#container').spin();
+		});
+		$(document).ajaxStop(function() {
+			$('#container').spin(false);
+		});
+	}
 };
 
 var tikron = new Tikron();
