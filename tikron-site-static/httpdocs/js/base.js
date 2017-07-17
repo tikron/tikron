@@ -37,6 +37,8 @@ function Tikron(options) {
 		_bindGoUpButton();
 		// Form elements
 		_bindForms();
+		// Bind ajax request for Ajax loading links
+		_bindAjaxLinks();
 		// Bind default ajax spinner
 		_bindAjaxDefaultSpinner();
 	}
@@ -115,15 +117,39 @@ function Tikron(options) {
 	}
 	
 	/**
+	 * Bind ajax request for Ajax loading links
+	 */
+	var _bindAjaxLinks = function() {
+		$("a.ajax").click(function(e) {
+			$.ajax({
+				url: $(this).attr('href'),
+				context: this,
+				success: function(response) {
+					var $target = $($(this).data('response-target'));
+					if ($target.length == 0) $target = $(this);
+					$target.html(response);
+				}
+			});
+			e.preventDefault();
+		});
+	}
+	
+	/**
 	 * Binds default spinner for all Ajax requests.
 	 */
 	var _bindAjaxDefaultSpinner = function() {
-		$(document).ajaxStart(function() {
-			$('#container').spin();
-		});
-		$(document).ajaxStop(function() {
-			$('#container').spin(false);
-		});
+		$('a.ajax').ajaxSend(function(e) {
+			$(e.target).spin();
+		})
+		$('a.ajax').ajaxComplete(function(e) {
+			$(e.target).spin(false);
+		})
+		$('form.ajax').ajaxSend(function(e) {
+			$(e.target).find('button[type=submit]').spin();
+		})
+		$('form.ajax').ajaxComplete(function(e) {
+			$(e.target).find('button[type=submit]').spin(false);
+		})
 	}
 };
 

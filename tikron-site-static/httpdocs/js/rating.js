@@ -55,14 +55,17 @@ function TikronRating(options) {
 	 * @param value The rating value chosen by the user.
 	 */
 	var _handleRating = function(e, value) {
-		var entityId = e.parent().parent().data('id');
+		var $rating = e.parents('.ratingStars');
+		$rating.find('.stars').spin();
+		var entityId = $rating.data('id');
 		var requestUrl = _buildRequestUrl(entityId, value)
 		$.ajax({
 			url: requestUrl,
+			context: $rating,
 			success: function(ratingResult) {
-				var $rating = _findById(ratingResult.id);
 				var $text = $rating.find('span.text');
 				$text.text(_composeRatingText(ratingResult.count));
+				$rating.find('.stars').spin(false);
 			}
 		});
 	}
