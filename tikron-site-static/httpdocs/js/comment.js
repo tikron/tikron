@@ -26,31 +26,31 @@ function TikronComment(options) {
 
 	var _bindUIActions = function() {
 		_ui.form.bind('submit', function(e) {
-			var url = _ui.form.attr('action');
-			// Collect entered data from form fields
-			var data = tikronUtil.collectFormData(_ui.form);
-			// Post data with URL request and JSON reponse
-			$.post(
-				url,
-				data,
-				function(response) {
+			var $form = $(this);
+			var url = $(this).attr('action');
+			// Post data with request URL and JSON reponse
+			$.ajax(url,	{
+				context: this,
+				data: $(this).serialize(),
+			  dataType: 'json',
+				method: 'post',
+				success: function(response) {
+					var $form = $(this);
 					// Reset errors
-					tikronUtil.resetErrors(_ui.form);
+					tikronUtil.resetErrors($form);
 					if (response.status == 'ERROR') {
-						tikronUtil.showErrors(_ui.form, response);
+						tikronUtil.showErrors($form, response);
 					} else {
 						// Handle success
 						if (_ui.list) {
 							_addListEntry(response.data);
 							_updateList();
 						}
-						_ui.form.trigger('reset');
+						$form.trigger('reset');
 					}
-				},
-				'json'
-			);
+				}
+	  	});
 			e.preventDefault();
-			return false;
 		});
 	}
 	

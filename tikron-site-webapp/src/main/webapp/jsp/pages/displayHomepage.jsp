@@ -34,7 +34,7 @@
 				</p>
 			</article>
 			<section class="log">
-				<a id="showLog" href="#" class="arrow log" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
+				<a id="showLog" href="${displayLogAjaxUrl}" class="arrow log ajax" data-response-target="#logResponse" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 				<div id="logResponse" class="timestamp">
 					Letzte Aktualisierung: <time datetime="2016-07-28">28.07.2016</time>
 				</div>
@@ -47,15 +47,4 @@
 </div>
 <%@ include file="/jsp/include/footer.jspf"%>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
-<script type="text/javascript">
-	$("#showLog").click(function() {
-		$.ajax({
-			url:'${displayLogAjaxUrl}',
-			success: function(msg) {
-				$("#logResponse").html( msg );
-			}
-		});
-		return false;
-	});
-</script>
 <%@ include file="/jsp/include/html_end.jspf"%>

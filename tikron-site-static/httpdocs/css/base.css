@@ -102,6 +102,10 @@ a > i {
 	padding: 0 2px 0 6px;
 }
 
+a.ajax {
+	position: relative; /* Relative position of spinner to this */
+}
+
 /* Show images and tables with no border */
 img, table {
 	border: 0;
@@ -125,6 +129,7 @@ input[type="submit"],
 input[type="reset"],
 button {
 	box-sizing: content-box;
+	position: relative; /* Relative position of spinner to this */
 }
 
 /*** Content tables and listings ******************************/
@@ -473,6 +478,7 @@ ul.comments div.attributes a {
 
 .ratingStars .stars {
 	display: inline-block;
+	position: relative; /* Relative position of spinner to this */
 }
 
 .ratingStars .text {

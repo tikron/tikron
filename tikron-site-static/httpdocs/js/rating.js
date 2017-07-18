@@ -27,9 +27,9 @@ function TikronRating(options) {
 	var _bindUIActions = function() {
 		_ui.ratingStars.each(function() {
 			// Fetch unique entity ID from HTML element
-			var entityId = $(this).attr('data-id');
-			var ratingValue = $(this).attr('data-avarage');
-			var ratingCount = $(this).attr('data-count');
+			var entityId = $(this).data('id');
+			var ratingValue = $(this).data('avarage');
+			var ratingCount = $(this).data('count');
 			// Set current rating as text message
 			var textE = $(this).find('span.text');
 			textE.text(_composeRatingText(ratingCount));
@@ -55,16 +55,26 @@ function TikronRating(options) {
 	 * @param value The rating value chosen by the user.
 	 */
 	var _handleRating = function(e, value) {
-		var entityId = e.parent().parent().attr('data-id');
+		var $rating = e.parents('.ratingStars');
+		$rating.find('.stars').spin();
+		var entityId = $rating.data('id');
 		var requestUrl = _buildRequestUrl(entityId, value)
 		$.ajax({
 			url: requestUrl,
+			context: $rating,
 			success: function(ratingResult) {
-				var resultE=_ui.ratingStars.filter('[data-id = "' + ratingResult.id + '"]');
-				var textE=resultE.find('span.text');
-				textE.text(_composeRatingText(ratingResult.count));
+				var $text = $rating.find('span.text');
+				$text.text(_composeRatingText(ratingResult.count));
+				$rating.find('.stars').spin(false);
 			}
 		});
+	}
+	
+	var _findById = function(id) {
+		var $rating = _ui.ratingStars.filter(function() {
+			return $(this).data("id") == id;
+		});
+		return $rating;
 	}
 	
 	/**

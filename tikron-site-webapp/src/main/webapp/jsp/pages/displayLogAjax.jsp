@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	try {
 		if (Piwik) {
-			var piwikTracker = Piwik.getAsyncTracker()
+			var piwikTracker = Piwik.getAsyncTracker();
 			piwikTracker.setCustomUrl('${fullRequestURI}');
 			piwikTracker.setDocumentTitle('${pageTitle}');
 			piwikTracker.trackPageView();

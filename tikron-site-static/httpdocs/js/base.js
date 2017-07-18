@@ -10,7 +10,7 @@ function Tikron(options) {
 			email: {address: 'contact@tikron.de', subject: 'Kontaktanfrage'},
 			address: {headline: '"Tikron" wird von {0} vertreten. Die Postanschrift lautet:'},
 			postal : {name: 'Titus Kruse', address: 'Birnweg 2', city: '22335 Hamburg', country: 'Germany'}
-	}
+	};
 
   this.config = $.extend({
   }, options);
@@ -37,6 +37,10 @@ function Tikron(options) {
 		_bindGoUpButton();
 		// Form elements
 		_bindForms();
+		// Bind ajax request for Ajax loading links
+		_bindAjaxLinks();
+		// Bind default ajax spinner
+		_bindAjaxDefaultSpinner();
 	}
 	
 	var _bindGoUpButton = function() {
@@ -111,7 +115,42 @@ function Tikron(options) {
 			$(field).val('http://' + value);
 		}
 	}
-
+	
+	/**
+	 * Bind ajax request for Ajax loading links
+	 */
+	var _bindAjaxLinks = function() {
+		$("a.ajax").click(function(e) {
+			$.ajax({
+				url: $(this).attr('href'),
+				context: this,
+				success: function(response) {
+					var $target = $($(this).data('response-target'));
+					if ($target.length == 0) $target = $(this);
+					$target.html(response);
+				}
+			});
+			e.preventDefault();
+		});
+	}
+	
+	/**
+	 * Binds default spinner for all Ajax requests.
+	 */
+	var _bindAjaxDefaultSpinner = function() {
+		$('a.ajax').ajaxSend(function(e) {
+			$(e.target).spin();
+		})
+		$('a.ajax').ajaxComplete(function(e) {
+			$(e.target).spin(false);
+		})
+		$('form.ajax').ajaxSend(function(e) {
+			$(e.target).find('button[type=submit]').spin();
+		})
+		$('form.ajax').ajaxComplete(function(e) {
+			$(e.target).find('button[type=submit]').spin(false);
+		})
+	}
 };
 
 var tikron = new Tikron();

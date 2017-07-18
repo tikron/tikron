@@ -32,23 +32,20 @@ function TikronUtil(options) {
 			str = str.replace(re, arr[i]);
 		}
 		return str;
-	} 
+	}
 	
 	/**
-	 * Collect input field values and return them as array of strings.
+	 * Enable or disable submit button of the given form.
 	 * 
 	 * @param jQuery form element.
-	 * @return An array of field values.
+	 * @param Enables the button, if set true. Disables it therwise. 
 	 */
-	this.collectFormData = function(form) {
-		var fields = form.find('input, select, textarea');
-		var data = {};
-		for (var i = 0; i < fields.length; i++) {
-			var $item = $(fields[i]);
-			var value = $item.val();
-			data[$item.attr('name')] = $item.val();
+	this.toggleSubmitButton = function($form, enable) {
+		if (enable) {
+			$form.find('button[type=submit]').removeAttr('disabled');
+		} else {
+			$form.find('button[type=submit]').attr('disabled', 'disabled');
 		}
-		return data;
 	}
 	
 	/**
@@ -56,10 +53,10 @@ function TikronUtil(options) {
 	 * 
 	 * @param jQuery form element.
 	 */
-	this.resetErrors = function(form) {
-		form.find('ul.globalMsg').empty();
-		form.find('div.form-control').removeClass('error');
-		form.find('span.error').empty();
+	this.resetErrors = function($form) {
+		$form.find('ul.globalMsg').empty();
+		$form.find('div.form-control').removeClass('error');
+		$form.find('span.error').empty();
 	}
 	
 	/**
@@ -68,15 +65,15 @@ function TikronUtil(options) {
 	 * @param jQuery form element.
 	 * @param response Ajax error response of java type ErrorResponse.  
 	 */
-	this.showErrors = function(form, response) {
+	this.showErrors = function($form, response) {
 		// Handle global errors
 		for (var i = 0; i < response.globalErrors.length; i++) {
-			_root.showGlobalMsg(form, response.globalErrors[i].message, 'error');
+			_root.showGlobalMsg($form, response.globalErrors[i].message, 'error');
 		}
 		// Handle field errors
 		for (var i = 0; i < response.fieldErrors.length; i++) {
 			var error = response.fieldErrors[i];
-			var $controlGroup = form.find('div.form-control[id="' + error.field + '"]');
+			var $controlGroup = $form.find('div.form-control[id="' + error.field + '"]');
 			$controlGroup.addClass('error');
 			$controlGroup.find('span.error').html(error.message);
 		}
@@ -89,8 +86,8 @@ function TikronUtil(options) {
 	 * @param message The message text to show.
 	 * @param clazz The CSS class to use for the added LI element. 
 	 */
-	this.showGlobalMsg = function(form, message, clazz) {
-		var $globalErrors = form.find('ul.globalMsg');
+	this.showGlobalMsg = function($form, message, clazz) {
+		var $globalErrors = $form.find('ul.globalMsg');
 		$globalErrors.append($('<li>', {'class': clazz, html: message}));
 	}
 	
