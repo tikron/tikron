@@ -14,6 +14,7 @@ Persistence:
 - @ManyToOne mit Fetch.LAZY versehen? Führt ansonsten zu großen SQL-Statements z.B. bei getComments().size()
 - Annotaionen @Index hinzufügen?
 - Statt visible im DAO zu filtern, dies im Service Layer per Java 8 Collection:removeIf().
+- Tabellen Comment und Picture... über Relationstabelle referenzieren.
 - Zum Laden des Menüs Projections (DTOs) verwenden. http://blog.arnoldgalovics.com/2017/03/14/using-projections-in-your-data-access-layer/ -> Geht nicht wegen OneToMany Catalog:Category.
 
 
