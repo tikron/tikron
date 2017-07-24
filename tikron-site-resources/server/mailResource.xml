@@ -5,7 +5,7 @@
 <Resource name="mail/tikron"
 	auth="Container"
 	type="javax.mail.Session"
-	mail.smtp.host="mail.tikron.de"
+	mail.smtp.host="smtp.tikron.de"
 	mail.smtp.auth="true"
 	username="contact@tikron.de"
 	password="********"
