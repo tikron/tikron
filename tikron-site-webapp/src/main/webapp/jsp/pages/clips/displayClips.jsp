@@ -33,8 +33,8 @@
 			<section id="contentMain">
 				<ul class="imageIndex">
 					<c:forEach var="clip" items="${clips}" varStatus="listStatus">
-					<c:set var="dateRecordedHtml"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="yyyy-MM" /></c:set>
-					<c:set var="playtimeHtml"><fmt:formatDate value="${clip.playtime}" type="time" pattern="'PT'm'M'ss'S'" /></c:set>
+					<c:set var="dateRecordedHtml">${tikron:formatLocalDate(clip.dateRecorded, "yyyy-MM")}</c:set>
+					<c:set var="playtimeHtml">${tikron:formatLocalTime(clip.playtime, "'PT'm'M'ss'S'")}</c:set>
 					<li>
 						<c:url var="displayClipUrl" value="/clips/displayClip.html">
 							<c:param name="clipId" value="${clip.id}"/>
@@ -44,13 +44,13 @@
 							<figure>
 								<a href="${displayClipUrl}" class="image block">
 									<img src="/images/clips/${clip.name}.png" alt="${clip.title}"/>
-									<span class="duration"><time datetime="${playtimeHtml}"><fmt:formatDate value="${clip.playtime}" type="time" pattern="m:ss" /></time></span>
+									<span class="duration"><time datetime="${playtimeHtml}">${tikron:formatLocalizedTime(clip.playtime, "m:ss", pageContext.response.locale)}</time></span>
 								</a>
 							</figure>
 							<div class="description clear">
 								<header>
 									<h2><a href="${displayClipUrl}"><c:out value="${clip.title}" /></a></h2>
-									<span class="date"><time datetime="${dateRecordedHtml}"><fmt:formatDate value="${clip.dateRecorded}" type="date" pattern="MMM. yyyy" /></time></span>
+									<span class="date"><time datetime="${dateRecordedHtml}">${tikron:formatLocalizedDate(clip.dateRecorded, "MMM. yyyy", pageContext.response.locale)}</time></span>
 								</header>
 								<p><c:out value="${clip.shortDescription}" /></p>
 								<c:set var="rating" value="${ratings[clip.id]}" />

@@ -3,7 +3,8 @@
  */
 package de.tikron.persistence.model.misc;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -59,10 +58,9 @@ public class Clip extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 	@Column(name = "video_height")
 	private Short videoHeight;
 	@Column(name = "date_recorded")
-	@Temporal(TemporalType.DATE)
-	private Date dateRecorded;
-	@Temporal(TemporalType.TIME)
-	private Date playtime;
+	private LocalDate dateRecorded;
+	@Column
+	private LocalTime playtime;
 
 	@OneToMany(mappedBy = "clip", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<ClipComment> comments = new HashSet<ClipComment>();
@@ -153,19 +151,19 @@ public class Clip extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 		this.videoHeight = videoHeight;
 	}
 
-	public Date getDateRecorded() {
+	public LocalDate getDateRecorded() {
 		return dateRecorded;
 	}
 
-	public void setDateRecorded(Date dateRecorded) {
+	public void setDateRecorded(LocalDate dateRecorded) {
 		this.dateRecorded = dateRecorded;
 	}
 
-	public Date getPlaytime() {
+	public LocalTime getPlaytime() {
 		return playtime;
 	}
 
-	public void setPlaytime(Date playtime) {
+	public void setPlaytime(LocalTime playtime) {
 		this.playtime = playtime;
 	}
 

@@ -33,7 +33,10 @@
 			<f:facet name="header">
 				<h:outputText value="#{msg.headerClipDateRecorded}"></h:outputText>
 			</f:facet>
-			<h:outputText value="#{clip.dateRecorded}"><f:convertDateTime type="date" /></h:outputText>
+			<h:outputText value="#{clip.dateRecorded}">
+				<f:converter converterId="localDateConverter" />
+				<f:attribute name="dateStyle" value="medium" />
+			</h:outputText>
 		</h:column>
 		<f:facet name="footer">
 			<h:outputText rendered="#{cc.attrs.dataModel.rowCount eq 0}" value="#{msg.textEmptyList}"></h:outputText>

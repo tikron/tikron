@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd" >
-<taglib>
-	<tlib-version>2.0</tlib-version>
-	<jsp-version>1.2</jsp-version>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+	<tlib-version>2.1</tlib-version>
 	<short-name>tikron</short-name>
 	<uri>http://www.tikron.de</uri>
 	<tag>
 		<name>textarea</name>
 		<tag-class>de.tikron.webapp.util.tag.TextArea</tag-class>
+		<body-content>scriptless</body-content>
 		<attribute>
 			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
 			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
@@ -23,22 +28,35 @@
 			<type>java.lang.String</type>
 		</attribute>
 	</tag>
-	<tag>
-		<name>tracklength</name>
-		<tag-class>de.tikron.webapp.util.tag.TrackLength</tag-class>
-		<attribute>
-			<name>id</name>
-			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
-			<name>styleClass</name>
-			<type>java.lang.String</type>
-		</attribute>
-		<attribute>
-			<name>value</name>
-			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.Integer</type>
-		</attribute>
-	</tag>
+	<function>
+		<name>formatLocalizedDateTime</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatDateTime(java.time.LocalDateTime, java.lang.String, java.util.Locale)</function-signature>
+	</function>
+	<function>
+		<name>formatLocalizedDate</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatDate(java.time.LocalDate, java.lang.String, java.util.Locale)</function-signature>
+	</function>
+	<function>
+		<name>formatLocalizedTime</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatTime(java.time.LocalTime, java.lang.String, java.util.Locale)</function-signature>
+	</function>
+	<!-- Copy of above function, because TLD function-signature doesn't support optional parameters -->
+	<function>
+		<name>formatLocalDateTime</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatDateTime(java.time.LocalDateTime, java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>formatLocalDate</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatDate(java.time.LocalDate, java.lang.String)</function-signature>
+	</function>
+	<function>
+		<name>formatLocalTime</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatTime(java.time.LocalTime, java.lang.String)</function-signature>
+	</function>
 </taglib>
