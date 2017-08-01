@@ -3,14 +3,17 @@
  */
 package de.tikron.webapp.util.tag;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+import org.apache.commons.lang3.time.DurationFormatUtils;
+
 /**
- * Formatters for custom JSTL functions.
+ * Date and Time formatters for my custom JSTL functions.
  * 
  * @see https://stackoverflow.com/questions/35606551/jstl-localdatetime-format
  *
@@ -45,5 +48,9 @@ public final class LocalDateTimeFormatter {
 
 	public static String formatTime(LocalTime localTime, String pattern) {
 		return localTime.format(DateTimeFormatter.ofPattern(pattern));
+	}
+	
+	public static String formatDuration(Duration duration, String pattern) {
+		return DurationFormatUtils.formatDuration(duration.toMillis(), pattern);
 	}
 }

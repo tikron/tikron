@@ -34,7 +34,7 @@
 				<ul class="imageIndex">
 					<c:forEach var="clip" items="${clips}" varStatus="listStatus">
 					<c:set var="dateRecordedHtml">${tikron:formatLocalDate(clip.dateRecorded, "yyyy-MM")}</c:set>
-					<c:set var="playtimeHtml">${tikron:formatLocalTime(clip.playtime, "'PT'm'M'ss'S'")}</c:set>
+					<c:set var="playtimeHtml">${tikron:formatDuration(clip.playtime, "'PT'm'M'ss'S'")}</c:set>
 					<li>
 						<c:url var="displayClipUrl" value="/clips/displayClip.html">
 							<c:param name="clipId" value="${clip.id}"/>
@@ -44,7 +44,7 @@
 							<figure>
 								<a href="${displayClipUrl}" class="image block">
 									<img src="/images/clips/${clip.name}.png" alt="${clip.title}"/>
-									<span class="duration"><time datetime="${playtimeHtml}">${tikron:formatLocalizedTime(clip.playtime, "m:ss", pageContext.response.locale)}</time></span>
+									<span class="duration"><time datetime="${playtimeHtml}">${tikron:formatDuration(clip.playtime, "m:ss")}</time></span>
 								</a>
 							</figure>
 							<div class="description clear">

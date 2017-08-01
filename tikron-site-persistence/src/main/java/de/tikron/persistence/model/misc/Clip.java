@@ -4,12 +4,13 @@
 package de.tikron.persistence.model.misc;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -19,6 +20,7 @@ import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
+import de.tikron.jpa.domain.DurationAttributeConverter;
 import de.tikron.jpa.domain.GeneratedKeyEntity;
 import de.tikron.jpa.domain.ShowableEntity;
 import de.tikron.persistence.model.user.ClipComment;
@@ -60,7 +62,8 @@ public class Clip extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 	@Column(name = "date_recorded")
 	private LocalDate dateRecorded;
 	@Column
-	private LocalTime playtime;
+	@Convert(converter = DurationAttributeConverter.class) // autoApply doesn't work on java.time.Duration
+	private Duration playtime;
 
 	@OneToMany(mappedBy = "clip", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<ClipComment> comments = new HashSet<ClipComment>();
@@ -159,11 +162,11 @@ public class Clip extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 		this.dateRecorded = dateRecorded;
 	}
 
-	public LocalTime getPlaytime() {
+	public Duration getPlaytime() {
 		return playtime;
 	}
 
-	public void setPlaytime(LocalTime playtime) {
+	public void setPlaytime(Duration playtime) {
 		this.playtime = playtime;
 	}
 

@@ -59,4 +59,10 @@
 		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
 		<function-signature>java.lang.String formatTime(java.time.LocalTime, java.lang.String)</function-signature>
 	</function>
+	<!-- Duration -->
+	<function>
+		<name>formatDuration</name>
+		<function-class>de.tikron.webapp.util.tag.LocalDateTimeFormatter</function-class>
+		<function-signature>java.lang.String formatDuration(java.time.Duration, java.lang.String)</function-signature>
+	</function>
 </taglib>

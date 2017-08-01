@@ -176,7 +176,7 @@ CREATE TABLE clip (
 	video_width smallint,
 	video_height smallint,
 	date_recorded date,
-	playtime integer,
+	playtime bigint,
 	created_on timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	version int(11) DEFAULT '0',
 	PRIMARY KEY (id),

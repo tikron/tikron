@@ -52,7 +52,7 @@
 		</h:inputText>
 		<tcf:outputLabel for="playtime" value="#{msg.labelClipPlaytime}"></tcf:outputLabel>
 		<h:inputText id="playtime" value="#{cc.attrs.clip.playtime}" styleClass="time">
-			<f:converter converterId="localTimeConverter" />
+			<f:converter converterId="durationConverter" />
 			<f:attribute name="timeStyle" value="medium" />
 		</h:inputText>
 	</h:panelGrid>

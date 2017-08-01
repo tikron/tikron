@@ -4,9 +4,9 @@
 package de.tikron.webapp.model.misc;
 
 import java.net.URI;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Map;
 
 import de.tikron.common.FormattedTextCompiler;
@@ -130,7 +130,7 @@ public class ClipEntityBean extends BaseEntityBean<Clip> {
 		return entity.getDateRecorded();
 	}
 
-	public LocalTime getPlaytime() {
+	public Duration getPlaytime() {
 		return entity.getPlaytime();
 	}
 	
