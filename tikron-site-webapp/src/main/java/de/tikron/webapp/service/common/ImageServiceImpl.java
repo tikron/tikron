@@ -12,7 +12,7 @@ import java.text.MessageFormat;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;

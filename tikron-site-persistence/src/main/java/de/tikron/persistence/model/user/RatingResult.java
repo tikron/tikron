@@ -3,8 +3,8 @@
  */
 package de.tikron.persistence.model.user;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.math.NumberUtils;
 
 
 

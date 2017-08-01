@@ -3,8 +3,9 @@
  */
 package de.tikron.galleryimport;
 
-import org.apache.commons.lang.ObjectUtils;
-import org.apache.commons.lang.StringUtils;
+import java.util.Objects;
+
+import org.apache.commons.lang3.StringUtils;
 
 import de.tikron.persistence.model.gallery.Picture;
 
@@ -64,10 +65,10 @@ public class BufferedPicture {
 		}
 		if (anObject instanceof BufferedPicture) {
 			BufferedPicture anotherBufferedPicture = (BufferedPicture) anObject;
-			if (ObjectUtils.equals(this.getName(), anotherBufferedPicture.getName())) {
-				if (ObjectUtils.equals(this.getTitle(), anotherBufferedPicture.getTitle())) {
-					if (ObjectUtils.equals(this.getDescription(), anotherBufferedPicture.getDescription())) {
-						if (ObjectUtils.equals(this.getImageName(), anotherBufferedPicture.getImageName())) {
+			if (Objects.equals(this.getName(), anotherBufferedPicture.getName())) {
+				if (Objects.equals(this.getTitle(), anotherBufferedPicture.getTitle())) {
+					if (Objects.equals(this.getDescription(), anotherBufferedPicture.getDescription())) {
+						if (Objects.equals(this.getImageName(), anotherBufferedPicture.getImageName())) {
 							return true;
 						}
 					}

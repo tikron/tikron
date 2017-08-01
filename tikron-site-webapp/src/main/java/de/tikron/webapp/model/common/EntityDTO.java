@@ -3,7 +3,7 @@
  */
 package de.tikron.webapp.model.common;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * Base class for all data transfer objects with unique identifier.
