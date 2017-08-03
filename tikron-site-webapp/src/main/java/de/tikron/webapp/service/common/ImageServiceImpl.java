@@ -28,7 +28,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service("imageService")
 public class ImageServiceImpl implements ImageService {
 
-	private static Logger LOGGER = LogManager.getLogger(ImageServiceImpl.class);
+	private static Logger LOGGER = LogManager.getLogger();
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
 

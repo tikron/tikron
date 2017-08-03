@@ -26,7 +26,7 @@ public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 	
 	public static final String NAME = "teaserEntityBean";
 
-	private static Logger LOGGER = LogManager.getLogger(TeaserEntityBean.class);
+	private static Logger LOGGER = LogManager.getLogger();
 	
 	private PictureDTO picture;
 	

@@ -35,7 +35,7 @@ import de.tikron.webapp.util.RobotsDirective;
 @Controller
 public class SendContactMessageController extends AbstractFormController {
 
-	private static Logger LOGGER = LogManager.getLogger(SendContactMessageController.class);
+	private static Logger LOGGER = LogManager.getLogger();
 
 	private EmailService emailService;
 

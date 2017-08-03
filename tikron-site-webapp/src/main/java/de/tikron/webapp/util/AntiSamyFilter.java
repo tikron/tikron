@@ -36,7 +36,7 @@ import org.owasp.validator.html.PolicyException;
  */
 public class AntiSamyFilter implements Filter {
 
-	private static final Logger LOG = LogManager.getLogger(AntiSamyFilter.class);
+	private static final Logger LOG = LogManager.getLogger();
 
 	/**
 	 * AntiSamy is unfortunately not immutable, but is threadsafe if we only call

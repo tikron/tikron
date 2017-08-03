@@ -27,7 +27,7 @@ import de.tikron.webapp.util.LocalizationContext;
 @ControllerAdvice
 public class GlobalDefaultExceptionHandler {
 
-	private static Logger LOGGER = LogManager.getLogger(GlobalDefaultExceptionHandler.class);
+	private static Logger LOGGER = LogManager.getLogger();
 	
 	private LocalizationContext localizationContext;
 

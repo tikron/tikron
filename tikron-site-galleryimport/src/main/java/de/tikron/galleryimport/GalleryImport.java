@@ -38,7 +38,7 @@ import de.tikron.persistence.model.gallery.Picture;
  */
 public class GalleryImport {
 
-	private static Logger log = LogManager.getLogger(GalleryImport.class);
+	private static Logger log = LogManager.getLogger();
 
 	private static int picturesAdded = 0;
 	private static int picturesUpdated = 0;

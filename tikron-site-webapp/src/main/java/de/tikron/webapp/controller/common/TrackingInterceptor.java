@@ -28,7 +28,7 @@ import de.tikron.webapp.service.common.TrackingService;
 @Component
 public class TrackingInterceptor extends HandlerInterceptorAdapter {
 
-	private static Logger LOGGER = LogManager.getLogger(TrackingInterceptor.class);
+	private static Logger LOGGER = LogManager.getLogger();
 
 	private static final String REQUEST_PARAM_TRACKING = "tracking";
 

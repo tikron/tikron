@@ -28,7 +28,7 @@ import javax.faces.event.ComponentSystemEvent;
 @ViewScoped
 public class PlaylistUploadBean extends AbstractFileUploadBean {
 
-//	private static Logger log = LogManager.getLogger(PlaylistUploadBean.class);
+//	private static Logger log = LogManager.getLogger();
 
 //	@ManagedProperty(value = "#{trackService}")
 //	private TrackService trackService;

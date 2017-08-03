@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
 @Service("fileArchiveService")
 public class FileArchiveServiceImpl implements FileArchiveService {
 
-	private static Logger LOGGER = LogManager.getLogger(FileArchiveServiceImpl.class);
+	private static Logger LOGGER = LogManager.getLogger();
 
 	private URL archiveUrl;
 	
