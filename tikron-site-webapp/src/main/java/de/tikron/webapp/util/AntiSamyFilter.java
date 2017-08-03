@@ -18,7 +18,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.owasp.validator.html.AntiSamy;
 import org.owasp.validator.html.CleanResults;
 import org.owasp.validator.html.Policy;
@@ -35,7 +36,7 @@ import org.owasp.validator.html.PolicyException;
  */
 public class AntiSamyFilter implements Filter {
 
-	private static final Logger LOG = Logger.getLogger(AntiSamyFilter.class);
+	private static final Logger LOG = LogManager.getLogger(AntiSamyFilter.class);
 
 	/**
 	 * AntiSamy is unfortunately not immutable, but is threadsafe if we only call

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<RollingFile name="de.tikron.webapp.service.user.UserActionAppender" fileName="${sys:catalina.base}/logs/useraction.log" 
+			filePattern="${sys:catalina.base}/logs/useraction-%d{yyyy-MM-dd}-%i.log" append="true">
+			<PatternLayout pattern="%d %p: %m%n" />
+			<Policies>
+<!-- 				<OnStartupTriggeringPolicy /> -->
+				<SizeBasedTriggeringPolicy size="1 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %C %M%n%p: %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<!-- Application -->
+		<Logger name="de.tikron.webapp" level="info" />
+		
+		<!-- User action logger -->
+		<Logger name="de.tikron.webapp.service.user.UserAction" level="info" additivity="false">
+			<AppenderRef ref="de.tikron.webapp.service.user.UserActionAppender" />
+		</Logger>
+		
+		<!-- Hibernate/JPA-->
+		<Logger name="org.hibernate" level="info" />
+		<!-- Log all SQL DML statements as they are executed -->
+		<Logger name="org.hibernate.SQL" level="info" />
+		<!-- Log all SQL DDL statements as they are executed -->
+		<Logger name="org.hibernate.tool.hbm2ddl" level="info" />
+		
+		<!-- Spring Framework -->
+		<Logger name="org.springframework" level="info" />
+		
+		<Root level="warn">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>

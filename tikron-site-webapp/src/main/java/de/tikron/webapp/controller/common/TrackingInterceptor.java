@@ -9,7 +9,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
@@ -27,7 +28,7 @@ import de.tikron.webapp.service.common.TrackingService;
 @Component
 public class TrackingInterceptor extends HandlerInterceptorAdapter {
 
-	private static Logger LOGGER = Logger.getLogger(TrackingInterceptor.class);
+	private static Logger LOGGER = LogManager.getLogger(TrackingInterceptor.class);
 
 	private static final String REQUEST_PARAM_TRACKING = "tracking";
 

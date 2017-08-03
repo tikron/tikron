@@ -5,7 +5,8 @@ package de.tikron.webapp.controller.main;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -34,7 +35,7 @@ import de.tikron.webapp.util.RobotsDirective;
 @Controller
 public class SendContactMessageController extends AbstractFormController {
 
-	private static Logger LOGGER = Logger.getLogger(SendContactMessageController.class);
+	private static Logger LOGGER = LogManager.getLogger(SendContactMessageController.class);
 
 	private EmailService emailService;
 

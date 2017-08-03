@@ -18,7 +18,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.cyberneko.html.parsers.DOMParser;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -37,7 +38,7 @@ import de.tikron.persistence.model.gallery.Picture;
  */
 public class GalleryImport {
 
-	private static Logger log = Logger.getLogger(GalleryImport.class);
+	private static Logger log = LogManager.getLogger(GalleryImport.class);
 
 	private static int picturesAdded = 0;
 	private static int picturesUpdated = 0;

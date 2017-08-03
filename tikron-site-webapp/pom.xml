@@ -23,6 +23,9 @@
 	</build>
 	<profiles>
 		<profile>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<id>dev</id>
 			<build>
 				<resources>
@@ -34,9 +37,6 @@
 		</profile>
 		<profile>
 			<id>prod</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
 			<build>
 				<resources>
 					<resource>
@@ -167,8 +167,8 @@
 			<version>1.5.1</version>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.tuckey</groupId>

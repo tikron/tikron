@@ -13,7 +13,8 @@ import java.text.MessageFormat;
 import javax.annotation.PostConstruct;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -27,7 +28,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service("imageService")
 public class ImageServiceImpl implements ImageService {
 
-	private static Logger LOGGER = Logger.getLogger(ImageServiceImpl.class);
+	private static Logger LOGGER = LogManager.getLogger(ImageServiceImpl.class);
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
 

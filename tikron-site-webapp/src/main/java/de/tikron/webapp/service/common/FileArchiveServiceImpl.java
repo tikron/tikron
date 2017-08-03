@@ -9,7 +9,8 @@ import java.text.MessageFormat;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ import org.springframework.stereotype.Service;
 @Service("fileArchiveService")
 public class FileArchiveServiceImpl implements FileArchiveService {
 
-	private static Logger LOGGER = Logger.getLogger(FileArchiveServiceImpl.class);
+	private static Logger LOGGER = LogManager.getLogger(FileArchiveServiceImpl.class);
 
 	private URL archiveUrl;
 	

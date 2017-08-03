@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<RollingFile name="de.tikron.webapp.service.user.UserActionAppender" fileName="${sys:catalina.base}/logs/useraction.log" 
+			filePattern="${sys:catalina.base}/logs/useraction-%d{yyyy-MM-dd}-%i.log" append="true">
+			<PatternLayout pattern="%d %p: %m%n" />
+			<Policies>
+<!-- 				<OnStartupTriggeringPolicy /> -->
+				<SizeBasedTriggeringPolicy size="1 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="10"/>
+		</RollingFile>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %C %M%n%p: %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<!-- Application -->
+		<Logger name="de.tikron.webapp" level="debug" />
+		
+		<!-- User action logger -->
+		<Logger name="de.tikron.webapp.service.user.UserAction" level="info" additivity="false">
+			<AppenderRef ref="de.tikron.webapp.service.user.UserActionAppender" />
+		</Logger>
+		
+		<!-- Hibernate/JPA-->
+		<Logger name="org.hibernate" level="info" />
+		<!-- Log all SQL DML statements as they are executed -->
+		<Logger name="org.hibernate.SQL" level="info" />
+		<!-- Set this to trace to log JDBC parameters and result -->
+		<Logger name="org.hibernate.type.descriptor.sql" level="info" />
+		<!-- Execution time and the retrieved number of rows -->
+		<Logger name="org.hibernate.stat" level="info" />
+		<!-- Log all SQL DDL statements as they are executed -->
+		<Logger name="org.hibernate.tool.hbm2ddl" level="info" />
+		<!-- Log the state of all entities (max 20 entities) associated with the session at flush time -->
+		<Logger name="org.hibernate.pretty" level="info" />
+		<!-- Log all second-level cache activity -->
+		<Logger name="org.hibernate.cache" level="info" />
+		<!-- Log transaction related activity -->
+		<Logger name="org.hibernate.transaction" level="info" />
+		<!-- Log all JDBC resource acquisition -->
+		<Logger name="org.hibernate.engine.jdbc" level="info" />
+		<!-- Log HQL and SQL ASTs during query parsing  -->
+		<Logger name="org.hibernate.hql.ast.AST" level="info" />
+		
+		<!-- Spring Framework -->
+		<Logger name="org.springframework" level="info" />
+		<!-- 
+		<Logger name="org.springframework.bean" level="debug" />
+		<Logger name="org.springframework.context.annotation" level="info" />
+		<Logger name="org.springframework.orm.jpa" level="debug" />
+		<Logger name="org.springframework.transaction" level="debug" />
+		<Logger name="org.springframework.transaction.interceptor" level="trace" />
+		 -->
+		
+		<Root level="warn">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>
