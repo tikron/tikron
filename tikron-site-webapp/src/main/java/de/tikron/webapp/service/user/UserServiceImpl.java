@@ -131,7 +131,11 @@ public class UserServiceImpl implements UserService {
 		content.append(messageSource.getMessage("addComment.email.text", new Object[] { comment.getText() }, null));
 		content.append(LINEFEED);
 		// Send message
-		return emailService.sendEmail(subject, content.toString());
+		if (comment.getUser().getEmail() != null) {
+			return emailService.sendEmail(comment.getUser().getEmail(), subject, content.toString());
+		} else {
+			return emailService.sendEmail(subject, content.toString());
+		}
 	}
 
 	@Autowired

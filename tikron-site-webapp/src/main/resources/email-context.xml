@@ -14,15 +14,17 @@
 		
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="session" ref="mailSession"/>
-		<property name="javaMailProperties"><props>
-			<prop key="mail.mime.charset">${email.encoding:UTF-8}</prop>
-		</props></property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.mime.charset">${email.encoding:UTF-8}</prop>
+			</props>
+		</property>
 	</bean>
 
 	<bean id="emailService" class="de.tikron.common.spring.EmailServiceImpl">
 		<property name="enabled" value="${email.enabled:true}" />
-		<property name="sender" value="${email.defaultSender}" />
-		<property name="recipient" value="${email.defaultRecipient}" />
+		<property name="senderEmail" value="${email.defaultSender}" />
+		<property name="recipientEmail" value="${email.defaultRecipient}" />
 	</bean>
 
 </beans>
