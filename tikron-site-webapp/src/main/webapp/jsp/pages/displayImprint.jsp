@@ -29,7 +29,7 @@
 					<li>Mozilla Firefox 4</li>
 				</ul>
 				<h2>Tracking-Cookie</h2>
-				<iframe src="http://analytics.tikron.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de" class="optOut"></iframe>
+				<iframe src="//analytics.tikron.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de" class="optOut"></iframe>
 				<%-- Banner code not needed yet
 				<div class="livewatch">
 			     	<p align="center">  

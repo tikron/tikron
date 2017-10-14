@@ -32,7 +32,7 @@
 		<section class="col-lg-9 col-md-12 col-xs-12">
 			<figure id="picturePan">
 				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" />
-				<%-- <img src="http://dummyimage.com/830x533" alt="${picture.title}" /> --%>
+				<%-- <img src="https://dummyimage.com/830x533" alt="${picture.title}" /> --%>
 				<nav>
 				<c:if test="${pager.size gt 0 and pager.hasPrevious}">
 					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>

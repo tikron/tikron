@@ -22,7 +22,7 @@
 <script type="text/javascript" src="/lib/scrollup-2.0/jquery.scrollUp.min.js"></script>
 <script type="text/javascript" src="/lib/spin.min.js" ></script>
 <script type="text/javascript" src="/lib/jquery.spin.js" ></script>
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
 <script type="text/javascript" src="/js/base.js" ></script>
 <script type="text/javascript" src="/js/navigation.js${contentVersionParam}" ></script>
 <script type="text/javascript" src="/js/util.js" ></script>

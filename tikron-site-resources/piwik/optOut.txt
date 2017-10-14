@@ -1,0 +1,5 @@
+vim /var/www/vhosts/tikron.de/analytics.tikron.de/plugins/CoreAdminHome/templates/optOut.twig
+
+# replace <body> with:
+
+<body style="font-family: Arial, sans-serif; font-size: 85%; line-height: 150%; color: #CCCCCC; margin: 0;">
