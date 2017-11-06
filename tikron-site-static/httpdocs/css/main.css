@@ -19,7 +19,7 @@
 	height: 124px;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	.homepage .feature img {
 		height: 248px;
 	}
@@ -43,7 +43,7 @@ aside.teaserbar .teaser#finding figure img {
 }
 
 /*** Send Contact Message ****************************/
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1280px) {
 	.contact .captchaInput {
 		padding-right: 25px;
 	}
@@ -82,20 +82,26 @@ aside.teaserbar .teaser#finding figure img {
 
 .imprint iframe.optOut {
 	width: 100%;
-	height: 350px;
+	height: 320px;
 	border: none;
 	background-color: #2C2523;
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 480px) {
 	.imprint iframe.optOut {
-		height: 275px;
+		height: 240px;
+	}
+}
+	
+@media only screen and (min-width: 640px) {
+	.imprint iframe.optOut {
+		height: 200px;
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
 	.imprint iframe.optOut {
-		height: 200px;
+		height: auto;
 	}
 }
 

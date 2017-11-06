@@ -2,14 +2,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <footer id="main" class="row">
-	<div class="col-lg-7 col-md-7 col-xs-12">
+	<div class="col-lg-7 col-sm-7 col-xs-12">
 		<ul id="siteInfo">
 			<li><a href="${displayImprintUrl}" class="arrow"><spring:message code="footer.siteInfo.imprint"/></a></li>
 			<li><a href="${sendContactMessageUrl}" class="arrow"><spring:message code="footer.siteInfo.contact"/></a></li>
 			<li><span><spring:message code="footer.siteInfo.copyright" arguments="${copyrightYear}"/></span></li>
 		</ul>
 	</div>
-	<div class="col-lg-5 col-md-5 col-xs-12">
+	<div class="col-lg-5 col-sm-5 col-xs-12">
 		<ul id="goodies">
 			<li>
 				<a href="${baseUrl}/feed.xml" class="icon icon_feed" title="<spring:message code="footer.goodies.feed"/>"><spring:message code="footer.goodies.feed"/></a>

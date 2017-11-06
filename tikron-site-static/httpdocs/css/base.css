@@ -14,7 +14,7 @@
 body {
 	color: #CCCCCC;
 	background: #333333 url("img/bg/dgrey0094.jpg") repeat fixed left top;
-	padding-bottom: 15px;
+	padding-bottom: 1rem;
 	font-size: 85%;
 }
 
@@ -184,7 +184,7 @@ ul.imageIndex li .description {
 	padding: 20px 0 10px 0;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	ul.imageIndex li .image img {
 		float: left;
 	}
@@ -498,9 +498,6 @@ ul.comments div.attributes a {
 }
 
 #container {
-	margin: 0 auto;
-/*	width: 320px;*/
-	width: 100%;
 	background-color: #2C2523;
 }
 
@@ -510,9 +507,8 @@ ul.comments div.attributes a {
 }
 
 #content {
-/*	margin-top: 70px;*/
-	min-height: 550px; /* reduce "jumping" of footer while page load. */
-	padding: 35px 20px 25px 20px;
+	min-height: 36rem; /* reduce "jumping" of footer while page load. */
+	padding: 2rem 1.5rem 1.5rem 1.5rem;
 	line-height: 150%;
 }
 
@@ -521,17 +517,20 @@ ul.comments div.attributes a {
 	width: 100%
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 960px) {
 	#container {
-		width: 95%;
-		max-width: 1240px;
+		margin: 0 1rem;
+	}
+	#content {
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 }
 
-@media only screen and (min-width: 540px) {
-	#content {
-		padding-left: 45px;
-		padding-right: 45px;
+@media only screen and (min-width: 1280px) {
+	#container {
+		max-width: 78rem;
+		margin: 0 auto;
 	}
 }
 
@@ -541,7 +540,7 @@ ul.comments div.attributes a {
 	box-sizing: border-box;
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 768px) {
 	.col-sm-1 {width: 8.33%;}
 	.col-sm-2 {width: 16.66%;}
 	.col-sm-3 {width: 25%;}
@@ -556,7 +555,7 @@ ul.comments div.attributes a {
 	.col-sm-12 {width: 100%;}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	.col-md-1 {width: 8.33%;}
 	.col-md-2 {width: 16.66%;}
 	.col-md-3 {width: 25%;}
@@ -571,7 +570,7 @@ ul.comments div.attributes a {
 	.col-md-12 {width: 100%;}
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1280px) {
 	.col-lg-1 {width: 8.33%;}
 	.col-lg-2 {width: 16.66%;}
 	.col-lg-3 {width: 25%;}
@@ -588,12 +587,12 @@ ul.comments div.attributes a {
 
 [class*="col-"] {
 	float: left;
-	padding: 10px;
+	padding: 0.5rem;
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1280px) {
 	[class*="col-"] {
-		padding: 15px;
+		padding: 1rem;
 	}
 }
 
@@ -606,7 +605,7 @@ ul.comments div.attributes a {
 }
 
 .row.inner {
-	padding-bottom: 15px;
+	padding-bottom: 1rem;
 }
 
 .row::after {
@@ -620,7 +619,7 @@ ul.comments div.attributes a {
 header#main {
 	background: url('img/bg/brown1742.jpg');
 	border-bottom: 1px solid #bbbbbb;
-	padding: 0 20px;
+	padding: 0 1.5rem;
 }
 
 header#main [class*="col-"] {
@@ -640,7 +639,7 @@ header#main img#logo {
 	height: 54px;
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 960px) {
 	header#main img#title {
 		height: 72px;
 	}
@@ -650,9 +649,9 @@ header#main img#logo {
 	}
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 960px) {
 	header#main {
-		padding: 0 45px;
+		padding: 0 2rem;
 	}
 }
 
@@ -665,22 +664,16 @@ nav#main div.top {
 }
 
 nav#main div.top > ul {
-	margin-left: 10px;
-	margin-right: 35px;
+	margin-left: 1rem;
+	margin-right: 2rem;
 	font-size: 1.2em;
 	overflow: hidden; /* removes scroll bar at max-height in mobile/desktopn transition */
 	transition: max-height 0.5s;
 }
-
-@media only screen and (min-width: 540px) {
-	nav#main div.top > ul {
-		margin-left: 35px;
-	}
-}
 	
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1280px) {
 	nav#main div.top > ul {
-		margin-left: 40px;
+		margin-left: 1.5rem;
 	}
 }
 
@@ -698,7 +691,7 @@ nav#main div.top > ul > li {
 nav#main div.top > ul > li > a {
 	color: #B1A68C;
 	display: block;
-	padding: 8px 20px;
+	padding: 0.5rem 1.5rem;
 	white-space: nowrap;
 }
 
@@ -751,12 +744,12 @@ nav#main div.sub {
 
 nav#main div.sub > ul {
 	font-size: 0.75em;
-	margin-left: 45px; /* 35 + 20 - 10 */
+	margin-left: 1.5rem;
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1280px) {
 	nav#main div.sub > ul {
-		margin-left: 50px; /* 40 + 20 - 10 */
+		margin-left: 2rem;
 	}
 }
 
@@ -769,7 +762,7 @@ nav#main div.sub > ul > li {
 nav#main div.sub > ul > li > a {
 	color: #B1A68C;
 	display: block;
-	padding: 0 10px;
+	padding: 0 1rem;
 	white-space: nowrap;
 }
 
@@ -788,14 +781,14 @@ nav#main div.sub > ul > li.current > a {
 
 nav#main #toggleNav {
 	width: 100%;
-	padding: 5px 0 5px 30px;
+	padding: 5px 0 5px 2rem;
 	color: #B1A68C;
 	cursor: pointer;
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 960px) {
 	nav#main #toggleNav {
-		padding-left: 55px;
+		padding-left: 2.5rem;
 	}
 }
 
@@ -803,18 +796,20 @@ nav#main #toggleNav i {
 	float: left;
 }
 
+/*
 nav#main #toggleNav span {
 	float: left;
 	margin: 4px 0 0 20px;
 	font-size: 1.2em;
 }
+*/
 
 @media only screen and (max-width: 959px) {
 	nav#main div.top > ul {
 		max-height: 0;
 	}
 	nav#main div.top > ul.show {
-		max-height: 20em;
+		max-height: 20rem;
 	}
 	nav#main div.top > ul > li {
 		width: 100%;
@@ -833,14 +828,14 @@ nav#main #toggleNav span {
 /*** Footer ************************************/
 
 footer#main {
-	padding: 0 20px;
+	padding: 0 1.5rem;
 	border-top: 1px solid #bbbbbb;
 	background: url('img/bg/brown1742.jpg');
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 768px) {
 	footer#main {
-		padding: 0 45px;
+		padding: 0 2rem;
 	}
 }
 
@@ -865,7 +860,7 @@ footer#main ul#siteInfo span {
 }
 footer#main ul#siteInfo li:not(:last-child) a,
 footer#main ul#siteInfo li:not(:last-child) span {
-	margin-right: 25px;
+	margin-right: 1.5rem;
 }
 
 footer#main ul#goodies {
@@ -985,14 +980,14 @@ aside.teaserbar .teaser figcaption span.sub {
 .story a.right,
 .story img.right {
 	margin-bottom: 15px;
-	display: block;
+	display: inline-block;
 }
 
 .story img {
 	max-width: 100%;
 }
 	
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	.story a.left, 
 	.story img.left {
 		float: left;

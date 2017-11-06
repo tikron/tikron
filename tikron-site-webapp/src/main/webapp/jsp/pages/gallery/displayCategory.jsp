@@ -18,7 +18,7 @@
 <%@ include file="/jsp/include/nav_main.jspf" %>
 <div id="content" class="gallery category">
 	<div class="row">
-		<section class="col-lg-9 col-md-12 col-xs-12">
+		<section class="col-lg-9 col-md-9 col-xs-12">
 			<ul class="thumbs">
 			<c:forEach var="picture" items="${pictures}" varStatus="listStatus">
 				<c:url var="displayPictureUrl" value="/gallery/displayPicture.html">
@@ -30,7 +30,7 @@
 					<c:choose>
 					<c:when test="${category.displayType eq 'OVERLAY'}">
 						<%-- Show image with "fancybox" --%>
-						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
+						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
 							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
 						</a>
 					</c:when>
@@ -48,7 +48,7 @@
 			</c:forEach>
 			</ul>
 		</section>
-		<section class="col-lg-3 col-md-12 col-xs-12 intro">
+		<section class="col-lg-3 col-md-3 col-xs-12 intro">
 			<div class="description">
 				<article>
 					<header><h1><c:out value="${category.title}" /></h1></header>

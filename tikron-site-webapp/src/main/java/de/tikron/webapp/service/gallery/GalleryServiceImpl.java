@@ -39,7 +39,7 @@ public class GalleryServiceImpl implements GalleryService {
 
 	private static final String IMAGE_SECTIONPATH = "gallery";
 
-	private static final String[] IMAGE_TEMPLATES = { "galleryImage", "galleryThumbnail", "galleryTeaser", "galleryStory" };
+	private static final String[] IMAGE_TEMPLATES = { "galImgLg", "galImgMd", "galImgSm", "galleryThumbnail", "galleryTeaser", "galleryStory" };
 
 	private CatalogDao catalogDao;
 

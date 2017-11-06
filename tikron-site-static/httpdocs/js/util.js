@@ -99,6 +99,22 @@ function TikronUtil(options) {
 	this.viewPortMobile = function() {
 		return window.innerWidth < 768;
 	}
+	
+	this.bindColorbox = function(txt) {
+		if (!_root.viewPortMobile()) {
+			$('a.storyImage').colorbox({
+				maxWidth: '90%',
+				photo:true, 
+				rel:'storyImage', 
+				current: txt.labelCurrent, 
+				title: function(){return $(this).attr('data-caption');}
+			});
+		} else {
+			$('a.storyImage').on('click', function(e){e.preventDefault();});
+			$('a.storyImage').removeAttr('title');
+			$('a.storyImage').css('cursor', 'auto');
+		}
+	}
 
 };
 

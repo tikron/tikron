@@ -126,7 +126,7 @@
 	display: none;
 }
 
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 1280px) {
 	#content.gallery.picture .intro .description.box {
 		min-height: 360px;
 	}

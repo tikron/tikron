@@ -9,7 +9,7 @@
 <%@ include file="/jsp/include/htmlhead_start.jspf" %>
 <%@ include file="/jsp/include/title.jspf" %>
 <%@ include file="/jsp/include/head.jspf" %>
-<script type="text/javascript" src="/lib/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="/lib/jquery-placeholder-2.3.1/jquery.placeholder.min.js"></script>
 <script type="text/javascript" src="/lib/jRate.min.js" ></script>
 <script type="text/javascript" src="/lib/hammer.min.js" ></script>
 <script type="text/javascript" src="/js/rating.js" ></script>
@@ -30,8 +30,19 @@
 <div id="content" class="gallery picture">
 	<div class="row base-line">
 		<section class="col-lg-9 col-md-12 col-xs-12">
-			<figure id="picturePan">
-				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryImage']}" />" alt="${picture.title}" />
+			<figure id="picturePan"><%--
+				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" />"
+					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 830w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 656w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 340w"
+					sizes="(min-width: 768px) 830px, (min-width: 400px) 656px, 340px" 
+					alt="${picture.title}" />  --%>
+				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" />"
+					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 830w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 656w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 296w"
+					sizes="(max-width: 360px) 296px, (max-width: 768px) 656px, 830px" 
+					alt="${picture.title}" />
 				<%-- <img src="https://dummyimage.com/830x533" alt="${picture.title}" /> --%>
 				<nav>
 				<c:if test="${pager.size gt 0 and pager.hasPrevious}">

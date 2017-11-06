@@ -39,7 +39,7 @@
 	clear: left;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
 	.clips ul.imageIndex li .description {
 		clear: none;
 	}

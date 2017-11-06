@@ -3,11 +3,49 @@
 	xsi:schemaLocation="http://www.tikron.de/imageTemplates ../../../ibase/ibase/target/classes/imageTemplates.xsd ">
 	<!-- *** Tikron Webapp -->
 	<template>
-		<name>galleryImage</name>
+		<name>galImgLg</name>
 		<creationType>EAGER</creationType>
 		<scaling>
 			<mode>LIMITTED</mode>
 			<width>830</width>
+			<height>600</height>
+		</scaling>
+		<signature>
+			<text>tikron.de</text>
+			<size>14</size>
+			<opacity>0.4</opacity>
+			<position>
+				<horizontal>10</horizontal>
+				<vertical>-10</vertical>
+			</position>
+		</signature>
+		<compressionQuality>1.0</compressionQuality>
+	</template>
+	<template>
+		<name>galImgMd</name>
+		<creationType>EAGER</creationType>
+		<scaling>
+			<mode>LIMITTED</mode>
+			<width>656</width>
+			<height>600</height>
+		</scaling>
+		<signature>
+			<text>tikron.de</text>
+			<size>14</size>
+			<opacity>0.4</opacity>
+			<position>
+				<horizontal>10</horizontal>
+				<vertical>-10</vertical>
+			</position>
+		</signature>
+		<compressionQuality>1.0</compressionQuality>
+	</template>
+	<template>
+		<name>galImgSm</name>
+		<creationType>EAGER</creationType>
+		<scaling>
+			<mode>LIMITTED</mode>
+			<width>340</width>
 			<height>600</height>
 		</scaling>
 		<signature>
