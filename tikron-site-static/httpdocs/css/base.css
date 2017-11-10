@@ -691,7 +691,7 @@ nav#main div.top > ul > li {
 nav#main div.top > ul > li > a {
 	color: #B1A68C;
 	display: block;
-	padding: 0.5rem 1.5rem;
+	padding: 0.5rem 1rem;
 	white-space: nowrap;
 }
 
@@ -810,6 +810,7 @@ nav#main #toggleNav span {
 	}
 	nav#main div.top > ul.show {
 		max-height: 20rem;
+		max-width: 20rem;
 	}
 	nav#main div.top > ul > li {
 		width: 100%;
