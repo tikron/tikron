@@ -113,7 +113,7 @@
 		$('input, textarea').placeholder();
 		// Init. comment form handler
 		var tikronComment = new TikronComment({'msg' : {author:'<spring:message code="comments.author"/>', date: '<spring:message code="comments.date"/>'}});
-		tikronComment.init();
+		tikronComment.initAndBuild();
 	});
 </script>
 <%@ include file="/jsp/include/html_end.jspf" %>

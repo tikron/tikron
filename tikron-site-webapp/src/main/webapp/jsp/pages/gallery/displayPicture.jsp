@@ -20,119 +20,15 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/jsp/include/header.jspf" %>
 <%@ include file="/jsp/include/nav_main.jspf" %>
-<c:url var="displayCategoryUrl" value="/gallery/displayCategory.html">
-	<c:param name="categoryId" value="${picture.category.id}"/>
-	<c:param name="name" value="${picture.category.seoName}"/>
-</c:url>
-<c:url var="addCommentUrl" value="/gallery/addComment.html">
-	<c:param name="pictureId" value="${picture.id}"/>
-</c:url>
 <div id="content" class="gallery picture">
-	<div class="row base-line">
-		<section class="col-lg-9 col-md-12 col-xs-12">
-			<figure id="picturePan"><%--
-				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" />"
-					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 830w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 656w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 340w"
-					sizes="(min-width: 768px) 830px, (min-width: 400px) 656px, 340px" 
-					alt="${picture.title}" />  --%>
-				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" />"
-					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 830w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 656w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 296w"
-					sizes="(max-width: 360px) 296px, (max-width: 768px) 656px, 830px" 
-					alt="${picture.title}" />
-				<%-- <img src="https://dummyimage.com/830x533" alt="${picture.title}" /> --%>
-				<nav>
-				<c:if test="${pager.size gt 0 and pager.hasPrevious}">
-					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
-					<a href="${previousPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.previous"/>" --%> class="nav nav-left"></a>
-				</c:if>
-				<c:if test="${pager.size gt 0 and pager.hasNext}">
-					<c:url var="nextPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
-					<a href="${nextPictureUrl}"<%-- title="<spring:message code="gallery.displayPicture.pager.next"/>" --%> class="nav nav-right"></a>
-				</c:if>
-				</nav>
-				<span class="counter"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></span>
-			</figure>
-		</section>
-		<section class="col-lg-3 col-md-9 col-xs-12 intro">
-			<div id="galleryInfo" class="teaser">
-				<article class="description box">
-					<header>
-						<h1><c:out value="${not empty picture.title ? picture.title : picture.category.title}" /></h1>
-					</header>
-					<p>
-						<c:choose>
-							<c:when test="${not empty picture.description}"><c:out value="${picture.description}" escapeXml="false" /></c:when>
-							<c:otherwise><spring:message code="gallery.displayPicture.emptyDescription" /></c:otherwise>
-						</c:choose>
-						<c:if test="${picture.category.commentable}">
-							<br /><br />
-							<a id="addComment" href="#" class="arrow"><spring:message code="link.addPictureComment"/></a>
-						</c:if>
-					</p>
-				</article>
-				<section id="galleryControls">
-					<c:if test="${picture.category.rateable and not browserLowerIE9}">
-					<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
-					</c:if>
-					<%-- <%@ include file="include/picturePager.jspf" %> --%>
-					<ul class="buttonBar vt">
-						<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
-					</ul>
-				</section>
-			</div>
-		</section>
-	</div>
-	<div class="row">
-		<section class="col-lg-9 col-md-9 col-xs-12">
-			<c:if test="${picture.category.commentable}">
-			<section class="commentBox">
-			<c:if test="${picture.id ne 731}">
-				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
-			</c:if>
-				<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
-			</section>
-			</c:if>
-		</section>
-	</div>
+	<%@ include file="/jsp/pages/gallery/include/pictureContent.jspf" %>
 </div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
-<script>
-  var panSettings = {elementId: 'picturePan'};
-  <c:if test="${pager.size gt 0 and pager.hasPrevious}">panSettings['urlPrevious'] = '${previousPictureUrl}';</c:if>
-  <c:if test="${pager.size gt 0 and pager.hasNext}">panSettings['urlNext'] = '${nextPictureUrl}';</c:if>
-  bindTouchHandler(panSettings);
-</script>
-<c:if test="${picture.category.commentable}">
-<script type="text/javascript">
-	$(document).ready(function() {
-		// Bind placeholder plugin
-		$('input, textarea').placeholder();
-		// Bind srolling to comment box
-		$('a#addComment').click(function (){
-			$('html, body').animate({
-				scrollTop: $('.commentBox').offset().top
-			}, 500);
-		});
-		// Init. comment form handler
-		var tikronComment = new TikronComment({'msg' : {author:'<spring:message code="comments.author"/>', date: '<spring:message code="comments.date"/>'}});
-		tikronComment.init();
-	});
-</script>
-</c:if>
-<c:if test="${picture.category.rateable and not browserLowerIE9}">
-<c:url var="addRatingUrl" value="/gallery/addPictureRating.json"><c:param name="pictureId" value=""/><c:param name="ratingValue" value=""/></c:url>
-<script type="text/javascript">
-	$(document).ready(function() {
-		// Init. rating box
-		var tikronRating = new TikronRating({'addRatingUrl': '${addRatingUrl}',	'msg' : 
-			{ratingCount:'<spring:message code="rating.count"/>', ratingEmpty: '<spring:message code="rating.empty"/>'}});
-		tikronRating.init();
-	});
-</script>
-</c:if>
 <%@ include file="/jsp/include/html_end.jspf" %>
+<script type="text/javascript">
+	var tikronComment = new TikronComment({'msg' : {author:'<spring:message code="comments.author"/>', date: '<spring:message code="comments.date"/>'}});
+	tikronComment.init();
+	var tikronRating = new TikronRating({'msg' : {ratingCount:'<spring:message code="rating.count"/>', ratingEmpty: '<spring:message code="rating.empty"/>'}});
+	tikronRating.init();
+</script>

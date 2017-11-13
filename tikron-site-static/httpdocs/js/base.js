@@ -26,6 +26,12 @@ function Tikron(options) {
 //		console.log(_cfg);
 	}
 	
+	this.bindEventHandler = function(container) {
+		_bindAjaxLinks(container);
+		_bindAjaxDefaultSpinner(container);
+		_bindScroller(container);
+	}
+	
 	var _updateUI = function() {
 		$('div.address').append(_getAddressHtml());
 		$('a.email_link').attr('href', _getContactEmailLink());
@@ -39,8 +45,9 @@ function Tikron(options) {
 		_bindForms();
 		// Bind ajax request for Ajax loading links
 		_bindAjaxLinks();
-		// Bind default ajax spinner
+		// Bind default ajax spinner and scroller
 		_bindAjaxDefaultSpinner();
+		_bindScroller();
 	}
 	
 	var _bindGoUpButton = function() {
@@ -119,37 +126,69 @@ function Tikron(options) {
 	/**
 	 * Bind ajax request for Ajax loading links
 	 */
-	var _bindAjaxLinks = function() {
-		$("a.ajax").click(function(e) {
+	var _bindAjaxLinks = function(container) {
+		$("a.ajax", container).on('click', function(e) {
+			e.preventDefault();
 			$.ajax({
 				url: $(this).attr('href'),
 				context: this,
 				success: function(response) {
+					// Try to obtain response target from data attribute
 					var $target = $($(this).data('response-target'));
-					if ($target.length == 0) $target = $(this);
+					if ($target.length == 0) {
+						console.debug('No data-response-target specified. Using default.');
+						$target = $(this);
+					}
+					// Render response and bind ajax events again
 					$target.html(response);
+					_root.bindEventHandler($target);
 				}
 			});
-			e.preventDefault();
 		});
 	}
 	
 	/**
 	 * Binds default spinner for all Ajax requests.
 	 */
-	var _bindAjaxDefaultSpinner = function() {
-		$('a.ajax').ajaxSend(function(e) {
+	var _bindAjaxDefaultSpinner = function(container) {
+		$('a.ajax', container).ajaxSend(function(e) {
 			$(e.target).spin();
 		})
-		$('a.ajax').ajaxComplete(function(e) {
+		$('a.ajax', container).ajaxComplete(function(e) {
 			$(e.target).spin(false);
 		})
-		$('form.ajax').ajaxSend(function(e) {
+		$('form.ajax', container).ajaxSend(function(e) {
 			$(e.target).find('button[type=submit]').spin();
 		})
-		$('form.ajax').ajaxComplete(function(e) {
+		$('form.ajax', container).ajaxComplete(function(e) {
 			$(e.target).find('button[type=submit]').spin(false);
 		})
+	}
+	
+	/**
+	 * Enables smooth scrolling on to anchors on page 
+	 */
+	var _bindScroller = function(container) {
+	  $("a.smooth", container).on('click', function(event) {
+	    // Make sure this.hash has a value before overriding default behavior
+	    if (this.hash !== "") {
+	      // Prevent default anchor click behavior
+	      event.preventDefault();
+
+	      // Store hash
+	      var hash = this.hash;
+
+	      // Using jQuery's animate() method to add smooth page scroll
+	      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	      $('html, body').animate({
+	        scrollTop: $(hash).offset().top
+	      }, 800, function(){
+	   
+	        // Add hash (#) to URL when done scrolling (default click behavior)
+	        window.location.hash = hash;
+	      });
+	    } // End if
+	  });
 	}
 };
 

@@ -17,11 +17,20 @@ function TikronComment(options) {
 	this.init = function() {
 		_root = this;
 		_cfg = this.config;
+	}
+	
+	this.build = function() {
 		_ui = {
-				form: $('form#addComment'),
+				form: $('form#comments'),
 				list: $('ul.comments')
 		};
 		_bindUIActions();
+	}
+	
+	this.initAndBuild = function() {
+		_root = this;
+		_cfg = this.config;
+		_root.build();
 	}
 
 	var _bindUIActions = function() {

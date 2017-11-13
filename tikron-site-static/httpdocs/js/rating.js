@@ -18,10 +18,20 @@ function TikronRating(options) {
 	this.init = function() {
 		_root = this;
 		_cfg = this.config;
+	}
+	
+	this.build = function(url) {
+		_cfg.addRatingUrl = url;
 		_ui = {
 				ratingStars: $('div.ratingStars')
 		};
 		_bindUIActions();
+	}
+	
+	this.initAndBuild = function() {
+		_root = this;
+		_cfg = this.config;
+		_root.build(_cfg.addRatingUrl);
 	}
 
 	var _bindUIActions = function() {

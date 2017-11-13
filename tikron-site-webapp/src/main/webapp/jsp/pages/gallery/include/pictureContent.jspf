@@ -1,0 +1,91 @@
+<c:url var="displayCategoryUrl" value="/gallery/displayCategory.html">
+	<c:param name="categoryId" value="${picture.category.id}"/>
+	<c:param name="name" value="${picture.category.seoName}"/>
+</c:url>
+<c:url var="addCommentUrl" value="/gallery/addComment.html">
+	<c:param name="pictureId" value="${picture.id}"/>
+</c:url>
+<c:url var="addRatingUrl" value="/gallery/addPictureRating.json">
+	<c:param name="pictureId" value=""/>
+	<c:param name="ratingValue" value=""/>
+</c:url>
+	<div class="row base-line">
+		<section class="col-lg-9 col-md-12 col-xs-12">
+			<figure id="picturePan">
+				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" />"
+					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 830w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 656w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 296w"
+					sizes="(max-width: 360px) 296px, (max-width: 768px) 656px, 830px" 
+					alt="${picture.title}" />
+				<%-- <img src="https://dummyimage.com/830x533" alt="${picture.title}" /> --%>
+				<nav id="pager">
+				<c:if test="${pager.hasPrevious}">
+					<c:url var="previousPictureUrl" value="/gallery/displayPictureAjax.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
+					<a href="${previousPictureUrl}" rel="nofollow" class="nav nav-left ajax" data-response-target="#content"></a>
+				</c:if>
+				<c:if test="${pager.hasNext}">
+					<c:url var="nextPictureUrl" value="/gallery/displayPictureAjax.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
+					<a href="${nextPictureUrl}" rel="nofollow" class="nav nav-right ajax" data-response-target="#content"></a>
+				</c:if>
+				</nav>
+				<span class="counter"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></span>
+			</figure>
+		</section>
+		<section class="col-lg-3 col-md-9 col-xs-12 intro">
+			<div id="galleryInfo" class="teaser">
+				<article class="description box">
+					<header>
+						<h1><c:out value="${not empty picture.title ? picture.title : picture.category.title}" /></h1>
+					</header>
+					<p>
+						<c:choose>
+							<c:when test="${not empty picture.description}"><c:out value="${picture.description}" escapeXml="false" /></c:when>
+							<c:otherwise><spring:message code="gallery.displayPicture.emptyDescription" /></c:otherwise>
+						</c:choose>
+						<c:if test="${picture.category.commentable}">
+							<br /><br />
+							<a href="#comments" class="arrow smooth"><spring:message code="link.addPictureComment"/></a>
+						</c:if>
+					</p>
+				</article>
+				<section id="galleryControls">
+					<c:if test="${picture.category.rateable and not browserLowerIE9}">
+					<%@ include file="/jsp/pages/user/include/addRating.jspf" %>
+					</c:if>
+					<%-- <%@ include file="include/picturePager.jspf" %> --%>
+					<ul class="buttonBar vt">
+						<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
+					</ul>
+				</section>
+			</div>
+		</section>
+	</div>
+	<div class="row">
+		<section class="col-lg-9 col-md-9 col-xs-12">
+			<c:if test="${picture.category.commentable}">
+			<section class="commentBox">
+			<c:if test="${picture.id ne 731}">
+				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>
+			</c:if>
+				<%@ include file="/jsp/pages/user/include/commentList.jspf" %>
+			</section>
+			</c:if>
+		</section>
+	</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	// See https://stackoverflow.com/questions/3877027/jquery-callback-on-image-load-even-when-the-image-is-cached
+	// Bind touch pad handler
+	var panSettings = {elementId: 'picturePan'};
+	<c:if test="${pager.hasPrevious}">panSettings['urlPrevious'] = '${previousPictureUrl}';</c:if>
+	<c:if test="${pager.hasNext}">panSettings['urlNext'] = '${nextPictureUrl}';</c:if>
+	bindTouchHandler(panSettings);
+	// Bind placeholder plugin
+	$('input, textarea').placeholder();
+	// Bind comment handler
+	tikronComment.build();
+	// Bind rating stars handler
+	tikronRating.build('${addRatingUrl}');
+});
+</script>

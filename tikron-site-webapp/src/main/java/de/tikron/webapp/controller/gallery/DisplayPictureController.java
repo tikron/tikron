@@ -43,7 +43,7 @@ import de.tikron.webapp.util.SeoUtils;
  * @author Titus Kruse
  */
 @Controller
-@RequestMapping("/gallery/displayPicture.html")
+@RequestMapping("/gallery/displayPicture*.html")
 public class DisplayPictureController extends AbstractPageController {
 
 	private GalleryService galleryService;

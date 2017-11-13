@@ -75,7 +75,7 @@
 	$(document).ready(function() {
 		var tikronRating = new TikronRating({'addRatingUrl': '${addRatingUrl}',	'msg' : 
 			{ratingCount:'<spring:message code="rating.count"/>', ratingEmpty: '<spring:message code="rating.empty"/>'}});
-		tikronRating.init();
+		tikronRating.initAndBuild();
 	});
 </script>
 </c:if>

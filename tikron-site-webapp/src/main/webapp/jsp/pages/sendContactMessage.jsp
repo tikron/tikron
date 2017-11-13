@@ -22,7 +22,7 @@
 			<section id="contentHeader">
 				<header><h1><spring:message code="sendContactMessage.headline" /></h1></header>
 				<p><spring:message code="sendContactMessage.featureText" /></p>
-				<a class="arrow email_link" title="<spring:message code='sendContactMessage.email.link.description'/>" href="#"></a>
+				<a class="arrow email_link" title="<spring:message code='sendContactMessage.email.link.description'/>" href="#0" rel="nofollow"></a>
 			</section>
 			<section id="contentMain">
 				<form:form commandName="contactMessage" action="${sendContactMessageUrl}" id="contact" class="clear ajax">
@@ -63,7 +63,7 @@
 							</div>
 							<div class="col-lg-4 col-md-6 col-xs-12 captchaImage">
 								<img src="${captchaImageUrl}" alt="<spring:message code="captchaCode.image.alt" />" />
-								<a href="#" class="arrow" title="<spring:message code='captchaCode.link.reload.description' />"><spring:message code="captchaCode.link.reload" /></a>
+								<a href="#0" rel="nofollow" class="arrow" title="<spring:message code='captchaCode.link.reload.description' />"><spring:message code="captchaCode.link.reload" /></a>
 							</div>
 						</div>
 						<div class="row inner">

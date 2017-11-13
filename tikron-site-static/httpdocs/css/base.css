@@ -508,7 +508,7 @@ ul.comments div.attributes a {
 
 #content {
 	min-height: 36rem; /* reduce "jumping" of footer while page load. */
-	padding: 2rem 1.5rem 1.5rem 1.5rem;
+	padding: 1rem 0.5rem 1.0rem 0.5rem;
 	line-height: 150%;
 }
 
@@ -517,11 +517,13 @@ ul.comments div.attributes a {
 	width: 100%
 }
 
+/* When full top navigation appears */ 
 @media only screen and (min-width: 960px) {
 	#container {
 		margin: 0 1rem;
 	}
 	#content {
+		padding-top: 2rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
@@ -619,7 +621,7 @@ ul.comments div.attributes a {
 header#main {
 	background: url('img/bg/brown1742.jpg');
 	border-bottom: 1px solid #bbbbbb;
-	padding: 0 1.5rem;
+	padding: 0 0.5rem;
 }
 
 header#main [class*="col-"] {
@@ -664,7 +666,7 @@ nav#main div.top {
 }
 
 nav#main div.top > ul {
-	margin-left: 1rem;
+	margin-left: 1.5rem;
 	margin-right: 2rem;
 	font-size: 1.2em;
 	overflow: hidden; /* removes scroll bar at max-height in mobile/desktopn transition */
@@ -673,7 +675,7 @@ nav#main div.top > ul {
 	
 @media only screen and (min-width: 1280px) {
 	nav#main div.top > ul {
-		margin-left: 1.5rem;
+		margin-left: 2rem;
 	}
 }
 
@@ -781,7 +783,7 @@ nav#main div.sub > ul > li.current > a {
 
 nav#main #toggleNav {
 	width: 100%;
-	padding: 5px 0 5px 2rem;
+	padding: 0.25rem 0 0.25rem 1rem;
 	color: #B1A68C;
 	cursor: pointer;
 }
@@ -806,6 +808,7 @@ nav#main #toggleNav span {
 
 @media only screen and (max-width: 959px) {
 	nav#main div.top > ul {
+		margin-left: 0.5rem;
 		max-height: 0;
 	}
 	nav#main div.top > ul.show {
@@ -829,7 +832,7 @@ nav#main #toggleNav span {
 /*** Footer ************************************/
 
 footer#main {
-	padding: 0 1.5rem;
+	padding: 0 0.5rem;
 	border-top: 1px solid #bbbbbb;
 	background: url('img/bg/brown1742.jpg');
 }

@@ -27,7 +27,7 @@
 	width: 100px;
 /*	height: 106px; */
 	height: 95px;
-	padding: 5px;
+	padding: 4px;
 	display: table-cell;
 /*	vertical-align: middle; not needed anymore since thumbs are all with same height 66px.*/
 	text-align: center;

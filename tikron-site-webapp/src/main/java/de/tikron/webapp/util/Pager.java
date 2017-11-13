@@ -64,7 +64,7 @@ public class Pager<T> {
 	}
 
 	public T getCurrent() {
-		return elements.get(index);
+		return index < 0 ? null : elements.get(index);
 	}
 
 	public boolean getIsFirst() {
@@ -72,7 +72,7 @@ public class Pager<T> {
 	}
 
 	public T getFirst() {
-		return elements.get(0);
+		return elements.isEmpty() ? null : elements.get(0);
 	}
 
 	public boolean getHasPrevious() {
@@ -80,7 +80,7 @@ public class Pager<T> {
 	}
 
 	public T getPrevious() {
-		return elements.get(index - 1);
+		return getHasPrevious() ? elements.get(index - 1) : null;
 	}
 
 	public boolean getHasNext() {
@@ -88,7 +88,7 @@ public class Pager<T> {
 	}
 
 	public T getNext() {
-		return elements.get(index + 1);
+		return getHasNext() ? elements.get(index + 1) : null;
 	}
 
 	public boolean getIsLast() {
@@ -96,7 +96,7 @@ public class Pager<T> {
 	}
 
 	public T getLast() {
-		return elements.get(getSize() - 1);
+		return elements.isEmpty() ? null : elements.get(getSize() - 1);
 	}
 
 }
