@@ -4,14 +4,4 @@
 <div class="log">
 	<%@ include file="displayLogContent.jspf" %>
 </div>
-<script type="text/javascript">
-	try {
-		if (Piwik) {
-			var piwikTracker = Piwik.getAsyncTracker();
-			piwikTracker.setCustomUrl('${fullRequestURI}');
-			piwikTracker.setDocumentTitle('${pageTitle}');
-			piwikTracker.trackPageView();
-			piwikTracker.enableLinkTracking();
-		}
-	} catch (err) {}
-</script>
+<%@ include file="/jsp/include/tracking_ajax.jspf"%>

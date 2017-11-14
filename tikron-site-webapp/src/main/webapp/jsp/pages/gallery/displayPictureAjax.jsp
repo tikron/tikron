@@ -6,3 +6,4 @@
 <%@ taglib prefix="tikron" uri="/WEB-INF/tikron-webapp.tld" %>
 <%@ include file="/jsp/include/environment.jspf" %>
 <%@ include file="/jsp/pages/gallery/include/pictureContent.jspf" %>
+<%@ include file="/jsp/include/tracking_ajax.jspf"%>

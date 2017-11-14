@@ -75,7 +75,7 @@
 	</div>
 <script type="text/javascript">
 $(document).ready(function() {
-	// See https://stackoverflow.com/questions/3877027/jquery-callback-on-image-load-even-when-the-image-is-cached
+	<%-- See https://stackoverflow.com/questions/3877027/jquery-callback-on-image-load-even-when-the-image-is-cached --%>
 	// Bind touch pad handler
 	var panSettings = {elementId: 'picturePan'};
 	<c:if test="${pager.hasPrevious}">panSettings['urlPrevious'] = '${previousPictureUrl}';</c:if>
