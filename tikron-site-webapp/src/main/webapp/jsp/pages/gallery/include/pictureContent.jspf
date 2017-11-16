@@ -19,7 +19,7 @@
 					sizes="(max-width: 360px) 296px, (max-width: 768px) 656px, 830px" 
 					alt="${picture.title}" />
 				<%-- <img src="https://dummyimage.com/830x533" alt="${picture.title}" /> --%>
-				<nav id="pager">
+				<nav id="pager" style="display:none;">
 				<c:if test="${pager.hasPrevious}">
 					<c:url var="previousPictureUrl" value="/gallery/displayPictureAjax.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
 					<a href="${previousPictureUrl}" rel="nofollow" class="nav nav-left ajax" data-response-target="#content"></a>
@@ -29,7 +29,7 @@
 					<a href="${nextPictureUrl}" rel="nofollow" class="nav nav-right ajax" data-response-target="#content"></a>
 				</c:if>
 				</nav>
-				<span class="counter"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></span>
+				<span class="counter" style="display:none;"><c:out value="${pager.currentNumber}"/>&nbsp;/&nbsp;<c:out value="${pager.lastNumber}"/></span>
 			</figure>
 		</section>
 		<section class="col-lg-3 col-md-9 col-xs-12 intro">
@@ -87,5 +87,6 @@ $(document).ready(function() {
 	tikronComment.build();
 	// Bind rating stars handler
 	tikronRating.build('${addRatingUrl}');
+	// Show navigation on image load
 });
 </script>

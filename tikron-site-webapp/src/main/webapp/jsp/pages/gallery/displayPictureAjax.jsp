@@ -7,3 +7,9 @@
 <%@ include file="/jsp/include/environment.jspf" %>
 <%@ include file="/jsp/pages/gallery/include/pictureContent.jspf" %>
 <%@ include file="/jsp/include/tracking_ajax.jspf"%>
+<script type="text/javascript">
+	$('#content figure').imagesLoaded().done(function(instance) {
+	  $('nav#pager').show();
+	  $('span.counter').show();
+	});
+</script>
