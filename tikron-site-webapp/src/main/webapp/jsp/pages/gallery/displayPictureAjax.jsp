@@ -8,8 +8,14 @@
 <%@ include file="/jsp/pages/gallery/include/pictureContent.jspf" %>
 <%@ include file="/jsp/include/tracking_ajax.jspf"%>
 <script type="text/javascript">
+	/*
 	$('#content figure').imagesLoaded().done(function(instance) {
 	  $('nav#pager').show();
 	  $('span.counter').show();
 	});
+	*/
+	new LazyLoad({elements_selector: 'img.lazy', callback_load: function() {
+		$('nav#pager').show();
+		$('span.counter').show();
+	}});
 </script>

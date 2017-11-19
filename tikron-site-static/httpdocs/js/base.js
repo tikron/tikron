@@ -127,7 +127,7 @@ function Tikron(options) {
 	 * Bind ajax request for Ajax loading links
 	 */
 	var _bindAjaxLinks = function(container) {
-		$("a.ajax", container).on('click', function(e) {
+		$('a.ajax', container).on('click', function(e) {
 			e.preventDefault();
 			$.ajax({
 				url: $(this).attr('href'),
@@ -136,7 +136,7 @@ function Tikron(options) {
 					// Try to obtain response target from data attribute
 					var $target = $($(this).data('response-target'));
 					if ($target.length == 0) {
-						console.debug('No data-response-target specified. Using default.');
+						// console.debug('No data-response-target specified. Using default.');
 						$target = $(this);
 					}
 					// Render response and bind ajax events again
