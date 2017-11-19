@@ -71,7 +71,26 @@
 
 #content.gallery.picture figure img {
 	width: 100%;
-	height: auto;
+	height: 200px;
+	display: block;
+}
+
+@media only screen and (min-width: 520px) {
+	#content.gallery.picture figure img {
+		height: 320px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#content.gallery.picture figure img {
+		height: 480px;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	#content.gallery.picture figure img {
+		height: 560px;
+	}
 }
 
 @keyframes nav-fade-out {

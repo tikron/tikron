@@ -12,11 +12,13 @@
 	<div class="row base-line">
 		<section class="col-lg-9 col-md-12 col-xs-12">
 			<figure id="picturePan">
-				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" />"
-					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 830w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 656w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 296w"
-					sizes="(max-width: 360px) 296px, (max-width: 768px) 656px, 830px" 
+				<%-- Sizes must correspond with viewports defined in image CSS! (520, 768, 960) --%>
+				<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgXs']}" />"
+					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 840w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 720w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 480w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgXs']}" /> 300w"
+					sizes="(max-width: 519px) 300px, (max-width: 767px) 480px, (max-width: 959px) 720px, 840px" 
 					alt="${picture.title}" />
 				<%-- <img src="https://dummyimage.com/830x533" alt="${picture.title}" /> --%>
 				<nav id="pager" style="display:none;">

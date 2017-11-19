@@ -507,14 +507,21 @@ ul.comments div.attributes a {
 }
 
 #content {
+	min-width: 20rem;
 	min-height: 36rem; /* reduce "jumping" of footer while page load. */
-	padding: 1rem 0.5rem 1.0rem 0.5rem;
+	padding: 1rem 0;
 	line-height: 150%;
 }
 
 #contentWrap {
 /*  float: left;*/
 	width: 100%
+}
+
+@media only screen and (min-width: 480px) {
+	#content {
+		padding: 1rem 0.5rem;
+	}
 }
 
 /* When full top navigation appears */ 
