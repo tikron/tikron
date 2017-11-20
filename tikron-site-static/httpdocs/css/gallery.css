@@ -134,10 +134,24 @@ img:not([src]):not([srcset]) {
 #content.gallery.picture .counter {
 	position: absolute;
 	right: 10px;
-	bottom: 10px;
+	bottom: 5px;
 	font-weight: bold;
+	font-size: 10px; /* According to sizs of signature */
 	opacity: 0.6;
 }
+
+@media only screen and (min-width: 520px) {
+	#content.gallery.picture .counter {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	#content.gallery.picture .counter {
+		font-size: 14px;
+	}
+}
+	
 
 #content.gallery.picture .intro .description.box {
 	min-height: 0;

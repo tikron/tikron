@@ -27,7 +27,6 @@
 </div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
-<%@ include file="/jsp/include/html_end.jspf" %>
 <script type="text/javascript">
 	var tikronComment = new TikronComment({'msg' : {author:'<spring:message code="comments.author"/>', date: '<spring:message code="comments.date"/>'}});
 	tikronComment.init();
@@ -44,3 +43,4 @@
 		$('span.counter').show();
 	}});
 </script>
+<%@ include file="/jsp/include/html_end.jspf" %>
