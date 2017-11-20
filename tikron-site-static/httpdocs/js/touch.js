@@ -17,10 +17,12 @@ function bindTouchHandler(settings) {
 		} else if (ev.type == 'panleft') {
 			panDistance = Math.min(ev.deltaX, panDistance);
 		} else if (ev.type == 'panend') {
-			if (panDistance > panThreshold && (typeof settings.urlPrevious !== 'undefined')) {
-				window.location.href = settings.urlPrevious;      		
-			} else if (panDistance < -panThreshold && (typeof settings.urlNext !== 'undefined')) {
-				window.location.href = settings.urlNext;      		
+			if (panDistance > panThreshold) {
+				var elNav = elPicturePan.getElementsByClassName('nav-left');
+				if (elNav.length > 0)	elNav[0].click();
+			} else if (panDistance < -panThreshold) {
+				var elNav = elPicturePan.getElementsByClassName('nav-right');
+				if (elNav.length > 0) elNav[0].click();
 			}
 		}
 	});
