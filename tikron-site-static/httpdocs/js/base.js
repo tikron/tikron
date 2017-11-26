@@ -132,6 +132,7 @@ function Tikron(options) {
 			$.ajax({
 				url: $(this).attr('href'),
 				context: this,
+				dataType: 'html',
 				success: function(response) {
 					// Try to obtain response target from data attribute
 					var $target = $($(this).data('response-target'));

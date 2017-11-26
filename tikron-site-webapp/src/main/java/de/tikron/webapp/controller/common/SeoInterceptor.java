@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import de.tikron.persistence.model.gallery.Catalog;
 import de.tikron.persistence.model.gallery.Category;
@@ -28,7 +27,7 @@ import de.tikron.webapp.util.SeoURI;
  * @author Titus Kruse
  */
 @Component
-public class SeoInterceptor extends HandlerInterceptorAdapter {
+public class SeoInterceptor extends AbstractInterceptor {
 
 	private GalleryService galleryService;
 

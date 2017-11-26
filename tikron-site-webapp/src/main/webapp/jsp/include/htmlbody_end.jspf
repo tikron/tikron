@@ -4,6 +4,6 @@
 <script type="text/javascript">
 	$(document).tooltip({track: true});
 </script>
-<c:if test="${trackingEnabled and not param.disableTracking}">
+<c:if test="${trackingEnabled}">
 <%@ include file="/jsp/include/tracking.jspf"%>
 </c:if>

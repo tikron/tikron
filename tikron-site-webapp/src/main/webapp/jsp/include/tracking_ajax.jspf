@@ -1,9 +1,11 @@
+<c:if test="${true or trackingEnabled}">
 <!-- Piwik -->
+<c:url var="rewriteCanonicalUrl" value="${canonicalUrl}" /><%-- Process URL by Tuckey rewrite engine. --%>
 <script type="text/javascript">
 	try {
 		if (Piwik) {
 			var piwikTracker = Piwik.getAsyncTracker();
-			piwikTracker.setCustomUrl('${fullRequestURI}');
+			<c:if test="${not empty canonicalUrl}">piwikTracker.setCustomUrl('${rewriteCanonicalUrl}');</c:if>
 			piwikTracker.setDocumentTitle('${pageTitle}');
 			piwikTracker.trackPageView();
 			piwikTracker.enableLinkTracking();
@@ -11,3 +13,4 @@
 	} catch (err) {}
 </script>
 <!-- End Piwik Code -->
+</c:if>

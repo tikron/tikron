@@ -30,8 +30,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
  * @author Titus Kruse
  */
 @Controller
-@RequestMapping("/displaySubNavAjax.html")
-public class DisplaySubNavigationAjaxController extends AbstractController {
+@RequestMapping("/displaySubNav.html")
+public class DisplaySubNavigationController extends AbstractController {
 
 	private GalleryService galleryService;
 	

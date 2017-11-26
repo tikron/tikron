@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import de.tikron.webapp.controller.common.AbstractPageController;
+import de.tikron.webapp.controller.common.ViewConstants;
 import de.tikron.webapp.util.RobotsDirective;
 
 /**
@@ -21,7 +22,12 @@ import de.tikron.webapp.util.RobotsDirective;
 public class DisplayLogController extends AbstractPageController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public void doGet() {
+	public String doGet() {
+		if (isXmlHttpRequest()) {
+			return ViewConstants.DISPLAY_LOG_AJAX;
+		} else {
+			return ViewConstants.DISPLAY_LOG;
+		}
 	}
 
 	@Override

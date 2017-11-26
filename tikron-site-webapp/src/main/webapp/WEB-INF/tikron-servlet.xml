@@ -80,21 +80,18 @@
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
 			<mvc:exclude-mapping path="/captchaImage.html" />
-			<mvc:exclude-mapping path="/*display*Ajax.html" />
 			<ref bean="mainNavigationInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
 			<mvc:exclude-mapping path="/captchaImage.html" />
-			<mvc:exclude-mapping path="/*display*Ajax.html" />
 			<ref bean="seoInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
 			<mvc:exclude-mapping path="/captchaImage.html" />
-			<mvc:exclude-mapping path="/*display*Ajax.html" />
 			<ref bean="trackingInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

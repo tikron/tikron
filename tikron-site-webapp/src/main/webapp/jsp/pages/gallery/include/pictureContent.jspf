@@ -25,11 +25,11 @@
 				<%-- <img src="https://dummyimage.com/840x560" alt="${picture.title}" /> --%>
 				<nav id="pager" style="display:none;">
 				<c:if test="${pager.hasPrevious}">
-					<c:url var="previousPictureUrl" value="/gallery/displayPictureAjax.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
+					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
 					<a href="${previousPictureUrl}" rel="nofollow" class="nav nav-left ajax" data-response-target="#content"></a>
 				</c:if>
 				<c:if test="${pager.hasNext}">
-					<c:url var="nextPictureUrl" value="/gallery/displayPictureAjax.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
+					<c:url var="nextPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.next.id}"/><c:param name="name" value="${pager.next.seoName}"/></c:url>
 					<a href="${nextPictureUrl}" rel="nofollow" class="nav nav-right ajax" data-response-target="#content"></a>
 				</c:if>
 				</nav>

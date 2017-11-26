@@ -11,7 +11,7 @@
 <%@ include file="/jsp/include/htmlbody_start.jspf"%>
 <%@ include file="/jsp/include/header.jspf"%>
 <%@ include file="/jsp/include/nav_main.jspf"%>
-<c:url var="displayLogAjaxUrl" value="/displayLogAjax.html"/>
+<c:url var="displayLogUrl" value="/displayLog.html"/>
 <div id="content" class="homepage">
 	<div class="row">
 		<section class="col-lg-9 col-md-12 col-xs-12">
@@ -34,7 +34,7 @@
 				</p>
 			</article>
 			<section class="log">
-				<a id="showLog" href="${displayLogAjaxUrl}" class="arrow log ajax" data-response-target="#logResponse" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
+				<a id="showLog" href="${displayLogUrl}" class="arrow log ajax" data-response-target="#logResponse" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 				<div id="logResponse" class="timestamp">
 					Letzte Aktualisierung: <time datetime="2016-07-28">28.07.2016</time>
 				</div>

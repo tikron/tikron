@@ -98,6 +98,7 @@ function TikronNav(options) {
 		if (!$.trim($(elContainer).html())) {
 			$.ajax({
 				url : _cfg.loadSubNavUrl + identifier,
+				dataType: 'html',
 				success : function(msg) {
 					$(elContainer).html(msg);
 				}

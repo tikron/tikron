@@ -1,3 +1,4 @@
+<c:if test="${trackingEnabled}">
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -13,3 +14,4 @@
 </script>
 <noscript><p><img src="//analytics.tikron.de/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+</c:if>

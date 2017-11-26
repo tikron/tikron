@@ -112,7 +112,17 @@ public abstract class AbstractController {
 		String queryString = httpServletRequest.getQueryString();
 		return httpServletRequest.getRequestURL().toString() + (queryString != null ? "?" + queryString : "");
 	}
-	
+
+	/**
+	 * Checks whether the request is an Ajax request.
+	 *  
+	 * @return true, if Ajax.
+	 */
+	@ModelAttribute("xmlHttpRequest")
+	public boolean isXmlHttpRequest() {
+		String requestedWithHeader = getHttpServletRequest().getHeader("X-Requested-With");
+		return "XMLHttpRequest".equals(requestedWithHeader);
+	}
 	
 	/**
 	 * Checks whether the request was submitted by an Internet Explorer version lower then 9.

@@ -53,9 +53,9 @@ public class DisplayPictureController extends AbstractPageController {
 	private PictureDTOAssembler pictureDTOAssembler;
 	
 	private CommentDTOAssembler commentDTOAssembler;
-
+	
 	@RequestMapping(method = RequestMethod.GET)
-	public void doGet(ModelMap model, @RequestParam(ControllerConstants.REQUEST_PARAM_PICTURE_ID) Long pictureId) {
+	public String doGet(ModelMap model, @RequestParam(ControllerConstants.REQUEST_PARAM_PICTURE_ID) Long pictureId) {
 		// Validate request parameters
 		if (pictureId == null) {
 			throw new ApplicationException("exception.missingParameterValue", new Object[]{ControllerConstants.REQUEST_PARAM_PICTURE_ID});
@@ -81,12 +81,17 @@ public class DisplayPictureController extends AbstractPageController {
 			// Add rating
 			RatingResult rating = ratingService.getRatingResult(picture);
 			model.addAttribute("rating", rating);
+			if (StringUtils.isEmpty(picture.getDescription())) {
+				model.addAttribute(MODEL_ATTR_ROBOTS_DIRECTIVE, RobotsDirective.NOINDEX.toString());
+			}
 			// Add or override HTML meta info
 			model.addAttribute(MODEL_ATTR_CANONICAL_URL, buildCanonicalUrl(picture));
 			model.addAttribute(MODEL_ATTR_PAGE_TITLE, formatPageTitle(picture.getDisplayName()));
 			model.addAttribute(MODEL_ATTR_PAGE_DESCRIPTION, SeoUtils.getInstance().formatMetaDescription(picture.getDescription()));
-			if (StringUtils.isEmpty(picture.getDescription())) {
-				model.addAttribute(MODEL_ATTR_ROBOTS_DIRECTIVE, RobotsDirective.NOINDEX.toString());
+			if (isXmlHttpRequest()) {
+				return ViewConstants.GALLERY_DISPLAY_PICTURE_AJAX;
+			} else {
+				return ViewConstants.GALLERY_DISPLAY_PICTURE;
 			}
 		} else {
 			throw new ResourceNotFoundException("exception.pictureNotFound", new Object[]{pictureId});
