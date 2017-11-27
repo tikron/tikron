@@ -18,6 +18,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.owasp.validator.html.AntiSamy;
@@ -38,23 +39,13 @@ public class AntiSamyFilter implements Filter {
 
 	private static final Logger LOG = LogManager.getLogger();
 
+	private static final String DEFAULT_RULES_FILE = "antisamy.xml";
+
 	/**
 	 * AntiSamy is unfortunately not immutable, but is threadsafe if we only call
 	 * {@link AntiSamy#scan(String taintedHTML, int scanType)}
 	 */
-	private final AntiSamy antiSamy;
-
-	public AntiSamyFilter() {
-		try {
-			// Find antisamy configuration files here:
-			// https://code.google.com/p/owaspantisamy/downloads/list
-			URL url = this.getClass().getClassLoader().getResource("antisamy-slashdot-1.4.4.xml");
-			Policy policy = Policy.getInstance(url);
-			antiSamy = new AntiSamy(policy);
-		} catch (PolicyException e) {
-			throw new IllegalStateException(e.getMessage(), e);
-		}
-	}
+	private AntiSamy antiSamy;
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
@@ -69,6 +60,17 @@ public class AntiSamyFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
+		try {
+			String rulesFileName = ObjectUtils.firstNonNull(filterConfig.getInitParameter("rulesFile"), DEFAULT_RULES_FILE);
+			// Find antisamy configuration files here:
+			// https://code.google.com/p/owaspantisamy/downloads/list
+			LOG.info("Initializing antisamy filter with rules file {}.", rulesFileName);
+			URL url = this.getClass().getClassLoader().getResource(rulesFileName);
+			Policy policy = Policy.getInstance(url);
+			antiSamy = new AntiSamy(policy);
+		} catch (PolicyException e) {
+			throw new IllegalStateException(e.getMessage(), e);
+		}
 	}
 
 	@Override
@@ -105,8 +107,7 @@ public class AntiSamyFilter implements Filter {
 		}
 
 		@Override
-		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public Map getParameterMap() {
+		public Map<String, String[]> getParameterMap() {
 			Map<String, String[]> originalMap = super.getParameterMap();
 			Map<String, String[]> filteredMap = new ConcurrentHashMap<String, String[]>(originalMap.size());
 			for (String name : originalMap.keySet()) {
