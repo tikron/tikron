@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -49,13 +50,13 @@ public class GlobalDefaultExceptionHandler {
 	}
 	
 	/**
-	 * General Exeption handler for runtime exceptions thrown by this application.
+	 * General Exeption handler for runtime exceptions thrown by this application or bad request caused by wrong or missing paramters for example.
 	 * 
 	 * @param request
 	 * @param e
 	 * @return
 	 */
-	@ExceptionHandler(ApplicationException.class)
+	@ExceptionHandler({ApplicationException.class, ServletRequestBindingException.class})
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ModelAndView handleApplicationException(HttpServletRequest request, Exception e) {
 		LOGGER.warn(buildLogMessage(request, e));

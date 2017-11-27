@@ -16,8 +16,10 @@
 			<article>
 				<header><h1><spring:message code="displayApplicationError.headline"/></h1></header>
 				<p><spring:message code="displayApplicationError.info"/></p>
+				<c:if test="${not empty messageKey}">
 				<br />
 				<p><spring:message code="${messageKey}" arguments="${messageParam}"/></p>
+				</c:if>
 				<br />
 				<a href="/"><spring:message code="link.homepage"/></a>
 			</article>
