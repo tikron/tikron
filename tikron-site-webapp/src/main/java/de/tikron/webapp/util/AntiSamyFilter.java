@@ -37,7 +37,7 @@ import org.owasp.validator.html.PolicyException;
  */
 public class AntiSamyFilter implements Filter {
 
-	private static final Logger logger = LogManager.getLogger();
+	private static final Logger LOG = LogManager.getLogger();
 
 	private static final String DEFAULT_RULES_FILE = "antisamy.xml";
 
@@ -64,7 +64,7 @@ public class AntiSamyFilter implements Filter {
 			String rulesFileName = ObjectUtils.firstNonNull(filterConfig.getInitParameter("rulesFile"), DEFAULT_RULES_FILE);
 			// Find antisamy configuration files here:
 			// https://code.google.com/p/owaspantisamy/downloads/list
-			logger.info("Initializing antisamy filter with rules file {}.", rulesFileName);
+			LOG.info("Initializing antisamy filter with rules file {}.", rulesFileName);
 			URL url = this.getClass().getClassLoader().getResource(rulesFileName);
 			Policy policy = Policy.getInstance(url);
 			antiSamy = new AntiSamy(policy);
@@ -135,7 +135,7 @@ public class AntiSamyFilter implements Filter {
 			try {
 				CleanResults cr = antiSamy.scan(excapedPotentiallyDirtyParameter, AntiSamy.DOM);
 				if (cr.getNumberOfErrors() > 0) {
-					logger.warn("antisamy encountered problem with input: " + cr.getErrorMessages());
+					LOG.warn("antisamy encountered problem with input: " + cr.getErrorMessages());
 				}
 				return cr.getCleanHTML().replaceAll("%0A", "\n").replaceAll("%0D", "\r");
 			} catch (Exception e) {

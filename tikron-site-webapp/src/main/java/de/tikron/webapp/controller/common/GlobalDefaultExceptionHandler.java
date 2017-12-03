@@ -32,7 +32,7 @@ public class GlobalDefaultExceptionHandler {
 	
 	private LocalizationContext localizationContext;
 
-	private static final DateTimeFormatter yearFormatter = DateTimeFormatter.ofPattern("yyyy");
+	private static final DateTimeFormatter YEAR_FORMATTER = DateTimeFormatter.ofPattern("yyyy");
 	
 	/**
 	 * Special handler for exceptions caused by a missing resource. This handler results into a view, showing the user an
@@ -126,7 +126,7 @@ public class GlobalDefaultExceptionHandler {
 		// TODO Redundant with preparation in AbstractPageController and AbstractController
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("pageTitle", localizationContext.getMessage("title", null));
-		modelAndView.addObject("copyrightYear", yearFormatter.format(localizationContext.getLocalSystemTime()));
+		modelAndView.addObject("copyrightYear", YEAR_FORMATTER.format(localizationContext.getLocalSystemTime()));
 		if (e != null && e instanceof ApplicationException) {
 			ApplicationException ae = (ApplicationException) e;
 			modelAndView.addObject("messageKey", ae.getKey());
