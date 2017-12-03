@@ -22,30 +22,33 @@
 	<import resource="tikron-validator.xml"/>
 	
 	<!-- Bean providing access to message resource boundles -->
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+	<!-- https://www.journaldev.com/2610/spring-mvc-internationalization-i18n-and-localization-l10n-example -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
-				<value>de.tikron.webapp.mvc.common</value>
-				<value>de.tikron.webapp.mvc.error</value>
-				<value>de.tikron.webapp.mvc.exceptions</value>
-				<value>de.tikron.webapp.mvc.gallery</value>
-				<value>de.tikron.webapp.mvc.main</value>
-				<value>de.tikron.webapp.mvc.misc</value>
-				<value>de.tikron.webapp.mvc.user</value>
+				<value>classpath:de/tikron/webapp/mvc/common</value>
+				<value>classpath:de/tikron/webapp/mvc/error</value>
+				<value>classpath:de/tikron/webapp/mvc/exceptions</value>
+				<value>classpath:de/tikron/webapp/mvc/gallery</value>
+				<value>classpath:de/tikron/webapp/mvc/main</value>
+				<value>classpath:de/tikron/webapp/mvc/misc</value>
+				<value>classpath:de/tikron/webapp/mvc/user</value>
 			</list>
 		</property>
+		<property name="cacheSeconds" value="10"/>
 	</bean>
 
 	<!-- Set default locale for MVC frontend -->
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
 		<!-- Use always Germany because no english translation as fallback supported yet. -->
-		<property name="defaultLocale" value="de_DE"></property>
+<!-- 		<property name="defaultLocale" value="de_DE"></property> -->
 	</bean>
 	
 	<!-- Configure my localization context in request scope because properties like locale or time zone can change from request to request. -->
 	<!-- AOP proxy example: http://www.tikalk.com/java/injecting-request-scope-beans-singletons-resteasy-and-spring/ -->
 	<bean id="localizationContext" class="de.tikron.webapp.util.LocalizationContextImpl" scope="request">
 		<aop:scoped-proxy />
+		<property name="localeResolver" ref="localeResolver" />
 		<property name="messageSource" ref="messageSource" />
 	</bean>
 	
@@ -76,6 +79,16 @@
 	
 	<!-- Register handler interceptors -->
 	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="lang" />
+		</bean>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/contentNotFound.html" />
+			<mvc:exclude-mapping path="/captchaImage.html" />
+			<mvc:exclude-mapping path="/displayUnsupportedLanguage.html" />
+			<ref bean="localeInterceptor" />
+		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />

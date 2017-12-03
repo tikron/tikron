@@ -14,9 +14,11 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceResolvable;
 import org.springframework.context.NoSuchMessageException;
+import org.springframework.web.servlet.LocaleResolver;
 
 /**
  * Default implementation of {@link de.tikron.webapp.util.LocalizationContext}
@@ -26,13 +28,19 @@ import org.springframework.context.NoSuchMessageException;
  */
 public class LocalizationContextImpl implements LocalizationContext {
 	
-	@SuppressWarnings("unused")
+	@Autowired
 	private HttpServletRequest request;
 	
 	private MessageSource messageSource;
+	
+	private LocaleResolver localeResolver;
 
 	public void setMessageSource(MessageSource messageSource) {
 		this.messageSource = messageSource;
+	}
+
+	public void setLocaleResolver(LocaleResolver localeResolver) {
+		this.localeResolver = localeResolver;
 	}
 
 	@Override
@@ -52,9 +60,9 @@ public class LocalizationContextImpl implements LocalizationContext {
 
 	@Override
 	public Locale getLocale() {
-//		return this.request.getLocale();
+		return localeResolver.resolveLocale(request);
 		// Use always Germany because no english translation as fallback supported yet.  
-		return Locale.GERMANY;
+		// return Locale.GERMANY;
 	}
 
 	@Override
