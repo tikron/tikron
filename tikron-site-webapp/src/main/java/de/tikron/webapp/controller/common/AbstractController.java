@@ -45,7 +45,7 @@ public abstract class AbstractController {
 	
 //	protected Mapper beanMapper;
 
-	private static final DateTimeFormatter YEAR_FORMATTER = DateTimeFormatter.ofPattern("yyyy");
+	private static final DateTimeFormatter yearFormatter = DateTimeFormatter.ofPattern("yyyy");
 
 	/**
 	 * Returns a message text for the given message key and message arguments.
@@ -214,7 +214,7 @@ public abstract class AbstractController {
 	
 	@ModelAttribute("copyrightYear")
 	public String getCopyrightYear() {
-		return YEAR_FORMATTER.format(getLocalizationContext().getLocalSystemTime()); 
+		return yearFormatter.format(getLocalizationContext().getLocalSystemTime()); 
 	}
 
 	@Autowired

@@ -28,11 +28,11 @@ import de.tikron.webapp.util.LocalizationContext;
 @ControllerAdvice
 public class GlobalDefaultExceptionHandler {
 
-	private static Logger LOGGER = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 	
 	private LocalizationContext localizationContext;
 
-	private static final DateTimeFormatter YEAR_FORMATTER = DateTimeFormatter.ofPattern("yyyy");
+	private static final DateTimeFormatter yearFormatter = DateTimeFormatter.ofPattern("yyyy");
 	
 	/**
 	 * Special handler for exceptions caused by a missing resource. This handler results into a view, showing the user an
@@ -45,7 +45,7 @@ public class GlobalDefaultExceptionHandler {
 	@ExceptionHandler(ResourceNotFoundException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ModelAndView handleResourceNotFound(HttpServletRequest request, Exception e) {
-		LOGGER.warn(buildLogMessage(request, e));
+		logger.warn(buildLogMessage(request, e));
 		return prepareErrorView(ViewConstants.DISPLAY_APPLICATION_ERROR, e, request);
 	}
 	
@@ -59,7 +59,7 @@ public class GlobalDefaultExceptionHandler {
 	@ExceptionHandler({ApplicationException.class, ServletRequestBindingException.class})
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ModelAndView handleApplicationException(HttpServletRequest request, Exception e) {
-		LOGGER.warn(buildLogMessage(request, e));
+		logger.warn(buildLogMessage(request, e));
 		return prepareErrorView(ViewConstants.DISPLAY_APPLICATION_ERROR, e, request);
 	}
 	
@@ -73,7 +73,7 @@ public class GlobalDefaultExceptionHandler {
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public ModelAndView defaultHandler(HttpServletRequest request, Exception e) {
-		LOGGER.error(buildLogMessage(request, e), e);
+		logger.error(buildLogMessage(request, e), e);
 		return prepareErrorView(ViewConstants.DISPLAY_SYSTEM_ERROR, request);
 	}
 
@@ -126,7 +126,7 @@ public class GlobalDefaultExceptionHandler {
 		// TODO Redundant with preparation in AbstractPageController and AbstractController
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("pageTitle", localizationContext.getMessage("title", null));
-		modelAndView.addObject("copyrightYear", YEAR_FORMATTER.format(localizationContext.getLocalSystemTime()));
+		modelAndView.addObject("copyrightYear", yearFormatter.format(localizationContext.getLocalSystemTime()));
 		if (e != null && e instanceof ApplicationException) {
 			ApplicationException ae = (ApplicationException) e;
 			modelAndView.addObject("messageKey", ae.getKey());

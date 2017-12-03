@@ -23,13 +23,13 @@ import org.springframework.stereotype.Service;
 @Service("fileArchiveService")
 public class FileArchiveServiceImpl implements FileArchiveService {
 
-	private static Logger LOGGER = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 
 	private URL archiveUrl;
 	
 	@PostConstruct
 	public void init() {
-		LOGGER.info(MessageFormat.format("File archive service initialized with URL [{0}].", this.archiveUrl));
+		logger.info(MessageFormat.format("File archive service initialized with URL [{0}].", this.archiveUrl));
 	}
 
 	@Override

@@ -33,7 +33,7 @@ import de.tikron.persistence.model.user.RatingTypeId;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class RatingServiceImpl implements RatingService {
 
-	private static Logger USERACTION_LOGGER = LogManager.getLogger("de.tikron.webapp.service.user.UserAction");
+	private static Logger userAction = LogManager.getLogger("de.tikron.webapp.service.user.UserAction");
 
 	private RatingDao ratingDao;
 
@@ -57,14 +57,14 @@ public class RatingServiceImpl implements RatingService {
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void addRating(Rating rating) {
 		ratingDao.insert(rating);
-		USERACTION_LOGGER.info(MessageFormat.format("{0} \"{1}\" rated wih score {2}.", rating.getRatingType().getDescription(), rating.getRelatedEntity().getDisplayName(), rating.getValue()));
+		userAction.info(MessageFormat.format("{0} \"{1}\" rated wih score {2}.", rating.getRatingType().getDescription(), rating.getRelatedEntity().getDisplayName(), rating.getValue()));
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public RatingResult addRating(PictureRating rating) {
 		ratingDao.insert(rating);
-		USERACTION_LOGGER.info(MessageFormat.format("Picture {0} \"{1}\" rated wih score {2}.", rating.getPicture().getId(), rating.getPicture().getDisplayName(), rating.getValue()));
+		userAction.info(MessageFormat.format("Picture {0} \"{1}\" rated wih score {2}.", rating.getPicture().getId(), rating.getPicture().getDisplayName(), rating.getValue()));
 		return ratingDao.getResult(rating.getPicture());
 	}
 
@@ -72,7 +72,7 @@ public class RatingServiceImpl implements RatingService {
 	@Transactional(propagation = Propagation.REQUIRED)
 	public RatingResult addRating(ClipRating rating) {
 		ratingDao.insert(rating);
-		USERACTION_LOGGER.info(MessageFormat.format("Video Clip {0} \"{1}\" rated wih score {2}.", rating.getClip().getId(), rating.getClip().getDisplayName(), rating.getValue()));
+		userAction.info(MessageFormat.format("Video Clip {0} \"{1}\" rated wih score {2}.", rating.getClip().getId(), rating.getClip().getDisplayName(), rating.getValue()));
 		return ratingDao.getResult(rating.getClip());
 	}
 

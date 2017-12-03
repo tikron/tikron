@@ -28,7 +28,7 @@ import de.tikron.webapp.service.common.TrackingService;
 @Component
 public class TrackingInterceptor extends HandlerInterceptorAdapter {
 
-	private static Logger LOGGER = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 
 	private static final String REQUEST_PARAM_TRACKING = "tracking";
 
@@ -50,7 +50,7 @@ public class TrackingInterceptor extends HandlerInterceptorAdapter {
 			String requestParameter = request.getParameter(REQUEST_PARAM_TRACKING);
 			if (requestParameter != null) {
 				boolean requestTrackingEnabled = Boolean.parseBoolean(requestParameter);
-				LOGGER.info(MessageFormat.format("Tracking enabled {0} for session {1}.", requestTrackingEnabled, request
+				logger.info(MessageFormat.format("Tracking enabled {0} for session {1}.", requestTrackingEnabled, request
 						.getSession().getId()));
 				Cookie cookie = new Cookie(COOKIE_NAME, Boolean.toString(requestTrackingEnabled));
 				cookie.setPath("/");

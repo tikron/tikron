@@ -37,7 +37,7 @@ import de.tikron.persistence.model.user.User;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class UserServiceImpl implements UserService {
 
-	private static Logger USERACTION_LOGGER = LogManager.getLogger("de.tikron.webapp.service.user.UserAction");
+	private static Logger userAction = LogManager.getLogger("de.tikron.webapp.service.user.UserAction");
 
 	private UserDao userDao;
 
@@ -89,10 +89,10 @@ public class UserServiceImpl implements UserService {
 		sendNotificationEmail(comment);
 		// Logging
 		if (comment.getRelatedEntity() != null) {
-			USERACTION_LOGGER.info(MessageFormat.format("Comment of type {0} for object {1} added by User with name {3}.", 
+			userAction.info(MessageFormat.format("Comment of type {0} for object {1} added by User with name {3}.", 
 					comment.getClass().getSimpleName(), comment.getRelatedEntity().getId(), comment.getRelatedEntity().getDisplayName(), comment.getUser().getDisplayName()));
 		} else {
-			USERACTION_LOGGER.info(MessageFormat.format("Comment of type {0} added by User with name {1}.", 
+			userAction.info(MessageFormat.format("Comment of type {0} added by User with name {1}.", 
 					comment.getClass().getSimpleName(), comment.getUser().getDisplayName()));
 		}
 	}

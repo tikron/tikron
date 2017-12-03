@@ -26,7 +26,7 @@ public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 	
 	public static final String NAME = "teaserEntityBean";
 
-	private static Logger LOGGER = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 	
 	private PictureDTO picture;
 	
@@ -49,7 +49,7 @@ public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 				if (findingPicture != null) {
 					picture = applicationContext.getBean(PictureDTOAssembler.class).toDTO(findingPicture);
 				} else {
-					LOGGER.warn("No random Picture found for finding teaser.");
+					logger.warn("No random Picture found for finding teaser.");
 				}
 			} else if (entity.getPicture() != null) {
 				// General teaser with picture from image archive.

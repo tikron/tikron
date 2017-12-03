@@ -35,7 +35,7 @@ import de.tikron.webapp.util.RobotsDirective;
 @Controller
 public class SendContactMessageController extends AbstractFormController {
 
-	private static Logger LOGGER = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 
 	private EmailService emailService;
 
@@ -68,7 +68,7 @@ public class SendContactMessageController extends AbstractFormController {
 			String emailSubject = getMessage("sendContactMessage.email.subject");
 			if (!emailService.sendEmail(contactMessage.getEmail(), contactMessage.getName(), null, emailSubject,
 					contactMessage.getMessage())) {
-				LOGGER.warn("Error occured sending contact message.");
+				logger.warn("Error occured sending contact message.");
 				return new ErrorResponse("sendContactMessage.confirmation.error", localizationContext);
 			}
 			return new SuccessResponse(localizationContext.getMessage("sendContactMessage.confirmation.success", new Object[]{}));

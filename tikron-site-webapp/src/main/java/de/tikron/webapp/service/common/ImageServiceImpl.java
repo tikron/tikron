@@ -28,7 +28,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Service("imageService")
 public class ImageServiceImpl implements ImageService {
 
-	private static Logger LOGGER = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
 
@@ -36,7 +36,7 @@ public class ImageServiceImpl implements ImageService {
 	
 	@PostConstruct
 	public void init() {
-		LOGGER.info(MessageFormat.format("Image service initialized with server URL [{0}].", this.imageServerUrl));
+		logger.info(MessageFormat.format("Image service initialized with server URL [{0}].", this.imageServerUrl));
 	}
 
 	@Override
