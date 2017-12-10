@@ -30,7 +30,8 @@ function TikronNav(options) {
 		});
 		// Handle mouse enter and leave on main top navigation items having a sub navigation
 		var $subNav = _ui.topNav.find('ul li.hasSubNav');
-		$subNav.mouseenter(function() {
+		var $subNavTrigger = $('a', $subNav);
+		$subNavTrigger.mouseenter(function() {
 			_switchSubNav(this, true);
 		});
 		$subNav.mouseleave(function() {
@@ -52,7 +53,7 @@ function TikronNav(options) {
 	 */
 	var _switchSubNav = function(elHover, enter) {
 		var dropDownNav = (window.innerWidth < 960); 
-		var hoverId = $(elHover).attr('id');
+		var hoverId = $(elHover).parent().attr('id');
 		// console.log(enter + '/' + hoverId);
 		if (hoverId && !dropDownNav) {
 			var hoverName = hoverId.replace(/navTop_/, '')
