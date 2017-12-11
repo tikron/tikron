@@ -21,6 +21,7 @@ function Tikron(options) {
 		_ui = {
 				goup: $('#goup')
 		};
+		_consoleWrapper();
 		_updateUI();
 		_bindUIActions();
 //		console.log(_cfg);
@@ -192,6 +193,18 @@ function Tikron(options) {
 	      });
 	    } // End if
 	  });
+	}
+	
+	/**
+	 * Javascript console logger poylfill
+	 */
+	var _consoleWrapper = function() {
+		if (!window.console) window.console = {};
+		if (!window.console.error) window.console.error = function () {};
+		if (!window.console.info) window.console.info = function () {};
+		if (!window.console.log) window.console.log = function () {};
+		if (!window.console.trace) window.console.trace = function () {};
+		if (!window.console.warn) window.console.warn = function () {};
 	}
 };
 
