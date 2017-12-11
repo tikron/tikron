@@ -48,6 +48,8 @@ function Tikron(options) {
 		// Bind default ajax spinner and scroller
 		_bindAjaxDefaultSpinner();
 		_bindScroller();
+		// Tooltips
+		$(document).tooltip({track: true, show: {delay: 500}});
 	}
 	
 	var _bindGoUpButton = function() {
