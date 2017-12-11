@@ -32,14 +32,13 @@ function TikronNav(options) {
 		var $subNav = _ui.topNav.find('ul li.hasSubNav');
 		var $subNavTrigger = $('a', $subNav);
 		$subNavTrigger.mouseenter(function() {
-			_switchSubNav(this, true);
+			var id = $(this).parent().attr('id');
+			_switchSubNav(id, true);
 		});
 		$subNav.mouseleave(function() {
-			_switchSubNav(this, false);
+			var id = $(this).attr('id');
+			_switchSubNav(id, false);
 		});
-	}
-	
-	var _bindMainNavToggle = function() {
 	}
 
 	/**
@@ -51,10 +50,9 @@ function TikronNav(options) {
 	 *          If true, the sub navigation will be shown, otherwise it will be
 	 *          hidden.
 	 */
-	var _switchSubNav = function(elHover, enter) {
+	var _switchSubNav = function(hoverId, enter) {
 		var dropDownNav = (window.innerWidth < 960); 
-		var hoverId = $(elHover).parent().attr('id');
-		// console.log(enter + '/' + hoverId);
+		console.debug(enter + '/' + hoverId);
 		if (hoverId && !dropDownNav) {
 			var hoverName = hoverId.replace(/navTop_/, '')
 			// Hide sub nav on leave or already shown current
