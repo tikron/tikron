@@ -10,8 +10,7 @@
 <%@ include file="/jsp/include/title.jspf" %>
 <%@ include file="/jsp/include/head.jspf" %>
 <script type="text/javascript" src="/lib/jquery-placeholder-2.3.1/jquery.placeholder.min.js"></script>
-<!-- <script type="text/javascript" src="/lib/imagesloaded-4.1.3.pkgd.min.js"></script> -->
-<script type="text/javascript" src="/lib/lazyload-8.5.0.min.js"></script>
+<script type="text/javascript" src="/lib/picturefill-3.0.3/dist/picturefill.min.js"></script>
 <script type="text/javascript" src="/lib/jRate.min.js" ></script>
 <script type="text/javascript" src="/lib/hammer.min.js" ></script>
 <script type="text/javascript" src="/js/rating.js" ></script>
@@ -32,15 +31,9 @@
 	tikronComment.init();
 	var tikronRating = new TikronRating({'msg' : {ratingCount:'<spring:message code="rating.count"/>', ratingEmpty: '<spring:message code="rating.empty"/>'}});
 	tikronRating.init();
-	/*
-	$('#content figure').imagesLoaded().done(function(instance) {
+	$('#content figure img').one('load', function(e) {
 	  $('nav#pager').show();
 	  $('span.counter').show();
 	});
-	*/
-	new LazyLoad({elements_selector: 'img.lazy', callback_load: function() {
-		$('nav#pager').show();
-		$('span.counter').show();
-	}});
 </script>
 <%@ include file="/jsp/include/html_end.jspf" %>

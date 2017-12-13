@@ -37,7 +37,7 @@
 					<c:otherwise>
 						<%-- Show image in new page --%>
 						<a href="${displayPictureUrl}" title="<spring:message code='gallery.thumnail.description'/>">
-							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
+							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="" />
 						</a>
 					</c:otherwise>
 					</c:choose>

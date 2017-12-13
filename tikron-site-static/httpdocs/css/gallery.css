@@ -43,6 +43,7 @@
 
 #content.gallery.category ul.thumbs img {
 	height: 66px;
+	max-width: 100px;
 	display: block;
 	margin: 0 auto;
 }

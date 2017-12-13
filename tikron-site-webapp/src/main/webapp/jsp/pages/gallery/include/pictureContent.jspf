@@ -15,14 +15,14 @@
 		<section class="col-lg-9 col-md-12 col-xs-12">
 			<figure id="picturePan">
 				<%-- Sizes must correspond with viewports defined in image CSS! (520, 768, 960) --%>
-				<img class="${imgClass}" data-src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgXs']}" />" 
-					data-srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 840w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 720w,
+				<img class="${imgClass}" src="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" />" alt="${picture.title}"
+					srcset="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgXs']}" /> 300w,
 						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgSm']}" /> 480w,
-						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgXs']}" /> 300w"
-					sizes="(max-width: 519px) 300px, (max-width: 767px) 480px, (max-width: 959px) 720px, 840px" 
-					alt="${picture.title}" />
-				<%-- <img src="https://dummyimage.com/840x560" alt="${picture.title}" /> --%>
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgMd']}" /> 720w,
+						<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" /> 840w"
+					sizes="(min-width: 960px) 840px, (min-width: 768px) 720px, (min-width: 520px) 480px, 300px" 
+				 />
+				<%-- <img src="//dummyimage.com/840x560" alt="${picture.title}" />				--%>
 				<nav id="pager" style="display:none;">
 				<c:if test="${pager.hasPrevious}">
 					<c:url var="previousPictureUrl" value="/gallery/displayPicture.html"><c:param name="pictureId" value="${pager.previous.id}"/><c:param name="name" value="${pager.previous.seoName}"/></c:url>
@@ -91,6 +91,5 @@ $(document).ready(function() {
 	tikronComment.build();
 	// Bind rating stars handler
 	tikronRating.build('${addRatingUrl}');
-	// Show navigation on image load
 });
 </script>
