@@ -948,6 +948,7 @@ footer#main ul#goodies .icon_monitoring {
 
 aside.teaserbar .teaser {
 	float: left;
+	width: 230px;
 	margin-bottom: 30px;
 	margin-right: 30px;
 }
@@ -957,11 +958,13 @@ aside.teaserbar .teaser .setoff {
 }
 
 aside.teaserbar .teaser a {
-	min-height: 150px;
+	height: 150px;
+	display: inline-block;
 }
 
 aside.teaserbar .teaser figure img {
 	display: block;
+	overflow: hidden;
 }
 
 aside.teaserbar .teaser figcaption {
