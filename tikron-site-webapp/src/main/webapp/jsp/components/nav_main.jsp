@@ -67,7 +67,7 @@
 		</ul>
 	</div>
 </nav>
-<script type="text/javascript">
+<script>
 	$(document).ready(function() {
 		var tikronNav = new TikronNav({"loadSubNavUrl": "${displaySubNavUrl}"});
 		tikronNav.init();

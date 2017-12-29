@@ -9,13 +9,13 @@
 <%@ include file="/jsp/include/htmlhead_start.jspf" %>
 <%@ include file="/jsp/include/title.jspf" %>
 <%@ include file="/jsp/include/head.jspf" %>
-<script type="text/javascript" src="/lib/jquery-placeholder-2.3.1/jquery.placeholder.min.js"></script>
-<script type="text/javascript" src="/lib/picturefill-3.0.3/dist/picturefill.min.js"></script>
-<script type="text/javascript" src="/lib/jRate.min.js" ></script>
-<script type="text/javascript" src="/lib/hammer.min.js" ></script>
-<script type="text/javascript" src="/js/rating.js" ></script>
-<script type="text/javascript" src="/js/comment.js" ></script>
-<script type="text/javascript" src="/js/touch.js" ></script>
+<script src="/lib/jquery-placeholder-2.3.1/jquery.placeholder.min.js"></script>
+<script src="/lib/picturefill-3.0.3/dist/picturefill.min.js"></script>
+<script src="/lib/jRate.min.js" ></script>
+<script src="/lib/hammer.min.js" ></script>
+<script src="/js/rating.js" ></script>
+<script src="/js/comment.js" ></script>
+<script src="/js/touch.js" ></script>
 <link rel="stylesheet" type="text/css" href="/css/gallery.css${contentVersionParam}" />
 <%@ include file="/jsp/include/htmlhead_end.jspf" %>
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>

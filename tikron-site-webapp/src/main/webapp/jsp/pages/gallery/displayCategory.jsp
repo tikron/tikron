@@ -70,7 +70,7 @@
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <c:if test="${category.displayType eq 'OVERLAY'}">
 	<%-- Show overlay pictures with "qjeury plugin colorbox" --%>
-	<script type="text/javascript" src="/lib/jquery.colorbox-min.js"></script>
+	<script src="/lib/jquery.colorbox-min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('a.colorbox').colorbox({photo:true, rel:'colorbox', current: '<spring:message code="colorbox.current"/>', title: function(){return $(this).attr('data-caption');}});
