@@ -25,7 +25,7 @@
 				<p><strong>Ein Reisebericht über eine 3-monatige Campingtour Skandinavien und Baltikum</strong></p>
 				<p><time datetime="2014-09-20">20.09.2014</time></p>
 			</header>
-			<section id="contentMain">
+			<div id="contentMain">
 				<p>Wir waren schon mehrmals in Dänemark und <a class="arrow" href="<c:url value="${displayCategoryURLs['sweden']}" />">Schweden</a>. Auch den <a class="arrow" href="<c:url value="${displayCategoryURLs['poland']}" />">Norden Polens</a> hatten wir 2011 mit dem Campingbus erkundet. Es schwirrte aber schon lange Zeit die Vorstellung in meinen Kopf, einmal um die Ostsee zu fahren. Damit würden wir auch mal Finnland sehen. Und einen Teil der baltischen Länder. Über Estland und der Kurischen Nehrung hatten wir schon einige Reportagen im Fernsehen gesehen und für interessant befunden.</p>
 				<h2>Vorbereitung</h2>
 				<p>So sollte es dieses Jahr nun also endlich klappen. Die Vorbereitungen fingen bereits im Winter 2014 an. Dazu hatten wir die ungefähre Route geplant und für einen mehrwöchigen Aufenthalt auf Saaremaa in Estland ein kleines Ferienhaus gebucht. Für die Reise hatten wir insgesamt 3 Monate veranschlagt. Wegen den großen Entfernungen Richtung Norden wollten wir nicht die ganze Ostseeküste bereisen. Stattdessen haben wir im Norden zwischen Schweden und Finnland abgekürzt und einen Sprung über die sehr schöne Insel Åland gemacht. St. Petersburg und die russische Exklave Kaliningrad wollen wir wegen dem Ukraine-Konflikt auslassen.</p>
@@ -93,7 +93,7 @@
 				<p>Am letzten Tag unserer Reise verfolge ich an der Reling gelehnt auf dem Navi des Smartphones unsere genaue Position. Es geht entlang der polnischen und deutschen Ostseeküste. Wir sehen Bornholm, die Kalkfelsen von Rügen und die Strände von Fehmarn. Die Fahrt verläuft ruhiger, als in der Nacht. Es gibt Frühstück und zwei Mal Warm.</p>
 				<p>Es ist kurz vor zehn Uhr, als wir nach einem ärgerlichen Zwischenfall mit einem hektischen und sehr ungehaltenen Einweiser das Autodeck verlassen. Wir fahren auf der A7 zurück nach Hamburg und haben es geschafft. Irgendwie ist es schade, dass auch dieser lange Urlaub schon wieder zu Ende ist. Wir sind aber glücklich, so viele kleine Abenteuer erlebt und schöne Ort gesehen zu haben. 4000 Kilometer im Auto liegen hinter uns. Wir haben 300 Liter Diesel getankt. Durch 6 Länder sind wir gefahren. 350 Fotos wurden geschossen und 2 Filme gedreht. Dem Bus geht es inzwischen wieder besser. Das rechte untere Traggelenk war defekt.</p>
 				<a href="<c:url value="${displayCatalogURLs['travels']}" />" class="arrow"><spring:message code="button.backToOverview"/></a>
-			</section>
+			</div>
 			<c:if test="${category.commentable}">
 			<section class="commentBox">
 				<%@ include file="/jsp/pages/user/include/addCommentForm.jspf" %>

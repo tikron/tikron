@@ -19,9 +19,9 @@
 				<header><h1>Was bisher geschah...</h1></header>
 				<p>Wer Tikron nicht so häufig besucht, kann auf dieser Seite auch Neuigkeiten nachlesen, die vielleicht schon etwas länger her sind. Leider sind <strong>nicht mehr alle Protokolleinträge vorhanden</strong>, so dass diese nur bis in's Jahr 2007 zurück reichen.</p>
 			</section>
-			<section id="contentMain">
+			<div id="contentMain">
 				<%@ include file="displayLogContent.jspf" %>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>

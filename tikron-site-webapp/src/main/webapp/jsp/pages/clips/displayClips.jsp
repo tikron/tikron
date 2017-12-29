@@ -30,7 +30,7 @@
 					Der Eintritt ist wie immer kostenlos und das Kino frei von Werbung.
 				</p>
 			</article>
-			<section id="contentMain">
+			<div id="contentMain">
 				<ul class="imageIndex">
 					<c:forEach var="clip" items="${clips}" varStatus="listStatus">
 					<c:set var="dateRecordedHtml">${tikron:formatLocalDate(clip.dateRecorded, "yyyy-MM")}</c:set>
@@ -61,7 +61,7 @@
 					</li>
 					</c:forEach>
 				</ul>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>

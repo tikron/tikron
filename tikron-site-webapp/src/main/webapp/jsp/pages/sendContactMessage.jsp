@@ -24,7 +24,7 @@
 				<p><spring:message code="sendContactMessage.featureText" /></p>
 				<a class="arrow email_link" title="<spring:message code='sendContactMessage.email.link.description'/>" href="#0" rel="nofollow"></a>
 			</section>
-			<section id="contentMain">
+			<div id="contentMain">
 				<form:form commandName="contactMessage" action="${sendContactMessageUrl}" id="contact" class="clear ajax">
 					<ul class="globalMsg"><form:errors element="li" cssClass="error"/></ul>
 					<fieldset>
@@ -78,7 +78,7 @@
 						</div>
 					</fieldset>
 				</form:form>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>
