@@ -30,14 +30,14 @@
 					<c:choose>
 					<c:when test="${category.displayType eq 'OVERLAY'}">
 						<%-- Show image with "fancybox" --%>
-						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
+						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" />"<%-- title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}" --%>>
 							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
 						</a>
 					</c:when>
 					<c:otherwise>
 						<%-- Show image in new page --%>
-						<a href="${displayPictureUrl}" title="<spring:message code='gallery.thumnail.description'/>">
-							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="" />
+						<a href="${displayPictureUrl}"<%-- title="<spring:message code='gallery.thumnail.description'/>" --%>>
+							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
 						</a>
 					</c:otherwise>
 					</c:choose>

@@ -15,7 +15,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 <c:if test="${not empty canonicalUrl}">
 <c:url var="rewriteCanonicalUrl" value="${canonicalUrl}" /><%-- Process URL by Tuckey rewrite engine. --%>
-<link rel="canonical" href="${baseUrl}${rewriteCanonicalUrl}" />
+<link rel="canonical" href="${rewriteCanonicalUrl}" />
 </c:if>
 <script src="/lib/jquery-1.12.4.min.js"></script>
 <script src="/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

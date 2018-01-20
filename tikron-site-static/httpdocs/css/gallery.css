@@ -102,6 +102,11 @@ img:not([src]):not([srcset]) {
 	height: auto;
 }
 
+@keyframes nav-fade-in {
+	from {opacity: 0;}
+	to {opacity: 0.8;}
+}
+
 @keyframes nav-fade-out {
 	from {opacity: 0.8;}
 	to {opacity: 0;}
@@ -115,7 +120,12 @@ img:not([src]):not([srcset]) {
 	transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	opacity: 0;
-	animation: nav-fade-out 3s ease-out;
+	animation: nav-fade-out 2s ease-out;
+	transition: opacity 0.4s;
+}
+
+#content.gallery.picture .nav:hover {
+	opacity: 0.8;
 }
 
 #content.gallery.picture .nav-left {
