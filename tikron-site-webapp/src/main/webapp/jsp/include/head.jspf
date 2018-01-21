@@ -8,7 +8,7 @@
 </c:if>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <link rel="stylesheet" type="text/css" href="/lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
-<link rel="stylesheet" type="text/css" href="/lib/font-awesome-4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/font-awesome-4.7.0/css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="/lib/scrollup-2.0/css/themes/image.css">
 <link rel="stylesheet" type="text/css" href="/css/base.css${contentVersionParam}" />
 <link rel="shortcut icon" href="/favicon.ico" />
