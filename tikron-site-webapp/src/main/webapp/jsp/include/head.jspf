@@ -21,7 +21,6 @@
 <script src="/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="/lib/scrollup-2.0/jquery.scrollUp.min.js"></script>
 <script src="/lib/spin.min.js" ></script>
-<script src="/lib/jquery.spin.js" ></script>
 <!--[if lt IE 9]><script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
 <script src="/js/base.js" ></script>
 <script src="/js/navigation.js${contentVersionParam}" ></script>
