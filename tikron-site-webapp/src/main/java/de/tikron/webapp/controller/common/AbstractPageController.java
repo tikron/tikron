@@ -43,13 +43,11 @@ public abstract class AbstractPageController extends AbstractController {
 	 * @return Der Titel.
 	 */
 	protected String formatPageTitle(String subTitle) {
-		StringBuffer title = new StringBuffer();
-		title.append(getMessage("title"));
 		if (subTitle != null) {
-			title.append(TITLE_DELIMITER);
-			title.append(subTitle);
+			return String.format("%s - %s", subTitle, getMessage("title"));
+		} else {
+			return getMessage("title");
 		}
-		return title.toString();
 	}
 
 	/**
