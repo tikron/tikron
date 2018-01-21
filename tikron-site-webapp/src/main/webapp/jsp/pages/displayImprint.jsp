@@ -23,10 +23,10 @@
 				<p>Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Alle Inhalte meiner Seiten unterliegen - soweit nicht anders gekennzeichnet - meinem Urheberrecht. Es ist nicht gestattet, Texte oder Grafiken meiner Seite ohne meine schriftliche Einwilligung ganz oder in Teilen zu verwenden. Ebenfalls ist es nicht gestattet, eine Verlinkung von Bild-, Ton- oder Videodateien auf andereren Websites vorzunehmen.</p>
 				<p>"Tikron" (ehem. Freakworm) besteht seit dem 21.05.2005. Um eine korrekte Darstellung der Website zu ermöglichen, solltest Du einen der unten aufgeführten Web-Browser mit der angegebenen Version oder einer aktuelleren Version verwenden:</p>
 				<ul class="browserList">
-					<li>Apple Safari 5</li>
-					<li>Google Chrome 7.0</li>
+					<li>Apple Safari 9</li>
+					<li>Google Chrome 36.0</li>
 					<li>Microsoft Internet Explorer 9</li>
-					<li>Mozilla Firefox 4</li>
+					<li>Mozilla Firefox 36</li>
 				</ul>
 				<%--
 				<iframe src="//analytics.tikron.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de" class="optOut"></iframe>
