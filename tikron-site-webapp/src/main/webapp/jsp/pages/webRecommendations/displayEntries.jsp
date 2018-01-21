@@ -28,7 +28,7 @@
 					Auch <a class="arrow" href="${sendContactMessageUrl}">Tipps für neue Links</a> werden gerne angenommen.
 				</p>
 			</article>
-			<section id="contentMain">
+			<div id="contentMain">
 				<ul class="imageIndex">
 					<c:forEach var="webRecommendation" items="${webRecommendations}" varStatus="listStatus">
 					<li>
@@ -46,7 +46,7 @@
 					</li>
 					</c:forEach>
 				</ul>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>

@@ -14,7 +14,7 @@
 <c:url var="displayLogUrl" value="/displayLog.html"/>
 <div id="content" class="homepage">
 	<div class="row">
-		<section class="col-lg-9 col-md-12 col-xs-12">
+		<div class="col-lg-9 col-md-12 col-xs-12">
 			<h1><spring:message code="displayHomepage.headline" /></h1>
 			<article class="feature">
 				<figure>
@@ -33,16 +33,16 @@
 					Schönes Ding.
 				</p>
 			</article>
-			<section class="log">
+			<div class="log">
 				<a id="showLog" href="${displayLogUrl}" class="arrow log ajax" data-response-target="#logResponse" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 				<div id="logResponse" class="timestamp">
 					Letzte Aktualisierung: <time datetime="2016-07-28">28.07.2016</time>
 				</div>
-			</section>
-		</section>
-		<section class="col-lg-3 col-md-12 col-xs-12">
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-12 col-xs-12">
 			<%@ include file="/jsp/include/teaserbar.jspf" %>
-		</section>
+		</div>
 	</div>
 </div>
 <%@ include file="/jsp/include/footer.jspf"%>

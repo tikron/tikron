@@ -18,7 +18,7 @@
 <%@ include file="/jsp/include/nav_main.jspf" %>
 <div id="content" class="gallery category">
 	<div class="row">
-		<section class="col-lg-9 col-md-9 col-xs-12">
+		<nav class="col-lg-9 col-md-9 col-xs-12">
 			<ul class="thumbs">
 			<c:forEach var="picture" items="${pictures}" varStatus="listStatus">
 				<c:url var="displayPictureUrl" value="/gallery/displayPicture.html">
@@ -30,13 +30,13 @@
 					<c:choose>
 					<c:when test="${category.displayType eq 'OVERLAY'}">
 						<%-- Show image with "fancybox" --%>
-						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" />" title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}">
+						<a class="colorbox" href="<c:out value="${imageServerUrl}${picture.image.imageUris['galImgLg']}" />"<%-- title="<spring:message code='gallery.thumnail.description'/>" data-caption="${picture.title}" --%>>
 							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
 						</a>
 					</c:when>
 					<c:otherwise>
 						<%-- Show image in new page --%>
-						<a href="${displayPictureUrl}" title="<spring:message code='gallery.thumnail.description'/>">
+						<a href="${displayPictureUrl}"<%-- title="<spring:message code='gallery.thumnail.description'/>" --%>>
 							<img src="<c:out value="${imageServerUrl}${picture.image.imageUris['galleryThumbnail']}" />" alt="${picture.title}" />
 						</a>
 					</c:otherwise>
@@ -47,8 +47,8 @@
 				<c:remove var="displayPictureUrl" />
 			</c:forEach>
 			</ul>
-		</section>
-		<section class="col-lg-3 col-md-3 col-xs-12 intro">
+		</nav>
+		<div class="col-lg-3 col-md-3 col-xs-12 intro">
 			<div class="description">
 				<article>
 					<header><h1><c:out value="${category.title}" /></h1></header>
@@ -63,14 +63,14 @@
 					<c:remove var="goBackUrl" />
 				</ul>
 			</c:if>
-		</section>
+		</div>
 	</div>
 </div>
 <%@ include file="/jsp/include/footer.jspf" %>
 <%@ include file="/jsp/include/htmlbody_end.jspf" %>
 <c:if test="${category.displayType eq 'OVERLAY'}">
 	<%-- Show overlay pictures with "qjeury plugin colorbox" --%>
-	<script type="text/javascript" src="/lib/jquery.colorbox-min.js"></script>
+	<script src="/lib/jquery.colorbox-min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('a.colorbox').colorbox({photo:true, rel:'colorbox', current: '<spring:message code="colorbox.current"/>', title: function(){return $(this).attr('data-caption');}});

@@ -18,7 +18,7 @@
 				<header><h1><c:out value="${catalog.title}" /></h1></header>
 				<p><c:out value="${catalog.longDescription}" escapeXml="false"/></p>
 			</article>
-			<section id="contentMain">
+			<div id="contentMain">
 				<ul class="imageIndex">
 				<c:forEach var="category" items="${categories}" varStatus="listStatus">
 					<c:choose>
@@ -51,7 +51,7 @@
 					<c:remove var="displayCategoryUrl"/>
 				</c:forEach>
 				</ul>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>

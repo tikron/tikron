@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<header id="main" class="row">
+<header class="row main">
 	<div class="col-lg-12 col-md-12 col-xs-12">
 		<a href="${displayHomepageUrl}">
 			<img id="title" src="/images/header_logo_tr.png" alt="<spring:message code='header.logo.alt'/>" />

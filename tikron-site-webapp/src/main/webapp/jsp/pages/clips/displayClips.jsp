@@ -8,8 +8,8 @@
 <%@ include file="/jsp/include/htmlhead_start.jspf" %>
 <%@ include file="/jsp/include/title.jspf" %>
 <%@ include file="/jsp/include/head.jspf" %>
-<script type="text/javascript" src="/lib/jRate.min.js" ></script>
-<script type="text/javascript" src="/js/rating.js" ></script>
+<script src="/lib/jRate.min.js" ></script>
+<script src="/js/rating.js" ></script>
 <link rel="stylesheet" type="text/css" href="/css/clips.css${contentVersionParam}" />
 <%@ include file="/jsp/include/htmlhead_end.jspf" %>
 <%@ include file="/jsp/include/htmlbody_start.jspf" %>
@@ -30,7 +30,7 @@
 					Der Eintritt ist wie immer kostenlos und das Kino frei von Werbung.
 				</p>
 			</article>
-			<section id="contentMain">
+			<div id="contentMain">
 				<ul class="imageIndex">
 					<c:forEach var="clip" items="${clips}" varStatus="listStatus">
 					<c:set var="dateRecordedHtml">${tikron:formatLocalDate(clip.dateRecorded, "yyyy-MM")}</c:set>
@@ -61,7 +61,7 @@
 					</li>
 					</c:forEach>
 				</ul>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>
@@ -71,7 +71,7 @@
 <c:url var="addRatingUrl" value="/clips/addClipRating.json"><c:param name="clipId" value=""/><c:param name="ratingValue" value=""/></c:url>
 <spring:message code="rating.count" var="msgRatingCount"/>
 <spring:message code="rating.empty" var="msgRatingEmpty"/>
-<script type="text/javascript">
+<script>
 	$(document).ready(function() {
 		var tikronRating = new TikronRating({'addRatingUrl': '${addRatingUrl}',	'msg' : 
 			{ratingCount:'<spring:message code="rating.count"/>', ratingEmpty: '<spring:message code="rating.empty"/>'}});

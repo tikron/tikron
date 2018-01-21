@@ -19,7 +19,7 @@
 				<p>So oft es geht, fahren wir mit dem Campingmobil raus und schauen uns andere Länder an. Meistens geht es nach Skandinavien, weil man sich dort am besten von dem hektischen Leben in Deutschland erholen kann. Auch Polen und das Baltikum wurden schon erkundet. Hier gibt es als westlich geprägten Europäer noch viel zu entdecken. In südlicher Himmelsrichtung waren wir nun schon drei Mal in Kroatien. Die dalmatinischen Inseln sind sehr schön, das Mittelmeer auch im Spätsommer noch warm und die Strände nicht so zugebaut wie in Frankreich oder Italien.</p>
 				<p>Hier wird es wohl nicht den großen Reiseblog mit Berichten von aufregenden Abenteuern aus der ganzen Welt geben. Trotzdem könnt ihr hier auch kleinere Geschichten lesen und viele schöne Fotos sehen.</p>
 			</article>
-			<section id="contentMain">
+			<div id="contentMain">
 				<ul class="imageIndex">
 				<li>
 					<a href="${displayBalticSea2014Url}" class="image"><img src="/images/travels/balticsee.png" alt="Einmal um die Ostsee" /></a>
@@ -53,7 +53,7 @@
 				</c:forEach>
 				</c:if>
 				</ul>
-			</section>
+			</div>
 		</div>
 	</div>
 </div>
