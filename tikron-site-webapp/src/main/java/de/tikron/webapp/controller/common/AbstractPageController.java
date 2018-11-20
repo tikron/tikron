@@ -24,8 +24,6 @@ public abstract class AbstractPageController extends AbstractController {
 
 	protected static final String MODEL_ATTR_CANONICAL_URL = "canonicalUrl";
 
-	private static final String TITLE_DELIMITER = " - ";
-
 	/**
 	 * Liefert den Seitentitel, der im TITLE-Tag eingefügt wird.
 	 * 
