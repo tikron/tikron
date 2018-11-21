@@ -112,6 +112,11 @@
 		<from>^/webapp/displayImprint\.html$</from>
 		<to last="true">%{scheme}://%{server-name}%{context-path}/displayImprint.html</to>
 	</outbound-rule>
+	<outbound-rule>
+		<name>Display Privacy Policy</name>
+		<from>^/webapp/displayPrivacyPolicy\.html$</from>
+		<to last="true">%{scheme}://%{server-name}%{context-path}/displayPrivacyPolicy.html</to>
+	</outbound-rule>
 	<!-- Outgoing URLs for other display pages-->
 	<!-- 
 	<outbound-rule>

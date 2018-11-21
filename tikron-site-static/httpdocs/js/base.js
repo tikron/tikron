@@ -8,9 +8,12 @@ function Tikron(options) {
 	var _cfg;
 	var _ui;
 	var _text = {
-			email: {address: 'contact@tikron.de', subject: 'Kontaktanfrage'},
+			email: {contact: {address: 'contact@tikron.de', subject: 'Kontaktanfrage'},
+				owner: {address: 'webmaster@tikron.de', subject: 'Kontaktanfrage'}
+			},
 			address: {headline: '"Tikron" wird von {0} vertreten. Die Postanschrift lautet:'},
-			postal : {name: 'Titus Kruse', address: 'Birnweg 2', city: '22335 Hamburg', country: 'Germany'}
+			postal : {name: 'Titus Kruse', address: 'Birnweg 2', city: '22335 Hamburg', country: 'Germany'},
+			phone: {label: '+49 40 59360711', number: '+494059360711'}
 	};
 
   this.config = $.extend({
@@ -36,9 +39,10 @@ function Tikron(options) {
 	}
 	
 	var _updateUI = function() {
-		$('div.address').append(_getAddressHtml());
-		$('a.email_link').attr('href', _getContactEmailLink());
-		$('a.email_link').html(_getContactEmailText());
+		$('.contact-email').attr('href', _getEmailLink('contact')).html(_getEmailText('contact'));
+		$('.site-owner.address').append(_getAddressHtml());
+		$('.site-owner.email').attr('href', _getEmailLink('owner')).html(_getEmailText('owner'));
+		$('.site-owner.phone').attr('href', _getPhoneLink()).html(_text.phone.label);
 	}
 
 	var _bindUIActions = function() {
@@ -79,8 +83,8 @@ function Tikron(options) {
 	 * 
 	 * @returns {String} The email address link.
 	 */
-	var _getContactEmailLink = function() {
-		return 'mailto:' + _text.email.address + '?subject=' + _text.email.subject;
+	var _getEmailLink = function(type) {
+		return 'mailto:' + _text.email[type].address + '?subject=' + _text.email[type].subject;
 	}
 
 	/**
@@ -88,8 +92,17 @@ function Tikron(options) {
 	 * 
 	 * @returns {String} The email address.
 	 */
-	var _getContactEmailText = function() {
-		return _text.email.address;
+	var _getEmailText = function(type) {
+		return _text.email[type].address;
+	}
+
+	/**
+	 * Returns the phone number link.
+	 * 
+	 * @returns {String} The phone number link.
+	 */
+	var _getPhoneLink = function() {
+		return 'tel:' + _text.phone.number;
 	}
 
 	/**
@@ -107,11 +120,7 @@ function Tikron(options) {
 	 * @returns {String} The HTML code.
 	 */
 	var _getAddressHtml = function() {
-		var pa = _getPostalAddress();
-		var headline = tikronUtil.substitute(_text.address.headline, [pa.name]);
-		return '<p>' + headline + '</p>' + '<address>'
-				+ pa.name + '<br />' + pa.address + '<br />' + pa.city + '<br />'
-				+ pa.country + '</address>';
+		return _text.postal.name + '<br />' + _text.postal.address + '<br />' + _text.postal.city + '<br />' + _text.postal.country;
 	}
 
 	/**

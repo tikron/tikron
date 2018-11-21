@@ -5,4 +5,5 @@
 <c:url var="displayHomepageUrl" value="/displayHomepage.html"/>
 <c:url var="displayLogUrl" value="/displayLog.html"/>
 <c:url var="displayImprintUrl" value="/displayImprint.html"/>
+<c:url var="displayPrivacyPolicytUrl" value="/displayPrivacyPolicy.html"/>
 <c:url var="sendContactMessageUrl" value="/sendContactMessage.html"/>

@@ -18,16 +18,17 @@
 				<p>Auch hier geht es nicht ganz ohne rechtliche Feinheiten ab. Deshalb an dieser Stelle Angaben zum Verantwortlichen der Website.</p>
 			</header>
 			<div id="contentMain" class="clear">
-				<div class="address"></div>
-				<p>Diese Adresse ist jedoch nur für Schriftverkehr vorgesehen, der nicht anders als auf postalischem Weg abgewickelt werden kann. Für alle anderen Fälle steht unter <a href="${sendContactMessageUrl}">Kontakt</a> eine E-Mail-Adresse zur Verfügung.</p>
-				<p>Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich. Alle Inhalte meiner Seiten unterliegen - soweit nicht anders gekennzeichnet - meinem Urheberrecht. Es ist nicht gestattet, Texte oder Grafiken meiner Seite ohne meine schriftliche Einwilligung ganz oder in Teilen zu verwenden. Ebenfalls ist es nicht gestattet, eine Verlinkung von Bild-, Ton- oder Videodateien auf andereren Websites vorzunehmen.</p>
-				<p>"Tikron" (ehem. Freakworm) besteht seit dem 21.05.2005. Um eine korrekte Darstellung der Website zu ermöglichen, solltest Du einen der unten aufgeführten Web-Browser mit der angegebenen Version oder einer aktuelleren Version verwenden:</p>
-				<ul class="browserList">
-					<li>Apple Safari 9</li>
-					<li>Google Chrome 36.0</li>
-					<li>Microsoft Internet Explorer 9</li>
-					<li>Mozilla Firefox 36</li>
-				</ul>
+				<h2>Angaben gemäß § 5 TMG</h2>
+				<%@ include file="/jsp/include/siteowner.jspf" %>
+				<h2>Haftung für Inhalte</h2>
+				<p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+				<p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+				<h2>Haftung für Links</h2>
+				<p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+				<p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+				<h2>Urheberrecht</h2>
+				<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+				<p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
 				<%--
 				<iframe src="//analytics.tikron.de/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=de" class="optOut"></iframe>
 				 --%>

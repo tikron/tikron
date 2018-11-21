@@ -22,7 +22,7 @@
 			<section id="contentHeader">
 				<header><h1><spring:message code="sendContactMessage.headline" /></h1></header>
 				<p><spring:message code="sendContactMessage.featureText" /></p>
-				<a class="arrow email_link" title="<spring:message code='sendContactMessage.email.link.description'/>" href="#0" rel="nofollow"></a>
+				<a class="arrow contact-email" title="<spring:message code='sendContactMessage.email.link.description'/>" href="#0" rel="nofollow"></a>
 			</section>
 			<div id="contentMain">
 				<form:form commandName="contactMessage" action="${sendContactMessageUrl}" id="contact" class="clear ajax orange">

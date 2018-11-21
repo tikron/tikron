@@ -4,6 +4,7 @@
 <footer class="row main">
 	<div class="col-lg-7 col-sm-7 col-xs-12">
 		<ul id="siteInfo">
+			<li><a href="${displayPrivacyPolicytUrl}" class="arrow"><spring:message code="footer.siteInfo.privacy"/></a></li>
 			<li><a href="${displayImprintUrl}" class="arrow"><spring:message code="footer.siteInfo.imprint"/></a></li>
 			<li><a href="${sendContactMessageUrl}" class="arrow"><spring:message code="footer.siteInfo.contact"/></a></li>
 			<li><span><spring:message code="footer.siteInfo.copyright" arguments="${copyrightYear}"/></span></li>

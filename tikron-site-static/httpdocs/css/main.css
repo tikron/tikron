@@ -57,7 +57,7 @@ aside.teaserbar .teaser#finding figure img {
 	margin-top: 3px;
 }
 
-/*** Imprint Page ************************************/
+/*** Imprint, Privacy Pages ************************************/
 .imprint #contentHeader {
 	margin-bottom: 0px;
 }
@@ -67,17 +67,26 @@ aside.teaserbar .teaser#finding figure img {
 	height: 85 px;
 }
 
-.imprint address {
-	margin-bottom: 1em;
+/** Das muss mal refactored werden... */
+.privacy-policy ol,
+.privacy-policy ul {
+	margin-bottom: 1rem;
 }
 
-.imprint ul.browserList {
+.privacy-policy ol.upper-roman {
 	padding-left: 40px;
-	margin-bottom: 3em;
 }
 
-.imprint ul.browserList li {
-	list-style: disc outside none;
+.privacy-policy ol.upper-roman li {
+	list-style: upper-roman;
+}
+
+.privacy-policy ul.disc {
+	padding-left: 40px;
+}
+
+.privacy-policy ul.disc li {
+	list-style: disc;
 }
 
 /*** Log Page ************************************/
