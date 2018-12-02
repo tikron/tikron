@@ -8,7 +8,7 @@ function Tikron(options) {
 	var _cfg;
 	var _ui;
 	var _text = {
-			email: {contact: {address: 'contact@tikron.de', subject: 'Kontaktanfrage'},
+			email: {contact: {address: 'mail@tikron.de', subject: 'Kontaktanfrage'},
 				owner: {address: 'webmaster@tikron.de', subject: 'Kontaktanfrage'}
 			},
 			address: {headline: '"Tikron" wird von {0} vertreten. Die Postanschrift lautet:'},

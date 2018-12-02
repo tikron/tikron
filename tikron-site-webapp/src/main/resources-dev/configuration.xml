@@ -4,9 +4,9 @@
 	<comment>Configuration Tikron Web Application 2.0 (Development)</comment>
 	<entry key="imageServerUrl">http://images.tikron/</entry>
 	<entry key="fileArchiveUrl">http://tikron/</entry>
-	<entry key="email.enabled">false</entry>
-	<entry key="email.defaultSender">webmaster@tikron.de</entry>
-	<entry key="email.defaultRecipient">contact@tikron.de</entry>
+	<entry key="email.enabled">true</entry>
+	<entry key="email.defaultSender">noreply@tikron.de</entry>
+	<entry key="email.defaultRecipient">mail@tikron.de</entry>
 	<entry key="trackingEnabled">false</entry>
 	<entry key="validation.spamPhrases"><![CDATA[cheap,viagra,pills,cialis,online]]></entry>
 </properties>
