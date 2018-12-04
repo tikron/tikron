@@ -3,6 +3,9 @@
  */
 package de.tikron.webapp.service.user;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.text.MessageFormat;
 import java.util.Comparator;
 import java.util.List;
@@ -19,7 +22,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tikron.common.spring.EmailService;
+import de.tikron.common.spring.MailService;
 import de.tikron.persistence.dao.user.CommentDao;
 import de.tikron.persistence.dao.user.CommentTypeDao;
 import de.tikron.persistence.dao.user.UserDao;
@@ -45,7 +48,7 @@ public class UserServiceImpl implements UserService {
 
 	private CommentTypeDao commentTypeDao;
 
-	private EmailService emailService;
+	private MailService mailService;
 
 	private MessageSource messageSource;
 
@@ -86,7 +89,7 @@ public class UserServiceImpl implements UserService {
 		comment.setVisible(Boolean.TRUE);
 		commentDao.insert(comment);
 		// Send notification message to web master
-		sendNotificationEmail(comment);
+		sendNotificationMail(comment);
 		// Logging
 		if (comment.getRelatedEntity() != null) {
 			userAction.info(MessageFormat.format("Comment of type {0} for object {1} added by User with name {3}.", 
@@ -103,8 +106,7 @@ public class UserServiceImpl implements UserService {
 	 * @param comment Der Kommentar, über den informiert wird.
 	 * @return true, falls das Senden erfolgreich war.
 	 */
-	private boolean sendNotificationEmail(Comment comment) {
-		final char LINEFEED = '\n';
+	private boolean sendNotificationMail(Comment comment) {
 		// Fetch information from object, the user has commented
 // CommentType is discriminator column and not set by ORM in new comment.		
 //		String type = comment.getCommentType().getDescription();
@@ -112,29 +114,23 @@ public class UserServiceImpl implements UserService {
 		// Fetch message meta data
 		String subject = messageSource.getMessage("addComment.email.subject", new Object[] { type }, null);
 		// Compose message
-		StringBuffer content = new StringBuffer();
-		content.append(messageSource.getMessage("addComment.email.headline", new Object[] { type }, null));
-		content.append(LINEFEED);
-		if (comment.getRelatedEntity() != null) {
-			content.append(LINEFEED);
-			content.append(messageSource.getMessage("addComment.email.id", new Object[] { comment.getRelatedEntity().getId() }, null));
-			content.append(LINEFEED);
-			content.append(messageSource.getMessage("addComment.email.name", new Object[] { comment.getRelatedEntity().getDisplayName() }, null));
-		}
-		content.append(LINEFEED);
-		content.append(messageSource.getMessage("addComment.email.author", new Object[] { comment.getUser().getName() }, null));
-		content.append(LINEFEED);
-		content.append(messageSource.getMessage("addComment.email.email", new Object[] { comment.getUser().getEmail() }, null));
-		content.append(LINEFEED);
-		content.append(messageSource.getMessage("addComment.email.url", new Object[] { comment.getUser().getUrl() }, null));
-		content.append(LINEFEED);
-		content.append(messageSource.getMessage("addComment.email.text", new Object[] { comment.getText() }, null));
-		content.append(LINEFEED);
-		// Send message
-		if (comment.getUser().getEmail() != null) {
-			return emailService.sendEmail(comment.getUser().getEmail(), subject, content.toString());
-		} else {
-			return emailService.sendEmail(subject, content.toString());
+		try (StringWriter out = new StringWriter()) {
+			try (PrintWriter writer = new PrintWriter(out)) {
+				writer.println(messageSource.getMessage("addComment.email.headline", new Object[] { type }, null));
+				if (comment.getRelatedEntity() != null) {
+					writer.println(messageSource.getMessage("addComment.email.id", new Object[] { comment.getRelatedEntity().getId() }, null));
+					writer.println(messageSource.getMessage("addComment.email.name", new Object[] { comment.getRelatedEntity().getDisplayName() }, null));
+				}
+				writer.println(messageSource.getMessage("addComment.email.author", new Object[] { comment.getUser().getName() }, null));
+				writer.println(messageSource.getMessage("addComment.email.email", new Object[] { comment.getUser().getEmail() }, null));
+				writer.println(messageSource.getMessage("addComment.email.url", new Object[] { comment.getUser().getUrl() }, null));
+				writer.println(messageSource.getMessage("addComment.email.text", new Object[] { comment.getText() }, null));
+				// Send message
+				return mailService.send(subject, out.toString());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
 		}
 	}
 
@@ -154,8 +150,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Autowired
-	public void setEmailService(EmailService emailService) {
-		this.emailService = emailService;
+	public void setMailService(MailService mailService) {
+		this.mailService = mailService;
 	}
 
 	@Resource

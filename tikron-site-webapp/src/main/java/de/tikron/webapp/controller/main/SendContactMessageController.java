@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import de.tikron.common.spring.EmailService;
+import de.tikron.common.spring.MailService;
 import de.tikron.webapp.controller.common.AbstractFormController;
 import de.tikron.webapp.controller.common.AjaxResponse;
 import de.tikron.webapp.controller.common.ErrorResponse;
@@ -37,7 +37,7 @@ public class SendContactMessageController extends AbstractFormController {
 
 	private static Logger logger = LogManager.getLogger();
 
-	private EmailService emailService;
+	private MailService emailService;
 
 	private Validator validator;
 
@@ -66,7 +66,7 @@ public class SendContactMessageController extends AbstractFormController {
 		validator.validate(contactMessage, result);
 		if (!result.hasErrors()) {
 			String emailSubject = getMessage("sendContactMessage.email.subject");
-			if (!emailService.sendEmail(contactMessage.getEmail(), contactMessage.getName(), null, emailSubject,
+			if (!emailService.send(contactMessage.getEmail(), contactMessage.getName(), null, emailSubject,
 					contactMessage.getMessage())) {
 				logger.warn("Error occured sending contact message.");
 				return new ErrorResponse("sendContactMessage.confirmation.error", localizationContext);
@@ -83,7 +83,7 @@ public class SendContactMessageController extends AbstractFormController {
 	}
 
 	@Autowired
-	public void setEmailService(EmailService emailService) {
+	public void setEmailService(MailService emailService) {
 		this.emailService = emailService;
 	}
 

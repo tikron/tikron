@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Mail resource to Tikron SMTP server -->
-<!-- Copy this to the "GlobalNamingResources" section of Tomcat server.xml -->
-<Resource name="mail/tikron"
-	auth="Container"
-	type="javax.mail.Session"
-	mail.smtp.host="mail.tikron.de"
-	mail.smtp.auth="true"
-	username="mail@tikron.de"
-	password="********"
-	mail.user="mail@tikron.de"
-	mail.password="********"
-	mail.port="25"
-	mail.transport.protocol="smtp"
-	mail.debug="false"/>
+<!-- Copy on of these to a Tomcat or Web App context.xml -->
+	<Resource auth="Container" 
+		name="mail/tikron" 
+		type="javax.mail.Session" 
+		mail.smtp.host="localhost" 
+		mail.smtp.port="25" 
+		mail.smtp.auth="true"
+		mail.user="mail@tikron.de" 
+		mail.password="********" 
+		mail.debug="false" 
+		mail.transport.protocol="smtp" 
+		username="mail@tikron.de"
+		password="********"/>
+	<Resource auth="Container" 
+		name="mail/tikron" 
+		type="javax.mail.Session" 
+		mail.smtp.host="mail.tikron.de" 
+		mail.smtp.port="587" 
+		mail.smtp.auth="true"
+		mail.smtp.starttls.enable="true"
+		mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory" 
+		mail.user="mail@tikron.de" 
+		mail.password="********" 
+		mail.debug="false" 
+		mail.transport.protocol="smtp" 
+		username="mail@tikron.de"
+		password="********"/>
