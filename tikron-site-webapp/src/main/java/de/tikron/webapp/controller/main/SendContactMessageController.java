@@ -37,7 +37,7 @@ public class SendContactMessageController extends AbstractFormController {
 
 	private static Logger logger = LogManager.getLogger();
 
-	private MailService emailService;
+	private MailService mailService;
 
 	private Validator validator;
 
@@ -66,7 +66,7 @@ public class SendContactMessageController extends AbstractFormController {
 		validator.validate(contactMessage, result);
 		if (!result.hasErrors()) {
 			String emailSubject = getMessage("sendContactMessage.email.subject");
-			if (!emailService.send(contactMessage.getEmail(), contactMessage.getName(), null, emailSubject,
+			if (!mailService.send(contactMessage.getEmail(), contactMessage.getName(), null, emailSubject,
 					contactMessage.getMessage())) {
 				logger.warn("Error occured sending contact message.");
 				return new ErrorResponse("sendContactMessage.confirmation.error", localizationContext);
@@ -83,8 +83,8 @@ public class SendContactMessageController extends AbstractFormController {
 	}
 
 	@Autowired
-	public void setEmailService(MailService emailService) {
-		this.emailService = emailService;
+	public void setMailService(MailService mailService) {
+		this.mailService = mailService;
 	}
 
 	@Resource(name = "contactMessageValidator")

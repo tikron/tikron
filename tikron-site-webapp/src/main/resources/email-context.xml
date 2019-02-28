@@ -15,7 +15,7 @@
 		<property name="session" ref="mailSession" />
 	</bean>
 
-	<bean id="emailService" class="de.tikron.common.spring.EmailServiceImpl">
+	<bean id="mailService" class="de.tikron.common.spring.MailServiceImpl">
 		<property name="mailSender" ref="mailSender" />
 		<property name="enabled" value="${mail.enabled:true}" />
 		<property name="senderEmail" value="${mail.template.from}" />
