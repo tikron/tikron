@@ -45,5 +45,7 @@
 	<bean id="fileArchiveService" class="de.tikron.webapp.service.common.FileArchiveServiceImpl">
 		<property name="archiveUrl" value="${fileArchiveUrl}"></property>
 	</bean>
+	
+	<bean id="geoLocationService" class="de.tikron.webapp.service.common.GeoLocationServiceMaxMindImpl" />
 
 </beans>
