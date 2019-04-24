@@ -16,7 +16,9 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
 /**
- * Interceptor using a Spring LocaleResolver and validating, if the locale/language is supported. 
+ * Interceptor using a Spring LocaleResolver and validating, if the locale/language is supported.
+ * 
+ * Note: Currently not in use. See tikron-servlet.xml für more details. 
  *
  * @date 03.12.2017
  * @author Titus Kruse

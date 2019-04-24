@@ -12,9 +12,11 @@
 	</div>
 	<div class="col-lg-5 col-sm-5 col-xs-12">
 		<ul id="goodies">
+		<%--
 			<li>
 				<a href="${baseUrl}/feed.xml" class="icon icon_feed" title="<spring:message code="footer.goodies.feed"/>"><spring:message code="footer.goodies.feed"/></a>
 			</li>
+			 --%>
 			<li>
 				<a href="http://validator.w3.org/check?uri=referer" rel="nofollow" class="icon icon_validation" title="<spring:message code="footer.goodies.validation" />"><spring:message code="footer.goodies.validation"/></a>
 			</li>

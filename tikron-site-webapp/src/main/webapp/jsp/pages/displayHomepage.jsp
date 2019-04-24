@@ -26,19 +26,22 @@
 			<article class="news">
 				<h2><spring:message code="displayHomepage.news.headline" /></h2>
 				<p>
-					Immerhin jeder dritte Gast auf Tikron ist mobil, also mit seinem Smartphone unterwegs.
-					Deshalb wurde nun für alle Seiten eine passende Darstellung programmiert.
-					Also kein lästiges Fingerspreizen und Augenblinzeln mehr.
-					Das ganze nennt sich übrigens responsive Design und ist aktueller Stand der Technik.
-					Schönes Ding.
+					Die meisten Menschen halten heute Instagram, Facebok und Youtube für das Internet.
+					Seine Ideen und Erfahrungen zu präsentieren geht dort allerdings auch wesentlich einfacher, als mit der Programmierung einer eigenen Website.
+					Für viele ist auch Google der Einstieg ins Netz.
+					Weil dort unter den ersten zehn Suchergebnissen fast immer Links zu den großen Anbietern erscheinen, wird man als kleines Portal kaum noch wahrgenommen.
+					Deshalb habe ich die Lust an der Weiterentwicklung von Tikron verloren.
+					Die Website bleibt aber noch eine Weile bestehen. 
 				</p>
 			</article>
+			<%--
 			<div class="log">
 				<a id="showLog" href="${displayLogUrl}" class="arrow log ajax" data-response-target="#logResponse" title="<spring:message code='displayHomepage.link.log.description' />"><spring:message code="displayHomepage.link.log" /></a>
 				<div id="logResponse" class="timestamp">
 					Letzte Aktualisierung: <time datetime="2016-07-28">28.07.2016</time>
 				</div>
 			</div>
+			 --%>
 		</div>
 		<div class="col-lg-3 col-md-12 col-xs-12">
 			<%@ include file="/jsp/include/teaserbar.jspf" %>

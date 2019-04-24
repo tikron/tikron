@@ -82,6 +82,7 @@
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="lang" />
 		</bean>
+		<!-- Don't run into error page by unsupported language anymore. Show some english text instead. 
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
@@ -89,6 +90,7 @@
 			<mvc:exclude-mapping path="/displayUnsupportedLanguage.html" />
 			<ref bean="localeInterceptor" />
 		</mvc:interceptor>
+		 -->
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
