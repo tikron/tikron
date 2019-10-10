@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Bean providing basic functions for a data list with a selection column.

@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.user.User;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * JPA implemenation of {@link UserDao}.

@@ -2,9 +2,9 @@ package de.tikron.persistence.dao.gallery;
 
 import java.util.List;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.gallery.Catalog;
 import de.tikron.persistence.model.gallery.Category;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 public interface CategoryDao extends GenericDao<Category, Long> {
 

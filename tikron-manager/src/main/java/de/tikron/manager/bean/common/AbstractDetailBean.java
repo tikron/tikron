@@ -5,7 +5,7 @@ package de.tikron.manager.bean.common;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import de.tikron.common.URLCoder;
+import de.tikru.commons.util.URLCoder;
 
 /**
  * Managed bean common for all entity detail beans.

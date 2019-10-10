@@ -22,8 +22,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import de.tikron.jpa.domain.GeneratedKeyEntity;
-import de.tikron.jpa.domain.ShowableEntity;
+import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
+import de.tikru.commons.jpa.domain.ShowableEntity;
 
 /**
  * Ein Katalog.

@@ -5,9 +5,9 @@ package de.tikron.persistence.dao.user;
 
 import javax.persistence.EntityManager;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.user.CommentType;
 import de.tikron.persistence.model.user.CommentTypeId;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * DAO für Kommentartypen.

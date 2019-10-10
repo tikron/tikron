@@ -5,7 +5,7 @@ package de.tikron.webapp.model.common;
 
 import java.io.Serializable;
 
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * An entity bean. The entity bean is a wrapper around domain model entity providing additional information on it.

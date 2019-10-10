@@ -3,9 +3,9 @@
  */
 package de.tikron.persistence.dao.gallery;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.gallery.CategoryType;
 import de.tikron.persistence.model.gallery.CategoryTypeId;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 /**
  * DAO for category types.

@@ -10,8 +10,8 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.misc.Clip;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * JPA implementation of clip DAO.

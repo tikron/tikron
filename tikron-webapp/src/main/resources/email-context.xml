@@ -2,20 +2,23 @@
 <!--
 	Spring configuration for email message handling.
 -->
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jee="http://www.springframework.org/schema/jee" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+        	
+	<jee:jndi-lookup id="mailSession" jndi-name="mail/tikron"/>
 	
-	<bean id="mailSession" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName">
-			<value>java:comp/env/mail/tikron</value>
-		</property>
-	</bean>
+<!-- 	<bean id="mailSession" class="org.springframework.jndi.JndiObjectFactoryBean"> -->
+<!-- 		<property name="jndiName" value="java:comp/env/mail/tikron" /> -->
+<!-- 	</bean> -->
 		
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="session" ref="mailSession" />
 	</bean>
 
-	<bean id="mailService" class="de.tikron.common.spring.MailServiceImpl">
+	<bean id="mailService" class="de.tikru.commons.spring.MailServiceImpl">
 		<property name="mailSender" ref="mailSender" />
 		<property name="enabled" value="${mail.enabled:true}" />
 		<property name="senderEmail" value="${mail.template.from}" />

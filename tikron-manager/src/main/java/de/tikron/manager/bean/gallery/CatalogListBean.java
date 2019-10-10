@@ -13,10 +13,10 @@ import javax.faces.event.ComponentSystemEvent;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.gallery.CatalogService;
 import de.tikron.persistence.model.gallery.Catalog;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für die Liste der Kataloge.

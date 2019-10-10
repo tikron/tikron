@@ -2,7 +2,6 @@ package de.tikron.persistence.dao.user;
 
 import java.util.List;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikron.persistence.model.misc.Clip;
@@ -12,6 +11,7 @@ import de.tikron.persistence.model.user.Comment;
 import de.tikron.persistence.model.user.CommentType;
 import de.tikron.persistence.model.user.CommentTypeId;
 import de.tikron.persistence.model.user.PictureComment;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 public interface CommentDao extends GenericDao<Comment, Long> {
 	

@@ -7,9 +7,9 @@ import java.io.Serializable;
 
 import javax.faces.event.ComponentSystemEvent;
 
-import de.tikron.faces.util.Message;
-import de.tikron.jpa.domain.Entity;
 import de.tikron.manager.service.common.CRUDService;
+import de.tikru.commons.faces.util.Message;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Generic managed bean to handle CRUD operations on the entity T with primary key ID.

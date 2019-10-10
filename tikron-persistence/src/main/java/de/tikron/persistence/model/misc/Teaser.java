@@ -16,9 +16,9 @@ import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.GeneratedKeyEntity;
-import de.tikron.jpa.domain.ShowableEntity;
 import de.tikron.persistence.model.gallery.Picture;
+import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
+import de.tikru.commons.jpa.domain.ShowableEntity;
 
 /**
  * A teaser storing site related information to be shown as an eye catcher on the home page.  

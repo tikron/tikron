@@ -5,7 +5,7 @@ package de.tikron.manager.bean.common;
 
 import org.apache.myfaces.custom.fileupload.UploadedFile;
 
-import de.tikron.faces.util.Message;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Basisklasse für Baens, die einen Dateiupload ermöglichen sollen. Die Bean wird normalerweise im Zusammenhang mit dem

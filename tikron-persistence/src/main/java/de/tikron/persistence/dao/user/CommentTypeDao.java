@@ -3,9 +3,9 @@
  */
 package de.tikron.persistence.dao.user;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.user.CommentType;
 import de.tikron.persistence.model.user.CommentTypeId;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 /**
  * DAO für Kommentartypen.

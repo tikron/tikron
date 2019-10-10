@@ -4,7 +4,7 @@
 		version="2.1">
 	<persistence-unit name="tikron-persistence" transaction-type="RESOURCE_LOCAL">
 		<!-- Entities located in external project tikron-site-persistence -->
-		<jar-file>/WEB-INF/lib/tikron-site-persistence-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>/WEB-INF/lib/tikron-persistence-2.0.1-SNAPSHOT.jar</jar-file>
 		<!-- Enable JPA 2 second level cache -->
 		<shared-cache-mode>ALL</shared-cache-mode>
 		<properties>

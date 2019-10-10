@@ -9,7 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Abstrakte Basisklasse für Default-Implementationen aller Services.

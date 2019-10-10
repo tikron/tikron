@@ -26,9 +26,9 @@ import javax.validation.constraints.Size;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.GeneratedKeyEntity;
-import de.tikron.jpa.domain.ShowableEntity;
-import de.tikron.jpa.validation.NotSpam;
+import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
+import de.tikru.commons.jpa.domain.ShowableEntity;
+import de.tikru.commons.jpa.validation.NotSpam;
 
 /**
  * Ein Kommentar.
@@ -133,7 +133,7 @@ public abstract class Comment extends GeneratedKeyEntity<Long> implements Showab
 	 * 
 	 * @return The entity or null, if this type off comment hasn't any associated object.
 	 */
-	public abstract de.tikron.jpa.domain.ShowableEntity<Long> getRelatedEntity();
+	public abstract de.tikru.commons.jpa.domain.ShowableEntity<Long> getRelatedEntity();
 
 	@Override
 	public String getDisplayName() {

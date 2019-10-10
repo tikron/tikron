@@ -12,9 +12,9 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.user.Role;
 import de.tikron.persistence.model.user.RoleId;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * JPA implementation of {@link RoleDao}

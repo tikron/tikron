@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.GeneratedKeyEntity;
+import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
 
 /**
  * A user rating of a publication.
@@ -66,7 +66,7 @@ public abstract class Rating extends GeneratedKeyEntity<Long> {
 	 * 
 	 * @return The entity or null, if this type off rating hasn't any associated object.
 	 */
-	public abstract de.tikron.jpa.domain.ShowableEntity<Long> getRelatedEntity();
+	public abstract de.tikru.commons.jpa.domain.ShowableEntity<Long> getRelatedEntity();
 
 	@Override
 	public String toString() {

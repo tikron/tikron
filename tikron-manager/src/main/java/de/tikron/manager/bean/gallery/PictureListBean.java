@@ -15,13 +15,13 @@ import javax.faces.model.SelectItem;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.common.ImageService;
 import de.tikron.manager.service.gallery.CategoryService;
 import de.tikron.manager.service.gallery.PictureService;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für eine Liste von Bilder.

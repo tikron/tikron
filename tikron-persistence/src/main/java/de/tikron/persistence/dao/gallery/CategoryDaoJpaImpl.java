@@ -10,10 +10,10 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
-import de.tikron.jpa.dao.JpaUtil;
 import de.tikron.persistence.model.gallery.Catalog;
 import de.tikron.persistence.model.gallery.Category;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
+import de.tikru.commons.jpa.dao.JpaUtil;
 
 /**
  * JPA implementation of {@link CategoryDao}.

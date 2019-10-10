@@ -2,8 +2,8 @@ package de.tikron.persistence.dao.gallery;
 
 import java.util.List;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.gallery.Catalog;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 public interface CatalogDao extends GenericDao<Catalog, Long> {
 	

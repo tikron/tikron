@@ -14,13 +14,13 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ComponentSystemEvent;
 
-import de.tikron.faces.util.FacesParameter;
-import de.tikron.faces.util.FacesUtil;
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.service.gallery.PictureService;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
+import de.tikru.commons.faces.util.FacesParameter;
+import de.tikru.commons.faces.util.FacesUtil;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für eine einzelne Kategory.

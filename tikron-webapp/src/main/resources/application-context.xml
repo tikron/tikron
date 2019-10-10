@@ -10,7 +10,7 @@
 					http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Application environment configuration -->
-<!-- 	<bean id="propertyConfigurer" class="de.tikron.common.spring.HostPropertyPlaceholderConfigurer"> -->
+<!-- 	<bean id="propertyConfigurer" class="de.tikru.commons.spring.HostPropertyPlaceholderConfigurer"> -->
 <!-- 		<property name="location" value="classpath:/configuration.xml" /> -->
 <!-- 	</bean> -->
 	

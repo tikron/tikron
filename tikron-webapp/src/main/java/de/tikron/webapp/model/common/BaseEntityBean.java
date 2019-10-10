@@ -6,8 +6,8 @@ package de.tikron.webapp.model.common;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
-import de.tikron.jpa.domain.Entity;
 import de.tikron.webapp.facade.common.EntityBeanHelper;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Abstract entity bean holding the entity and providing helper methods.

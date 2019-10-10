@@ -8,10 +8,10 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.service.gallery.CatalogService;
 import de.tikron.persistence.model.gallery.Catalog;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für einzelnen Catalog.

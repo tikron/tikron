@@ -119,7 +119,7 @@
 	</bean>
 
 	<!-- view resolver to redirect without model attributes -->
-	<bean id="redirectViewResolver" class="de.tikron.common.spring.RedirectViewResolver">
+	<bean id="redirectViewResolver" class="de.tikru.commons.spring.RedirectViewResolver">
 	</bean>
 
 	<!-- Add captchaImageController to handler mapping here since @RequestMapping will not found by Spring (since upgrade to Spring 3.2) -->

@@ -8,8 +8,8 @@ import java.util.List;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 
-import de.tikron.jpa.dao.GenericDao;
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.dao.GenericDao;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Abstrakte Basisklasse für Default-Implementationen aller nur lesenden Services.

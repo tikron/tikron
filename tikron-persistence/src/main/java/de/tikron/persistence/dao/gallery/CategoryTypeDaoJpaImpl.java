@@ -5,9 +5,9 @@ package de.tikron.persistence.dao.gallery;
 
 import javax.persistence.EntityManager;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.gallery.CategoryType;
 import de.tikron.persistence.model.gallery.CategoryTypeId;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * JPA implementation of {@link CategoryTypeDao}

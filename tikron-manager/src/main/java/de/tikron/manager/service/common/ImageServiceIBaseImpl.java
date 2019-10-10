@@ -56,7 +56,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.tikron.common.service.ImageService#getServerUrl()
+	 * @see de.tikru.commons.util.service.ImageService#getServerUrl()
 	 */
 	@Override
 	public String getServerPath() {
@@ -66,7 +66,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.tikron.common.service.ImageService#saveCover(java.lang.String, byte[])
+	 * @see de.tikru.commons.util.service.ImageService#saveCover(java.lang.String, byte[])
 	 */
 	@Override
 	public boolean saveAlbumCover(String name, byte[] image) {
@@ -76,7 +76,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.tikron.common.service.ImageService#deleteCover(java.lang.String)
+	 * @see de.tikru.commons.util.service.ImageService#deleteCover(java.lang.String)
 	 */
 	@Override
 	public boolean deleteAlbumCover(String name) {
@@ -86,7 +86,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.tikron.common.service.ImageService#saveGalleryImage(java.lang.String, byte[])
+	 * @see de.tikru.commons.util.service.ImageService#saveGalleryImage(java.lang.String, byte[])
 	 */
 	@Override
 	public boolean saveGalleryImage(String name, String category, byte[] image) {
@@ -96,7 +96,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.tikron.common.service.ImageService#deleteGalleryImage(java.lang.String)
+	 * @see de.tikru.commons.util.service.ImageService#deleteGalleryImage(java.lang.String)
 	 */
 	@Override
 	public boolean deleteGalleryImage(String name, String category) {
@@ -106,7 +106,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.tikron.common.service.ImageService#moveGalleryImage(java.lang.String, java.lang.String, java.lang.String)
+	 * @see de.tikru.commons.util.service.ImageService#moveGalleryImage(java.lang.String, java.lang.String, java.lang.String)
 	 */
 	@Override
 	public boolean moveGalleryImage(String name, String sourceCategory, String targetCategory) {

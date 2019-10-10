@@ -5,11 +5,11 @@ package de.tikron.persistence.dao.user;
 
 import java.util.List;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikron.persistence.model.misc.Clip;
 import de.tikron.persistence.model.user.Rating;
 import de.tikron.persistence.model.user.RatingResult;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 /**
  * DAO for ratings.

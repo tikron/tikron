@@ -8,7 +8,7 @@
 	<Loggers>
 		<!-- Application -->
 		<Logger name="de.tikron.manager" level="debug" />
-		<Logger name="de.tikron.common.spring.image" level="debug" />
+		<Logger name="de.tikru.commons.spring.image" level="debug" />
 		
 		<!-- Hibernate/JPA-->
 		<Logger name="org.hibernate" level="info" />

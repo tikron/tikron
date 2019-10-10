@@ -13,10 +13,10 @@ import javax.faces.event.ComponentSystemEvent;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.user.CommentService;
 import de.tikron.persistence.model.user.Comment;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für Liste der Kommentare.

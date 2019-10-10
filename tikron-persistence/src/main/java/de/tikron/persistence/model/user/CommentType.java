@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.EnumeratedKeyEntity;
+import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 
 /**
  * Ein Kommentartyp.

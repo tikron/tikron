@@ -12,8 +12,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 
-import de.tikron.jpa.domain.Entity;
 import de.tikron.manager.service.common.ReadingService;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Generic faces converter to convert to/from entity from/to primary key.

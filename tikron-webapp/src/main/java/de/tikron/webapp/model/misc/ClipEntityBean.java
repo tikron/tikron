@@ -9,13 +9,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-import de.tikron.common.FormattedTextCompiler;
 import de.tikron.persistence.model.misc.Clip;
 import de.tikron.persistence.model.user.RatingResult;
 import de.tikron.webapp.model.common.BaseEntityBean;
 import de.tikron.webapp.service.misc.ClipService;
 import de.tikron.webapp.service.user.RatingService;
 import de.tikron.webapp.util.SeoUtils;
+import de.tikru.commons.util.FormattedTextCompiler;
 
 /**
  * An entity bean for a video clip.

@@ -16,8 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
-import de.tikron.jpa.domain.Entity;
 import de.tikron.webapp.model.common.EntityBean;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Helper class providing usefull methods for entity beans.

@@ -8,7 +8,6 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.service.common.SecurityService;
 import de.tikron.manager.service.user.CommentService;
@@ -22,6 +21,7 @@ import de.tikron.persistence.model.user.Comment;
 import de.tikron.persistence.model.user.GuestbookComment;
 import de.tikron.persistence.model.user.PictureComment;
 import de.tikron.persistence.model.user.User;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für einzelnen Kommentar.

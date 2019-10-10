@@ -46,7 +46,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<!-- Generic data access helper -->
-	<bean id="dataAccessHelper" class="de.tikron.jpa.dao.DataAccessHelper" />
+	<bean id="dataAccessHelper" class="de.tikru.commons.jpa.dao.DataAccessHelper" />
 
 	<!-- DAOs of type JPA for package Gallery -->
 	<bean id="catalogDao" class="de.tikron.persistence.dao.gallery.CatalogDaoJpaImpl" />

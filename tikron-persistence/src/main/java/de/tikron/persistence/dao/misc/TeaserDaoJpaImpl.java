@@ -5,8 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.misc.Teaser;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 public class TeaserDaoJpaImpl extends GenericJpaDao<Teaser, Long> implements TeaserDao {
 

@@ -11,9 +11,9 @@ import org.springframework.validation.Validator;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import de.tikron.common.spring.ValidationUtils;
 import de.tikron.webapp.model.main.ContactMessage;
 import de.tikron.webapp.service.common.CaptchaService;
+import de.tikru.commons.spring.ValidationUtils;
 
 /**
  * Validator für Kontaktnachrichten. (Sollte später durch JSR303 Bean-Validation ersetzt werden.)

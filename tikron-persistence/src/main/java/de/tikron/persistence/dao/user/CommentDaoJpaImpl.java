@@ -12,7 +12,6 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikron.persistence.model.misc.Clip;
@@ -22,6 +21,7 @@ import de.tikron.persistence.model.user.Comment;
 import de.tikron.persistence.model.user.CommentType;
 import de.tikron.persistence.model.user.CommentTypeId;
 import de.tikron.persistence.model.user.PictureComment;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * Data-Access-Object für Kommentare.

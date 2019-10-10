@@ -10,8 +10,8 @@ import javax.persistence.TypedQuery;
 
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.misc.WebRecommendation;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * JPA implementation of web recommendation DAO.

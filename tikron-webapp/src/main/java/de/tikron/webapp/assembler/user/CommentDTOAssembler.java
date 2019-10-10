@@ -11,7 +11,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.tikron.common.FormattedTextCompiler;
 import de.tikron.persistence.model.user.CategoryComment;
 import de.tikron.persistence.model.user.Comment;
 import de.tikron.persistence.model.user.PictureComment;
@@ -24,6 +23,7 @@ import de.tikron.webapp.model.user.CategoryCommentDTO;
 import de.tikron.webapp.model.user.CommentDTO;
 import de.tikron.webapp.model.user.PictureCommentDTO;
 import de.tikron.webapp.util.LocalizationConverter;
+import de.tikru.commons.util.FormattedTextCompiler;
 
 /**
  * Component class mapping from/to data transfer objects of type Comment. 

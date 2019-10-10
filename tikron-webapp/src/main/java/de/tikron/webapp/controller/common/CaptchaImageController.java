@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import de.tikron.common.spring.bytecontent.AbstractContentTypeController;
 import de.tikron.webapp.service.common.CaptchaService;
+import de.tikru.commons.spring.bytecontent.AbstractContentTypeController;
 
 /**
  * Controller providing a random generated Captcha image as byte data.

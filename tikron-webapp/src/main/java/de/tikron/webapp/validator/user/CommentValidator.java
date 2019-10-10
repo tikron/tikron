@@ -7,9 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import de.tikron.common.spring.ValidationUtils;
 import de.tikron.persistence.model.user.Comment;
 import de.tikron.webapp.model.user.CommentForm;
+import de.tikru.commons.spring.ValidationUtils;
 
 /**
  * Validator für Kommentare. (Sollte später durch JSR303 Bean-Validation ersetzt werden.)

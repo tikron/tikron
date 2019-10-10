@@ -3,8 +3,8 @@
  */
 package de.tikron.manager.converter.common;
 
-import de.tikron.jpa.domain.Entity;
 import de.tikron.manager.service.common.ReadingService;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Generic faces convert to convert to/from entity with numeric primary key.

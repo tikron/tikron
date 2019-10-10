@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import de.tikron.common.spring.MailService;
 import de.tikron.webapp.controller.common.AbstractFormController;
 import de.tikron.webapp.controller.common.AjaxResponse;
 import de.tikron.webapp.controller.common.ErrorResponse;
@@ -28,6 +27,7 @@ import de.tikron.webapp.controller.common.ViewConstants;
 import de.tikron.webapp.model.main.ContactMessage;
 import de.tikron.webapp.service.common.GeoLocationService;
 import de.tikron.webapp.util.RobotsDirective;
+import de.tikru.commons.spring.MailService;
 
 /**
  * Controller for caontact message page.

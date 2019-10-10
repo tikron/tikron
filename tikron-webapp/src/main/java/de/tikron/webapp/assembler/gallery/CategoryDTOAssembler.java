@@ -10,12 +10,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import de.tikron.common.FormattedTextCompiler;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.webapp.model.gallery.BasicCatalogDTO;
 import de.tikron.webapp.model.gallery.BasicCategoryDTO;
 import de.tikron.webapp.model.gallery.CategoryDTO;
 import de.tikron.webapp.util.SeoUtils;
+import de.tikru.commons.util.FormattedTextCompiler;
 
 /**
  * Component class mapping from/to data transfer objects of type Category. 

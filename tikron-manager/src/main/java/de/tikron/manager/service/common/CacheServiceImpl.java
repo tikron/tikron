@@ -11,7 +11,7 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Implementation of {@link ReadingService} caching all read information. The cache will never be flushed and has

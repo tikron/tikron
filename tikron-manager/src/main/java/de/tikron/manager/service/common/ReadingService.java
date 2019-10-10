@@ -6,7 +6,7 @@ package de.tikron.manager.service.common;
 import java.io.Serializable;
 import java.util.List;
 
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Deklariert grundsätzliche Methoden, die von nur lesenden Services implementieren müssen.

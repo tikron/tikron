@@ -9,10 +9,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import de.tikron.jpa.validation.AllowedDomain;
-import de.tikron.jpa.validation.NotSpam;
-import de.tikron.jpa.validation.ValidationConstants;
 import de.tikron.persistence.model.user.CommentTypeId;
+import de.tikru.commons.jpa.validation.AllowedDomain;
+import de.tikru.commons.jpa.validation.NotSpam;
+import de.tikru.commons.jpa.validation.ValidationConstants;
 
 /**
  * Base class for Comment forms, holding common properties.

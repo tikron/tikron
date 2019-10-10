@@ -5,7 +5,7 @@ package de.tikron.manager.service.common;
 
 import java.io.Serializable;
 
-import de.tikron.jpa.domain.Entity;
+import de.tikru.commons.jpa.domain.Entity;
 
 /**
  * Deklariert grundsätzliche Methoden, die zum Erstellen, Lesen, Ändern und Löschen von Entitäten verwendet werden.

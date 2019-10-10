@@ -10,7 +10,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.NavigationBean;
 import de.tikron.manager.navigation.ChildrenProvider;
 import de.tikron.manager.navigation.LoadableNode;
@@ -24,6 +23,7 @@ import de.tikron.manager.service.gallery.PictureService;
 import de.tikron.persistence.model.gallery.Catalog;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Managed bean providing the navigation tree for catalogs and associated children.

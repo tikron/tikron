@@ -13,10 +13,10 @@ import javax.faces.event.ComponentSystemEvent;
 
 import org.springframework.web.util.UriComponentsBuilder;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractSelectableListBean;
 import de.tikron.manager.service.misc.ClipService;
 import de.tikron.persistence.model.misc.Clip;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Managed bean providing a selectable list of video clips.

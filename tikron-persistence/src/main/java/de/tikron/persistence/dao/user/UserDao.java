@@ -1,7 +1,7 @@
 package de.tikron.persistence.dao.user;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.user.User;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 public interface UserDao extends GenericDao<User, Long> {
 	

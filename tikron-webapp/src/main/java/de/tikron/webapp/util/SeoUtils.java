@@ -6,7 +6,7 @@ package de.tikron.webapp.util;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 
-import de.tikron.common.FormattedTextCompiler;
+import de.tikru.commons.util.FormattedTextCompiler;
 
 /**
  * Utility class providing some SEO methods.

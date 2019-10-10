@@ -22,13 +22,13 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.tikron.common.spring.MailService;
 import de.tikron.persistence.dao.user.CommentDao;
 import de.tikron.persistence.dao.user.CommentTypeDao;
 import de.tikron.persistence.dao.user.UserDao;
 import de.tikron.persistence.model.user.Comment;
 import de.tikron.persistence.model.user.CommentTypeId;
 import de.tikron.persistence.model.user.User;
+import de.tikru.commons.spring.MailService;
 
 /**
  * Standard-Implementation des Service für Benutzer.

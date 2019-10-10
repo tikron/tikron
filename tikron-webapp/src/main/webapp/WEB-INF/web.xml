@@ -59,7 +59,7 @@
 	<filter>
 		<filter-name>XSS Filter</filter-name>
 <!-- 		<filter-class>org.owasp.esapi.filters.SecurityWrapper</filter-class> -->
-<!-- 		<filter-class>de.tikron.common.XSSFilter</filter-class> -->
+<!-- 		<filter-class>de.tikru.commons.util.XSSFilter</filter-class> -->
 		<filter-class>de.tikron.webapp.util.AntiSamyFilter</filter-class>
 		<init-param>
 			<param-name>rulesFile</param-name>

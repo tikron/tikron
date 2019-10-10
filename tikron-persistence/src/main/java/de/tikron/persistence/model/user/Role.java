@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.EnumeratedKeyEntity;
+import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 
 /**
  * A single role. Each role determines application permissions for users. A user can have none or some roles.

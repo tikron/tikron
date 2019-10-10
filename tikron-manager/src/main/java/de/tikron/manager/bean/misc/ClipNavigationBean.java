@@ -10,7 +10,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.NavigationBean;
 import de.tikron.manager.navigation.ChildrenProvider;
 import de.tikron.manager.navigation.LoadableNode;
@@ -20,6 +19,7 @@ import de.tikron.manager.navigation.SimpleNode;
 import de.tikron.manager.service.common.Constants;
 import de.tikron.manager.service.misc.ClipService;
 import de.tikron.persistence.model.misc.Clip;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Managed bean providing the navigation tree for video clips.

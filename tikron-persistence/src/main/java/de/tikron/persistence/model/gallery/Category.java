@@ -20,8 +20,8 @@ import javax.persistence.UniqueConstraint;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.GeneratedKeyEntity;
-import de.tikron.jpa.domain.ShowableEntity;
+import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
+import de.tikru.commons.jpa.domain.ShowableEntity;
 
 /**
  * Eine Kategorie.

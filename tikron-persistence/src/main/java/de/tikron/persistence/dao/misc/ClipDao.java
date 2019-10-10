@@ -5,8 +5,8 @@ package de.tikron.persistence.dao.misc;
 
 import java.util.List;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.misc.Clip;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 /**
  * Data Acccess Object for video clips.

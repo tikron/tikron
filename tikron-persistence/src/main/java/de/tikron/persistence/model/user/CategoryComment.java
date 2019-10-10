@@ -59,7 +59,7 @@ public class CategoryComment extends Comment {
 	}
 
 	@Override
-	public de.tikron.jpa.domain.ShowableEntity<Long> getRelatedEntity() {
+	public de.tikru.commons.jpa.domain.ShowableEntity<Long> getRelatedEntity() {
 		return getCategory();
 	}
 

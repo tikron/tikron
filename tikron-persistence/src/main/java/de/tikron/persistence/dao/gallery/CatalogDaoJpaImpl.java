@@ -14,8 +14,8 @@ import javax.persistence.TypedQuery;
 import org.hibernate.Hibernate;
 import org.hibernate.jpa.QueryHints;
 
-import de.tikron.jpa.dao.GenericJpaDao;
 import de.tikron.persistence.model.gallery.Catalog;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
 
 /**
  * Data-Access-Object für Kataloge.

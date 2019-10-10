@@ -24,10 +24,10 @@ import javax.validation.constraints.Size;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import de.tikron.jpa.domain.GeneratedKeyEntity;
-import de.tikron.jpa.domain.ShowableEntity;
-import de.tikron.jpa.validation.AllowedDomain;
-import de.tikron.jpa.validation.ValidationConstants;
+import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
+import de.tikru.commons.jpa.domain.ShowableEntity;
+import de.tikru.commons.jpa.validation.AllowedDomain;
+import de.tikru.commons.jpa.validation.ValidationConstants;
 
 /**
  * A single user.

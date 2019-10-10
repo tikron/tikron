@@ -2,8 +2,8 @@ package de.tikron.persistence.dao.misc;
 
 import java.util.List;
 
-import de.tikron.jpa.dao.GenericDao;
 import de.tikron.persistence.model.misc.Teaser;
+import de.tikru.commons.jpa.dao.GenericDao;
 
 public interface TeaserDao extends GenericDao<Teaser, Long> {
 

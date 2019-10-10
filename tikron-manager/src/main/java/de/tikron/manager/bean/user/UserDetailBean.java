@@ -8,11 +8,11 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
-import de.tikron.faces.util.Message;
 import de.tikron.manager.bean.common.AbstractDetailBean;
 import de.tikron.manager.converter.user.PasswordConverter;
 import de.tikron.manager.service.user.UserService;
 import de.tikron.persistence.model.user.User;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Backing Bean für einzelnen Kommentar.

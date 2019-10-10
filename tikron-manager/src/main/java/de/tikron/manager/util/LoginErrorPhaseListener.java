@@ -11,7 +11,7 @@ import javax.faces.event.PhaseListener;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.web.WebAttributes;
 
-import de.tikron.faces.util.Message;
+import de.tikru.commons.faces.util.Message;
 
 /**
  * Listener converting Spring BadCredentialsException into faces message shown in the frontend.

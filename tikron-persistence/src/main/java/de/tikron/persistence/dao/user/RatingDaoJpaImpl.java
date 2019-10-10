@@ -8,12 +8,12 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import de.tikron.jpa.dao.GenericJpaDao;
-import de.tikron.jpa.dao.JpaUtil;
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikron.persistence.model.misc.Clip;
 import de.tikron.persistence.model.user.Rating;
 import de.tikron.persistence.model.user.RatingResult;
+import de.tikru.commons.jpa.dao.GenericJpaDao;
+import de.tikru.commons.jpa.dao.JpaUtil;
 
 /**
  * JPA implementation of {@link RatingDao}.
