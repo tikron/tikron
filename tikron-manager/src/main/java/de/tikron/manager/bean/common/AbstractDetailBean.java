@@ -15,6 +15,8 @@ import de.tikru.commons.util.URLCoder;
  */
 public abstract class AbstractDetailBean<T> extends BaseBean {
 
+	private static final long serialVersionUID = 9153110292004663165L;
+	
 	private String successView;
 	
 	/**

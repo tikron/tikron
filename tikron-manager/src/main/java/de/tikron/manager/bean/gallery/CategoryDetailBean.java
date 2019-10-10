@@ -23,6 +23,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class CategoryDetailBean extends AbstractDetailBean<Category> {
 
+	private static final long serialVersionUID = 5959087401338955734L;
+
 	private Category category;
 
 	private Catalog catalog;

@@ -22,6 +22,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class CatalogDetailBean extends AbstractDetailBean<Catalog> {
 
+	private static final long serialVersionUID = -3189264578671142352L;
+
 	private Catalog catalog;
 
 	@ManagedProperty(value = "#{catalogService}")

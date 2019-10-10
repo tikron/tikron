@@ -35,6 +35,7 @@ public class PlaylistUploadBean extends AbstractFileUploadBean {
 
 //	private Volume volume;
 
+	private static final long serialVersionUID = -4785639397303799949L;
 	private boolean compilation;
 
 	public PlaylistUploadBean() {

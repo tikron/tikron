@@ -18,6 +18,8 @@ import javax.faces.model.ListDataModel;
  */
 public abstract class AbstractListBean<T> extends BaseBean {
 
+	private static final long serialVersionUID = -2074259960164047460L;
+
 	private List<T> list;
 
 	private DataModel<T> model;

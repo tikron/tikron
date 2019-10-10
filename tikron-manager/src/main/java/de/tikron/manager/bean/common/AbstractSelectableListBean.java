@@ -19,6 +19,8 @@ import de.tikru.commons.jpa.domain.Entity;
  */
 public class AbstractSelectableListBean<T extends Entity<ID>, ID extends Serializable> extends AbstractListBean<T> {
 
+	private static final long serialVersionUID = 745126489681509651L;
+	
 	private Map<ID, Boolean> selectedIds = new HashMap<ID, Boolean>();
 
 	/**

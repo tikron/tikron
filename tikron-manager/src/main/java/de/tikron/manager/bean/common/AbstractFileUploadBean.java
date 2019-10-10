@@ -18,6 +18,8 @@ import de.tikru.commons.faces.util.Message;
  */
 public abstract class AbstractFileUploadBean extends BaseBean {
 
+	private static final long serialVersionUID = -2821601905279177321L;
+
 	private UploadedFile uploadedFile;
 
 	private String[] mimeTypes;

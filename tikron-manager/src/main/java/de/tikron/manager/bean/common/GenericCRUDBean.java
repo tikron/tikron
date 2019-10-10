@@ -19,6 +19,8 @@ import de.tikru.commons.jpa.domain.Entity;
  */
 public abstract class GenericCRUDBean<T extends Entity<ID>, ID extends Serializable> extends AbstractDetailBean<T> {
 	
+	private static final long serialVersionUID = -8646208128838304950L;
+
 	private T entity;
 	
 	private CRUDService<T, ID> service;

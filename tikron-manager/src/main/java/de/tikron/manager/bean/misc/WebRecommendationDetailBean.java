@@ -20,6 +20,8 @@ import de.tikron.persistence.model.misc.WebRecommendation;
 @ViewScoped
 public class WebRecommendationDetailBean extends GenericCRUDBean<WebRecommendation, Long> {
 
+	private static final long serialVersionUID = 3275629036282408508L;
+	
 	@ManagedProperty(value = "#{webRecommendationService}")
 	private WebRecommendationService webRecommendationService;
 

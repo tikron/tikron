@@ -32,6 +32,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class CommentDetailBean extends AbstractDetailBean<Comment> {
 
+	private static final long serialVersionUID = 1109910707176913977L;
+
 	private Comment comment;
 
 	private Clip clip;

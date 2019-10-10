@@ -23,6 +23,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class UserDetailBean extends AbstractDetailBean<User> {
 
+	private static final long serialVersionUID = -3419398448577797395L;
+
 	private User user;
 	
 	private Long userId;

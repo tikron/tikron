@@ -20,6 +20,8 @@ import de.tikron.persistence.model.misc.Clip;
 @ViewScoped
 public class ClipDetailBean extends GenericCRUDBean<Clip, Long> {
 
+	private static final long serialVersionUID = -3793500956704110241L;
+	
 	@ManagedProperty(value = "#{clipService}")
 	private ClipService clipService;
 

@@ -31,6 +31,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class PictureDetailBean extends AbstractDetailBean<Picture> {
 
+	private static final long serialVersionUID = 427069534572697996L;
+
 	private Picture picture;
 
 	private Category category;

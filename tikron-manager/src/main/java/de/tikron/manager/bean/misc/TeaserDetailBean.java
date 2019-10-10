@@ -21,6 +21,7 @@ import de.tikron.persistence.model.misc.Teaser;
 @ViewScoped
 public class TeaserDetailBean extends GenericCRUDBean<Teaser, Long> {
 
+	private static final long serialVersionUID = 416253007486656526L;
 	@ManagedProperty(value = "#{teaserService}")
 	private TeaserService teaserService;
 

@@ -21,6 +21,8 @@ import de.tikron.persistence.model.gallery.Picture;
 @ViewScoped
 public class PictureImageUploadConfirmBean extends BaseBean {
 
+	private static final long serialVersionUID = 8532922321612737984L;
+
 	private Picture picture;
 
 	private String imageName;
