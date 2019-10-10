@@ -25,6 +25,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 @Table(name = "rating_type")
 public class RatingType extends EnumeratedKeyEntity<RatingTypeId> {
 
+	private static final long serialVersionUID = -1958430668169745989L;
+	
 	public static final String NQ_FIND_ALL = "RatingType.findAll";
 	public static final String NQ_FIND_BY_ID = "RatingType.findById";
 

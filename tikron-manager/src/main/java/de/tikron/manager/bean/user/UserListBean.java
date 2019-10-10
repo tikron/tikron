@@ -27,6 +27,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class UserListBean extends AbstractSelectableListBean<User, Long> implements Serializable {
 
+	private static final long serialVersionUID = 8613909928841928339L;
+	
 	@ManagedProperty(value = "#{userService}")
 	private UserService userService;
 

@@ -25,7 +25,8 @@ import de.tikron.persistence.model.user.Role;
 @ApplicationScoped
 public class RoleBean implements Serializable {
 
-//	@ManagedProperty(value = "#{roleService}")
+private static final long serialVersionUID = -4465980950752118142L;
+	//	@ManagedProperty(value = "#{roleService}")
 	private transient RoleService roleService;
 
 	public List<Role> getRoles() {

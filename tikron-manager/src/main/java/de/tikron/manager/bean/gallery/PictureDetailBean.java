@@ -3,7 +3,7 @@
  */
 package de.tikron.manager.bean.gallery;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -87,7 +87,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 		// Build redirect URL to get back to current domain and context after succuessful upload
 		FacesContext context = FacesContext.getCurrentInstance();
 		Map<String, List<String>> parameters = new HashMap<String, List<String>>();
-		parameters.put("pictureId", new ArrayList<String>(){{add(picture.getId().toString());}});
+		parameters.put("pictureId", Arrays.asList(picture.getId().toString()));
 		String redirectUrl = FacesUtil.getServerURI()
 				+ context.getApplication().getViewHandler().getRedirectURL(context, "/pages/common/uploadPictureImageConfirm.html", parameters, false);
 		// Pass picture image path and redirect URL to common image upload view

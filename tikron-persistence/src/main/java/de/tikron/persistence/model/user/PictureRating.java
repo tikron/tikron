@@ -26,6 +26,8 @@ import de.tikron.persistence.model.gallery.Picture;
 })
 public class PictureRating extends Rating {
 
+	private static final long serialVersionUID = 6933617428740639350L;
+
 	public static final String NQ_FIND_BY_PICTURE = "Rating.findByPicture";
 
 	@ManyToOne(fetch = FetchType.LAZY) 	// Typically the picture is not used for each rating in a list

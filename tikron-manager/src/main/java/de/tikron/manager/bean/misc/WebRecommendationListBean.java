@@ -27,6 +27,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class WebRecommendationListBean extends AbstractSelectableListBean<WebRecommendation, Long> implements Serializable {
 
+	private static final long serialVersionUID = 8882230306407537798L;
+	
 	@ManagedProperty(value = "#{webRecommendationService}")
 	private WebRecommendationService webRecommendationService;
 

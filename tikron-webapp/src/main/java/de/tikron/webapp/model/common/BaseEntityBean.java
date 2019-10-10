@@ -19,6 +19,8 @@ import de.tikru.commons.jpa.domain.Entity;
  */
 public abstract class BaseEntityBean<E extends Entity<?>> implements EntityBean<E> {
 
+	private static final long serialVersionUID = 7059486057515049582L;
+
 	protected ApplicationContext applicationContext;
 
 	protected EntityBeanHelper entityBeanHelper;

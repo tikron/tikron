@@ -27,6 +27,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class CommentListBean extends AbstractSelectableListBean<Comment, Long> implements Serializable {
 
+	private static final long serialVersionUID = -8721392911343917155L;
+	
 	@ManagedProperty(value = "#{commentService}")
 	private CommentService commentService;
 

@@ -13,6 +13,8 @@ import java.io.Serializable;
  */
 public class ContactMessage implements Serializable {
 
+	private static final long serialVersionUID = -5248668669736528839L;
+
 	public static final String NAME = "contactMessage";
 
 	private String name;

@@ -43,6 +43,8 @@ import de.tikru.commons.jpa.validation.ValidationConstants;
 @Table(name = "user", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class User extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = -3983451583631457910L;
+	
 	public static final String NQ_FIND_ALL = "User.findAll";
 	public static final String NQ_FIND_BY_NAME = "User.findByName";
 

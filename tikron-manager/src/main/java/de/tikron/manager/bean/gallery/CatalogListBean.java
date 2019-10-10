@@ -27,6 +27,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class CatalogListBean extends AbstractSelectableListBean<Catalog, Long> implements Serializable {
 
+	private static final long serialVersionUID = -943335027364563993L;
+	
 	@ManagedProperty(value = "#{catalogService}")
 	private transient CatalogService catalogService;
 

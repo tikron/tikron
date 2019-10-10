@@ -26,6 +26,8 @@ import de.tikron.persistence.model.misc.Clip;
 })
 public class ClipRating extends Rating {
 
+	private static final long serialVersionUID = -1164291711362363511L;
+
 	public static final String NQ_FIND_BY_CLIP = "Rating.findByClip";
 
 	@ManyToOne(fetch = FetchType.LAZY) 	// Typically the clip is not used for each rating in a list

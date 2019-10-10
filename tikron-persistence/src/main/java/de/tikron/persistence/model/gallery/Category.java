@@ -41,6 +41,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 @Table(name = "gallery_category", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class Category extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = 833099831074320988L;
+	
 	public static final String NQ_FIND_ALL = "Category.findAll";
 	public static final String NQ_FIND_BY_VISIBILITY = "Category.findByVisibility";
 	public static final String NQ_FIND_BY_CATALOG = "Category.findByCatalog";

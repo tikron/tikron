@@ -25,7 +25,9 @@ import de.tikron.persistence.model.gallery.CategoryType;
 @ApplicationScoped
 public class CategoryTypeBean implements Serializable {
 
-//	@ManagedProperty(value = "#{categoryTypeService}")
+private static final long serialVersionUID = -2940941963125048972L;
+
+	//	@ManagedProperty(value = "#{categoryTypeService}")
 	private transient CategoryTypeService categoryTypeService;
 
 	public List<CategoryType> getCategoryTypes() {

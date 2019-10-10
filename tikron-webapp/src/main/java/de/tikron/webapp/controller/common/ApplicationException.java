@@ -15,6 +15,8 @@ import java.util.ResourceBundle;
  */
 public class ApplicationException extends RuntimeException {
 	
+	private static final long serialVersionUID = -8517510245636325957L;
+
 	private static final String DEFAULT_BUNDLE = "de/tikron/webapp/mvc/exceptions";
 
 	private final ResourceBundle resourceBundle;

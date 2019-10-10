@@ -27,6 +27,8 @@ import org.springframework.transaction.TransactionException;
  */
 public class CustomHibernateJpaDialect extends HibernateJpaDialect {
 
+	private static final long serialVersionUID = -7932460697048485486L;
+
 	@Override
 	public Object beginTransaction(final EntityManager entityManager, final TransactionDefinition definition)
 			throws PersistenceException, SQLException, TransactionException {

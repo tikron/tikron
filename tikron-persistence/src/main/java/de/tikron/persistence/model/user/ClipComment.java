@@ -32,6 +32,8 @@ import de.tikron.persistence.model.misc.Clip;
 })
 public class ClipComment extends Comment {
 
+	private static final long serialVersionUID = 292294889347718981L;
+	
 	public static final String NQ_FIND_BY_CLIP = "Comment.findByClip";
 	public static final String NQ_FIND_VISIBLE_BY_CLIP = "Comment.findVisibleByClip";
 	

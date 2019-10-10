@@ -28,6 +28,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class TeaserListBean extends AbstractSelectableListBean<Teaser, Long> implements Serializable {
 
+	private static final long serialVersionUID = -3901244567066052604L;
+	
 	@ManagedProperty(value = "#{teaserService}")
 	private TeaserService teaserService;
 

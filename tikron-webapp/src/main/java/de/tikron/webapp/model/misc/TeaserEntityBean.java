@@ -24,6 +24,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
  */
 public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 	
+	private static final long serialVersionUID = 3649565021160434768L;
+
 	public static final String NAME = "teaserEntityBean";
 
 	private static Logger logger = LogManager.getLogger();

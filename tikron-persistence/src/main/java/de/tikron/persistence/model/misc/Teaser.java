@@ -36,6 +36,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 @Table(name = "teaser", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class Teaser extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = -6293446250983491689L;
+	
 	public static final String NQ_FIND_ALL = "Teaser.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_NAME = "Teaser.findAllOrderByName";
 	public static final String NQ_FIND_ALL_ORDERBY_SEQUENCE = "Teaser.findAllOrderBySequence";

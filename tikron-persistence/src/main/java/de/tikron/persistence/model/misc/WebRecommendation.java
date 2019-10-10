@@ -27,6 +27,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 @Table(name = "web_recommendation")
 public class WebRecommendation extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = 3563850092321060808L;
+	
 	public static final String NQ_FIND_ALL = "WebRecommendation.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_SEQUENCE = "WebRecommendation.findAllOrderBySequence";
 	

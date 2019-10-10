@@ -28,6 +28,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class CategoryListBean extends AbstractSelectableListBean<Category, Long> implements Serializable {
 
+	private static final long serialVersionUID = 3888284346938452091L;
+
 	private Catalog catalog;
 
 	@ManagedProperty(value = "#{categoryService}")

@@ -26,6 +26,8 @@ import de.tikron.persistence.model.gallery.Category;
 		@NamedQuery(name = CategoryComment.NQ_FIND_VISIBLE_BY_CATEGORY, query = "SELECT o FROM CategoryComment o WHERE o.category = :category AND o.visible = true") })
 public class CategoryComment extends Comment {
 
+	private static final long serialVersionUID = 3627088511003821262L;
+	
 	public static final String NQ_FIND_BY_CATEGORY = "Comment.findByCategory";
 	public static final String NQ_FIND_VISIBLE_BY_CATEGORY = "Comment.findVisibleByCategory";
 

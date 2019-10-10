@@ -28,6 +28,8 @@ import de.tikru.commons.jpa.validation.ValidationConstants;
  */
 public class CommentForm implements Serializable {
 
+	private static final long serialVersionUID = -3579398474098485909L;
+
 	public static final String NAME = "commentForm";
 	
 	private CommentTypeId relatedEntityType;

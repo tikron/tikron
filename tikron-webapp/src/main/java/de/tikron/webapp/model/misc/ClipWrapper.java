@@ -15,6 +15,8 @@ import de.tikron.webapp.model.common.EntityBean;
  */
 public class ClipWrapper extends Clip implements EntityBean<Clip> {
 
+	private static final long serialVersionUID = 5222088166919383979L;
+
 	/**
 	 * Default constructor.
 	 * 

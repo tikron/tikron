@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page trimDirectiveWhitespaces="true" %>
+<c:set var="contentVersionParam" value="" />
+<c:set var="baseUrl" value="${pageContext.request.scheme}://${pageContext.request.serverName}" />
+<c:url var="displayHomepageUrl" value="/displayHomepage.html"/>
+<c:url var="displayLogUrl" value="/displayLog.html"/>
+<c:url var="displayImprintUrl" value="/displayImprint.html"/>
+<c:url var="displayPrivacyPolicytUrl" value="/displayPrivacyPolicy.html"/>
+<c:url var="sendContactMessageUrl" value="/sendContactMessage.html"/>

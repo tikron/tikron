@@ -15,6 +15,8 @@ package de.tikron.webapp.controller.common;
 // HTTP Response code in exception will not be forwarded by exceptions handler annotated with ControllerAdvice.   
 public class ResourceNotFoundException extends ApplicationException {
 
+	private static final long serialVersionUID = 6172409854241113618L;
+
 	public ResourceNotFoundException(String msgKey, Object[] msgParam, String resourceBundle) {
 		super(msgKey, msgParam, resourceBundle);
 	}

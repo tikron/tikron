@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<meta charset="UTF-8">
+<c:if test="${not empty pageDescription}">
+<meta name="description" content="<c:out value="${pageDescription}" />" />
+</c:if>
+<c:if test="${not empty robotsDirective}">
+<meta name="robots" content="${robotsDirective}" />
+</c:if>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/lib/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/font-awesome-4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="/lib/scrollup-2.0/css/themes/image.css">
+<link rel="stylesheet" type="text/css" href="/css/base.css${contentVersionParam}" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+<c:if test="${not empty canonicalUrl}">
+<c:url var="rewriteCanonicalUrl" value="${canonicalUrl}" /><%-- Process URL by Tuckey rewrite engine. --%>
+<link rel="canonical" href="${rewriteCanonicalUrl}" />
+</c:if>
+<script src="/lib/jquery-1.12.4.min.js"></script>
+<script src="/lib/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="/lib/scrollup-2.0/jquery.scrollUp.min.js"></script>
+<script src="/lib/spin.min.js" ></script>
+<!--[if lt IE 9]><script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+<script src="/js/base.js" ></script>
+<script src="/js/navigation.js${contentVersionParam}" ></script>
+<script src="/js/util.js" ></script>

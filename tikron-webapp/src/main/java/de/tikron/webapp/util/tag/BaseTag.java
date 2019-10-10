@@ -13,6 +13,8 @@ import javax.servlet.jsp.tagext.TagSupport;
  */
 public abstract class BaseTag extends TagSupport {
 
+	private static final long serialVersionUID = 463455574521820078L;
+	
 	private String styleClass;
 
 	public String getStyleClass() {

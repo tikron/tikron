@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<spring:message code="addComment.label.author" var="msgLabelAuthor" />
+<spring:message code="addComment.label.email" var="msgLabelEmail" />
+<spring:message code="addComment.label.url" var="msgLabelUrl" />
+<spring:message code="addComment.label.text" var="msgLabelText" />
+<h2><spring:message code="addComment.header" /></h2>
+<c:url var="addCommentUrl" value="/addComment.json" />
+<form:form modelAttribute="comment" action="${addCommentUrl}" id="comments" class="clear ajax orange">
+	<form:hidden path="relatedEntityType" />
+	<form:hidden path="relatedEntityId" />
+	<ul class="globalMsg"><form:errors element="li" cssClass="error"/></ul>
+	<fieldset class="clear">
+		<div class="row inner form-control" id="author">
+			<div class="col-lg-6 col-md-8 col-xs-12">
+				<form:input path="author" placeholder="${msgLabelAuthor}" /><span class="error"><form:errors path="author" /></span>
+			</div>
+		</div>
+		<div class="row inner form-control" id="email">
+			<div class="col-lg-6 col-md-8 col-xs-12">
+				<form:input path="email" type="email" placeholder="${msgLabelEmail}" /><span class="error"><form:errors path="email" /></span>
+			</div>
+		</div>
+		<div class="row inner form-control" id="text">
+			<div class="col-lg-8 col-md-8 col-xs-12">
+				<form:textarea path="text" placeholder="${msgLabelText}" /><span class="error"><form:errors path="text" /></span>
+			</div>
+		</div>
+		<div class="row inner">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				<ul class="buttonBar">
+					<li><button type="submit" class="button button_green" title="<spring:message code='addComment.button.save.description' />"><i class="fa fa-check-square-o"></i><spring:message code="addComment.button.save" /></button></li>
+			<%-- 		<li><button type="button" class="button button_green" onclick="location.href='${servletContextPath}${successView}';"><i class="fa fa-reply"></i><spring:message code="button.cancel" /></button></li> --%>
+				</ul>
+			</div>
+		</div>
+	</fieldset>
+</form:form>

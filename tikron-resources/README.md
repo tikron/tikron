@@ -12,7 +12,7 @@ I like to provide contents about my hobbies photography, powerful machines, open
 
 ## Installation
 
-The applications program code is divided into 3 main repositories: tikron contains common maven configuration for all projects. tikron-common provides common source code for main applications. And finally tikron-site contains source code for the web site, the management tool and other utilities.  
+The applications program code is divided into 3 main repositories: tikru contains common maven configuration for all projects. tikru-commons provides common source code for main applications. And finally tikron contains source code for the web site, the management tool and other utilities.  
 
 ## License
 

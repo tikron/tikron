@@ -5,15 +5,15 @@
 		version="3.1">
 	<display-name>Tikron Web Application 2.1</display-name>
 	<welcome-file-list>
-		<welcome-file>/jsp/index.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
 	</welcome-file-list>
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>
-		<location>/jsp/error.jsp</location>
+		<location>/WEB-INF/jsp/error.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/jsp/error404.jsp</location>
+		<location>/WEB-INF/jsp/error404.jsp</location>
 	</error-page>
 	<session-config>
 		<tracking-mode>COOKIE</tracking-mode>

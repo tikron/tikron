@@ -32,6 +32,8 @@ import de.tikron.persistence.model.gallery.Picture;
 })
 public class PictureComment extends Comment {
 
+	private static final long serialVersionUID = -6384859053020186692L;
+	
 	public static final String NQ_FIND_BY_PICTURE = "Comment.findByPicture";
 	public static final String NQ_FIND_VISIBLE_BY_PICTURE = "Comment.findVisibleByPicture";
 	

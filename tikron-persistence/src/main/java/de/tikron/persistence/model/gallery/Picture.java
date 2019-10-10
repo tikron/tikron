@@ -38,6 +38,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 @Table(name = "gallery_picture", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class Picture extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = -2763126762054544147L;
+	
 	public static final String NQ_FIND_ALL = "Picture.findAll";
 	public static final String NQ_FIND_BY_CATEGORY = "Picture.findByCategory";
 	public static final String NQ_FIND_BY_CATEGORY_ORDERBY_NAME = "Picture.findByCategoryOrderByName";

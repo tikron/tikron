@@ -27,6 +27,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class ClipListBean extends AbstractSelectableListBean<Clip, Long> implements Serializable {
 
+	private static final long serialVersionUID = 2828228622638635884L;
+	
 	@ManagedProperty(value = "#{clipService}")
 	private ClipService clipService;
 

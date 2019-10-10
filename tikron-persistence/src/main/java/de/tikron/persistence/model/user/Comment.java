@@ -48,6 +48,8 @@ import de.tikru.commons.jpa.validation.NotSpam;
 @Table(name = "comment")
 public abstract class Comment extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = -8773919811533986782L;
+	
 	public static final String NQ_FIND_ALL = "Comment.findAll";
 	public static final String NQ_FIND_BY_COMMENTTYPE = "Comment.findByCommentType";
 	public static final String NQ_FIND_BY_COMMENTTYPE_AND_VISIBILITY = "Comment.findByCommentTypeAndVisibility";

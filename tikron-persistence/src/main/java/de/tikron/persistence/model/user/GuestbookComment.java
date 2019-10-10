@@ -16,6 +16,8 @@ import javax.persistence.Entity;
 @DiscriminatorValue("GUESTBOOK")
 public class GuestbookComment extends Comment {
 
+	private static final long serialVersionUID = -4719908455109462544L;
+
 	public GuestbookComment() {
 	}
 

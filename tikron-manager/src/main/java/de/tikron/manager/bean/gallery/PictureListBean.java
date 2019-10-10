@@ -32,6 +32,8 @@ import de.tikru.commons.faces.util.Message;
 @ViewScoped
 public class PictureListBean extends AbstractSelectableListBean<Picture, Long> implements Serializable {
 
+	private static final long serialVersionUID = 5264895250753768995L;
+
 	private Category category;
 
 	private List<SelectItem> selectCategories;

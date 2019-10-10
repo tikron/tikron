@@ -25,6 +25,8 @@ import de.tikru.commons.util.FormattedTextCompiler;
  */
 public class ClipEntityBean extends BaseEntityBean<Clip> {
 	
+	private static final long serialVersionUID = 6884927968374984831L;
+
 	public static final String NAME = "clipEntityBean";
 	
 	private String seoName;

@@ -16,7 +16,7 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * A single role. Each role determines application permissions for users. A user can have none or some roles.
  * 
- * TODO: Instead of using an enum as key, thre role itself could be an enum. (@Converter(autoApply = true) public class CategoryTypeConverter implements javax.persistence.AttributeConverter <CategoryType, String>)
+ * TODO Instead of using an enum as key, thre role itself could be an enum. (@Converter(autoApply = true) public class CategoryTypeConverter implements javax.persistence.AttributeConverter <CategoryType, String>)
  *
  * @date 01.04.2015
  * @author Titus Kruse
@@ -27,6 +27,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 @Table(name = "role")
 public class Role extends EnumeratedKeyEntity<RoleId> {
 
+	private static final long serialVersionUID = -1498416861726489027L;
+	
 	public static final String NQ_FIND_ALL = "Role.findAll";
 	public static final String NQ_FIND_BY_ID = "Role.findById";
 	

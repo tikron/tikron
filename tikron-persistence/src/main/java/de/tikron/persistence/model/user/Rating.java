@@ -32,6 +32,7 @@ import de.tikru.commons.jpa.domain.GeneratedKeyEntity;
 @Table(name = "rating")
 public abstract class Rating extends GeneratedKeyEntity<Long> {
 
+	private static final long serialVersionUID = -4795029391823937216L;
 	public static final String NQ_FIND_ALL = "Rating.findAll";
 	public static final String NQ_FIND_BY_RATINGTYPE = "Rating.findByRatingType";
 

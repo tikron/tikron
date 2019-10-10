@@ -17,6 +17,8 @@ import javax.servlet.jsp.tagext.Tag;
  */
 public class TextArea extends BaseTag implements Tag {
 
+	private static final long serialVersionUID = -6158069008929073201L;
+	
 	private String value;
 
 	public int doStartTag() throws JspException {

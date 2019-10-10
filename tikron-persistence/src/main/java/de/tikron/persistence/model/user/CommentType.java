@@ -25,6 +25,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 @Table(name = "comment_type")
 public class CommentType extends EnumeratedKeyEntity<CommentTypeId> {
 
+	private static final long serialVersionUID = 6675939547565754170L;
+	
 	public static final String NQ_FIND_ALL = "CommentType.findAll";
 	public static final String NQ_FIND_BY_ID = "CommentType.findById";
 

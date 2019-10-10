@@ -14,6 +14,8 @@ import de.tikron.webapp.model.common.BaseEntityBean;
  */
 public class WebRecommendationEntityBean extends BaseEntityBean<WebRecommendation> {
 	
+	private static final long serialVersionUID = -2913522153142844967L;
+	
 	public static final String NAME = "webRecommendationEntityBean";
 	
 	// Currently no additional properties required.

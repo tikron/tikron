@@ -39,6 +39,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 @Table(name = "clip", uniqueConstraints = { @UniqueConstraint(columnNames = { "name" }) })
 public class Clip extends GeneratedKeyEntity<Long> implements ShowableEntity<Long> {
 
+	private static final long serialVersionUID = -4554227552063589174L;
+	
 	public static final String NQ_FIND_ALL = "Clip.findAll";
 	public static final String NQ_FIND_ALL_ORDERBY_DATERECORDED = "Clip.findAllOrderByDateRecorded";
 	public static final String NQ_FIND_BY_NAME = "Clip.findByName";

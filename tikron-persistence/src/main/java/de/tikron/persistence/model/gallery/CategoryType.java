@@ -25,6 +25,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 @Table(name = "category_type")
 public class CategoryType extends EnumeratedKeyEntity<CategoryTypeId> {
 
+	private static final long serialVersionUID = 7328752004659056478L;
+	
 	public static final String NQ_FIND_ALL = "CategoryType.findAll";
 	public static final String NQ_FIND_BY_ID = "CategoryType.findById";
 
