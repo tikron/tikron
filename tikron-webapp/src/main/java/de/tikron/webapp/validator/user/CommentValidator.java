@@ -25,21 +25,11 @@ public abstract class CommentValidator implements Validator {
 
 	private String[] spamPhrases = new String[] {};
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.validation.Validator#supports(java.lang.Class)
-	 */
 	@SuppressWarnings("rawtypes")
 	public boolean supports(Class clazz) {
 		return Comment.class.isAssignableFrom(clazz);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.validation.Validator#validate(java.lang.Object, org.springframework.validation.Errors)
-	 */
 	public void validate(Object command, Errors errors) {
 		CommentForm comment = (CommentForm) command;
 

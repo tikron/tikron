@@ -53,61 +53,31 @@ public class ImageServiceIBaseImpl implements ImageService {
 		iBaseClient.close();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikru.commons.util.service.ImageService#getServerUrl()
-	 */
 	@Override
 	public String getServerPath() {
 		return serverPath;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikru.commons.util.service.ImageService#saveCover(java.lang.String, byte[])
-	 */
 	@Override
 	public boolean saveAlbumCover(String name, byte[] image) {
 		return addImage(Constants.ALBUM_IMAGE_PATH + name, image);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikru.commons.util.service.ImageService#deleteCover(java.lang.String)
-	 */
 	@Override
 	public boolean deleteAlbumCover(String name) {
 		return removeImage(Constants.ALBUM_IMAGE_PATH + name);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikru.commons.util.service.ImageService#saveGalleryImage(java.lang.String, byte[])
-	 */
 	@Override
 	public boolean saveGalleryImage(String name, String category, byte[] image) {
 		return addImage(Constants.GALLERY_IMAGE_PATH + category + "/" + name, image);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikru.commons.util.service.ImageService#deleteGalleryImage(java.lang.String)
-	 */
 	@Override
 	public boolean deleteGalleryImage(String name, String category) {
 		return removeImage(Constants.GALLERY_IMAGE_PATH + category + "/" + name);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikru.commons.util.service.ImageService#moveGalleryImage(java.lang.String, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public boolean moveGalleryImage(String name, String sourceCategory, String targetCategory) {
 		return renameImage(Constants.GALLERY_IMAGE_PATH + sourceCategory + "/" + name, Constants.GALLERY_IMAGE_PATH

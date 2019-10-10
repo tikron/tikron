@@ -25,20 +25,10 @@ public class CaptchaServiceImpl implements CaptchaService {
 
 	private ImageCaptchaService imageCaptchaService;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.webapp.common.service.CaptchaService#getCaptcha(java.lang.String)
-	 */
 	public BufferedImage getCaptchaImage(String captchaId) throws CaptchaServiceException {
 		return getImageCaptchaService().getImageChallengeForID(captchaId);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.webapp.common.service.CaptchaService#validateCaptcha(java.lang.String, java.lang.String)
-	 */
 	public boolean validateCaptchaCode(String captchaId, String captchaCode) {
 		return getImageCaptchaService().validateResponseForID(captchaId, captchaCode.toUpperCase()).booleanValue();
 	}

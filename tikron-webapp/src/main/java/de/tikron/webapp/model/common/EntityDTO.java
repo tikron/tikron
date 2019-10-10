@@ -25,32 +25,17 @@ public abstract class EntityDTO<ID> {
 		this.id = id;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals()
-	 */
 	@Override
 	public boolean equals(Object other) {
 		return other instanceof EntityDTO<?> && (id != null) ? id.equals(((EntityDTO<?>) other).getId())
 				: (other == this);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode() {
 		return id != null ? this.getClass().hashCode() + id.hashCode() : super.hashCode();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this).append("id", id).toString();

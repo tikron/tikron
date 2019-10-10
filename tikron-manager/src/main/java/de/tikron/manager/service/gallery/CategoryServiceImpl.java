@@ -25,11 +25,6 @@ import de.tikron.persistence.model.gallery.Category;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class CategoryServiceImpl extends CRUDServiceImpl<Category, Long> implements CategoryService {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.manager.service.CategoryService#getCategories(de.tikron.gallery.model.Catalog)
-	 */
 	@Transactional(readOnly = true)
 	public List<Category> getCategories(Catalog catalog) {
 		return getCategoryDao().findByCatalog(catalog);

@@ -29,21 +29,11 @@ public class ContactMessageValidator implements Validator {
 
 	private CaptchaService captchaService;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.validation.Validator#supports(java.lang.Class)
-	 */
 	@SuppressWarnings("rawtypes")
 	public boolean supports(Class clazz) {
 		return ContactMessage.class.isAssignableFrom(clazz);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.validation.Validator#validate(java.lang.Object, org.springframework.validation.Errors)
-	 */
 	public void validate(Object command, Errors errors) {
 		// Validate required fields
 		// TODO Konstanten für Feldnamen extrahieren

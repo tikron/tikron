@@ -33,11 +33,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	private UserDao userDao;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername(java.lang.String)
-	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException {
 		de.tikron.persistence.model.user.User user = this.userDao.findByNameFetchRoles(username);

@@ -53,11 +53,6 @@ public class BufferedPicture {
 		picture.setImageName(imageName);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object anObject) {
 		if (this == anObject) {

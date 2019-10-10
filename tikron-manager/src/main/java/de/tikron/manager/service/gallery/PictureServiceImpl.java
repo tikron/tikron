@@ -25,31 +25,16 @@ import de.tikron.persistence.model.gallery.Picture;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class PictureServiceImpl extends CRUDServiceImpl<Picture, Long> implements PictureService {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.manager.service.PictureService#getCategories(de.tikron.gallery.model.Catalog)
-	 */
 	@Override
 	public List<Picture> getPictures(Category category) {
 		return getPictureDao().findByCategoryOrderByName(category);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.gallery.service.PictureService#getPrevious(de.tikron.gallery.model.Picture)
-	 */
 	@Override
 	public Picture getPrevious(Picture picture) {
 		return getPictureDao().findPrevious(picture.getCategory(), picture);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.gallery.service.PictureService#getNext(de.tikron.gallery.model.Picture)
-	 */
 	@Override
 	public Picture getNext(Picture picture) {
 		return getPictureDao().findNext(picture.getCategory(), picture);

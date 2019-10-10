@@ -17,11 +17,6 @@ import org.springframework.stereotype.Service;
 @Service("securityService")
 public class SecurityServiceImpl implements SecurityService {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.manager.service.SecurityService#getCurrentUser()
-	 */
 	@Override
 	public User getCurrentUser() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -36,11 +31,6 @@ public class SecurityServiceImpl implements SecurityService {
 		return null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.manager.service.SecurityService#isUserInRole(java.lang.String)
-	 */
 	@Override
 	public boolean hasAuthorityRole(String authorityRole) {
 		User currentUser = getCurrentUser();

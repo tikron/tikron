@@ -28,13 +28,6 @@ public class CaptchaImageController extends AbstractContentTypeController {
 
 	private CaptchaService captchaService;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * de.tikron.webapp.common.spring.bytecontent.AbstractContentTypeController#getData(javax.servlet.http.HttpServletRequest
-	 * )
-	 */
 	@Override
 	protected byte[] getData(HttpServletRequest request) throws Exception {
 		// Fetch captcha image for the given session ID from captcha storage

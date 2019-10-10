@@ -16,11 +16,6 @@ public class TrackingServiceImpl implements TrackingService {
 
 	private boolean enabled;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.tikron.webapp.common.service.TrackingService#isTracking()
-	 */
 	@Override
 	public boolean isEnabled() {
 		return this.enabled;
