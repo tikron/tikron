@@ -9,7 +9,9 @@ package de.tikron.manager.service.common;
  * @date 24.07.2011
  * @author Titus Kruse
  */
-public interface Constants {
+public final class Constants {
+	
+	private Constants() {};
 
 	/**
 	 * Relativer Pfad bzw. Unterverzeichnis der Albumcover im Image-Service.

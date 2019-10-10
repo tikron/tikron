@@ -9,7 +9,9 @@ package de.tikron.webapp.controller.common;
  * @date 30.12.2012
  * @author Titus Kruse
  */
-public interface ViewConstants {
+public final class ViewConstants {
+	
+	private ViewConstants() {};
 	
 	// TODO Should be refactored (Replaced by generic logic)
 

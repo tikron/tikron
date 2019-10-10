@@ -9,7 +9,9 @@ package de.tikron.webapp.controller.common;
  * @date 12.12.2014
  * @author Titus Kruse
  */
-public interface ControllerConstants {
+public final class ControllerConstants {
+	
+	private ControllerConstants() {};
 
 	public static final String REQUEST_PARAM_CATALOG_ID = "catalogId";
 
