@@ -99,4 +99,12 @@
 		<url-pattern>*.html</url-pattern>
 		<url-pattern>*.json</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>confirmLivewatch</servlet-name>
+		<servlet-class>de.tikron.webapp.util.servlet.ConfirmLivewatchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>confirmLivewatch</servlet-name>
+		<url-pattern>/confirmLivewatch</url-pattern>
+	</servlet-mapping>
 </web-app>
