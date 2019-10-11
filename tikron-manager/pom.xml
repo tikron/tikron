@@ -138,7 +138,7 @@
 		<dependency>
 			<groupId>de.tikru.ibase</groupId>
 			<artifactId>ibase-client</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>1.1</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -31,7 +31,7 @@
 		</h:inputText>
 		<tcf:outputLabel for="image" value="#{msg.labelPictureImage}" rendered="#{not empty cc.attrs.picture.imageName}"></tcf:outputLabel>
 		<h:panelGroup rendered="#{not empty cc.attrs.picture.imageName}">
-			<img src="#{imageServerBean.contextPath}getImage.jsp?name=#{pictureImageBean.pictureImagePaths[cc.attrs.picture.category.id]}#{cc.attrs.picture.imageName}&amp;template=galleryEdit" />
+			<img src="#{imageServerBean.contextPath}getImage?name=#{pictureImageBean.pictureImagePaths[cc.attrs.picture.category.id]}#{cc.attrs.picture.imageName}&amp;template=galleryEdit" />
 		</h:panelGroup>
 	</h:panelGrid>
 </composite:implementation>

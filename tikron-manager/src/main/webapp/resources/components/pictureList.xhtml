@@ -18,7 +18,7 @@
 			<h:link outcome="/pages/gallery/editPicture.html">
 				<f:param name="pictureId" value="#{picture.id}" />
 				<f:param name="successView" value="#{cc.attrs.successView}" />
-				<img src="#{imageServerBean.contextPath}getImage.jsp?name=#{pictureImageBean.pictureImagePaths[picture.category.id]}#{picture.imageName}&amp;template=galleryList" />
+				<img src="#{imageServerBean.contextPath}getImage?name=#{pictureImageBean.pictureImagePaths[picture.category.id]}#{picture.imageName}&amp;template=galleryList" />
 			</h:link>
 			</h:panelGroup>
 		</h:column>

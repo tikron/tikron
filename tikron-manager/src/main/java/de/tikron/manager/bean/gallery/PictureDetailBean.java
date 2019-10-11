@@ -90,6 +90,7 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 		FacesContext context = FacesContext.getCurrentInstance();
 		Map<String, List<String>> parameters = new HashMap<String, List<String>>();
 		parameters.put("pictureId", Arrays.asList(picture.getId().toString()));
+		// TODO HTTP port missing in redirect URL! Redirect failed for URL like //10.8.0.1:8011/webman/pages/...
 		String redirectUrl = FacesUtil.getServerURI()
 				+ context.getApplication().getViewHandler().getRedirectURL(context, "/pages/common/uploadPictureImageConfirm.html", parameters, false);
 		// Pass picture image path and redirect URL to common image upload view

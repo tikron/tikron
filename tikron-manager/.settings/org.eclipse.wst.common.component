@@ -20,7 +20,7 @@
         <dependent-module archiveName="tikru-commons-util-1.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-util/tikru-commons-util">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ibase-client-1.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ibase-client/ibase-client">
+        <dependent-module archiveName="ibase-client-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ibase-client/ibase-client">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/tikron-manager/target/classes"/>

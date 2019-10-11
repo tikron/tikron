@@ -24,7 +24,7 @@
 						</div>
 					</h:form>
 					<!-- HTML form calling iBase servlet on submit to store image file -->
-					<form action="#{imageServerBean.contextPath}putSourceImage.jsp" method="post" enctype="multipart/form-data">
+					<form action="#{imageServerBean.contextPath}putSourceImage" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="name" value="#{sessionScope.imagePath}"/>
 						<input type="hidden" name="redirectUrl" value="#{sessionScope.redirectUrl}"/>
 						<table class="form">
