@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- Copy the following lines to Tomcat context.xml and add passwords -->
+
+	<!-- Disable session persistence across Tomcat restarts -->
+	<Manager pathname="" />
+	
+	<!-- ibase -->
+	<!-- Configure image archive location (Windows) -->
+	<Parameter name="ibaseArchiveLocation" value="C:/Users/Titus/AppData/Local/ibase/"/>
+	<!-- Configure image archive location (Linux) -->
+	<Parameter name="ibaseArchiveLocation" value="/var/opt/ibase/"/>
+	<!-- Unsharp scaled images fo better quality-->
+	<Parameter name="ibaseConverterScaleUnsharped" value="true"/>
+    
+    <!-- JNDI Datasource for Tikron Database -->
+	<!-- http://tomcat.apache.org/tomcat-9.0-doc/jndi-datasource-examples-howto.html -->
+	<Resource name="jdbc/tikron"
+		auth="Container"
+		type="javax.sql.DataSource"
+		maxTotal="100"
+		maxIdle="30"
+		maxWaitMillis="10000"
+		username="tikron"
+		password="********"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/tikron"/>
+    <!-- See https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-tomcat.html -->
+	<Resource name="jdbc/tikron"
+		auth="Container"
+		type="javax.sql.DataSource"
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+		maxActive="10"
+		maxIdle="5"
+		validationQuery="SELECT 1"
+		testOnBorrow="true"
+		testWhileIdle="true"
+		timeBetweenEvictionRunsMillis="10000"
+		minEvictableIdleTimeMillis="60000"
+		username="tikron"
+		password="********"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/tikron"/>
+	<!-- JNDI Datasource for Tikron Database (MySQL 5) 
+	<Resource auth="Container" 
+		name="jdbc/tikron" 
+		type="javax.sql.DataSource" 
+		driverClassName="com.mysql.jdbc.Driver" 
+		factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" 
+		username="tikron" 
+		password="********" 
+		testOnBorrow="true" 
+		testWhileIdle="true" 
+		timeBetweenEvictionRunsMillis="10000" 
+		url="jdbc:mysql://localhost:3306/tikron?useSSL=false&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;relaxAutoCommit=true" 
+		maxIdle="5" 
+		maxTotal="10" 
+		minEvictableIdleTimeMillis="60000" 
+		validationQuery="SELECT 1"/>-->
+    
+	<!-- Mail resource to Tikron SMTP server -->
+	<Resource auth="Container" 
+		name="mail/tikron" 
+		type="javax.mail.Session" 
+		mail.smtp.host="smtp.tikron.de" 
+		mail.smtp.port="587" 
+		mail.smtp.auth="true"
+		mail.smtp.starttls.enable="true"
+		mail.user="mail@tikron.de" 
+		mail.password="********" 
+		mail.debug="false" 
+		mail.transport.protocol="smtp" 
+		username="mail@tikron.de"
+		password="********"/>
+</Context>

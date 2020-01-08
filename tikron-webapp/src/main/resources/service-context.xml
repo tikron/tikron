@@ -6,11 +6,11 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-					http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+					http://www.springframework.org/schema/beans/spring-beans.xsd
 					http://www.springframework.org/schema/context
-					http://www.springframework.org/schema/context/spring-context-4.3.xsd
+					http://www.springframework.org/schema/context/spring-context.xsd
 					http://www.springframework.org/schema/tx 
-					http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+					http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
 	<!-- Bean providing access to message resource boundles -->
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -39,11 +39,11 @@
 	</bean>
 	
 	<bean id="imageService" class="de.tikron.webapp.service.common.ImageServiceImpl">
-		<property name="imageServerUrl" value="${imageServerUrl}"></property>
+		<constructor-arg value="${imageServerUrl}" />
 	</bean>
 	
 	<bean id="fileArchiveService" class="de.tikron.webapp.service.common.FileArchiveServiceImpl">
-		<property name="archiveUrl" value="${fileArchiveUrl}"></property>
+		<constructor-arg value="${fileArchiveUrl}" />
 	</bean>
 	
 	<bean id="geoLocationService" class="de.tikron.webapp.service.common.GeoLocationServiceMaxMindImpl" />

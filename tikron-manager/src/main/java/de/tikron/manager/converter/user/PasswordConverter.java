@@ -5,14 +5,19 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @FacesConverter("passwordConverter")
 public class PasswordConverter implements Converter {
 
 	public static final String SUBSTITUTION = "********";
 
-	private static ShaPasswordEncoder passwordEncoder = new ShaPasswordEncoder();
+	private static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	
+	public static void main(String[] args) {
+		System.out.println("[" + passwordEncoder.encode("Eopl12Muke") + "]");
+	}
 
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
@@ -20,7 +25,7 @@ public class PasswordConverter implements Converter {
 			return null;
 		else if (value.equals(SUBSTITUTION))
 			return value;
-		return passwordEncoder.encodePassword(value, null);
+		return passwordEncoder.encode(value);
 	}
 
 	@Override

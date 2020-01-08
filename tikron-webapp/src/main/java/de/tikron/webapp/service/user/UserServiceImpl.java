@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.SERIALIZABLE)
 	// Using isolation level SERIALIZABLE can cause concurrent locks. Performance problems are the consequence on high traffic.
-	// An alternative is to handle "find or insert" on database level by a stored procedure.
+	// TODO An alternative is to handle "find or insert" on database level by a stored procedure.
 	public User initGuestUser(String name) {
 		return userDao.findOrCreate(name);
 	}

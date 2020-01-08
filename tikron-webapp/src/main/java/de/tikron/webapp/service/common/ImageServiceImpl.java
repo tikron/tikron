@@ -9,13 +9,13 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -32,8 +32,18 @@ public class ImageServiceImpl implements ImageService {
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
 
-	private URL imageServerUrl;
+	private final URL imageServerUrl;
 	
+	public ImageServiceImpl(URL imageServerUrl) {
+		Objects.requireNonNull(imageServerUrl, "Constructor argument imageServerUrl must not be null");
+		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
+		try {
+			this.imageServerUrl = new URL(imageServerUrl.getProtocol(), imageServerUrl.getHost(), imageServerUrl.getPort(), "");
+		} catch (MalformedURLException e) {
+			throw new IllegalArgumentException("Invalid image server URL: " + imageServerUrl.toString(), e);
+		}
+	}
+
 	@PostConstruct
 	public void init() {
 		logger.info(MessageFormat.format("Image service initialized with server URL [{0}].", this.imageServerUrl));
@@ -87,15 +97,4 @@ public class ImageServiceImpl implements ImageService {
 		uriBuilder.queryParam("template", template);
 		return uriBuilder.build().toUri();
 	}
-
-	@Required
-	public void setImageServerUrl(URL url) {
-		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
-		try {
-			this.imageServerUrl = new URL(url.getProtocol(), url.getHost(), url.getPort(), "");
-		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException("Invalid image server URL: " + url.toString(), e);
-		}
-	}
-
 }

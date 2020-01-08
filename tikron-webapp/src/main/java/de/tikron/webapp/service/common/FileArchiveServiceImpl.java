@@ -6,12 +6,12 @@ package de.tikron.webapp.service.common;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 
 /**
@@ -25,8 +25,18 @@ public class FileArchiveServiceImpl implements FileArchiveService {
 
 	private static Logger logger = LogManager.getLogger();
 
-	private URL archiveUrl;
+	private final URL archiveUrl;
 	
+	public FileArchiveServiceImpl(URL archiveUrl) {
+		Objects.requireNonNull(archiveUrl, "Constructor argument archiveUrl must not be null");
+		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
+		try {
+			this.archiveUrl = new URL(archiveUrl.getProtocol(), archiveUrl.getHost(), archiveUrl.getPort(), "");
+		} catch (MalformedURLException e) {
+			throw new IllegalArgumentException("Invalid file archive URL: " + archiveUrl.toString(), e);
+		}
+	}
+
 	@PostConstruct
 	public void init() {
 		logger.info(MessageFormat.format("File archive service initialized with URL [{0}].", this.archiveUrl));
@@ -56,15 +66,4 @@ public class FileArchiveServiceImpl implements FileArchiveService {
 			return archiveUrl;
 		}
 	}
-
-	@Required
-	public void setArchiveUrl(URL url) {
-		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
-		try {
-			this.archiveUrl = new URL(url.getProtocol(), url.getHost(), url.getPort(), "");
-		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException("Invalid file archive URL: " + url.toString(), e);
-		}
-	}
-
 }

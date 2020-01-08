@@ -10,7 +10,7 @@ import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.hibernate.jpa.QueryHints;
+import org.hibernate.graph.GraphSemantic;
 
 import de.tikron.persistence.model.user.User;
 import de.tikru.commons.jpa.dao.GenericJpaDao;
@@ -34,7 +34,7 @@ public class UserDaoJpaImpl extends GenericJpaDao<User, Long> implements UserDao
 	public User findByIdFetchRoles(Long id) {
 		final EntityGraph<?> entityGraph = entityManager.getEntityGraph(User.NEG_ROLES);
 		Map<String, Object> hints = new HashMap<String, Object>();
-		hints.put(QueryHints.HINT_FETCHGRAPH, entityGraph);
+		hints.put(GraphSemantic.FETCH.getJpaHintName(), entityGraph);
 		return entityManager.find(User.class, id, hints);
 	}
 
@@ -49,7 +49,7 @@ public class UserDaoJpaImpl extends GenericJpaDao<User, Long> implements UserDao
 	public User findByNameFetchRoles(String name) {
 		TypedQuery<User> query = entityManager.createNamedQuery(User.NQ_FIND_BY_NAME, User.class);
 		query.setParameter("name", name);
-		query.setHint(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(User.NEG_ROLES));
+		query.setHint(GraphSemantic.FETCH.getJpaHintName(), entityManager.getEntityGraph(User.NEG_ROLES));
 		return singleResultOrNull(query);
 	}
 	

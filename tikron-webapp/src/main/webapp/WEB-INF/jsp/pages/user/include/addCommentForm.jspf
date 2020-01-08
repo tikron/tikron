@@ -8,7 +8,7 @@
 <spring:message code="addComment.label.text" var="msgLabelText" />
 <h2><spring:message code="addComment.header" /></h2>
 <c:url var="addCommentUrl" value="/addComment.json" />
-<form:form modelAttribute="comment" action="${addCommentUrl}" id="comments" class="clear ajax orange">
+<form:form action="${addCommentUrl}" modelAttribute="comment" id="comments" class="clear ajax orange">
 	<form:hidden path="relatedEntityType" />
 	<form:hidden path="relatedEntityId" />
 	<ul class="globalMsg"><form:errors element="li" cssClass="error"/></ul>

@@ -4,10 +4,8 @@
 package de.tikron.galleryimport;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -17,14 +15,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.cyberneko.html.parsers.DOMParser;
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.input.DOMBuilder;
-import org.xml.sax.SAXException;
 
 import de.tikron.persistence.dao.gallery.GalleryDaoFactory;
 import de.tikron.persistence.model.gallery.Category;
@@ -124,85 +116,6 @@ public class GalleryImport {
 		} else {
 			log.info("Usage: java GalleryImport <URL to pictures directory> <category name> <database host> <schema> <user> <password>");
 			return;
-		}
-	}
-
-	/**
-	 * Interpretiert die Index-Page der Web-Fotogallerie.
-	 * 
-	 * @param indexFileName Pfadname des HTML-Index-Dokuments.
-	 * @return Map aus Bildern und deren eindeutigen Namen.
-	 * @throws IOException Fehler beim Lesen der Datei.
-	 * @throws SAXException Fehler beim Interpretieren der Datei.
-	 */
-	@SuppressWarnings({ "unchecked", "unused" })
-	private static Map<String, BufferedPicture> parseIndexPage(String indexFileName) throws IOException, SAXException {
-		Map<String, BufferedPicture> pictureBuffer = new TreeMap<String, BufferedPicture>();
-		DOMParser parser = new DOMParser();
-		parser.parse(indexFileName);
-		DOMBuilder builder = new DOMBuilder();
-		Document doc = builder.build(parser.getDocument());
-		Element root = doc.getRootElement();
-		Element body = root.getChild("BODY");
-		if (body != null) {
-			Element table = body.getChild("TABLE");
-			if (table != null) {
-				List<Element> rows = table.getChildren("TR");
-				for (Element row : rows) {
-					List<Element> columns = row.getChildren("TD");
-					for (Element column : columns) {
-						Element a = column.getChild("A");
-						if (a != null) {
-							String href = a.getAttributeValue("href");
-							if (href != null) {
-								String name = getName(href);
-								BufferedPicture picture = new BufferedPicture(name);
-								String subPageFileName = getPathName(indexFileName) + File.separator
-										+ href.replace("/", File.separator);
-								parseSubPage(subPageFileName, picture);
-								Element img = a.getChild("IMG");
-								if (img != null) {
-									// picture.setThumbnailName(getFileName(img.getAttributeValue("src")));
-									// picture.setThumbnailHeight(new Integer(img.getAttributeValue("height")));
-									// picture.setThumbnailWidth(new Integer(img.getAttributeValue("width")));
-								}
-								pictureBuffer.put(name, picture);
-							}
-						}
-					}
-				}
-			}
-		}
-		return pictureBuffer;
-	}
-
-	/**
-	 * Interpretiert eine SubPage der Web-Photogallerie.
-	 * 
-	 * @param subPageFileName Pfadname des HTML-Dokuments.
-	 * @param picture Bild, in das die extrahierten Daten gespeichert werden.
-	 * @throws IOException Fehler beim Lesen der Datei.
-	 * @throws SAXException Fehler beim Interpretieren der Datei.
-	 */
-	private static void parseSubPage(String subPageFileName, BufferedPicture picture) throws IOException, SAXException {
-		DOMParser parser = new DOMParser();
-		parser.parse(subPageFileName);
-		DOMBuilder builder = new DOMBuilder();
-		Document doc = builder.build(parser.getDocument());
-		Element root = doc.getRootElement();
-		Element body = root.getChild("BODY");
-		if (body != null) {
-			Element img = body.getChild("IMG");
-			if (img != null) {
-				picture.setImageName(getFileName(img.getAttributeValue("src")));
-				// picture.setImageHeight(new Integer(img.getAttributeValue("height")));
-				// picture.setImageWidth(new Integer(img.getAttributeValue("width")));
-				picture.setTitle(img.getAttributeValue("alt"));
-			}
-			Element p = body.getChild("P");
-			if (p != null) {
-				picture.setDescription(StringUtils.stripToNull(p.getText()));
-			}
 		}
 	}
 
@@ -387,16 +300,6 @@ public class GalleryImport {
 	 */
 	private static String getFileName(String path) {
 		return new File(path).getName();
-	}
-
-	/**
-	 * Extrahiert aus einem Pfadnamen den Verzeichnisnamen.
-	 * 
-	 * @param path Der Pfadname.
-	 * @return Der Verzeichnisname.
-	 */
-	private static String getPathName(String path) {
-		return new File(path).getParent();
 	}
 
 	/**

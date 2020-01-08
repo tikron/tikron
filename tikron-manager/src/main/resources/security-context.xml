@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Spring security configuration file. -->
-<beans:beans
-	xmlns="http://www.springframework.org/schema/security"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http>
 		<intercept-url pattern="/pages/common/**" access="isAuthenticated()" />
 		<intercept-url pattern="/pages/gallery/**" access="isAuthenticated()" />
 		<intercept-url pattern="/pages/user/**" access="isAuthenticated()" />
-		<intercept-url pattern="/pages/**" access="permitAll"/>
-		<intercept-url pattern="/**" access="permitAll"/>
-		<form-login login-page="/pages/login.html"/>
+		<intercept-url pattern="/pages/**" access="permitAll" />
+		<intercept-url pattern="/**" access="permitAll" />
+		<form-login login-page="/pages/login.html" />
 		<logout logout-url="/pages/logout.html" logout-success-url="/pages/logoutSuccess.html"></logout>
-		<csrf disabled="true"/>
+		<csrf disabled="true" />
 	</http>
-    
-    <authentication-manager>
+
+	<authentication-manager>
 		<authentication-provider user-service-ref="userDetailsService">
-			<password-encoder hash="sha" />
+			<password-encoder ref="passwordEncoder" />
 		</authentication-provider>
-    </authentication-manager> 
-    
-    <global-method-security pre-post-annotations="enabled"/>
+	</authentication-manager>
+
+	<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+
+	<global-method-security pre-post-annotations="enabled" />
 </beans:beans>

@@ -3,7 +3,6 @@
  */
 package de.tikron.webapp.util;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -63,12 +62,7 @@ public class URIBuilder {
 		for (URIBuilder.NameValuePair parameter : parameters) {
 			uriBuilder = uriBuilder.queryParam(parameter.getName(), parameter.getValue());
 		}
-		try {
-			return uriBuilder.build().encode("UTF-8").toUriString();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		return "";
+		return uriBuilder.build().encode().toUriString();
 	}
 
 	public static class NameValuePair {
