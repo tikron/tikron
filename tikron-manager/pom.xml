@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.tikron</groupId>
 		<artifactId>tikron</artifactId>
-		<version>2.0.1-SNAPSHOT</version>
+		<version>3.0</version>
 		<relativePath>../tikron</relativePath>
 	</parent>
 	<artifactId>tikron-manager</artifactId>
@@ -90,17 +90,27 @@
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
-			<version>1.2.1</version>
+			<version>1.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-web</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<!-- BEGIN: JEP 320: Remove the Java EE and CORBA Modules -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+		</dependency>
+		<!-- END -->
 		<!-- Required for EmptyToNullStringELResolver -->
 		<dependency>
 			<groupId>javax.el</groupId>
@@ -123,22 +133,22 @@
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
-			<version>2.0.1-SNAPSHOT</version>
+			<version>3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-faces</artifactId>
-			<version>2.0.1-SNAPSHOT</version>
+			<version>3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-spring</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
+			<version>3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.ibase</groupId>
 			<artifactId>ibase-client</artifactId>
-			<version>1.1</version>
+			<version>3.0</version>
 		</dependency>
 	</dependencies>
 </project>

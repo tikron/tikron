@@ -25,7 +25,7 @@
 				<a class="arrow contact-email" title="<spring:message code='sendContactMessage.email.link.description'/>" href="#0" rel="nofollow"></a>
 			</section>
 			<div id="contentMain">
-				<form:form commandName="contactMessage" action="${sendContactMessageUrl}" id="contact" class="clear ajax orange">
+				<form:form action="${sendContactMessageUrl}" modelAttribute="contactMessage" id="contact" class="clear ajax orange">
 					<ul class="globalMsg"><form:errors element="li" cssClass="error"/></ul>
 					<fieldset>
 						<div class="row inner form-control" id="name">

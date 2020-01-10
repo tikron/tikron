@@ -8,13 +8,12 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.apache.commons.io.IOUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 
 import de.tikron.ibase.client.IBaseClient;
@@ -29,13 +28,17 @@ import de.tikron.ibase.client.IBaseClientException;
 @Service("imageService")
 public class ImageServiceIBaseImpl implements ImageService {
 
-	private String serverPath;
+	private final String serverPath;
 
 	private String serverUser;
 
 	private String serverPassword;
 
 	private IBaseClient iBaseClient;
+
+	public ImageServiceIBaseImpl(String serverPath) {
+		this.serverPath = Objects.requireNonNull(serverPath, "Constructor argument serverPath must not be null");
+	}
 
 	@PostConstruct
 	public void init() throws URISyntaxException {
@@ -138,19 +141,19 @@ public class ImageServiceIBaseImpl implements ImageService {
 		return success;
 	}
 
-	@Required
-	public void setServerPath(String serverPath) {
-		this.serverPath = serverPath;
+	public String getServerUser() {
+		return serverUser;
 	}
 
-	@Autowired
 	public void setServerUser(String serverUser) {
 		this.serverUser = serverUser;
 	}
 
-	@Autowired
+	public String getServerPassword() {
+		return serverPassword;
+	}
+
 	public void setServerPassword(String serverPassword) {
 		this.serverPassword = serverPassword;
 	}
-
 }

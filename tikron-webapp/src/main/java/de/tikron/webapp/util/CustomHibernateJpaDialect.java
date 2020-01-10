@@ -20,11 +20,14 @@ import org.springframework.transaction.TransactionException;
  * Custom JpaDialect to enable setting an insolation level per transaction.
  * 
  * @see http://www.byteslounge.com/tutorials/spring-change-transaction-isolation-level-example
+ * 
+ * @deprecated Because DataSourceUtils.resetConnectionAfterTransaction() is deprecated and I got currently not enough time to find a better solution. (17.12.2019)
  *
  * @date 29.03.2015
  * @author Gonçalo Marques
  * @author Titus Kruse
  */
+@Deprecated
 public class CustomHibernateJpaDialect extends HibernateJpaDialect {
 
 	private static final long serialVersionUID = -7932460697048485486L;

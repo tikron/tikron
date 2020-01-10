@@ -30,12 +30,12 @@ public class CaptchaEngine extends ListImageCaptchaEngine {
 	@Override
 	protected void buildInitialFactories() {
 		WordGenerator wordGenerator = new RandomWordGenerator("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-		TextPaster textPaster = new RandomTextPaster(new Integer(5), new Integer(5), new Color(0xcc, 0xcc, 0xcc));
+		TextPaster textPaster = new RandomTextPaster(5, 5, new Color(0xcc, 0xcc, 0xcc));
 
-		BackgroundGenerator backgroundGenerator = new GradientBackgroundGenerator(new Integer(225), new Integer(50),
+		BackgroundGenerator backgroundGenerator = new GradientBackgroundGenerator(225, 50,
 				new SingleColorGenerator(new Color(0x80, 0x80, 0x80)), new SingleColorGenerator(new Color(0x30, 0x30, 0x30)));
 
-		FontGenerator fontGenerator = new RandomFontGenerator(new Integer(20), new Integer(20));
+		FontGenerator fontGenerator = new RandomFontGenerator(20, 20);
 
 		WordToImage wordToImage = new ComposedWordToImage(fontGenerator, backgroundGenerator, textPaster);
 		this.addFactory(new GimpyFactory(wordGenerator, wordToImage));

@@ -7,9 +7,9 @@
 		xmlns:aop="http://www.springframework.org/schema/aop"
 		xmlns:tx="http://www.springframework.org/schema/tx"
 		xsi:schemaLocation="
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 <!-- 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" /> -->
 
@@ -19,9 +19,10 @@
 		<property name="persistenceUnitName" value="tikron-persistence" />
 		<property name="dataSource" ref="dataSource" />
 		<!-- Using an enhanced JPA dialect to enable setting an isolation level per transaction -->
-		<property name="jpaDialect">
-    		<bean class="de.tikron.webapp.util.CustomHibernateJpaDialect" />
-  		</property>
+		<!-- Dont know if this is still required (17.12.2019) -->
+<!-- 		<property name="jpaDialect"> -->
+<!--     		<bean class="de.tikron.webapp.util.CustomHibernateJpaDialect" /> -->
+<!--   		</property> -->
 		<property name="jpaVendorAdapter">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
 				<property name="database" value="MYSQL" />

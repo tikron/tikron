@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
 	<Appenders>
-		<RollingFile name="de.tikron.webapp.service.user.UserActionAppender" fileName="${sys:catalina.base}/logs/useraction.log" 
-			filePattern="${sys:catalina.base}/logs/useraction-%d{yyyy-MM-dd}-%i.log" append="true">
+		<File name="de.tikron.webapp.service.user.UserActionAppender" fileName="${sys:catalina.base}/logs/useraction.log">
 			<PatternLayout pattern="%d %p: %m%n" />
-			<Policies>
-<!-- 				<OnStartupTriggeringPolicy /> -->
-				<SizeBasedTriggeringPolicy size="1 MB"/>
-			</Policies>
-			<DefaultRolloverStrategy max="10"/>
-		</RollingFile>
+		</File>
 		<Console name="STDOUT" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d %C %M%n%p: %m%n" />
 		</Console>

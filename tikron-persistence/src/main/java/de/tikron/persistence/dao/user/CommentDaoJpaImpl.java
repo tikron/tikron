@@ -10,7 +10,7 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.hibernate.jpa.QueryHints;
+import org.hibernate.graph.GraphSemantic;
 
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
@@ -49,9 +49,9 @@ public class CommentDaoJpaImpl extends GenericJpaDao<Comment, Long> implements C
 	@Override
 	public Comment findByIdFetchUserAndCommented(Long id) {
 		Map<String, Object> hints = new HashMap<String, Object>();
-		hints.put(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(Comment.NEG_USER));
-		hints.put(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(ClipComment.NEG_CLIP));
-		hints.put(QueryHints.HINT_FETCHGRAPH, entityManager.getEntityGraph(PictureComment.NEG_PICTURE));
+		hints.put(GraphSemantic.FETCH.getJpaHintName(), entityManager.getEntityGraph(Comment.NEG_USER));
+		hints.put(GraphSemantic.FETCH.getJpaHintName(), entityManager.getEntityGraph(ClipComment.NEG_CLIP));
+		hints.put(GraphSemantic.FETCH.getJpaHintName(), entityManager.getEntityGraph(PictureComment.NEG_PICTURE));
 		return entityManager.find(Comment.class, id, hints);
 	}
 
