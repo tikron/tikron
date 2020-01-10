@@ -27,6 +27,7 @@ import de.tikron.persistence.model.gallery.Picture;
  * 
  * @date 26.09.2008
  * @author Titus Kruse
+ * @version 3.0
  */
 public class GalleryImport {
 
@@ -48,7 +49,7 @@ public class GalleryImport {
 	 * @param args Programmparameter.
 	 */
 	public static void main(String[] args) throws Exception {
-		log.info("Gallery-Import Version 1.2");
+		log.info("Gallery-Import Version 3.0");
 		if (args.length >= 5) {
 			try {
 				// Parameter übersetzen

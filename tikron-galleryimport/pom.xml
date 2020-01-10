@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>de.tikron</groupId>
 		<artifactId>tikron</artifactId>
-		<version>2.0.1-SNAPSHOT</version>
+		<version>3.0</version>
 		<relativePath>../tikron</relativePath>
 	</parent>
 	<artifactId>tikron-galleryimport</artifactId>
@@ -65,12 +65,11 @@
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
-			<version>2.0.1-SNAPSHOT</version>
+			<version>3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-util</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
