@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<comment>Configuration Tikron Web Application 2.0 (Development)</comment>
-	<entry key="imageServerUrl">http://images.tikron/</entry>
-	<entry key="fileArchiveUrl">http://tikron/</entry>
+	<comment>Configuration Tikron Web Application (Development)</comment>
+	<entry key="imageServerUrl">http://images.tikron.tikru.home.arpa/</entry>
+	<entry key="fileArchiveUrl">http://tikron.tikru.home.arpa/</entry>
 	<entry key="mail.enabled">true</entry>
 	<entry key="mail.template.from">mail@tikron.de</entry>
 	<entry key="mail.template.to">mail@tikron.de</entry>

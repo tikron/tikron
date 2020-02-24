@@ -21,6 +21,12 @@
 				<property name="showSql" value="false" />
 			</bean>
 		</property>
+		<property name="jpaProperties">
+			<props>
+				<!-- Property in persistence.xml not recognized. So defining here again. -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+			</props>
+		</property>
 	</bean>
 
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">

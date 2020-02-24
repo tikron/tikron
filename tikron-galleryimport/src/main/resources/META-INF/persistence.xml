@@ -16,9 +16,9 @@
 		<class>de.tikron.persistence.model.user.Role</class>
 		
 		<properties>
-			<!-- Connection to MYSQL database with InnoDB dialect-->
+			<!-- Connection to MYSQL database -->
 			<!-- DB credentials will be set programatically -->			
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 	
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 		

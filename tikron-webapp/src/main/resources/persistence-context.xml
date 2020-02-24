@@ -28,7 +28,13 @@
 				<property name="database" value="MYSQL" />
 			</bean>
 		</property>
-	</bean>
+		<property name="jpaProperties">
+			<props>
+				<!-- Property in persistence.xml not recognized. So defining here again. -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+			</props>
+		</property>
+    </bean>
 
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="java:comp/env/jdbc/tikron" />

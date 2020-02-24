@@ -4,10 +4,11 @@
 		version="2.1">
 	<persistence-unit name="tikron-persistence" transaction-type="RESOURCE_LOCAL">
 		<!-- Entities located in external project tikron-persistence -->
-		<jar-file>/WEB-INF/lib/tikron-persistence-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>/WEB-INF/lib/tikron-persistence-3.0.jar</jar-file>
 		<!-- Enable JPA 2 second level cache -->
 		<shared-cache-mode>ALL</shared-cache-mode>
 		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 			<property name="hibernate.hbm2ddl.auto" value="validate" />
 			<property name="hibernate.cache.use_second_level_cache" value="true" />
 			<property name="hibernate.cache.use_query_cache" value="true" /><!-- (Not) Disabled because of LazyInitializationException with fetch graphs -->
