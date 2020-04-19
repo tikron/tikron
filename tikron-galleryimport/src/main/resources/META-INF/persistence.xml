@@ -20,7 +20,7 @@
 			<!-- DB credentials will be set programatically -->			
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 	
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
 		
 			<!-- Validate database schema definition -->
 			<property name="hibernate.hbm2ddl.auto" value="validate" />
