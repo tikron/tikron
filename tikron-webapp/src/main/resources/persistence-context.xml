@@ -4,34 +4,40 @@
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context"
 		xmlns:tx="http://www.springframework.org/schema/tx"
 		xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- Source: https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-persistence-simple -->
 
-<!-- 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" /> -->
+<!-- Moved to application-context.xml -->		
+<!-- 	<context:property-placeholder location="classpath:persistence.properties"/> -->
 
-	<!-- http://piotrnowicki.com/2012/11/types-of-entitymanagers-application-managed-entitymanager/ -->
-	<!-- http://www.byteslounge.com/tutorials/spring-change-transaction-isolation-level-example -->
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="tikron-persistence" />
 		<property name="dataSource" ref="dataSource" />
-		<!-- Using an enhanced JPA dialect to enable setting an isolation level per transaction -->
-		<!-- Dont know if this is still required (17.12.2019) -->
-<!-- 		<property name="jpaDialect"> -->
-<!--     		<bean class="de.tikron.webapp.util.CustomHibernateJpaDialect" /> -->
-<!--   		</property> -->
+		<property name="packagesToScan" value="de.tikron.persistence.model, de.tikru.commons.jpa.domain"/>
 		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="database" value="MYSQL" />
-			</bean>
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
 		</property>
 		<property name="jpaProperties">
 			<props>
-				<!-- Property in persistence.xml not recognized. So defining here again. -->
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<!-- Workaround : Schema-validation: missing table [hibernate_sequence] -->
+				<!-- Hibernate 5 picks TABLE sequence generator instead of IDENTITY. So schema validation on application startup fails, because missing sequence database table. -->
+<!-- 				https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.3/html/Migration_Guide/Preserve_the_Existing_Behavior_of_the_Hibernate_Identity_Auto_Generated_Value1.html -->
+				<prop key="hibernate.id.new_generator_mappings">false</prop>
+				<!-- Logging (see https://stackoverflow.com/questions/2536829/hibernate-show-real-sql)-->
+				<prop key="show_sql">${hibernate.show_sql}</prop>
+				<prop key="format_sql">${hibernate.format_sql}</prop>
+				<prop key="use_sql_comments">${hibernate.use_sql_comments}</prop>
+				<!-- Caching -->
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
 			</props>
 		</property>
     </bean>
@@ -40,17 +46,13 @@
 		<property name="jndiName" value="java:comp/env/jdbc/tikron" />
 	</bean>
 
-	<!-- 
-	<bean id="jpaTemplate" class="org.springframework.orm.jpa.JpaTemplate">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-	 -->
-
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	<tx:annotation-driven />
+	
+	<bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 	
 	<!-- Generic data access helper -->
 	<bean id="dataAccessHelper" class="de.tikru.commons.jpa.dao.DataAccessHelper" />
