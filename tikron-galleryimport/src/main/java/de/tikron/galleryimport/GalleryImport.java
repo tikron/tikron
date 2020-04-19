@@ -37,7 +37,7 @@ public class GalleryImport {
 	private static int picturesUpdated = 0;
 	private static int picturesRemoved = 0;
 
-	private static final String PERSISTENCE_UNIT_NAME = "tikron-data";
+	private static final String PERSISTENCE_UNIT_NAME = "tikron-persistence";
 
 	private static EntityManagerFactory entityManagerFactory;
 	private static EntityManager entityManager;
