@@ -6,10 +6,10 @@
 	<Manager pathname="" />
 	
 	<!-- ibase -->
-	<!-- Configure image archive location (Windows) -->
-	<Parameter name="ibaseArchiveLocation" value="C:/Users/Titus/AppData/Local/ibase/"/>
-	<!-- Configure image archive location (Linux) -->
+	<!-- Configure image archive location (Prod) -->
 	<Parameter name="ibaseArchiveLocation" value="/var/opt/ibase/"/>
+	<!-- Configure image archive location (Dev) -->
+	<Parameter name="ibaseArchiveLocation" value="/home/titus/ibase/"/>
 	<!-- Unsharp scaled images fo better quality-->
 	<Parameter name="ibaseConverterScaleUnsharped" value="true"/>
     

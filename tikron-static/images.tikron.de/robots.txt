@@ -6,4 +6,3 @@ User-agent: Bing
 Allow: /
 User-Agent: Yahoo
 Allow: /
-Sitemap: http://images.tikron.de/sitemap.xml
