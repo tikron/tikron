@@ -14,10 +14,6 @@ public class PasswordConverter implements Converter {
 	public static final String SUBSTITUTION = "********";
 
 	private static PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-	
-	public static void main(String[] args) {
-		System.out.println("[" + passwordEncoder.encode("Eopl12Muke") + "]");
-	}
 
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
