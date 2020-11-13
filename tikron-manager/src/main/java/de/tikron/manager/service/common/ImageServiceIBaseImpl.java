@@ -8,12 +8,12 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import de.tikron.ibase.client.IBaseClient;
@@ -28,29 +28,30 @@ import de.tikron.ibase.client.IBaseClientException;
 @Service("imageService")
 public class ImageServiceIBaseImpl implements ImageService {
 	
-	private final String serverHost;
+	private String host;
 
-	private String serverUser;
+	private String user;
 
-	private String serverPassword;
+	private String password;
 
 	private IBaseClient iBaseClient;
 	
 	private String serverPath;
 
-	public ImageServiceIBaseImpl(String host) {
-		this.serverHost = Objects.requireNonNull(host, "Constructor argument host must not be null");
-	}
-
 	@PostConstruct
 	public void init() {
-		iBaseClient = new IBaseClient(serverHost);
-		if (serverUser != null) {
-			iBaseClient.setUserName(serverUser);
+		if (getHost() == null) {
+			throw new IllegalStateException("Property host must not be null.");
 		}
-		if (serverPassword != null) {
-			iBaseClient.setPassword(serverPassword);
+		// Init iBase client to access image archive
+		iBaseClient = new IBaseClient(getHost());
+		if (getUser() != null) {
+			iBaseClient.setUserName(getUser());
 		}
+		if (getPassword() != null) {
+			iBaseClient.setPassword(getPassword());
+		}
+		// Build server path for access in view layer
 		try {
 			serverPath = new URL("https", iBaseClient.getHost(), iBaseClient.getPort(), iBaseClient.getContextPath()).toString();
 		} catch (MalformedURLException e) {
@@ -148,19 +149,30 @@ public class ImageServiceIBaseImpl implements ImageService {
 		return success;
 	}
 
-	public String getServerUser() {
-		return serverUser;
+	public String getHost() {
+		return host;
 	}
 
-	public void setServerUser(String serverUser) {
-		this.serverUser = serverUser;
+	@Value("${image-server.host}")
+	public void setHost(String host) {
+		this.host = host;
 	}
 
-	public String getServerPassword() {
-		return serverPassword;
+	public String getUser() {
+		return user;
 	}
 
-	public void setServerPassword(String serverPassword) {
-		this.serverPassword = serverPassword;
+	@Value("${image-server.user}")
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	@Value("${image-server.password}")
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

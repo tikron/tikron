@@ -9,13 +9,13 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -32,19 +32,23 @@ public class ImageServiceImpl implements ImageService {
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
 	
-	private final String host;
-	
-	public ImageServiceImpl(String host) {
-		this.host = Objects.requireNonNull(host, "Constructor argument host must not be null");;
-	}
+	private String host;
 
 	@PostConstruct
 	public void init() {
-		logger.info(MessageFormat.format("Image service initialized with host [{0}].", getHost()));
+		if (getHost() == null) {
+			throw new IllegalStateException("Property host must not be null.");
+		}
+		logger.info(MessageFormat.format("Initialized Image Service with host [{0}].", getHost()));
 	}
 
 	public String getHost() {
 		return host;
+	}
+
+	@Value("${images.host}")
+	public void setHost(String host) {
+		this.host = host;
 	}
 
 	@Override

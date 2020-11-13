@@ -19,9 +19,9 @@
 	</bean>
 
 	<bean id="mailService" class="de.tikru.commons.spring.MailServiceImpl">
-		<constructor-arg ref="mailSender" />
-		<constructor-arg value="${mail.template.from}" />
-		<constructor-arg value="${mail.template.to}" />
+		<property name="mailSender" ref="mailSender" />
+		<property name="senderEmail" value="${mail.template.from}" />
+		<property name="recipientEmail" value="${mail.template.to}" />
 		<property name="enabled" value="${mail.enabled:true}" />
 	</bean>
 </beans>

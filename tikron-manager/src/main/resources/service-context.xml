@@ -10,12 +10,8 @@
 	<!-- scan for service beans -->
 	<context:component-scan base-package="de.tikron.manager.service" />
 	
-	<!-- Configure image service with iBase adapter -->
-	<bean id="imageService" class="de.tikron.manager.service.common.ImageServiceIBaseImpl">
-		<constructor-arg value="${image-server.host}" />
-		<property name="serverUser" value="${image-server.user}" />
-		<property name="serverPassword" value="${image-server.password}" />
-	</bean>
+	<!-- Configure image service with iBase adapter. Properties are set by annotations. -->
+	<bean id="imageService" class="de.tikron.manager.service.common.ImageServiceIBaseImpl" />
 
 </beans>
 
