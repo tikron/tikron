@@ -39,11 +39,11 @@
 	</bean>
 	
 	<bean id="imageService" class="de.tikron.webapp.service.common.ImageServiceImpl">
-		<constructor-arg value="${images.url}" />
+		<constructor-arg value="${images.host}" />
 	</bean>
 	
 	<bean id="fileArchiveService" class="de.tikron.webapp.service.common.FileArchiveServiceImpl">
-		<constructor-arg value="${files.url}" />
+		<constructor-arg value="${files.host}" />
 	</bean>
 	
 	<bean id="geoLocationService" class="de.tikron.webapp.service.common.GeoLocationServiceMaxMindImpl" />

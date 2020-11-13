@@ -31,34 +31,31 @@ public class ImageServiceImpl implements ImageService {
 	private static Logger logger = LogManager.getLogger();
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
-
-	private final URL imageServerUrl;
 	
-	public ImageServiceImpl(URL imageServerUrl) {
-		Objects.requireNonNull(imageServerUrl, "Constructor argument imageServerUrl must not be null");
-		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
-		try {
-			this.imageServerUrl = new URL(imageServerUrl.getProtocol(), imageServerUrl.getHost(), imageServerUrl.getPort(), "");
-		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException("Invalid image server URL: " + imageServerUrl.toString(), e);
-		}
+	private final String host;
+	
+	public ImageServiceImpl(String host) {
+		this.host = Objects.requireNonNull(host, "Constructor argument host must not be null");;
 	}
 
 	@PostConstruct
 	public void init() {
-		logger.info(MessageFormat.format("Image service initialized with server URL [{0}].", this.imageServerUrl));
+		logger.info(MessageFormat.format("Image service initialized with host [{0}].", getHost()));
+	}
+
+	public String getHost() {
+		return host;
 	}
 
 	@Override
 	public URL getImageServerUrl() {
-		return imageServerUrl;
+		return getImageServerUrl(true);
 	}
 
 	@Override
 	public URL getImageServerUrl(boolean secure) {
 		try {
-			return new URL(secure ? "https" : "http", imageServerUrl.getHost(), imageServerUrl.getPort(),
-					imageServerUrl.getPath());
+			return new URL(secure ? "https" : "http", getHost(), "");
 		} catch (MalformedURLException e) {
 			throw new IllegalStateException(e);
 		}

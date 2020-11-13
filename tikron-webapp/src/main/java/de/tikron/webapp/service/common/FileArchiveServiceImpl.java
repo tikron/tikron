@@ -27,13 +27,12 @@ public class FileArchiveServiceImpl implements FileArchiveService {
 
 	private final URL archiveUrl;
 	
-	public FileArchiveServiceImpl(URL archiveUrl) {
-		Objects.requireNonNull(archiveUrl, "Constructor argument archiveUrl must not be null");
-		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
+	public FileArchiveServiceImpl(String host) {
+		Objects.requireNonNull(host, "Constructor argument host must not be null");
 		try {
-			this.archiveUrl = new URL(archiveUrl.getProtocol(), archiveUrl.getHost(), archiveUrl.getPort(), "");
+			this.archiveUrl = new URL("https", host, "");
 		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException("Invalid file archive URL: " + archiveUrl.toString(), e);
+			throw new IllegalArgumentException("Could not create URL from file archive host: " + host, e);
 		}
 	}
 

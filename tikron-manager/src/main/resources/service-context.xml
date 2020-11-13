@@ -12,7 +12,7 @@
 	
 	<!-- Configure image service with iBase adapter -->
 	<bean id="imageService" class="de.tikron.manager.service.common.ImageServiceIBaseImpl">
-		<constructor-arg value="${image-server.url}" />
+		<constructor-arg value="${image-server.host}" />
 		<property name="serverUser" value="${image-server.user}" />
 		<property name="serverPassword" value="${image-server.password}" />
 	</bean>

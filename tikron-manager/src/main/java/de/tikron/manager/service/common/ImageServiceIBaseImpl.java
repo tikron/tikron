@@ -6,8 +6,8 @@ package de.tikron.manager.service.common;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Objects;
 
 import javax.annotation.PostConstruct;
@@ -27,27 +27,34 @@ import de.tikron.ibase.client.IBaseClientException;
  */
 @Service("imageService")
 public class ImageServiceIBaseImpl implements ImageService {
-
-	private final String serverPath;
+	
+	private final String serverHost;
 
 	private String serverUser;
 
 	private String serverPassword;
 
 	private IBaseClient iBaseClient;
+	
+	private String serverPath;
 
-	public ImageServiceIBaseImpl(String serverPath) {
-		this.serverPath = Objects.requireNonNull(serverPath, "Constructor argument serverPath must not be null");
+	public ImageServiceIBaseImpl(String host) {
+		this.serverHost = Objects.requireNonNull(host, "Constructor argument host must not be null");
 	}
 
 	@PostConstruct
-	public void init() throws URISyntaxException {
-		iBaseClient = new IBaseClient(new URI(serverPath));
+	public void init() {
+		iBaseClient = new IBaseClient(serverHost);
 		if (serverUser != null) {
 			iBaseClient.setUserName(serverUser);
 		}
 		if (serverPassword != null) {
 			iBaseClient.setPassword(serverPassword);
+		}
+		try {
+			serverPath = new URL("https", iBaseClient.getHost(), iBaseClient.getPort(), iBaseClient.getContextPath()).toString();
+		} catch (MalformedURLException e) {
+			throw new IllegalStateException("Could not create server URL.", e);
 		}
 	}
 
