@@ -40,7 +40,7 @@ public class TrackingServiceImpl implements TrackingService {
 	 * 
 	 * @param enabled true, falls das Tracking aktiviert ist.
 	 */
-	@Value("${tracking.enabled:true}")
+	@Value("${tikron.tracking.enabled:true}")
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}

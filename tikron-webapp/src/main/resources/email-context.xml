@@ -20,8 +20,8 @@
 
 	<bean id="mailService" class="de.tikru.commons.spring.MailServiceImpl">
 		<property name="mailSender" ref="mailSender" />
-		<property name="senderEmail" value="${mail.template.from}" />
-		<property name="recipientEmail" value="${mail.template.to}" />
-		<property name="enabled" value="${mail.enabled:true}" />
+		<property name="senderEmail" value="${tikron.mail.template.from}" />
+		<property name="recipientEmail" value="${tikron.mail.template.to}" />
+		<property name="enabled" value="${tikron.mail.enabled:true}" />
 	</bean>
 </beans>

@@ -46,7 +46,7 @@ public class ImageServiceImpl implements ImageService {
 		return host;
 	}
 
-	@Value("${images.host}")
+	@Value("${tikron.images.host}")
 	public void setHost(String host) {
 		this.host = host;
 	}

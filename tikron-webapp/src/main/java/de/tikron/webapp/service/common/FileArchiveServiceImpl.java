@@ -39,7 +39,7 @@ public class FileArchiveServiceImpl implements FileArchiveService {
 		return host;
 	}
 
-	@Value("${files.host}")
+	@Value("${tikron.files.host}")
 	public void setHost(String host) {
 		this.host = host;
 	}

@@ -153,7 +153,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 		return host;
 	}
 
-	@Value("${image-server.host}")
+	@Value("${tikron.image-server.host}")
 	public void setHost(String host) {
 		this.host = host;
 	}
@@ -162,7 +162,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 		return user;
 	}
 
-	@Value("${image-server.user}")
+	@Value("${tikron.image-server.user}")
 	public void setUser(String user) {
 		this.user = user;
 	}
@@ -171,7 +171,7 @@ public class ImageServiceIBaseImpl implements ImageService {
 		return password;
 	}
 
-	@Value("${image-server.password}")
+	@Value("${tikron.image-server.password}")
 	public void setPassword(String password) {
 		this.password = password;
 	}

@@ -33,7 +33,7 @@ public class GeoLocationServiceMaxMindImpl implements GeoLocationService {
 
 	private static Logger logger = LogManager.getLogger();
 	
-	@Value("file:${geo-location.maxmind.country-db}")
+	@Value("file:${tikron.geo-location.maxmind.country-db}")
 	private Resource database;
 	
 	private DatabaseReader databaseReader;
