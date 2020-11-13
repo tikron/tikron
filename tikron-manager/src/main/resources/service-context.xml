@@ -9,9 +9,6 @@
 					
 	<!-- scan for service beans -->
 	<context:component-scan base-package="de.tikron.manager.service" />
-	
-	<!-- Configure image service with iBase adapter. Properties are set by annotations. -->
-	<bean id="imageService" class="de.tikron.manager.service.common.ImageServiceIBaseImpl" />
 
 </beans>
 
