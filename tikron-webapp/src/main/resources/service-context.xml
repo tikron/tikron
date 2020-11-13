@@ -35,15 +35,15 @@
 	
 	<!-- Configure service bean properties -->
 	<bean id="trackingService" class="de.tikron.webapp.service.common.TrackingServiceImpl">
-		<property name="enabled" value="${trackingEnabled:true}"></property>
+		<property name="enabled" value="${tracking.enabled:true}"></property>
 	</bean>
 	
 	<bean id="imageService" class="de.tikron.webapp.service.common.ImageServiceImpl">
-		<constructor-arg value="${imageServerUrl}" />
+		<constructor-arg value="${images.url}" />
 	</bean>
 	
 	<bean id="fileArchiveService" class="de.tikron.webapp.service.common.FileArchiveServiceImpl">
-		<constructor-arg value="${fileArchiveUrl}" />
+		<constructor-arg value="${files.url}" />
 	</bean>
 	
 	<bean id="geoLocationService" class="de.tikron.webapp.service.common.GeoLocationServiceMaxMindImpl" />
