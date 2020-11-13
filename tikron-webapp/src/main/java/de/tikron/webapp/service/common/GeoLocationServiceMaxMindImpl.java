@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Service;
 
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.AddressNotFoundException;
@@ -27,11 +28,12 @@ import com.maxmind.geoip2.record.Country;
  * @date 29.03.2019
  * @author Titus Kruse
  */
+@Service("geoLocationService")
 public class GeoLocationServiceMaxMindImpl implements GeoLocationService {
 
 	private static Logger logger = LogManager.getLogger();
 	
-	@Value("classpath:GeoLite2-Country.mmdb")
+	@Value("file:${geo-location.maxmind.country-db}")
 	private Resource database;
 	
 	private DatabaseReader databaseReader;
@@ -40,7 +42,7 @@ public class GeoLocationServiceMaxMindImpl implements GeoLocationService {
 	private void init() throws IOException {
 		Objects.requireNonNull(database, "Resource Geo IP database must not be null.");
 		databaseReader = new DatabaseReader.Builder(database.getInputStream()).build();
-		logger.info("Geo location service initialized with database [{}].", database);
+		logger.info("Initialized MaxMind Geo Location Service with database [{}].", database);
 	}
 
 	@Override
