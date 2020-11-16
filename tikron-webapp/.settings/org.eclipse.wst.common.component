@@ -47,16 +47,16 @@
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources-prod"/>
-        <dependent-module archiveName="tikron-persistence-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikron-persistence/tikron-persistence">
+        <dependent-module archiveName="tikron-persistence-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikron-persistence/tikron-persistence">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="tikru-commons-jpa-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-jpa/tikru-commons-jpa">
+        <dependent-module archiveName="tikru-commons-jpa-3.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-jpa/tikru-commons-jpa">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="tikru-commons-spring-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-spring/tikru-commons-spring">
+        <dependent-module archiveName="tikru-commons-spring-3.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-spring/tikru-commons-spring">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="tikru-commons-util-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-util/tikru-commons-util">
+        <dependent-module archiveName="tikru-commons-util-3.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-util/tikru-commons-util">
             <dependency-type>uses</dependency-type>
         </dependent-module>
                                                 

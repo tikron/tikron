@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>de.tikron</groupId>
 	<artifactId>tikron-manager</artifactId>
-	<version>3.0</version>
+	<version>3.1</version>
 	<packaging>war</packaging>
 	<name>Tikron Website Management Tool</name>
 	<build>
@@ -135,17 +135,17 @@
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
-			<version>3.0</version>
+			<version>3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-faces</artifactId>
-			<version>3.0</version>
+			<version>3.2</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-spring</artifactId>
-			<version>3.0</version>
+			<version>3.2</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.ibase</groupId>
