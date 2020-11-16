@@ -56,7 +56,7 @@
         <dependent-module archiveName="tikru-commons-util-3.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-util/tikru-commons-util">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ibase-client-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ibase-client/ibase-client">
+        <dependent-module archiveName="ibase-client-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ibase-client/ibase-client">
             <dependency-type>uses</dependency-type>
         </dependent-module>
                                                         
