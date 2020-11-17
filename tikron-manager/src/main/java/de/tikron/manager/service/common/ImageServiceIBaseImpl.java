@@ -6,14 +6,14 @@ package de.tikron.manager.service.common;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Objects;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import de.tikron.ibase.client.IBaseClient;
@@ -27,27 +27,35 @@ import de.tikron.ibase.client.IBaseClientException;
  */
 @Service("imageService")
 public class ImageServiceIBaseImpl implements ImageService {
+	
+	private String host;
 
-	private final String serverPath;
+	private String user;
 
-	private String serverUser;
-
-	private String serverPassword;
+	private String password;
 
 	private IBaseClient iBaseClient;
-
-	public ImageServiceIBaseImpl(String serverPath) {
-		this.serverPath = Objects.requireNonNull(serverPath, "Constructor argument serverPath must not be null");
-	}
+	
+	private String serverPath;
 
 	@PostConstruct
-	public void init() throws URISyntaxException {
-		iBaseClient = new IBaseClient(new URI(serverPath));
-		if (serverUser != null) {
-			iBaseClient.setUserName(serverUser);
+	public void init() {
+		if (getHost() == null) {
+			throw new IllegalStateException("Property host must not be null.");
 		}
-		if (serverPassword != null) {
-			iBaseClient.setPassword(serverPassword);
+		// Init iBase client to access image archive
+		iBaseClient = new IBaseClient(getHost());
+		if (getUser() != null) {
+			iBaseClient.setUserName(getUser());
+		}
+		if (getPassword() != null) {
+			iBaseClient.setPassword(getPassword());
+		}
+		// Build server path for access in view layer
+		try {
+			serverPath = new URL("https", iBaseClient.getHost(), iBaseClient.getPort(), iBaseClient.getContextPath()).toString();
+		} catch (MalformedURLException e) {
+			throw new IllegalStateException("Could not create server URL.", e);
 		}
 	}
 
@@ -141,19 +149,30 @@ public class ImageServiceIBaseImpl implements ImageService {
 		return success;
 	}
 
-	public String getServerUser() {
-		return serverUser;
+	public String getHost() {
+		return host;
 	}
 
-	public void setServerUser(String serverUser) {
-		this.serverUser = serverUser;
+	@Value("${tikron.image-server.host}")
+	public void setHost(String host) {
+		this.host = host;
 	}
 
-	public String getServerPassword() {
-		return serverPassword;
+	public String getUser() {
+		return user;
 	}
 
-	public void setServerPassword(String serverPassword) {
-		this.serverPassword = serverPassword;
+	@Value("${tikron.image-server.user}")
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	@Value("${tikron.image-server.password}")
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

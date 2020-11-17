@@ -33,19 +33,4 @@
 	<!--  Scan for data transfer objects -->
 	<context:component-scan base-package="de.tikron.webapp.model" />
 	
-	<!-- Configure service bean properties -->
-	<bean id="trackingService" class="de.tikron.webapp.service.common.TrackingServiceImpl">
-		<property name="enabled" value="${trackingEnabled:true}"></property>
-	</bean>
-	
-	<bean id="imageService" class="de.tikron.webapp.service.common.ImageServiceImpl">
-		<constructor-arg value="${imageServerUrl}" />
-	</bean>
-	
-	<bean id="fileArchiveService" class="de.tikron.webapp.service.common.FileArchiveServiceImpl">
-		<constructor-arg value="${fileArchiveUrl}" />
-	</bean>
-	
-	<bean id="geoLocationService" class="de.tikron.webapp.service.common.GeoLocationServiceMaxMindImpl" />
-
 </beans>

@@ -3,11 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>de.tikron</groupId>
-		<artifactId>tikron</artifactId>
-		<version>3.0</version>
-		<relativePath>../tikron</relativePath>
+		<artifactId>tikron-parent</artifactId>
+		<version>1</version>
+		<relativePath>../tikron-parent</relativePath>
 	</parent>
+	<groupId>de.tikron</groupId>
 	<artifactId>tikron-persistence</artifactId>
+	<version>3.1</version>
 	<name>Tikron Website Persistence Modul</name>
 	<build>
 		<resources>
@@ -38,7 +40,7 @@
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-jpa</artifactId>
-			<version>3.0</version>
+			<version>3.2</version>
 		</dependency>
 	</dependencies>
 </project>

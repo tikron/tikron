@@ -9,13 +9,13 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
-import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -31,34 +31,35 @@ public class ImageServiceImpl implements ImageService {
 	private static Logger logger = LogManager.getLogger();
 
 	private static final String IMAGE_SERVLET_PATH = "/ibase/getImage.jsp";
-
-	private final URL imageServerUrl;
 	
-	public ImageServiceImpl(URL imageServerUrl) {
-		Objects.requireNonNull(imageServerUrl, "Constructor argument imageServerUrl must not be null");
-		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
-		try {
-			this.imageServerUrl = new URL(imageServerUrl.getProtocol(), imageServerUrl.getHost(), imageServerUrl.getPort(), "");
-		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException("Invalid image server URL: " + imageServerUrl.toString(), e);
-		}
-	}
+	private String host;
 
 	@PostConstruct
 	public void init() {
-		logger.info(MessageFormat.format("Image service initialized with server URL [{0}].", this.imageServerUrl));
+		if (getHost() == null) {
+			throw new IllegalStateException("Property host must not be null.");
+		}
+		logger.info(MessageFormat.format("Initialized Image Service with host [{0}].", getHost()));
+	}
+
+	public String getHost() {
+		return host;
+	}
+
+	@Value("${tikron.images.host}")
+	public void setHost(String host) {
+		this.host = host;
 	}
 
 	@Override
 	public URL getImageServerUrl() {
-		return imageServerUrl;
+		return getImageServerUrl(true);
 	}
 
 	@Override
 	public URL getImageServerUrl(boolean secure) {
 		try {
-			return new URL(secure ? "https" : "http", imageServerUrl.getHost(), imageServerUrl.getPort(),
-					imageServerUrl.getPath());
+			return new URL(secure ? "https" : "http", getHost(), "");
 		} catch (MalformedURLException e) {
 			throw new IllegalStateException(e);
 		}

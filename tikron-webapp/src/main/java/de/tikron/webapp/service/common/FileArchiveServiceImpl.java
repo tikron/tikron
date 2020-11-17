@@ -6,12 +6,12 @@ package de.tikron.webapp.service.common;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
-import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,46 +24,46 @@ import org.springframework.stereotype.Service;
 public class FileArchiveServiceImpl implements FileArchiveService {
 
 	private static Logger logger = LogManager.getLogger();
-
-	private final URL archiveUrl;
 	
-	public FileArchiveServiceImpl(URL archiveUrl) {
-		Objects.requireNonNull(archiveUrl, "Constructor argument archiveUrl must not be null");
-		// Remove possible configured path from URL to simplify concatenation of server URL und file path on JSPs.
-		try {
-			this.archiveUrl = new URL(archiveUrl.getProtocol(), archiveUrl.getHost(), archiveUrl.getPort(), "");
-		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException("Invalid file archive URL: " + archiveUrl.toString(), e);
-		}
-	}
+	private String host;
 
 	@PostConstruct
 	public void init() {
-		logger.info(MessageFormat.format("File archive service initialized with URL [{0}].", this.archiveUrl));
+		if (getHost() == null) {
+			throw new IllegalStateException("Property host must not be null.");
+		}
+		logger.info(MessageFormat.format("Initialized File Archive Service with host [{0}].", getHost()));
+	}
+
+	public String getHost() {
+		return host;
+	}
+
+	@Value("${tikron.files.host}")
+	public void setHost(String host) {
+		this.host = host;
 	}
 
 	@Override
 	public URL getArchiveUrl() {
-		return archiveUrl;
+		return getArchiveUrl(true);
 	}
 
 	@Override
 	public URL getArchiveUrl(boolean secure) {
 		try {
-			return new URL(secure ? "https" : "http", archiveUrl.getHost(), archiveUrl.getPort(), archiveUrl.getPath());
+			return new URL(secure ? "https" : "http", getHost(), "");
 		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return archiveUrl;
+			throw new IllegalStateException(e);
 		}
 	}
 
 	@Override
 	public URL getFileUrl(boolean secure, String filePath) {
 		try {
-			return new URL(archiveUrl.getProtocol(), archiveUrl.getHost(), archiveUrl.getPort(), filePath);
+			return new URL(secure ? "https" : "http", getHost(), filePath);
 		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			return archiveUrl;
+			throw new IllegalStateException(e);
 		}
 	}
 }
