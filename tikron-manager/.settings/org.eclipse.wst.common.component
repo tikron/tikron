@@ -1,59 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                
+                                
+    
+    
+    
+    
     
     
     <wb-module deploy-name="webman">
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/properties"/>
-        <dependent-module archiveName="tikron-persistence-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikron-persistence/tikron-persistence">
+        <dependent-module archiveName="tikron-persistence-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikron-persistence/tikron-persistence">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="tikru-commons-jpa-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-jpa/tikru-commons-jpa">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="tikru-commons-faces-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-faces/tikru-commons-faces">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="tikru-commons-spring-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-spring/tikru-commons-spring">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="tikru-commons-util-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikru-commons-util/tikru-commons-util">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="ibase-client-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ibase-client/ibase-client">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <property name="java-output-path" value="/tikron-manager/target/classes"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <property name="context-root" value="webman"/>
-                            
+                                                            
+    
+    
+    
+    
     
     
     </wb-module>
-            
+                            
+
+
+
+
 
 
 </project-modules>

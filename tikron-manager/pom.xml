@@ -3,11 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>de.tikron</groupId>
-		<artifactId>tikron</artifactId>
-		<version>3.0</version>
-		<relativePath>../tikron</relativePath>
+		<artifactId>tikron-parent</artifactId>
+		<version>1</version>
+		<relativePath>../tikron-parent</relativePath>
 	</parent>
+	<groupId>de.tikron</groupId>
 	<artifactId>tikron-manager</artifactId>
+	<version>3.1</version>
 	<packaging>war</packaging>
 	<name>Tikron Website Management Tool</name>
 	<build>
@@ -133,22 +135,22 @@
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
-			<version>3.0</version>
+			<version>3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-faces</artifactId>
-			<version>3.0</version>
+			<version>3.2</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-spring</artifactId>
-			<version>3.0</version>
+			<version>3.2</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.ibase</groupId>
 			<artifactId>ibase-client</artifactId>
-			<version>3.0</version>
+			<version>3.1</version>
 		</dependency>
 	</dependencies>
 </project>

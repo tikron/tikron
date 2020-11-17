@@ -3,11 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>de.tikron</groupId>
-		<artifactId>tikron</artifactId>
-		<version>3.0</version>
-		<relativePath>../tikron</relativePath>
+		<artifactId>tikron-parent</artifactId>
+		<version>1</version>
+		<relativePath>../tikron-parent</relativePath>
 	</parent>
+	<groupId>de.tikron</groupId>
 	<artifactId>tikron-galleryimport</artifactId>
+	<version>3.1</version>
 	<name>Tikron Website Gallery Import Tool</name>
 	<build>
 		<finalName>galleryimport</finalName>
@@ -15,7 +17,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.1.1</version><!--$NO-MVN-MAN-VER$--><!-- https://bugs.eclipse.org/bugs/show_bug.cgi?id=346725 -->
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
@@ -35,7 +36,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -65,12 +65,12 @@
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
-			<version>3.0</version>
+			<version>3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-util</artifactId>
-			<version>3.1</version>
+			<version>3.2</version>
 		</dependency>
 	</dependencies>
 </project>

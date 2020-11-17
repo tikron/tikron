@@ -1,5 +1,5 @@
 
-Tikron:
+# Tikron
 
 - log4j logging context außerhalb der Web Apps (rolling file config soll vom admin, nicht vom developer bestimmt werden.) Siehe https://logging.apache.org/log4j/2.x/manual/logsep.html. Thema auf Umstellung auf Wildfly vertagen.
 - Subdomains images.tikron.de usw. auflösen.
@@ -8,7 +8,7 @@ Tikron:
 - Service-Layer in separates Projekt auslagern und von webapp/webman gemeinsam nutzen.
 
 
-Tikron Persistence:
+# Tikron Persistence
 
 - hibernate.dialect in JPA persistence.xml wird nicht mehr erkannt. Workaround über Spring persistence-context.xml ist doof. 
 - WARN: HHH020100: The Ehcache second-level cache provider for Hibernate is deprecated.  See https://hibernate.atlassian.net/browse/HHH-12441 for details.
@@ -22,12 +22,12 @@ Tikron Persistence:
 - Zum Laden des Menüs Projections (DTOs) verwenden. http://blog.arnoldgalovics.com/2017/03/14/using-projections-in-your-data-access-layer/ -> Geht nicht wegen OneToMany Catalog:Category.
 
 
-Tikron Manager:
+# Tikron Manager
 
 - Würde gerne von JSF auf AngualarJS umstellen.
 
 
-Tikron WebApp:
+# Tikron WebApp
 
 - Statt useraction.log in DB mittels activity table o.ä. persistieren.
 - Auf HttpRequestMethodNotSupportedException reagieren (Bsp. https://www.baeldung.com/global-error-handler-in-a-spring-rest-api)
