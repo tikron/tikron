@@ -50,9 +50,6 @@
         <dependent-module archiveName="tikron-persistence-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/tikron-persistence/tikron-persistence">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ibase-client-3.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ibase-client/ibase-client">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
                                                                 
         
         
