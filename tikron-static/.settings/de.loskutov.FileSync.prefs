@@ -1,7 +1,0 @@
-WARNING=DO NOT MODIFY THIS FILE IF YOU DON'T UNDERSTAND
-defaultDestination=C\:/Program Files (x86)/Apache/Apache24/htdocs/tikron.de
-defaultVariables=
-eclipse.preferences.version=1
-includeTeamPrivateFiles=false
-map|0=/|,|,|**/.gitignore;.project;.settings/|,
-useCurrentDateForDestinationFiles=false
