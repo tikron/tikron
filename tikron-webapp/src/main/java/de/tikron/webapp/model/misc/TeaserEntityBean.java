@@ -5,8 +5,8 @@ package de.tikron.webapp.model.misc;
 
 import java.time.LocalDateTime;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikron.persistence.model.misc.Teaser;
@@ -28,7 +28,7 @@ public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 
 	public static final String NAME = "teaserEntityBean";
 
-	private static Logger logger = LogManager.getLogger();
+	private static Logger logger = LoggerFactory.getLogger(TeaserEntityBean.class);
 	
 	private PictureDTO picture;
 	

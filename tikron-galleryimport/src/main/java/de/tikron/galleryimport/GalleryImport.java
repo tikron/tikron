@@ -15,8 +15,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.tikron.persistence.dao.gallery.GalleryDaoFactory;
 import de.tikron.persistence.model.gallery.Category;
@@ -30,7 +30,7 @@ import de.tikron.persistence.model.gallery.Picture;
  */
 public class GalleryImport {
 
-	private static Logger log = LogManager.getLogger();
+	private static Logger logger = LoggerFactory.getLogger(GalleryImport.class);
 	
 	private static final String VERSION = GalleryImport.class.getPackage().getImplementationVersion();
 
@@ -50,7 +50,7 @@ public class GalleryImport {
 	 * @param args Programmparameter.
 	 */
 	public static void main(String[] args) throws Exception {
-		log.info("Gallery-Import Version {}", VERSION);
+		logger.info("Gallery-Import Version {}", VERSION);
 		if (args.length >= 5) {
 			try {
 				// Parameter übersetzen
@@ -71,34 +71,34 @@ public class GalleryImport {
 				entityManagerProperties.put("hibernate.cache.use_second_level_cache", dbPassword);
 				entityManagerProperties.put("hibernate.cache.use_query_cache", dbPassword);
 				// JPA-EntityManager holen
-				log.info(String.format("Connecting to %s, database %s with user %s.", dbHost, dbSchema, dbUser, dbPassword));
+				logger.info(String.format("Connecting to %s, database %s with user %s.", dbHost, dbSchema, dbUser, dbPassword));
 				entityManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME, entityManagerProperties);
 				entityManager = entityManagerFactory.createEntityManager();
 				// Transaktion öffnen und Kategorie holen
 				beginTransaction();
-				log.info(String.format("Fetching category properties for %s.", categoryName));
+				logger.info(String.format("Fetching category properties for %s.", categoryName));
 				Category category = getCategory(categoryName);
 				if (category != null) {
 					// log.info(String.format("Parsing HTML-Document \"%s.\"", indexFileName);
 					// Map<String, BufferedPicture> pictureBuffer = parseIndexPage(indexFileName);
-					log.info(String.format("Scanning directory \"%s\".", directoryPath));
+					logger.info(String.format("Scanning directory \"%s\".", directoryPath));
 					Map<String, BufferedPicture> pictureBuffer = scanDirectory(directoryPath);
-					log.info(String.format("Removing old pictures from category %d.", category.getId()));
+					logger.info(String.format("Removing old pictures from category %d.", category.getId()));
 					removePictures(category, pictureBuffer);
-					log.info(String.format("Updating category %d with new pictures.", category.getId()));
+					logger.info(String.format("Updating category %d with new pictures.", category.getId()));
 					addOrUpdatePictures(category, pictureBuffer);
 					// Bilder werden nun direkt persistiert, nicht mehr automatisch über die Collection
 					// GalleryDaoFactory.getCategoryDao(entityManager).update(category);
 					commit();
-					log.info(String.format("%d pictures removed, %d added and %d updated for category \"%s\".", picturesRemoved,
+					logger.info(String.format("%d pictures removed, %d added and %d updated for category \"%s\".", picturesRemoved,
 							picturesAdded, picturesUpdated, categoryName));
 				} else {
 					rollback();
-					log.error(String.format("Category \"%s\" does not exist.", categoryName));
+					logger.error(String.format("Category \"%s\" does not exist.", categoryName));
 				}
 			} catch (NumberFormatException e) {
 				rollback();
-				log.error("Invalid parameter.");
+				logger.error("Invalid parameter.");
 			}
 			// Indicates a well-formedness error
 			// catch (SAXException e) {
@@ -116,7 +116,7 @@ public class GalleryImport {
 					entityManagerFactory.close();
 			}
 		} else {
-			log.info("Usage: java GalleryImport <URL to pictures directory> <category name> <database host> <schema> <user> <password>");
+			logger.info("Usage: java GalleryImport <URL to pictures directory> <category name> <database host> <schema> <user> <password>");
 			return;
 		}
 	}
@@ -164,7 +164,7 @@ public class GalleryImport {
 					// Altes Bild mit den Eigenschaften des neuen überschreiben
 					bufferedPicture.overridePicture(picture);
 					picture = updatePicture(picture);
-					log.info(String.format("Picture with name %s and title \"%s\" updated in category %d.", picture.getName(),
+					logger.info(String.format("Picture with name %s and title \"%s\" updated in category %d.", picture.getName(),
 							picture.getTitle(), category.getId()));
 					++picturesUpdated;
 				}
@@ -175,7 +175,7 @@ public class GalleryImport {
 				bufferedPicture.copyToPicture(picture);
 				picture = insertPicture(picture);
 				category.getPictures().add(picture);
-				log.info(String.format("Picture with name %s and title \"%s\" added to category %d.", picture.getName(),
+				logger.info(String.format("Picture with name %s and title \"%s\" added to category %d.", picture.getName(),
 						picture.getTitle(), category.getId()));
 				++picturesAdded;
 			}
@@ -195,7 +195,7 @@ public class GalleryImport {
 			if (!pictureBuffer.containsKey(picture.getName())) {
 				deletePicture(picture);
 				picturesIterator.remove();
-				log.info(String.format("Picture with name %s and title \"%s\" removed from category %d.", picture.getName(),
+				logger.info(String.format("Picture with name %s and title \"%s\" removed from category %d.", picture.getName(),
 						picture.getTitle(), category.getId()));
 				++picturesRemoved;
 			}
@@ -290,7 +290,7 @@ public class GalleryImport {
 			if (tx != null && tx.isActive())
 				tx.rollback();
 		} catch (RuntimeException e) {
-			log.error("Error rolling back transaction");
+			logger.error("Error rolling back transaction");
 		}
 	}
 

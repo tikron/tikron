@@ -13,8 +13,8 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
@@ -40,7 +40,7 @@ import de.tikru.commons.spring.MailService;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class UserServiceImpl implements UserService {
 
-	private static Logger userAction = LogManager.getLogger("de.tikron.webapp.service.user.UserAction");
+	private static Logger userAction = LoggerFactory.getLogger("de.tikron.webapp.service.user.UserAction");
 
 	private UserDao userDao;
 

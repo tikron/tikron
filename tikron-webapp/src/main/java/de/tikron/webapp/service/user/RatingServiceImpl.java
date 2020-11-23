@@ -7,8 +7,8 @@ import java.text.MessageFormat;
 import java.util.List;
 
 import org.apache.commons.lang3.ObjectUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -33,7 +33,7 @@ import de.tikron.persistence.model.user.RatingTypeId;
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class RatingServiceImpl implements RatingService {
 
-	private static Logger userAction = LogManager.getLogger("de.tikron.webapp.service.user.UserAction");
+	private static Logger userAction = LoggerFactory.getLogger("de.tikron.webapp.service.user.UserAction");
 
 	private RatingDao ratingDao;
 

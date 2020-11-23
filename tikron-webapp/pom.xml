@@ -23,33 +23,6 @@
 			</resource>
 		</resources>
 	</build>
-	<profiles>
-		<profile>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<id>dev</id>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources-dev</directory>
-					</resource>
-				</resources>
-			</build>
-		</profile>
-		<profile>
-			<id>prod</id>
-			<build>
-				<resources>
-					<resource>
-						<directory>src/main/resources-prod</directory>
-					</resource>
-				</resources>
-				<!-- Using separate target to avoid publishing to local (development) tomcat instance -->
-				<directory>target-prod</directory>
-			</build>
-		</profile>
-	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -183,12 +156,9 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-web</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.tuckey</groupId>
