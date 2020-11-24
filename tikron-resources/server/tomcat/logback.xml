@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- User action log rolling file appender -->
+	<!-- Note: Daily log file compressor /etc/cron.daily/tomcat9 must be disabled in /etc/default/tomcat9 ! -->
+	<appender name="USER_ACTION_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/var/log/tomcat9/useraction.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- monthly rollover -->
+			<fileNamePattern>useraction.%d{yyyy-MM}.log</fileNamePattern>
+			<!-- keep 12months' worth of history capped at 100MB total size -->
+			<maxHistory>12</maxHistory>
+			<totalSizeCap>100MB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %level: %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- ibase log rolling file appender -->
+	<!-- Note: Daily log file compressor /etc/cron.daily/tomcat9 must be disabled in /etc/default/tomcat9 ! -->
+	<appender name="IBASE_SERVICE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/var/log/tomcat9/ibase.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- monthly rollover -->
+			<fileNamePattern>ibase.%d{yyyy-MM}.log</fileNamePattern>
+			<!-- keep 12months' worth of history capped at 100MB total size -->
+			<maxHistory>12</maxHistory>
+			<totalSizeCap>100MB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %level: %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Tikru Commons -->
+	<logger name="de.tikru.commons.spring.image" level="info" />
+
+	<!-- Tikron -->
+	<logger name="de.tikron.webapp" level="info" />
+	<logger name="de.tikron.manager" level="info" />
+
+	<!-- User action logger -->
+	<logger name="de.tikron.webapp.service.user.UserAction" level="info" additivity="false">
+		<appender-ref ref="USER_ACTION_APPENDER" />
+	</logger>
+
+	<!-- ibase -->
+	<logger name="de.tikron.ibase.common.service" level="info" additivity="false">
+		<appender-ref ref="IBASE_SERVICE" />
+	</logger>
+
+	<!-- Hibernate/JPA -->
+	<logger name="org.hibernate" level="info" />
+	<!-- Log all SQL DML statements as they are executed -->
+	<logger name="org.hibernate.SQL" level="info" />
+	<!-- Log all SQL DDL statements as they are executed -->
+	<logger name="org.hibernate.tool.hbm2ddl" level="info" />
+
+	<!-- Spring Framework -->
+	<logger name="org.springframework" level="info" />
+
+	<!-- JSF -->
+	<logger name="javax.faces" level="warn" />
+	<logger name="org.apache.myfaces" level="warn" />
+
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
