@@ -7,8 +7,8 @@ import java.util.Locale;
 
 import javax.annotation.Resource;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -38,7 +38,7 @@ import de.tikru.commons.spring.MailService;
 @Controller
 public class SendContactMessageController extends AbstractFormController {
 
-	private static Logger logger = LogManager.getLogger();
+	private static Logger logger = LoggerFactory.getLogger(SendContactMessageController.class);
 
 	private MailService mailService;
 	

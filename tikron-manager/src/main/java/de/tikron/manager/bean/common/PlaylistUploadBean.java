@@ -11,8 +11,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.ComponentSystemEvent;
 
-//import org.apache.log4j.Logger;
-
 //import de.tikru.commons.faces.util.Message;
 //import de.tikron.manager.service.music.TrackService;
 //import de.tikron.manager.service.music.TrackServiceJPAImpl.PlaylistException;
@@ -27,8 +25,6 @@ import javax.faces.event.ComponentSystemEvent;
 @ManagedBean
 @ViewScoped
 public class PlaylistUploadBean extends AbstractFileUploadBean {
-
-//	private static Logger log = LogManager.getLogger();
 
 //	@ManagedProperty(value = "#{trackService}")
 //	private TrackService trackService;

@@ -10,8 +10,8 @@ import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ import com.maxmind.geoip2.record.Country;
 @Service("geoLocationService")
 public class GeoLocationServiceMaxMindImpl implements GeoLocationService {
 
-	private static Logger logger = LogManager.getLogger();
+	private static Logger logger = LoggerFactory.getLogger(GeoLocationServiceMaxMindImpl.class);
 	
 	@Value("file:${tikron.geo-location.maxmind.country-db}")
 	private Resource database;

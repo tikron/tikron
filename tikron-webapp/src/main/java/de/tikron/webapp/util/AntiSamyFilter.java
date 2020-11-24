@@ -19,12 +19,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
 import org.apache.commons.lang3.ObjectUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.owasp.validator.html.AntiSamy;
 import org.owasp.validator.html.CleanResults;
 import org.owasp.validator.html.Policy;
 import org.owasp.validator.html.PolicyException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Servlet filter that checks all request parameters for potential XSS attacks
@@ -37,7 +37,7 @@ import org.owasp.validator.html.PolicyException;
  */
 public class AntiSamyFilter implements Filter {
 
-	private static final Logger LOG = LogManager.getLogger();
+	private static final Logger LOG = LoggerFactory.getLogger(AntiSamyFilter.class);
 
 	private static final String DEFAULT_RULES_FILE = "antisamy.xml";
 
