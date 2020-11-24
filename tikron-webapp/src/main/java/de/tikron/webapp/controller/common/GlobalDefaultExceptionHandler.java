@@ -7,8 +7,8 @@ import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.ServletRequestBindingException;
@@ -28,7 +28,7 @@ import de.tikron.webapp.util.LocalizationContext;
 @ControllerAdvice
 public class GlobalDefaultExceptionHandler {
 
-	private static Logger logger = LogManager.getLogger();
+	private static Logger logger = LoggerFactory.getLogger(GlobalDefaultExceptionHandler.class);
 	
 	private LocalizationContext localizationContext;
 

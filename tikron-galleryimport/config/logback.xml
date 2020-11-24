@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date %class %method%n%level: %msg%n</pattern>
+		</encoder>
+	</appender>
+	<!-- Application -->
+	<logger name="de.tikron.galleryimport" level="debug" />
+	
+	<!-- Hibernate/JPA-->
+	<logger name="org.hibernate" level="warn" />
+	<!-- Log all SQL DML statements as they are executed -->
+	<logger name="org.hibernate.SQL" level="warn" />
+	<!-- Set this to trace to log JDBC parameters and result -->
+	<logger name="org.hibernate.type.descriptor.sql" level="warn" />
+	<!-- Execution time and the retrieved number of rows -->
+	<logger name="org.hibernate.stat" level="warn" />
+	<!-- Log all SQL DDL statements as they are executed -->
+	<logger name="org.hibernate.tool.hbm2ddl" level="warn" />
+	<!-- Log the state of all entities (max 20 entities) associated with the session at flush time -->
+	<logger name="org.hibernate.pretty" level="warn" />
+	<!-- Log all second-level cache activity -->
+	<logger name="org.hibernate.cache" level="warn" />
+	<!-- Log transaction related activity -->
+	<logger name="org.hibernate.transaction" level="warn" />
+	<!-- Log all JDBC resource acquisition -->
+	<logger name="org.hibernate.engine.jdbc" level="warn" />
+	<!-- Log HQL and SQL ASTs during query parsing  -->
+	<logger name="org.hibernate.hql.ast.AST" level="warn" />
+	
+	<!-- Spring Framework -->
+	<logger name="org.springframework" level="warn" />
+	<!-- 
+	<logger name="org.springframework.bean" level="debug" />
+	<logger name="org.springframework.context.annotation" level="info" />
+	<logger name="org.springframework.orm.jpa" level="debug" />
+	<logger name="org.springframework.transaction" level="debug" />
+	<logger name="org.springframework.transaction.interceptor" level="trace" />
+		 -->
+	<root level="info">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
