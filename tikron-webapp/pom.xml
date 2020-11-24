@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>de.tikron</groupId>
 	<artifactId>tikron-webapp</artifactId>
-	<version>3.1</version>
+	<version>3.2</version>
 	<packaging>war</packaging>
 	<name>Tikron Website Frontend Application</name>
 	<build>
@@ -181,12 +181,12 @@
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
-			<version>3.1</version>
+			<version>3.2</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-spring</artifactId>
-			<version>3.2</version>
+			<version>3.3</version>
 		</dependency>
 <!-- 		<dependency> -->
 <!-- 			<groupId>org.aspectj</groupId> -->
@@ -206,7 +206,7 @@
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-util</artifactId>
-			<version>3.2</version>
+			<version>3.3</version>
 		</dependency>
 	</dependencies>
 </project>
