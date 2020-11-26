@@ -4,14 +4,6 @@
 
 	<!-- Disable session persistence across Tomcat restarts -->
 	<Manager pathname="" />
-	
-	<!-- ibase -->
-	<!-- Configure image archive location (Prod) -->
-	<Parameter name="ibaseArchiveLocation" value="/var/opt/ibase/"/>
-	<!-- Configure image archive location (Dev) -->
-	<Parameter name="ibaseArchiveLocation" value="/home/titus/ibase/"/>
-	<!-- Unsharp scaled images fo better quality-->
-	<Parameter name="ibaseConverterScaleUnsharped" value="true"/>
     
     <!-- JNDI Datasource for Tikron Database -->
 	<!-- http://tomcat.apache.org/tomcat-9.0-doc/jndi-datasource-examples-howto.html -->
