@@ -1,7 +1,6 @@
 
 # Tikron
 
-- log4j logging context außerhalb der Web Apps (rolling file config soll vom admin, nicht vom developer bestimmt werden.) Siehe https://logging.apache.org/log4j/2.x/manual/logsep.html. Thema auf Umstellung auf Wildfly vertagen.
 - Subdomains images.tikron.de usw. auflösen.
 - Images über attachment Tabelle referenzieren.
 - Images wirklich in Verzeichnis je Bereich/Kategorie speichern (Problem Verschieben zwischen Kategorien)?
