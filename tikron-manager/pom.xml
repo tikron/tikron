@@ -145,9 +145,14 @@
 			<version>3.3</version>
 		</dependency>
 		<dependency>
+			<groupId>de.tikru.commons</groupId>
+			<artifactId>tikru-commons-util</artifactId>
+			<version>3.3</version>
+		</dependency>
+		<dependency>
 			<groupId>de.tikru.ibase</groupId>
 			<artifactId>ibase-client</artifactId>
-			<version>3.2</version>
+			<version>3.3</version>
 		</dependency>
 	</dependencies>
 </project>
