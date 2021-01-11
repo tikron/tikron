@@ -13,7 +13,7 @@ import de.tikron.persistence.model.user.Comment;
 /**
  * Service für Kommentare.
  * 
- * @date 12.06.2008
+ * @since 12.06.2008
  * @author Titus Kruse
  */
 public interface CommentService extends CRUDService<Comment, Long> {

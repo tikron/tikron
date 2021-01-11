@@ -17,7 +17,7 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * 
  *
- * @date 01.01.2015
+ * @since 01.01.2015
  * @author Titus Kruse
  */
 @Service

@@ -22,7 +22,7 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * Spring implementation of ClipService.
  *
- * @date 18.03.2015
+ * @since 18.03.2015
  * @author Titus Kruse
  */
 @Service("clipService")

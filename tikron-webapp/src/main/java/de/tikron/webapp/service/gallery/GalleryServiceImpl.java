@@ -30,7 +30,7 @@ import de.tikron.webapp.util.Pager;
 /**
  * Standard-Implementation des GalleryService.
  * 
- * @date 15.03.2009
+ * @since 15.03.2009
  * @author Titus Kruse
  */
 @Service("galleryService")

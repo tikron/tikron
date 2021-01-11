@@ -13,7 +13,7 @@ import de.tikru.commons.faces.util.Message;
  * 
  * @link org.apache.myfaces.custom.fileupload.UploadedFile
  * 
- * @date 25.01.2011
+ * @since 25.01.2011
  * @author Titus Kruse
  */
 public abstract class AbstractFileUploadBean extends BaseBean {

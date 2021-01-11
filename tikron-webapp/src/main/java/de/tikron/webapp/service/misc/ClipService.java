@@ -12,7 +12,7 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * Service for video clips.
  *
- * @date 18.03.2015
+ * @since 18.03.2015
  * @author Titus Kruse
  */
 public interface ClipService {

@@ -23,7 +23,7 @@ import org.springframework.web.servlet.LocaleResolver;
 /**
  * Default implementation of {@link de.tikron.webapp.util.LocalizationContext}
  * 
- * @date 13.02.2015
+ * @since 13.02.2015
  * @author Titus Kruse
  */
 public class LocalizationContextImpl implements LocalizationContext {

@@ -19,7 +19,7 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Ein Bild-Kommentar.
  *
- * @date 29.03.2012
+ * @since 29.03.2012
  * @author Titus Kruse
  */
 @Entity

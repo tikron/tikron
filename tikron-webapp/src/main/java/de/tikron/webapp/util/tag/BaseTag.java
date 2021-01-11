@@ -8,7 +8,7 @@ import javax.servlet.jsp.tagext.TagSupport;
 /**
  * Basisklasse für HTML-Tags. Stellt gemeinsame Attribute zur Verfügung.
  * 
- * @date 25.12.2008
+ * @since 25.12.2008
  * @author Titus Kruse
  */
 public abstract class BaseTag extends TagSupport {

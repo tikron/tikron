@@ -22,7 +22,7 @@ import de.tikron.webapp.util.LocalizationContext;
 /**
  * Exception handler in modern annotation style. 
  *
- * @date 19.01.2015
+ * @since 19.01.2015
  * @author Titus Kruse
  */
 @ControllerAdvice

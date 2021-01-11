@@ -19,7 +19,7 @@ import de.tikron.persistence.model.user.Comment;
 /**
  * Default-Implementation des CommentService.
  *
- * @date 26.03.2009
+ * @since 26.03.2009
  * @author Titus Kruse
  */
 @Service("commentService")

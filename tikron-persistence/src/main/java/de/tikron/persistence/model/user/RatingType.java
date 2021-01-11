@@ -16,7 +16,7 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * A type of rating.
  *
- * @date 26.04.2015
+ * @since 26.04.2015
  * @author Titus Kruse
  */
 @Entity

@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
  * Base excpetion class for all runtime exceptions of this application. To provide a message in localized form, the JVM
  * default locale will be used.
  *
- * @date 21.01.2015
+ * @since 21.01.2015
  * @author Titus Kruse
  */
 public class ApplicationException extends RuntimeException {

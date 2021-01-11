@@ -26,7 +26,7 @@ import de.tikron.persistence.model.user.RatingTypeId;
 /**
  * Default implementation of {@link RatingService}.
  *
- * @date 27.04.2015
+ * @since 27.04.2015
  * @author Titus Kruse
  */
 @Service("ratingService")

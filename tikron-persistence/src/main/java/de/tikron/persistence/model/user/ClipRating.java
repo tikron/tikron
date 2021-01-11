@@ -16,7 +16,7 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * A user rating for a video clip.
  *
- * @date 26.04.2015
+ * @since 26.04.2015
  * @author Titus Kruse
  */
 @Entity

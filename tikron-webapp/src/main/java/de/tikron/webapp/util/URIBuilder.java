@@ -12,7 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 /**
  * Helper class to build URIs.
  *
- * @date 08.04.2014
+ * @since 08.04.2014
  * @author Titus Kruse
  */
 public class URIBuilder {

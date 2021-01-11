@@ -16,7 +16,7 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * Component class mapping from/to data transfer objects of type Image. 
  *
- * @date 02.01.2015
+ * @since 02.01.2015
  * @author Titus Kruse
  */
 @Component

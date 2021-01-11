@@ -16,7 +16,7 @@ import de.tikron.persistence.model.gallery.Category;
 /**
  * A comment for a category.
  *
- * @date 07.04.2015
+ * @since 07.04.2015
  * @author Titus Kruse
  */
 @Entity

@@ -40,7 +40,7 @@ import de.tikron.webapp.util.SeoURI;
  * 
  * Note: This controller can be enhanced to show all kind of reports later.
  * 
- * @date 25.07.2014
+ * @since 25.07.2014
  * @author Titus Kruse
  */
 @Controller

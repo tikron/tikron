@@ -21,7 +21,7 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * Data-Access-Object für Kataloge.
  * 
- * @date 28.09.2008
+ * @since 28.09.2008
  * @author Titus Kruse
  */
 public class CatalogDaoJpaImpl extends GenericJpaDao<Catalog, Long> implements CatalogDao {

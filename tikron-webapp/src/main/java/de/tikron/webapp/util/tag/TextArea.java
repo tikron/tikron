@@ -12,7 +12,7 @@ import javax.servlet.jsp.tagext.Tag;
 /**
  * HTML-Tag zum Formatieren von Textbereichen.
  * 
- * @date 21.12.2008
+ * @since 21.12.2008
  * @author Titus Kruse
  */
 public class TextArea extends BaseTag implements Tag {

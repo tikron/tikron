@@ -18,7 +18,7 @@ import de.tikron.persistence.model.gallery.Category;
 /**
  * Default-Implementation des CategoryService.
  * 
- * @date 12.02.2012
+ * @since 12.02.2012
  * @author Titus Kruse
  */
 @Service("categoryService")

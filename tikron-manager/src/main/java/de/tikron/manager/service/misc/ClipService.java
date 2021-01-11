@@ -6,7 +6,7 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * Service for video clips.
  * 
- * @date 16.03.2015
+ * @since 16.03.2015
  * @author Titus Kruse
  */
 public interface ClipService extends CRUDService<Clip, Long> {

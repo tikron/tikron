@@ -14,7 +14,7 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Zeigt die Historie an.
  * 
- * @date 28.12.2012
+ * @since 28.12.2012
  * @author Titus Kruse
  */
 @Controller

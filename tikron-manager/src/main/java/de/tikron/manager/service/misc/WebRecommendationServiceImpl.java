@@ -15,7 +15,7 @@ import de.tikron.persistence.model.misc.WebRecommendation;
 /**
  * Default implementation of WebRecommendationService.
  *
- * @date 21.03.2015
+ * @since 21.03.2015
  * @author Titus Kruse
  */
 @Service("webRecommendationService")

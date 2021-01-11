@@ -6,7 +6,7 @@ package de.tikron.webapp.controller.common;
 /**
  * Interface declaring basic Ajax response.
  *
- * @date 17.05.2015
+ * @since 17.05.2015
  * @author Titus Kruse
  */
 public interface AjaxResponse {

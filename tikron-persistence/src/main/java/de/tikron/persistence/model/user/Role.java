@@ -14,11 +14,9 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 
 /**
- * A single role. Each role determines application permissions for users. A user can have none or some roles.
+ * A single role. Each role determines application permissions for users. A user can have none, one or multiple roles.
  * 
- * TODO Instead of using an enum as key, thre role itself could be an enum. (@Converter(autoApply = true) public class CategoryTypeConverter implements javax.persistence.AttributeConverter <CategoryType, String>)
- *
- * @date 01.04.2015
+ * @since 01.04.2015
  * @author Titus Kruse
  */
 @Entity

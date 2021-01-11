@@ -30,9 +30,9 @@ import de.tikron.webapp.util.RobotsDirective;
 import de.tikru.commons.spring.MailService;
 
 /**
- * Controller for caontact message page.
+ * Controller for the contact message page.
  *
- * @date 30.12.2012
+ * @since 30.12.2012
  * @author Titus Kruse
  */
 @Controller
@@ -61,10 +61,10 @@ public class SendContactMessageController extends AbstractFormController {
 	/**
 	 * Process form submit.
 	 * 
-	 * @param commentForm The comment to add.
+	 * @param contactMessage The contact message to add.
 	 * @param result Spring form result.
 	 * 
-	 * @return The form response. On success the response data contains the new comment. On error the reponse data contains the Spring errors. 
+	 * @return The Spring form response. {@link de.tikron.webapp.controller.common.SuccessResponse} on success, {@link de.tikron.webapp.controller.common.ErrorResponse} otherwise.  
 	 */
 	@RequestMapping(value = "/sendContactMessage.json", method = RequestMethod.POST)
 	public @ResponseBody AjaxResponse processSubmit(@ModelAttribute(ContactMessage.NAME) ContactMessage contactMessage, BindingResult result) {

@@ -15,7 +15,7 @@ import de.tikron.persistence.model.gallery.Catalog;
 /**
  * Default-Implementation des CatalogService.
  *
- * @date 12.02.2012
+ * @since 12.02.2012
  * @author Titus Kruse
  */
 @Service("catalogService")

@@ -21,7 +21,7 @@ import de.tikru.commons.util.FormattedTextCompiler;
 /**
  * Component class mapping from/to data transfer objects of type Picture. 
  *
- * @date 02.01.2015
+ * @since 02.01.2015
  * @author Titus Kruse
  */
 @Component

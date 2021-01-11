@@ -26,7 +26,7 @@ import de.tikron.webapp.service.gallery.GalleryService;
  * Zeigt die Index-Seite zum Bereich "Reisen" an. Weil hier auch Bilder angezeigt werden, liefert diese Action
  * auch einen Zugriff auf den zugehörigen Katalog und desses Kategorien.
  * 
- * @date 16.12.2014
+ * @since 16.12.2014
  * @author Titus Kruse
  */
 @Controller

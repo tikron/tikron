@@ -28,7 +28,7 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 /**
  * A video clip.
  *
- * @date 14.03.2015
+ * @since 14.03.2015
  * @author Titus Kruse
  */
 @Entity

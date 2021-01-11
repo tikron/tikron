@@ -6,7 +6,7 @@ package de.tikron.webapp.controller.common;
 /**
  * Gives a summary of all views available in the application. 
  *
- * @date 30.12.2012
+ * @since 30.12.2012
  * @author Titus Kruse
  */
 public final class ViewConstants {

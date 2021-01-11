@@ -22,7 +22,7 @@ import com.octo.captcha.image.gimpy.GimpyFactory;
 /**
  * ListImageCaptchaEngine with specific default background, font and word generator.
  *
- * @date 16.06.2010
+ * @since 16.06.2010
  * @author Titus Kruse
  */
 public class CaptchaEngine extends ListImageCaptchaEngine {

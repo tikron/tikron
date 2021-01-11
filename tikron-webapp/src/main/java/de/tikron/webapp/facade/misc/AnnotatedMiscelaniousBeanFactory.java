@@ -19,7 +19,7 @@ import de.tikron.webapp.model.misc.WebRecommendationEntityBean;
 /**
  * An implementation of MiscelaniuosBeanFactory configured with Spring annotations.
  *
- * @date 19.03.2015
+ * @since 19.03.2015
  * @author Titus Kruse
  */
 @Configuration

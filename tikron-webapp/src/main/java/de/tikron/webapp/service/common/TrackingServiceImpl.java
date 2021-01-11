@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 /**
  * Stellt Konfigurationsparameter für das Tracking von Benutzeraktivitäten bereit.
  *
- * @date 09.08.2010
+ * @since 09.08.2010
  * @author Titus Kruse
  */
 @Service("trackingService")

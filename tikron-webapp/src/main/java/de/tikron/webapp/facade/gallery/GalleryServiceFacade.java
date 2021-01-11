@@ -10,7 +10,7 @@ import de.tikron.webapp.model.gallery.BasicPictureDTO;
 /**
  * 
  *
- * @date 01.01.2015
+ * @since 01.01.2015
  * @author Titus Kruse
  */
 public interface GalleryServiceFacade {

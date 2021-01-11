@@ -33,7 +33,7 @@ import de.tikru.commons.spring.MailService;
 /**
  * Standard-Implementation des Service für Benutzer.
  *
- * @date 23.03.2012
+ * @since 23.03.2012
  * @author Titus Kruse
  */
 @Service("userService")

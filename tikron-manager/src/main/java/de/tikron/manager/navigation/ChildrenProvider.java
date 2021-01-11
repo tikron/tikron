@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Abstract class used for a lazy loadable navigation node.
  *
- * @date 17.12.2011
+ * @since 17.12.2011
  * @author Titus Kruse
  */
 public abstract class ChildrenProvider {

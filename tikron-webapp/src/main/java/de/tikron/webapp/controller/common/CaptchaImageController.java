@@ -19,7 +19,7 @@ import de.tikru.commons.spring.bytecontent.AbstractContentTypeController;
 /**
  * Controller providing a random generated Captcha image as byte data.
  *
- * @date 30.12.2012
+ * @since 30.12.2012
  * @author Titus Kruse
  */
 @Controller

@@ -15,7 +15,7 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * Default implementation of ClipService.
  *
- * @date 16.03.2015
+ * @since 16.03.2015
  * @author Titus Kruse
  */
 @Service("clipService")

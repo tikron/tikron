@@ -22,7 +22,7 @@ import de.tikron.webapp.service.common.TrackingService;
 /**
  * Interceptor checking for enabled user tracking.
  *
- * @date 17.01.2013
+ * @since 17.01.2013
  * @author Titus Kruse
  */
 @Component

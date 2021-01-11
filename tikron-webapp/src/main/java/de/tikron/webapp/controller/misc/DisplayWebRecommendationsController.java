@@ -20,7 +20,7 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Shows a list of web recommendations.
  *
- * @date 30.12.2012
+ * @since 30.12.2012
  * @author Titus Kruse
  */
 @Controller

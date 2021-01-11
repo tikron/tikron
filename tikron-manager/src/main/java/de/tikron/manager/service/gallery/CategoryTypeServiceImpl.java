@@ -16,7 +16,7 @@ import de.tikron.persistence.model.gallery.CategoryTypeId;
 /**
  * Default implementation of {@link CategoryTypeService}.
  *
- * @date 05.04.2015
+ * @since 05.04.2015
  * @author Titus Kruse
  */
 @Service("categoryTypeService")

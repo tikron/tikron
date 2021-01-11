@@ -15,7 +15,7 @@ import java.util.List;
  * 
  * Alternative: https://commons.apache.org/proper/commons-collections/javadocs/api-3.2.1/org/apache/commons/collections/list/SetUniqueList.html
  * 
- * @date 28.09.2010
+ * @since 28.09.2010
  * @author Titus Kruse
  */
 public class Pager<T> {

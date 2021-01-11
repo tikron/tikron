@@ -16,7 +16,7 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * JPA implementation of clip DAO.
  *
- * @date 14.03.2015
+ * @since 14.03.2015
  * @author Titus Kruse
  */
 public class ClipDaoJpaImpl extends GenericJpaDao<Clip, Long> implements ClipDao {

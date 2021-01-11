@@ -18,7 +18,7 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Default-Implementation des PictureService.
  * 
- * @date 12.02.2012
+ * @since 12.02.2012
  * @author Titus Kruse
  */
 @Service("pictureService")

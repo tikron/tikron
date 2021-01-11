@@ -10,7 +10,7 @@ import de.tikron.persistence.model.user.RoleId;
 /**
  * Service for Roles.
  * 
- * @date 01.04.2015
+ * @since 01.04.2015
  * @author Titus Kruse
  */
 public interface RoleService extends ReadingService<Role, RoleId> {

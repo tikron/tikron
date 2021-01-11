@@ -14,7 +14,7 @@ import de.tikru.commons.jpa.dao.GenericDao;
 /**
  * DAO for ratings.
  *
- * @date 27.04.2015
+ * @since 27.04.2015
  * @author Titus Kruse
  */
 public interface RatingDao extends GenericDao<Rating, Long> {

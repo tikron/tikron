@@ -11,7 +11,7 @@ import java.time.format.FormatStyle;
 /**
  * Declares some methods providing formatters used to convert from/to model objects and localozed external representation.
  *
- * @date 13.02.2015
+ * @since 13.02.2015
  * @author Titus Kruse
  */
 public interface LocalizationConverter {
@@ -26,7 +26,7 @@ public interface LocalizationConverter {
 	/**
 	 * Returns a date formatter with given style according to the context locale.
 	 * 
-	 * @param The FormatStyle of the formatter.
+	 * @param style The FormatStyle of the formatter.
 	 * @return The date formatter.
 	 */
 	public DateTimeFormatter getDateFormatter(FormatStyle style);
@@ -41,7 +41,7 @@ public interface LocalizationConverter {
 	/**
 	 * Returns a time formatter with medium style according to the context locale.
 	 * 
-	 * @param The FormatStyle of the formatter.
+	 * @param style The FormatStyle of the formatter.
 	 * @return The time formatter.
 	 */
 	public DateTimeFormatter getTimeFormatter(FormatStyle style);

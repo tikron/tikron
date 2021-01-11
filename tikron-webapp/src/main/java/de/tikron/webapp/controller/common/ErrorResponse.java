@@ -15,7 +15,7 @@ import de.tikron.webapp.util.LocalizationContext;
 /**
  * An AjaxResponse for the error case holding global and field errors.
  *
- * @date 09.05.2015
+ * @since 09.05.2015
  * @author Titus Kruse
  */
 public class ErrorResponse implements AjaxResponse {

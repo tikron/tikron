@@ -25,7 +25,7 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Importiert die Metadaten einer mit Photoshop erstellten Web-Fotogallerie in die Freakworm-Gallerie.
  * 
- * @date 26.09.2008
+ * @since 26.09.2008
  * @author Titus Kruse
  */
 public class GalleryImport {
@@ -322,7 +322,7 @@ public class GalleryImport {
 	/**
 	 * Ignoriert die DTD der XML-Datei.
 	 * 
-	 * @date 28.09.2008
+	 * @since 28.09.2008
 	 * @author Titus Kruse
 	 */
 	/*

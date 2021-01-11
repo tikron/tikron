@@ -22,7 +22,7 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Helper class providing usefull methods for entity beans.
  *
- * @date 31.03.2014
+ * @since 31.03.2014
  * @author Titus
  */
 @Service

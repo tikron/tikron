@@ -9,7 +9,7 @@ import de.tikron.webapp.model.common.BaseEntityBean;
 /**
  * An entity bean for a web recommendation.
  *
- * @date 21.03.2015
+ * @since 21.03.2015
  * @author Titus Kruse
  */
 public class WebRecommendationEntityBean extends BaseEntityBean<WebRecommendation> {

@@ -11,7 +11,7 @@ import de.tikru.commons.util.FormattedTextCompiler;
 /**
  * Utility class providing some SEO methods.
  *
- * @date 16.03.2014
+ * @since 16.03.2014
  * @author Titus Kruse
  */
 public class SeoUtils {

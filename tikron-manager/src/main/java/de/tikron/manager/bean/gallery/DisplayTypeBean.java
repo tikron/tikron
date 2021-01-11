@@ -11,7 +11,7 @@ import de.tikron.persistence.model.gallery.DisplayType;
 /**
  * Helper bean providing enumeration values.
  *
- * @date 24.11.2014
+ * @since 24.11.2014
  * @author Titus Kruse
  */
 @ManagedBean

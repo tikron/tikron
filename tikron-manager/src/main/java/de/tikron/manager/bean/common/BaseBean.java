@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Basic Managed Bean provoding methods and fields for all managed beans.
  *
- * @date 27.02.2011
+ * @since 27.02.2011
  * @author Titus Kruse
  */
 @SuppressWarnings("serial")

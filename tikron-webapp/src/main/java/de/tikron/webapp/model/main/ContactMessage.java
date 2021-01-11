@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Eine Kontaktnachricht.
  *
- * @date 30.12.2012
+ * @since 30.12.2012
  * @author Titus Kruse
  */
 public class ContactMessage implements Serializable {

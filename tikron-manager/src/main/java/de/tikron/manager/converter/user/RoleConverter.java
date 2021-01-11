@@ -15,7 +15,7 @@ import de.tikron.persistence.model.user.RoleId;
 /**
  * Converter used as an interface between primary key and entity.
  * 
- * @date 27.11.2011
+ * @since 27.11.2011
  * @author Titus Kruse
  * @author BalusC
  * 

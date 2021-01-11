@@ -11,7 +11,7 @@ import de.tikru.commons.jpa.dao.GenericDao;
 /**
  * Data Acccess Object for web recommendations.
  *
- * @date 21.03.2015
+ * @since 21.03.2015
  * @author Titus Kruse
  */
 public interface WebRecommendationDao extends GenericDao<WebRecommendation, Long> {

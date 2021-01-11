@@ -83,7 +83,6 @@ public class User extends GeneratedKeyEntity<Long> implements ShowableEntity<Lon
 	 * Constructor with required fields.
 	 * 
 	 * @param name Benutzername.
-	 * @param role Rolle.
 	 */
 	public User(String name) {
 		this.name = name;

@@ -11,10 +11,10 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Bean providing basic functions for a data list with a selection column.
  * 
- * @param <T> The type of list list data.
- * @param <Serializable> The type of Serializables (the primary key) of the list data rows.
+ * @param <T> The type of list data.
+ * @param <ID> The type of the primary key of the list data rows.
  *
- * @date 24.01.2012
+ * @since 24.01.2012
  * @author Titus Kruse
  */
 public class AbstractSelectableListBean<T extends Entity<ID>, ID extends Serializable> extends AbstractListBean<T> {

@@ -10,7 +10,7 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Service for teasers.
  *
- * @date 01.06.2015
+ * @since 01.06.2015
  * @author Titus Kruse
  */
 public interface TeaserService {

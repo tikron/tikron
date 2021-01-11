@@ -14,7 +14,7 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Abstrakte Basisklasse für Default-Implementationen aller Services.
  *
- * @date 24.03.2009
+ * @since 24.03.2009
  * @author Titus Kruse
  */
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

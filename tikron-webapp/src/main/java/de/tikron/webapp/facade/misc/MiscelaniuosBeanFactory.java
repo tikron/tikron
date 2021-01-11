@@ -14,7 +14,7 @@ import de.tikron.webapp.model.misc.WebRecommendationEntityBean;
 /**
  * A bean factory used to create miscelanious entity beans.
  *
- * @date 19.03.2015
+ * @since 19.03.2015
  * @author Titus Kruse
  */
 public interface MiscelaniuosBeanFactory {

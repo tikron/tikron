@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 /**
  * 
  *
- * @date 10.04.2009
+ * @since 10.04.2009
  * @author Titus Kruse
  */
 public class GalleryDaoFactory {

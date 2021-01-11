@@ -6,7 +6,7 @@ package de.tikron.webapp.util;
 /**
  * Defines values for HTML meta directive "robots"
  *
- * @date 08.01.2015
+ * @since 08.01.2015
  * @author Titus Kruse
  */
 public enum RobotsDirective {

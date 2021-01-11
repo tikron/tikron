@@ -15,7 +15,7 @@ import de.tikron.persistence.model.user.User;
 /**
  * Default-Implementation des UserService.
  *
- * @date 05.02.2012
+ * @since 05.02.2012
  * @author Titus Kruse
  */
 @Service("userService")

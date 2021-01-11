@@ -13,7 +13,7 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Zeigt das Impressum an.
  * 
- * @date 28.12.2012
+ * @since 28.12.2012
  * @author Titus Kruse
  */
 @Controller

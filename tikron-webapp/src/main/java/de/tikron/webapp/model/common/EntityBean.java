@@ -12,7 +12,7 @@ import de.tikru.commons.jpa.domain.Entity;
  * 
  * @param <E> Type of entity.
  *
- * @date 31.03.2014
+ * @since 31.03.2014
  * @author Titus Kruse
  */
 public interface EntityBean<E extends Entity<?>> extends Serializable {

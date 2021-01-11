@@ -8,7 +8,7 @@ package de.tikron.webapp.controller.common;
  * Exception indicating a resource was not found. When requesting a not existing database record for example, this
  * exception results into a response with HTTP status 404.  
  *
- * @date 12.01.2015
+ * @since 12.01.2015
  * @author Titus Kruse
  */
 // @ResponseStatus(HttpStatus.NOT_FOUND)

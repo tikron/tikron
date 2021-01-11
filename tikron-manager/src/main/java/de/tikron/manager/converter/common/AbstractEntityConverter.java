@@ -21,7 +21,7 @@ import de.tikru.commons.jpa.domain.Entity;
  * @param T The type of enity to convert to/from.
  * @param ID The type of primary key to convert to/from.
  *
- * @date 29.05.2015
+ * @since 29.05.2015
  * @author Titus Kruse
  * @author BalusC
  * 

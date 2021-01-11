@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 /**
  * Stellt Methoden für den Zugang zum File Archive bereit.
  *
- * @date 17.09.2012
+ * @since 17.09.2012
  * @author Titus Kruse
  */
 @Service("fileArchiveService")

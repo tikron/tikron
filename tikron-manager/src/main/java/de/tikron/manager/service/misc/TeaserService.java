@@ -6,7 +6,7 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Service for teasers.
  * 
- * @date 29.05.2015
+ * @since 29.05.2015
  * @author Titus Kruse
  */
 public interface TeaserService extends CRUDService<Teaser, Long> {

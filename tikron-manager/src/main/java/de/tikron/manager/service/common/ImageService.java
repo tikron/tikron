@@ -6,7 +6,7 @@ package de.tikron.manager.service.common;
 /**
  * A service providing methods for dynamic images like album covers or pictures.
  *
- * @date 20.02.2012
+ * @since 20.02.2012
  * @author Titus Kruse
  */
 public interface ImageService {

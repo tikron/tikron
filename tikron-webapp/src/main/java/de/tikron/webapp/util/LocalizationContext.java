@@ -14,7 +14,7 @@ import org.springframework.context.NoSuchMessageException;
  * 
  * Note: This type should be replaced by Spring Web Flow {@link org.springframework.web.servlet.support.RequestContext} and {@link org.springframework.core.convert.ConversionService} later.
  *
- * @date 09.02.2015
+ * @since 09.02.2015
  * @author Titus Kruse
  * 
  * @see http://java.dzone.com/articles/deeper-look-java-8-date-and

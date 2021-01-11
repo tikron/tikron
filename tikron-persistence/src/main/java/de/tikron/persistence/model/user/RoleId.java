@@ -6,7 +6,7 @@ package de.tikron.persistence.model.user;
 /**
  * The primary key for roles. 
  *
- * @date 24.11.2014
+ * @since 24.11.2014
  * @author Titus Kruse
  */
 public enum RoleId {

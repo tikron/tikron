@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.User;
 /**
  * Service providing access to the Spring security layer.
  * 
- * @date 09.12.2010
+ * @since 09.12.2010
  * @author Titus Kruse
  */
 public interface SecurityService {

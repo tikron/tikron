@@ -12,7 +12,7 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * DAO für Kommentartypen.
  *
- * @date 27.03.2012
+ * @since 27.03.2012
  * @author Titus Kruse
  */
 public class CommentTypeDaoJpaImpl extends GenericJpaDao<CommentType, CommentTypeId> implements CommentTypeDao {

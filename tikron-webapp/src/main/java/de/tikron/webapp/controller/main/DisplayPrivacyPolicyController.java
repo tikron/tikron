@@ -13,7 +13,7 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Zeigt Informationen zum Datenschutz an.
  * 
- * @date 28.02.2019
+ * @since 28.02.2019
  * @author Titus Kruse
  */
 @Controller

@@ -12,7 +12,7 @@ import de.tikron.manager.service.common.ImageService;
 /**
  * Stellt Funktionen für den Image-Server iBase bereit.
  *
- * @date 22.10.2011
+ * @since 22.10.2011
  * @author Titus Kruse
  */
 @ManagedBean

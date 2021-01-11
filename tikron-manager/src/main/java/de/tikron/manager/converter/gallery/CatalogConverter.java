@@ -14,7 +14,7 @@ import de.tikron.persistence.model.gallery.Catalog;
 /**
  * Converter used as an interface between primary key and entity.
  * 
- * @date 12.02.2012
+ * @since 12.02.2012
  * @author Titus Kruse
  */
 @ManagedBean

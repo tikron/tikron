@@ -18,7 +18,7 @@ import de.tikron.persistence.model.gallery.DisplayType;
 /**
  * Validates the display type of a category. 
  *
- * @date 07.04.2015
+ * @since 07.04.2015
  * @author Titus Kruse
  */
 @FacesValidator(value="displayTypeValidator")

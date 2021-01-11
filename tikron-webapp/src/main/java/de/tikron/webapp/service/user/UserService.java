@@ -12,7 +12,7 @@ import de.tikron.persistence.model.user.User;
 /**
  * Schnittstelle zum Service-Objekt für Benutzer-Entities.
  *
- * @date 23.03.2012
+ * @since 23.03.2012
  * @author Titus Kruse
  */
 public interface UserService {

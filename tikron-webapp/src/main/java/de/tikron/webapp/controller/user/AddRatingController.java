@@ -11,7 +11,7 @@ import de.tikron.webapp.service.user.RatingService;
 /**
  * Base class for controller adding a rating for a publication.
  *
- * @date 26.04.2015
+ * @since 26.04.2015
  * @author Titus Kruse
  */
 public abstract class AddRatingController extends AbstractController {

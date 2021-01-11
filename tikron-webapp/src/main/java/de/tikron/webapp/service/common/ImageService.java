@@ -9,7 +9,7 @@ import java.net.URL;
 /**
  * Stellt Methoden für den Zugang zum Image Server bereit (ibase).
  * 
- * @date 12.03.2012
+ * @since 12.03.2012
  * @author Titus Kruse
  */
 public interface ImageService {

@@ -10,7 +10,7 @@ import java.time.temporal.TemporalAccessor;
 /**
  * Base class for Dates and Times representing a human readable format. 
  *
- * @date 01.07.2017
+ * @since 01.07.2017
  * @author Titus Kruse
  */
 public abstract class AbstractFormattedDateTime {

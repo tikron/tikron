@@ -6,7 +6,7 @@ import de.tikron.persistence.model.misc.WebRecommendation;
 /**
  * Service for web recommendations.
  * 
- * @date 21.03.2015
+ * @since 21.03.2015
  * @author Titus Kruse
  */
 public interface WebRecommendationService extends CRUDService<WebRecommendation, Long> {

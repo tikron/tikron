@@ -24,7 +24,7 @@ import de.tikron.persistence.model.user.Role;
 /**
  * Implementaion of UserDetailsService.
  *
- * @date 09.12.2010
+ * @since 09.12.2010
  * @author Titus Kruse
  */
 @Service("userDetailsService")

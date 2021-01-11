@@ -33,7 +33,7 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * Prepares some information shown on the main navigation menu.
  *
- * @date 06.01.2013
+ * @since 06.01.2013
  * @author Titus Kruse
  */
 @Component

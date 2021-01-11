@@ -17,7 +17,7 @@ import de.tikru.commons.jpa.domain.Entity;
  * Implementation of {@link ReadingService} caching all read information. The cache will never be flushed and has
  * unlimmited capacity. So this Service should only be used for data never changed while applications runs.
  *
- * @date 01.04.2015
+ * @since 01.04.2015
  * @author Titus Kruse
  */
 public class CacheServiceImpl<T extends Entity<ID>, ID extends Serializable> extends ReadingServiceImpl<T, ID> implements Refreshable {

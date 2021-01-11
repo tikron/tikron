@@ -10,7 +10,7 @@ import de.tikron.persistence.model.gallery.CategoryTypeId;
 /**
  * Service for category types.
  * 
- * @date 05.04.2015
+ * @since 05.04.2015
  * @author Titus Kruse
  */
 public interface CategoryTypeService extends ReadingService<CategoryType, CategoryTypeId> {

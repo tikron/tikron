@@ -29,7 +29,7 @@ import de.tikron.webapp.util.SeoURI;
 /**
  * Zeigt einen Katalog an.
  * 
- * @date 02.01.2013
+ * @since 02.01.2013
  * @author Titus Kruse
  */
 @Controller

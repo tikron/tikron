@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
 /**
  * Managed bean initializing the navigation tree for this application.
  *
- * @date 11.12.2011
+ * @since 11.12.2011
  * @author Titus Kruse
  */
 @ManagedBean

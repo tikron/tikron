@@ -11,7 +11,7 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Deklariert grundsätzliche Methoden, die von nur lesenden Services implementieren müssen.
  * 
- * @date 01.04.2015
+ * @since 01.04.2015
  * @author Titus Kruse
  */
 public interface ReadingService<T extends Entity<ID>, ID extends Serializable> {

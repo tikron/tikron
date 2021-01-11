@@ -12,7 +12,7 @@ import de.tikron.persistence.model.gallery.Category;
 /**
  * Service für Kategorien.
  * 
- * @date 12.02.2012
+ * @since 12.02.2012
  * @author Titus Kruse
  */
 public interface CategoryService extends CRUDService<Category, Long> {

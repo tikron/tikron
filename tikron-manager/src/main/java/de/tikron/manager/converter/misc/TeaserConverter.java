@@ -14,7 +14,7 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Converter used as an interface between primary key and entity.
  * 
- * @date 31.05.2015
+ * @since 31.05.2015
  * @author Titus Kruse
  */
 @ManagedBean

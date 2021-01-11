@@ -19,7 +19,7 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * An entity bean for a teaser.
  *
- * @date 01.06.2015
+ * @since 01.06.2015
  * @author Titus Kruse
  */
 public class TeaserEntityBean extends BaseEntityBean<Teaser> {

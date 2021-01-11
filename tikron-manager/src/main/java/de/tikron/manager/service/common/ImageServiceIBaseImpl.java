@@ -22,7 +22,7 @@ import de.tikron.ibase.client.IBaseClientException;
 /**
  * Implementierung des ImageService auf Basis von iBase.
  *
- * @date 20.02.2012
+ * @since 20.02.2012
  * @author Titus Kruse
  */
 @Service("imageService")

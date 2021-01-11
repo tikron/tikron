@@ -31,7 +31,7 @@ import de.tikron.webapp.service.user.UserService;
 /**
  * Handler for an add comment Ajax form. 
  *
- * @date 10.05.2015
+ * @since 10.05.2015
  * @author Titus Kruse
  */
 @Controller
@@ -51,7 +51,7 @@ public class AddCommentController extends AbstractAjaxFormController {
 	 * @param commentForm The comment to add.
 	 * @param result Spring form result.
 	 * 
-	 * @return The form response. On success the response data contains the new comment. On error the reponse data contains the Spring errors. 
+	 * @return The Spring form response. {@link de.tikron.webapp.controller.common.SuccessResponse} on success, {@link de.tikron.webapp.controller.common.ErrorResponse} otherwise.  
 	 */
 	@RequestMapping(value="/addComment.json", method = RequestMethod.POST)
 	public @ResponseBody AjaxResponse processSubmit(@Valid @ModelAttribute(MODEL_ATTR_COMMENT_FORM) CommentForm commentForm, BindingResult result) {

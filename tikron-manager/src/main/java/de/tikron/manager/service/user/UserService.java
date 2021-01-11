@@ -9,7 +9,7 @@ import de.tikron.persistence.model.user.User;
 /**
  * Service für Benutzer.
  * 
- * @date 05.02.2012
+ * @since 05.02.2012
  * @author Titus Kruse
  */
 public interface UserService extends CRUDService<User, Long> {

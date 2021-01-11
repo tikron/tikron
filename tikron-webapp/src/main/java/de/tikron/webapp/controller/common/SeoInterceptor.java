@@ -23,7 +23,7 @@ import de.tikron.webapp.util.SeoURI;
 /**
  * Prepares default SEO data for views.
  *
- * @date 06.04.2014
+ * @since 06.04.2014
  * @author Titus Kruse
  */
 @Component

@@ -16,7 +16,7 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * Ein Kommentartyp.
  *
- * @date 17.03.2012
+ * @since 17.03.2012
  * @author Titus Kruse
  */
 @Entity

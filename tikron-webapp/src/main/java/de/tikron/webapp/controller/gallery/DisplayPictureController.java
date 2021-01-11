@@ -39,7 +39,7 @@ import de.tikron.webapp.util.SeoUtils;
 /**
  * Zeigt ein Bild an.
  * 
- * @date 02.01.2013
+ * @since 02.01.2013
  * @author Titus Kruse
  */
 @Controller

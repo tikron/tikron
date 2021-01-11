@@ -22,7 +22,7 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * Controller adding a rating for a picture.
  *
- * @date 26.04.2015
+ * @since 26.04.2015
  * @author Titus Kruse
  */
 @Controller

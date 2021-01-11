@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Confirms the "Livewatch" request.
  * 
- * @date 11.10.2019
+ * @since 11.10.2019
  * 
  * @author Titus Kruse
  */

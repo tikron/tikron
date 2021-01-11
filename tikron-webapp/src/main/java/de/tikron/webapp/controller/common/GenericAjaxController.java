@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Common controller for all simple ajax responses.
  *
- * @date 20.11.2014
+ * @since 20.11.2014
  * @author Titus Kruse
  */
 @Controller

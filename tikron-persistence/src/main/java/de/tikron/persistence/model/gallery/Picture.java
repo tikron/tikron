@@ -26,7 +26,7 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 /**
  * Ein Bild.
  * 
- * @date 26.09.2008
+ * @since 26.09.2008
  * @author Titus Kruse
  */
 @Entity

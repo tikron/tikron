@@ -25,7 +25,7 @@ import com.maxmind.geoip2.record.Country;
 /**
  * Implementation of {@link GeoLocationService} based on MaxMind (R) open source geo IP database.
  *
- * @date 29.03.2019
+ * @since 29.03.2019
  * @author Titus Kruse
  */
 @Service("geoLocationService")

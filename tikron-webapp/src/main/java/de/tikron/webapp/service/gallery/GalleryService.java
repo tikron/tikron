@@ -17,7 +17,7 @@ import de.tikron.webapp.util.Pager;
 /**
  * Schnittstelle zum Service-Objekt der Bilder-Gallerie.
  * 
- * @date 08.03.2009
+ * @since 08.03.2009
  * @author Titus Kruse
  */
 public interface GalleryService {
@@ -147,8 +147,8 @@ public interface GalleryService {
 	/**
 	 * Liefert den URI zum angegebenen Bild und Template.
 	 * 
-	 * @param Das Bild (Entity).
-	 * @param Das Template.
+	 * @param picture Das Bild (Entity).
+	 * @param template Das Template.
 	 * @return Den URI zum Bild.
 	 */
 	public URI getImageUri(Picture picture, String template);
@@ -156,7 +156,7 @@ public interface GalleryService {
 	/**
 	 * Liefert eine Map aller Templates und dazugehörige URIs für das angegebene Bild.
 	 * 
-	 * @param Das Bild (Entity).
+	 * @param picture Das Bild (Entity).
 	 * @return Eine Map aus Templates und URIs.
 	 */
 	public Map<String, URI> getImageUris(Picture picture);

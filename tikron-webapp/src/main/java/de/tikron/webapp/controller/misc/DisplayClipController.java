@@ -26,7 +26,7 @@ import de.tikron.webapp.util.SeoURI;
 /**
  * Shows a single video clip.
  * 
- * @date 14.05.2014
+ * @since 14.05.2014
  * @author Titus Kruse
  */
 @Controller

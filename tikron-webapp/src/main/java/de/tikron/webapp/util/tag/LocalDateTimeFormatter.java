@@ -17,7 +17,7 @@ import org.apache.commons.lang3.time.DurationFormatUtils;
  * 
  * @see https://stackoverflow.com/questions/35606551/jstl-localdatetime-format
  *
- * @date 29.07.2017
+ * @since 29.07.2017
  * @author Titus Kruse
  * @author BalusC
  */

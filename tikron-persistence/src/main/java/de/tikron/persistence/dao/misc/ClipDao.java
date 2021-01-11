@@ -11,7 +11,7 @@ import de.tikru.commons.jpa.dao.GenericDao;
 /**
  * Data Acccess Object for video clips.
  *
- * @date 14.03.2015
+ * @since 14.03.2015
  * @author Titus Kruse
  */
 public interface ClipDao extends GenericDao<Clip, Long> {

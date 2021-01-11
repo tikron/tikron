@@ -16,7 +16,7 @@ import de.tikru.commons.faces.util.Message;
 /**
  * Listener converting Spring BadCredentialsException into faces message shown in the frontend.
  * 
- * @date 29.11.2010
+ * @since 29.11.2010
  * @author Titus Kruse
  * 
  * @see http://slackspace.de/articles/custom-login-page-with-jsf-and-spring-security-3-2/

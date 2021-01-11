@@ -12,7 +12,7 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * JPA implementation of {@link CategoryTypeDao}
  *
- * @date 05.04.2015
+ * @since 05.04.2015
  * @author Titus Kruse
  */
 public class CategoryTypeDaoJpaImpl extends GenericJpaDao<CategoryType, CategoryTypeId> implements CategoryTypeDao {

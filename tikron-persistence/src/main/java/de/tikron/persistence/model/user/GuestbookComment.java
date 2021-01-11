@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 /**
  * Ein Gästebucheintrag.
  *
- * @date 29.03.2012
+ * @since 29.03.2012
  * @author Titus Kruse
  */
 @Entity

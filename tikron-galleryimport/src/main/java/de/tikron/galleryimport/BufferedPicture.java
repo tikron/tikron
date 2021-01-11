@@ -12,7 +12,7 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Ein Bild zum Puffern.
  * 
- * @date 05.11.2008
+ * @since 05.11.2008
  * @author Titus Kruse
  */
 public class BufferedPicture {

@@ -23,7 +23,7 @@ import org.springframework.transaction.TransactionException;
  * 
  * @deprecated Because DataSourceUtils.resetConnectionAfterTransaction() is deprecated and I got currently not enough time to find a better solution. (17.12.2019)
  *
- * @date 29.03.2015
+ * @since 29.03.2015
  * @author Gonçalo Marques
  * @author Titus Kruse
  */

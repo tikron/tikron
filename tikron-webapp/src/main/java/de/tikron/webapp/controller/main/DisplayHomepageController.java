@@ -19,7 +19,7 @@ import de.tikron.webapp.service.misc.TeaserService;
 /**
  * Startseite.
  *
- * @date 27.12.2012
+ * @since 27.12.2012
  * @author Titus Kruse
  */
 @Controller

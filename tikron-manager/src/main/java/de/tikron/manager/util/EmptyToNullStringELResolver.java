@@ -9,7 +9,7 @@ import javax.el.ELResolver;
 /**
  * @see http://balusc.omnifaces.org/2015/10/the-empty-string-madness.html
  *
- * @date 28.04.2016
+ * @since 28.04.2016
  * @author Titus Kruse
  */
 public class EmptyToNullStringELResolver extends ELResolver {

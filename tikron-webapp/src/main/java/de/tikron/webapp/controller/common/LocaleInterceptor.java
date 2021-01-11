@@ -20,7 +20,7 @@ import org.springframework.web.servlet.support.RequestContextUtils;
  * 
  * Note: Currently not in use. See tikron-servlet.xml für more details. 
  *
- * @date 03.12.2017
+ * @since 03.12.2017
  * @author Titus Kruse
  */
 @Component

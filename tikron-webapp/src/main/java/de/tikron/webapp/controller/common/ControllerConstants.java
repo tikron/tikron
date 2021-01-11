@@ -6,7 +6,7 @@ package de.tikron.webapp.controller.common;
 /**
  * Interface defining constants used on web controller layer.
  *
- * @date 12.12.2014
+ * @since 12.12.2014
  * @author Titus Kruse
  */
 public final class ControllerConstants {

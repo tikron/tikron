@@ -16,7 +16,7 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Spring implementation of {@link TeaserService}.
  *
- * @date 01.06.2015
+ * @since 01.06.2015
  * @author Titus Kruse
  */
 @Service("teaserService")

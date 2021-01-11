@@ -11,7 +11,7 @@ import java.util.List;
  * 
  * Mandatory properties are identifier and description.
  *
- * @date 11.12.2011
+ * @since 11.12.2011
  * @author Titus Kruse
  */
 public class SimpleNode implements Node {

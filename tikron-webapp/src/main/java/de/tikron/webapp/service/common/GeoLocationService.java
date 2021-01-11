@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
  * 
  * Note: For simplification currently coutry only
  *
- * @date 29.03.2019
+ * @since 29.03.2019
  * @author Titus Kruse
  */
 public interface GeoLocationService {

@@ -6,7 +6,7 @@ package de.tikron.webapp.controller.common;
 /**
  * An AjaxResponse for the sucess case holding data to update the view.
  *
- * @date 17.05.2015
+ * @since 17.05.2015
  * @author Titus Kruse
  */
 public class SuccessResponse implements AjaxResponse {

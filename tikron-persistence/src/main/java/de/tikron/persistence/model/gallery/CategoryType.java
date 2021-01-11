@@ -16,7 +16,7 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * A category type.
  *
- * @date 05.04.2015
+ * @since 05.04.2015
  * @author Titus Kruse
  */
 @Entity
