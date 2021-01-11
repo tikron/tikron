@@ -6,8 +6,8 @@ package de.tikron.webapp.service.common;
 /**
  * Stellt Konfigurationsparameter für das Tracking von Benutzeraktivitäten bereit.
  *
- * @since 09.08.2010
  * @author Titus Kruse
+ * @since 09.08.2010
  */
 public interface TrackingService {
 

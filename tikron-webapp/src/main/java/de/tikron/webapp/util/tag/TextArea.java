@@ -12,8 +12,8 @@ import javax.servlet.jsp.tagext.Tag;
 /**
  * HTML-Tag zum Formatieren von Textbereichen.
  * 
- * @since 21.12.2008
  * @author Titus Kruse
+ * @since 21.12.2008
  */
 public class TextArea extends BaseTag implements Tag {
 

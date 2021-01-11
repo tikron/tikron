@@ -32,8 +32,8 @@ import de.tikru.commons.spring.MailService;
 /**
  * Controller for the contact message page.
  *
- * @since 30.12.2012
  * @author Titus Kruse
+ * @since 30.12.2012
  */
 @Controller
 public class SendContactMessageController extends AbstractFormController {

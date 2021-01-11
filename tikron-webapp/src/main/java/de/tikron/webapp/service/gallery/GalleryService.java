@@ -17,8 +17,8 @@ import de.tikron.webapp.util.Pager;
 /**
  * Schnittstelle zum Service-Objekt der Bilder-Gallerie.
  * 
- * @since 08.03.2009
  * @author Titus Kruse
+ * @since 08.03.2009
  */
 public interface GalleryService {
 

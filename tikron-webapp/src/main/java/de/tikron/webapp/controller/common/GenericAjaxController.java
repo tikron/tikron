@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Common controller for all simple ajax responses.
  *
- * @since 20.11.2014
  * @author Titus Kruse
+ * @since 20.11.2014
  */
 @Controller
 @RequestMapping("/*display*Ajax.html")

@@ -16,8 +16,8 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * A user rating for a video clip.
  *
- * @since 26.04.2015
  * @author Titus Kruse
+ * @since 26.04.2015
  */
 @Entity
 @DiscriminatorValue("CLIP")

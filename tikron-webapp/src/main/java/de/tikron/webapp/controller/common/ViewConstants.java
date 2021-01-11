@@ -6,8 +6,8 @@ package de.tikron.webapp.controller.common;
 /**
  * Gives a summary of all views available in the application. 
  *
- * @since 30.12.2012
  * @author Titus Kruse
+ * @since 30.12.2012
  */
 public final class ViewConstants {
 	

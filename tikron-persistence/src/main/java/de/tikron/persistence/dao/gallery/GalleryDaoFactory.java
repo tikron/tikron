@@ -8,8 +8,8 @@ import javax.persistence.EntityManager;
 /**
  * 
  *
- * @since 10.04.2009
  * @author Titus Kruse
+ * @since 10.04.2009
  */
 public class GalleryDaoFactory {
 

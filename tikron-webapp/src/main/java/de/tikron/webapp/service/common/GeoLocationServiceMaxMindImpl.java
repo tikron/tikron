@@ -25,8 +25,8 @@ import com.maxmind.geoip2.record.Country;
 /**
  * Implementation of {@link GeoLocationService} based on MaxMind (R) open source geo IP database.
  *
- * @since 29.03.2019
  * @author Titus Kruse
+ * @since 29.03.2019
  */
 @Service("geoLocationService")
 public class GeoLocationServiceMaxMindImpl implements GeoLocationService {

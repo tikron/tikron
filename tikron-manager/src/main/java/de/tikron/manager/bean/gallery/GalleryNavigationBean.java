@@ -28,8 +28,8 @@ import de.tikru.commons.faces.util.Message;
 /**
  * Managed bean providing the navigation tree for catalogs and associated children.
  *
- * @since 21.01.2012
  * @author Titus Kruse
+ * @since 21.01.2012
  */
 @ManagedBean
 @SessionScoped

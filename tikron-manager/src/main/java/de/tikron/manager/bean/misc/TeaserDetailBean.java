@@ -14,8 +14,8 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Backing bean for CRUD operations on a single video teaser.
  * 
- * @since 31.05.2015
  * @author Titus Kruse
+ * @since 31.05.2015
  */
 @ManagedBean
 @ViewScoped

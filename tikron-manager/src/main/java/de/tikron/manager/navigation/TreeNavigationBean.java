@@ -8,8 +8,8 @@ import javax.faces.event.ActionEvent;
 /**
  * A faces managed bean holding a navigation tree. The bean extends the tree by providing action event methods to control the tree. 
  *
- * @since 11.11.2011
  * @author Titus Kruse
+ * @since 11.11.2011
  */
 public class TreeNavigationBean {
 	

@@ -19,8 +19,8 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Helper-Bean, die Pfadnamen zu Gallery-Bilder bereitstellt.
  *
- * @since 18.02.2012
  * @author Titus Kruse
+ * @since 18.02.2012
  */
 @ManagedBean
 @ApplicationScoped

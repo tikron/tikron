@@ -10,8 +10,8 @@ import de.tikru.commons.jpa.dao.GenericDao;
 /**
  * DAO for roles.
  *
- * @since 01.04.2015
  * @author Titus Kruse
+ * @since 01.04.2015
  */
 public interface RoleDao extends GenericDao<Role, RoleId> {
 

@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 /**
  * Implementation of the security service to access the Spring security layer.
  *
- * @since 09.12.2010
  * @author Titus Kruse
+ * @since 09.12.2010
  */
 @Service("securityService")
 public class SecurityServiceImpl implements SecurityService {

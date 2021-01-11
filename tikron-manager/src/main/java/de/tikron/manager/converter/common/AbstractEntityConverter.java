@@ -21,8 +21,8 @@ import de.tikru.commons.jpa.domain.Entity;
  * @param T The type of enity to convert to/from.
  * @param ID The type of primary key to convert to/from.
  *
- * @since 29.05.2015
  * @author Titus Kruse
+ * @since 29.05.2015
  * @author BalusC
  * 
  * @see http://balusc.blogspot.com/2011/09/communication-in-jsf-20.html

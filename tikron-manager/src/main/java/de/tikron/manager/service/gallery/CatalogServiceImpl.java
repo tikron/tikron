@@ -15,8 +15,8 @@ import de.tikron.persistence.model.gallery.Catalog;
 /**
  * Default-Implementation des CatalogService.
  *
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 @Service("catalogService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -16,8 +16,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * Ein Kommentartyp.
  *
- * @since 17.03.2012
  * @author Titus Kruse
+ * @since 17.03.2012
  */
 @Entity
 @NamedQueries({ @NamedQuery(name = CommentType.NQ_FIND_ALL, query = "SELECT o FROM CommentType o"),

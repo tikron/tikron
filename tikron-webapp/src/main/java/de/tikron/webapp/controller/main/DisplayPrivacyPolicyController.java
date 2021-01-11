@@ -13,8 +13,8 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Zeigt Informationen zum Datenschutz an.
  * 
- * @since 28.02.2019
  * @author Titus Kruse
+ * @since 28.02.2019
  */
 @Controller
 @RequestMapping("/displayPrivacyPolicy.html")

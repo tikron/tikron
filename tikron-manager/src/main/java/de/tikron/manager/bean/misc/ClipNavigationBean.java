@@ -24,8 +24,8 @@ import de.tikru.commons.faces.util.Message;
 /**
  * Managed bean providing the navigation tree for video clips.
  *
- * @since 16.03.2015
  * @author Titus Kruse
+ * @since 16.03.2015
  */
 @ManagedBean
 @SessionScoped

@@ -16,8 +16,8 @@ import de.tikron.persistence.model.user.RoleId;
 /**
  * Default implementation of {@link RoleService}.
  *
- * @since 01.04.2015
  * @author Titus Kruse
+ * @since 01.04.2015
  */
 @Service("roleService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -18,8 +18,8 @@ import de.tikru.commons.jpa.dao.JpaUtil;
 /**
  * JPA implementation of {@link PictureDao}.
  * 
- * @since 28.09.2008
  * @author Titus Kruse
+ * @since 28.09.2008
  */
 public class PictureDaoJpaImpl extends GenericJpaDao<Picture, Long> implements PictureDao {
 

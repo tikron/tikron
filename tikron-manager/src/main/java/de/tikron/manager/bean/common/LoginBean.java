@@ -17,8 +17,8 @@ import javax.servlet.ServletResponse;
 /**
  * Managed bean delegating user authentication to the Spring security check.
  * 
- * @since 29.11.2010
  * @author Titus Kruse
+ * @since 29.11.2010
  * 
  * @see http://slackspace.de/articles/custom-login-page-with-jsf-and-spring-security-3-2/
  * 

@@ -16,8 +16,8 @@ import de.tikron.persistence.model.gallery.Category;
 /**
  * A comment for a category.
  *
- * @since 07.04.2015
  * @author Titus Kruse
+ * @since 07.04.2015
  */
 @Entity
 @DiscriminatorValue("CATEGORY")

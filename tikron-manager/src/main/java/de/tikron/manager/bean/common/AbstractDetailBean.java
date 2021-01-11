@@ -10,8 +10,8 @@ import de.tikru.commons.util.URLCoder;
 /**
  * Managed bean common for all entity detail beans.
  *
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 public abstract class AbstractDetailBean<T> extends BaseBean {
 

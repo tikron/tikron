@@ -16,8 +16,8 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Spring implementation of {@link TeaserService}.
  *
- * @since 01.06.2015
  * @author Titus Kruse
+ * @since 01.06.2015
  */
 @Service("teaserService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

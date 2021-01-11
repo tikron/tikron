@@ -30,8 +30,8 @@ import de.tikron.webapp.util.Pager;
 /**
  * Standard-Implementation des GalleryService.
  * 
- * @since 15.03.2009
  * @author Titus Kruse
+ * @since 15.03.2009
  */
 @Service("galleryService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

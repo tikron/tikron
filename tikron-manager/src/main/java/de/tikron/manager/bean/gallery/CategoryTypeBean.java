@@ -18,8 +18,8 @@ import de.tikron.persistence.model.gallery.CategoryType;
 /**
  * Helper bean providing a list of available category types.
  *
- * @since 05.04.2015
  * @author Titus Kruse
+ * @since 05.04.2015
  */
 @ManagedBean
 @ApplicationScoped

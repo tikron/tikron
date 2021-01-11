@@ -24,8 +24,8 @@ import de.tikru.commons.faces.util.Message;
 /**
  * Managed bean providing the navigation tree for web recommendations.
  *
- * @since 21.03.2015
  * @author Titus Kruse
+ * @since 21.03.2015
  */
 @ManagedBean
 @SessionScoped

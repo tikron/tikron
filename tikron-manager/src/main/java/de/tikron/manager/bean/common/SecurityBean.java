@@ -15,8 +15,8 @@ import de.tikron.persistence.model.user.RoleId;
 /**
  * Security bean providing information about the possibe currently logged in user.
  *
- * @since 20.11.2011
  * @author Titus Kruse
+ * @since 20.11.2011
  */
 @ManagedBean
 @RequestScoped

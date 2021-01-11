@@ -15,8 +15,8 @@ import de.tikron.persistence.model.gallery.CategoryTypeId;
 /**
  * Converter for type {@link de.tikron.persistence.model.gallery.CategoryTypeId}
  * 
- * @since 07.04.2015
  * @author Titus Kruse
+ * @since 07.04.2015
  */
 @ManagedBean
 @ApplicationScoped

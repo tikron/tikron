@@ -11,8 +11,8 @@ import java.time.format.FormatStyle;
 /**
  * Declares some methods providing formatters used to convert from/to model objects and localozed external representation.
  *
- * @since 13.02.2015
  * @author Titus Kruse
+ * @since 13.02.2015
  */
 public interface LocalizationConverter {
 

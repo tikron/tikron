@@ -12,8 +12,8 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Ein Bild zum Puffern.
  * 
- * @since 05.11.2008
  * @author Titus Kruse
+ * @since 05.11.2008
  */
 public class BufferedPicture {
 

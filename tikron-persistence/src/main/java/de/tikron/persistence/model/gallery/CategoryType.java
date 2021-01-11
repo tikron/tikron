@@ -16,8 +16,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * A category type.
  *
- * @since 05.04.2015
  * @author Titus Kruse
+ * @since 05.04.2015
  */
 @Entity
 @NamedQueries({ @NamedQuery(name = CategoryType.NQ_FIND_ALL, query = "SELECT o FROM CategoryType o"),

@@ -12,8 +12,8 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * DAO für Kommentartypen.
  *
- * @since 27.03.2012
  * @author Titus Kruse
+ * @since 27.03.2012
  */
 public class CommentTypeDaoJpaImpl extends GenericJpaDao<CommentType, CommentTypeId> implements CommentTypeDao {
 

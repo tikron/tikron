@@ -22,8 +22,8 @@ import de.tikron.ibase.client.IBaseClientException;
 /**
  * Implementierung des ImageService auf Basis von iBase.
  *
- * @since 20.02.2012
  * @author Titus Kruse
+ * @since 20.02.2012
  */
 @Service("imageService")
 public class ImageServiceIBaseImpl implements ImageService {

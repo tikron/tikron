@@ -16,8 +16,8 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * A user rating for a picture.
  *
- * @since 26.04.2015
  * @author Titus Kruse
+ * @since 26.04.2015
  */
 @Entity
 @DiscriminatorValue("PICTURE")

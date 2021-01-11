@@ -11,8 +11,8 @@ import java.util.List;
  * 
  * Mandatory properties are identifier and description.
  *
- * @since 11.12.2011
  * @author Titus Kruse
+ * @since 11.12.2011
  */
 public class SimpleNode implements Node {
 

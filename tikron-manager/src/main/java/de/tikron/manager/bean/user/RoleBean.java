@@ -18,8 +18,8 @@ import de.tikron.persistence.model.user.Role;
 /**
  * Helper bean providing a list of available roles.
  *
- * @since 24.11.2014
  * @author Titus Kruse
+ * @since 24.11.2014
  */
 @ManagedBean
 @ApplicationScoped

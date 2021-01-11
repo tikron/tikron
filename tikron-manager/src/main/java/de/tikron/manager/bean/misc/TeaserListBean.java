@@ -21,8 +21,8 @@ import de.tikru.commons.faces.util.Message;
 /**
  * Managed bean providing a selectable list of teasers.
  * 
- * @since 31.05.2015
  * @author Titus Kruse
+ * @since 31.05.2015
  */
 @ManagedBean
 @ViewScoped

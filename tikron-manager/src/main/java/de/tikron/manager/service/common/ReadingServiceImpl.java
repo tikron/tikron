@@ -14,8 +14,8 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Abstrakte Basisklasse für Default-Implementationen aller nur lesenden Services.
  *
- * @since 01.04.2015
  * @author Titus Kruse
+ * @since 01.04.2015
  */
 public class ReadingServiceImpl<T extends Entity<ID>, ID extends Serializable> implements ReadingService<T, ID> {
 

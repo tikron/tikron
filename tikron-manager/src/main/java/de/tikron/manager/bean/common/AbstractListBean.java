@@ -13,8 +13,8 @@ import javax.faces.model.ListDataModel;
  * 
  * @param <T> The type of list list data.
  *
- * @since 24.01.2012
  * @author Titus Kruse
+ * @since 24.01.2012
  */
 public abstract class AbstractListBean<T> extends BaseBean {
 

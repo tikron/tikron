@@ -10,8 +10,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * 
  * @param ID Type of identifier.
  *
- * @since 03.01.2015
  * @author Titus Kruse
+ * @since 03.01.2015
  */
 public abstract class EntityDTO<ID> {
 

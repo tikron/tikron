@@ -14,8 +14,8 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Abstrakte Basisklasse für Default-Implementationen aller Services.
  *
- * @since 24.03.2009
  * @author Titus Kruse
+ * @since 24.03.2009
  */
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public abstract class CRUDServiceImpl<T extends Entity<ID>, ID extends Serializable> extends ReadingServiceImpl<T, ID> implements CRUDService<T, ID> {

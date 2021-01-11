@@ -22,8 +22,8 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * Spring implementation of ClipService.
  *
- * @since 18.03.2015
  * @author Titus Kruse
+ * @since 18.03.2015
  */
 @Service("clipService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

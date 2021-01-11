@@ -12,8 +12,8 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * JPA implementation of {@link CategoryTypeDao}
  *
- * @since 05.04.2015
  * @author Titus Kruse
+ * @since 05.04.2015
  */
 public class CategoryTypeDaoJpaImpl extends GenericJpaDao<CategoryType, CategoryTypeId> implements CategoryTypeDao {
 

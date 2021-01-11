@@ -20,8 +20,8 @@ import de.tikru.commons.util.FormattedTextCompiler;
 /**
  * Component class mapping from/to data transfer objects of type Category. 
  *
- * @since 02.01.2015
  * @author Titus Kruse
+ * @since 02.01.2015
  */
 @Component
 public class CategoryDTOAssembler {

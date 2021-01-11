@@ -26,8 +26,8 @@ import de.tikron.persistence.model.user.RatingTypeId;
 /**
  * Default implementation of {@link RatingService}.
  *
- * @since 27.04.2015
  * @author Titus Kruse
+ * @since 27.04.2015
  */
 @Service("ratingService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

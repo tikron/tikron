@@ -26,8 +26,8 @@ import de.tikron.webapp.util.SeoURI;
 /**
  * Shows a single video clip.
  * 
- * @since 14.05.2014
  * @author Titus Kruse
+ * @since 14.05.2014
  */
 @Controller
 @RequestMapping("/clips/displayClip.html")

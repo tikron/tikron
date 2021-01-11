@@ -17,8 +17,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 /**
  * A web recommendation.
  *
- * @since 21.03.2015
  * @author Titus Kruse
+ * @since 21.03.2015
  */
 @Entity
 @NamedQueries({

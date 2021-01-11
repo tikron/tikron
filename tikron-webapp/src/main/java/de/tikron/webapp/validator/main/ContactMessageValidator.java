@@ -18,8 +18,8 @@ import de.tikru.commons.spring.ValidationUtils;
 /**
  * Validator für Kontaktnachrichten. (Sollte später durch JSR303 Bean-Validation ersetzt werden.)
  *
- * @since 30.12.2012
  * @author Titus Kruse
+ * @since 30.12.2012
  */
 public class ContactMessageValidator implements Validator {
 

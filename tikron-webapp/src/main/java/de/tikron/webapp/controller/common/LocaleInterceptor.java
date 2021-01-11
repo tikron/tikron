@@ -20,8 +20,8 @@ import org.springframework.web.servlet.support.RequestContextUtils;
  * 
  * Note: Currently not in use. See tikron-servlet.xml für more details. 
  *
- * @since 03.12.2017
  * @author Titus Kruse
+ * @since 03.12.2017
  */
 @Component
 public class LocaleInterceptor extends AbstractInterceptor implements HandlerInterceptor {

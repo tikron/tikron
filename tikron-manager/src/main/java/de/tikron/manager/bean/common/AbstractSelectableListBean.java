@@ -14,8 +14,8 @@ import de.tikru.commons.jpa.domain.Entity;
  * @param <T> The type of list data.
  * @param <ID> The type of the primary key of the list data rows.
  *
- * @since 24.01.2012
  * @author Titus Kruse
+ * @since 24.01.2012
  */
 public class AbstractSelectableListBean<T extends Entity<ID>, ID extends Serializable> extends AbstractListBean<T> {
 

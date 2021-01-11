@@ -6,8 +6,8 @@ package de.tikron.manager.navigation;
 /**
  * A navigation tree containing the root node and all its children.
  *
- * @since 11.12.2011
  * @author Titus Kruse
+ * @since 11.12.2011
  */
 public class Tree extends SimpleNode {
 

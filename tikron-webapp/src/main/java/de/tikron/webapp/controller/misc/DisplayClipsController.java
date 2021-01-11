@@ -27,8 +27,8 @@ import de.tikron.webapp.service.user.RatingService;
 /**
  * Shows a list of video clips.
  * 
- * @since 14.05.2014
  * @author Titus Kruse
+ * @since 14.05.2014
  */
 @Controller
 @RequestMapping("/clips/displayClips.html")

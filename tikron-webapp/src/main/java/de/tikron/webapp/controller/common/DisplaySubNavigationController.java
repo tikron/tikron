@@ -26,8 +26,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * 
  *
- * @since 12.01.2015
  * @author Titus Kruse
+ * @since 12.01.2015
  */
 @Controller
 @RequestMapping("/displaySubNav.html")

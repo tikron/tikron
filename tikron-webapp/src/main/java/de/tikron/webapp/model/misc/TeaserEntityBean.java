@@ -19,8 +19,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * An entity bean for a teaser.
  *
- * @since 01.06.2015
  * @author Titus Kruse
+ * @since 01.06.2015
  */
 public class TeaserEntityBean extends BaseEntityBean<Teaser> {
 	

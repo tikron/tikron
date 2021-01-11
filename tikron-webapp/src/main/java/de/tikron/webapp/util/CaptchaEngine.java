@@ -22,8 +22,8 @@ import com.octo.captcha.image.gimpy.GimpyFactory;
 /**
  * ListImageCaptchaEngine with specific default background, font and word generator.
  *
- * @since 16.06.2010
  * @author Titus Kruse
+ * @since 16.06.2010
  */
 public class CaptchaEngine extends ListImageCaptchaEngine {
 

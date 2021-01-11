@@ -19,8 +19,8 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * JPA implementation of {@link RoleDao}
  *
- * @since 01.04.2015
  * @author Titus Kruse
+ * @since 01.04.2015
  */
 public class RoleDaoJpaImpl extends GenericJpaDao<Role, RoleId> implements RoleDao {
 

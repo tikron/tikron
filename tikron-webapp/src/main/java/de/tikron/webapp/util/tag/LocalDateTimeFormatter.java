@@ -17,8 +17,8 @@ import org.apache.commons.lang3.time.DurationFormatUtils;
  * 
  * @see https://stackoverflow.com/questions/35606551/jstl-localdatetime-format
  *
- * @since 29.07.2017
  * @author Titus Kruse
+ * @since 29.07.2017
  * @author BalusC
  */
 public final class LocalDateTimeFormatter {

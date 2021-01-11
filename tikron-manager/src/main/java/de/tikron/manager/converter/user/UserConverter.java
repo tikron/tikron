@@ -14,8 +14,8 @@ import de.tikron.persistence.model.user.User;
 /**
  * Converter used as an interface between primary key and entity.
  * 
- * @since 27.11.2011
  * @author Titus Kruse
+ * @since 27.11.2011
  */
 @ManagedBean
 @ApplicationScoped

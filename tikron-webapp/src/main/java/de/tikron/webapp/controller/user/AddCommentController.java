@@ -31,8 +31,8 @@ import de.tikron.webapp.service.user.UserService;
 /**
  * Handler for an add comment Ajax form. 
  *
- * @since 10.05.2015
  * @author Titus Kruse
+ * @since 10.05.2015
  */
 @Controller
 public class AddCommentController extends AbstractAjaxFormController {

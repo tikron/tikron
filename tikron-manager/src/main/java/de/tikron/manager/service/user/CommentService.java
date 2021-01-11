@@ -13,8 +13,8 @@ import de.tikron.persistence.model.user.Comment;
 /**
  * Service für Kommentare.
  * 
- * @since 12.06.2008
  * @author Titus Kruse
+ * @since 12.06.2008
  */
 public interface CommentService extends CRUDService<Comment, Long> {
 

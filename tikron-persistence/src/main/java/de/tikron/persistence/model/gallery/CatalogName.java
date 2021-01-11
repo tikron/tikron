@@ -6,8 +6,8 @@ package de.tikron.persistence.model.gallery;
 /**
  * Per convention defined catalog names.
  *
- * @since 05.04.2014
  * @author Titus
+ * @since 05.04.2014
  */
 public enum CatalogName {
 

@@ -6,8 +6,8 @@ package de.tikron.manager.service.common;
 /**
  * Konstanten für "Music"
  *
- * @since 24.07.2011
  * @author Titus Kruse
+ * @since 24.07.2011
  */
 public final class Constants {
 	

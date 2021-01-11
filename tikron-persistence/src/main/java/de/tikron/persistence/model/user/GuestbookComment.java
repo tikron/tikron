@@ -9,8 +9,8 @@ import javax.persistence.Entity;
 /**
  * Ein Gästebucheintrag.
  *
- * @since 29.03.2012
  * @author Titus Kruse
+ * @since 29.03.2012
  */
 @Entity
 @DiscriminatorValue("GUESTBOOK")

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 /**
  * Abstract base controller for all servlets containing an input form.
  *
- * @since 12.12.2014
  * @author Titus Kruse
+ * @since 12.12.2014
  */
 public class AbstractFormController extends AbstractPageController {
 

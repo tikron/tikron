@@ -11,8 +11,8 @@ import org.apache.commons.lang3.math.NumberUtils;
 /**
  * A result of ratings for a publication. This is an unmapped POJO used by a query with HPQL scalar functions result.
  *
- * @since 27.04.2015
  * @author Titus Kruse
+ * @since 27.04.2015
  */
 public class RatingResult {
 	

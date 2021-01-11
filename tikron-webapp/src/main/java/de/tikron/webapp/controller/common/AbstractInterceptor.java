@@ -10,8 +10,8 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 /**
  * Base class for all my interceptors
  *
- * @since 26.11.2017
  * @author Titus Kruse
+ * @since 26.11.2017
  */
 public abstract class AbstractInterceptor extends HandlerInterceptorAdapter {
 

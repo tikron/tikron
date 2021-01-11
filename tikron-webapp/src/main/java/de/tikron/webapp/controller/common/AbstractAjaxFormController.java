@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 /**
  * Abstract base controller for all servlets containing an input form processed by Ajax request.
  *
- * @since 10.05.2015
  * @author Titus Kruse
+ * @since 10.05.2015
  */
 public class AbstractAjaxFormController extends AbstractController {
 

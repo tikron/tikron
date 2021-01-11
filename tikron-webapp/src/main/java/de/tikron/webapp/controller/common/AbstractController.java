@@ -28,8 +28,8 @@ import de.tikron.webapp.util.LocalizationContext;
 /**
  * Base class for all controllers providing helper methods.
  * 
- * @since 26.12.2009
  * @author Titus Kruse
+ * @since 26.12.2009
  */
 public abstract class AbstractController {
 

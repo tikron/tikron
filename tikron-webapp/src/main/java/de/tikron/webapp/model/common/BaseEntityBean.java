@@ -14,8 +14,8 @@ import de.tikru.commons.jpa.domain.Entity;
  * 
  * @param <E> Type of entity for this entity bean.
  *
- * @since 31.03.2014
  * @author Titus
+ * @since 31.03.2014
  */
 public abstract class BaseEntityBean<E extends Entity<?>> implements EntityBean<E> {
 

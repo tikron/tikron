@@ -18,8 +18,8 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Default-Implementation des PictureService.
  * 
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 @Service("pictureService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

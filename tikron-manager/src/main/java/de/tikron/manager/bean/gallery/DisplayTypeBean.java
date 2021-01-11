@@ -11,8 +11,8 @@ import de.tikron.persistence.model.gallery.DisplayType;
 /**
  * Helper bean providing enumeration values.
  *
- * @since 24.11.2014
  * @author Titus Kruse
+ * @since 24.11.2014
  */
 @ManagedBean
 @ApplicationScoped

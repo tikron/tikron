@@ -10,8 +10,8 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Deklariert grundsätzliche Methoden, die zum Erstellen, Lesen, Ändern und Löschen von Entitäten verwendet werden.
  * 
- * @since 07.06.2008
  * @author Titus Kruse
+ * @since 07.06.2008
  */
 public interface CRUDService<T extends Entity<ID>, ID extends Serializable> extends ReadingService<T, ID> {
 

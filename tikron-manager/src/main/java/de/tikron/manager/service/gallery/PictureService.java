@@ -12,8 +12,8 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Service für Bilder.
  * 
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 public interface PictureService extends CRUDService<Picture, Long> {
 

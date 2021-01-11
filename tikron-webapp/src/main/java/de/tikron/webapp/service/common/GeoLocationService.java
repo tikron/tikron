@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
  * 
  * Note: For simplification currently coutry only
  *
- * @since 29.03.2019
  * @author Titus Kruse
+ * @since 29.03.2019
  */
 public interface GeoLocationService {
 	

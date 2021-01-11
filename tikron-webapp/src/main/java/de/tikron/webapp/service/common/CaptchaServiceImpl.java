@@ -17,8 +17,8 @@ import de.tikron.webapp.util.CaptchaEngine;
 /**
  * Default implementation of the Captcha service.
  * 
- * @since 16.06.2010
  * @author Titus Kruse
+ * @since 16.06.2010
  */
 @Service("captchaService")
 public class CaptchaServiceImpl implements CaptchaService {

@@ -22,8 +22,8 @@ import de.tikron.webapp.service.misc.ClipService;
 /**
  * Controller adding a rating for a video clip.
  *
- * @since 26.04.2015
  * @author Titus Kruse
+ * @since 26.04.2015
  */
 @Controller
 @RequestMapping("/clips/addClipRating.json")

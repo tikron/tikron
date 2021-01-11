@@ -18,8 +18,8 @@ import de.tikron.persistence.model.gallery.Category;
 /**
  * Default-Implementation des CategoryService.
  * 
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 @Service("categoryService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -18,8 +18,8 @@ import de.tikru.commons.jpa.dao.JpaUtil;
 /**
  * JPA implementation of {@link CategoryDao}.
  * 
- * @since 28.09.2008
  * @author Titus Kruse
+ * @since 28.09.2008
  */
 public class CategoryDaoJpaImpl extends GenericJpaDao<Category, Long> implements CategoryDao {
 

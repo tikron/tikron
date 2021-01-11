@@ -8,8 +8,8 @@ package de.tikron.manager.navigation;
  *
  * Mandatory property is the title.
  * 
- * @since 14.01.2012
  * @author Titus Kruse
+ * @since 14.01.2012
  */
 public class NodeDescription {
 

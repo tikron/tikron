@@ -19,8 +19,8 @@ import de.tikron.webapp.controller.common.ResourceNotFoundException;
 /**
  * Exception handler with additional logging and preparing the error page content. 
  *
- * @since 18.01.2015
  * @author Titus Kruse
+ * @since 18.01.2015
  */
 public class ExceptionHandler extends SimpleMappingExceptionResolver implements ApplicationContextAware {
 	

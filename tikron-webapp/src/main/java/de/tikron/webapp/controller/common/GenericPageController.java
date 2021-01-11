@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Common controller for all pages, displaying simple content.
  *
- * @since 27.12.2012
  * @author Titus Kruse
+ * @since 27.12.2012
  */
 @Controller
 @RequestMapping("/*display*.html")

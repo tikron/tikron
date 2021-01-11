@@ -6,8 +6,8 @@ package de.tikron.persistence.model.user;
 /**
  * Possible types of comments (like a picture comment). 
  *
- * @since 06.12.2014
  * @author Titus Kruse
+ * @since 06.12.2014
  */
 public enum CommentTypeId {
 

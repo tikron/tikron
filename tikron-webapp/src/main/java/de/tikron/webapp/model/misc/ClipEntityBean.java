@@ -20,8 +20,8 @@ import de.tikru.commons.util.FormattedTextCompiler;
 /**
  * An entity bean for a video clip.
  *
- * @since 18.03.2015
  * @author Titus Kruse
+ * @since 18.03.2015
  */
 public class ClipEntityBean extends BaseEntityBean<Clip> {
 	

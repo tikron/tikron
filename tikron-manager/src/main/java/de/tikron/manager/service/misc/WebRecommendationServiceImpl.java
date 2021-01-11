@@ -15,8 +15,8 @@ import de.tikron.persistence.model.misc.WebRecommendation;
 /**
  * Default implementation of WebRecommendationService.
  *
- * @since 21.03.2015
  * @author Titus Kruse
+ * @since 21.03.2015
  */
 @Service("webRecommendationService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

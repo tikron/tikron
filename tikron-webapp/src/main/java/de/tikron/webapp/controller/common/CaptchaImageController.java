@@ -19,8 +19,8 @@ import de.tikru.commons.spring.bytecontent.AbstractContentTypeController;
 /**
  * Controller providing a random generated Captcha image as byte data.
  *
- * @since 30.12.2012
  * @author Titus Kruse
+ * @since 30.12.2012
  */
 @Controller
 @RequestMapping("/captchaImage.html")

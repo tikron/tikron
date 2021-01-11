@@ -6,8 +6,8 @@ import de.tikron.persistence.model.gallery.Catalog;
 /**
  * Service für Kataloge.
  * 
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 public interface CatalogService extends CRUDService<Catalog, Long> {
 

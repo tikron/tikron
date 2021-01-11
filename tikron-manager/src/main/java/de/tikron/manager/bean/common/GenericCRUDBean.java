@@ -14,8 +14,8 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Generic managed bean to handle CRUD operations on the entity T with primary key ID.
  *
- * @since 17.03.2015
  * @author Titus Kruse
+ * @since 17.03.2015
  */
 public abstract class GenericCRUDBean<T extends Entity<ID>, ID extends Serializable> extends AbstractDetailBean<T> {
 	

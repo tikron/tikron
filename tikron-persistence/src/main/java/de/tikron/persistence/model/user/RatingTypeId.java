@@ -6,8 +6,8 @@ package de.tikron.persistence.model.user;
 /**
  * Possible types of rating objects (like a picture rating). 
  *
- * @since 26.04.2015
  * @author Titus Kruse
+ * @since 26.04.2015
  */
 public enum RatingTypeId {
 

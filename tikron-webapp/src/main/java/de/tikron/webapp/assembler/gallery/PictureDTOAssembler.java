@@ -21,8 +21,8 @@ import de.tikru.commons.util.FormattedTextCompiler;
 /**
  * Component class mapping from/to data transfer objects of type Picture. 
  *
- * @since 02.01.2015
  * @author Titus Kruse
+ * @since 02.01.2015
  */
 @Component
 public class PictureDTOAssembler {

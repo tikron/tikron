@@ -26,8 +26,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 /**
  * Ein Bild.
  * 
- * @since 26.09.2008
  * @author Titus Kruse
+ * @since 26.09.2008
  */
 @Entity
 @NamedQueries({

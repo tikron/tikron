@@ -17,8 +17,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * 
  *
- * @since 01.01.2015
  * @author Titus Kruse
+ * @since 01.01.2015
  */
 @Service
 public class GalleryServiceFacadeImpl implements GalleryServiceFacade {

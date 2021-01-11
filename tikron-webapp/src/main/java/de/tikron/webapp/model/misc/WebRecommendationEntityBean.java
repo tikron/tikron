@@ -9,8 +9,8 @@ import de.tikron.webapp.model.common.BaseEntityBean;
 /**
  * An entity bean for a web recommendation.
  *
- * @since 21.03.2015
  * @author Titus Kruse
+ * @since 21.03.2015
  */
 public class WebRecommendationEntityBean extends BaseEntityBean<WebRecommendation> {
 	

@@ -6,8 +6,8 @@ package de.tikron.persistence.model.misc;
 /**
  * Per convesion defined special teaser names.
  *
- * @since 01.06.2015
  * @author Titus Kruse
+ * @since 01.06.2015
  */
 public enum TeaserName {
 	

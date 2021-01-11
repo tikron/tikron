@@ -15,8 +15,8 @@ import de.tikron.persistence.model.user.User;
 /**
  * Default-Implementation des UserService.
  *
- * @since 05.02.2012
  * @author Titus Kruse
+ * @since 05.02.2012
  */
 @Service("userService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -6,8 +6,8 @@ package de.tikron.persistence.model.gallery;
 /**
  * How to show pictures in the frontend.
  *
- * @since 24.11.2014
  * @author Titus Kruse
+ * @since 24.11.2014
  */
 public enum DisplayType {
 

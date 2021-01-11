@@ -18,8 +18,8 @@ import de.tikru.commons.jpa.dao.JpaUtil;
 /**
  * JPA implementation of {@link RatingDao}.
  *
- * @since 27.04.2015
  * @author Titus Kruse
+ * @since 27.04.2015
  */
 public class RatingDaoJpaImpl extends GenericJpaDao<Rating, Long> implements RatingDao {
 

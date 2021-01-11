@@ -6,8 +6,8 @@ package de.tikron.manager.navigation;
 /**
  * Extends the navigation tree node by a feature to "lazy load" its children.
  *
- * @since 14.01.2012
  * @author Titus Kruse
+ * @since 14.01.2012
  */
 public class LoadableNode extends SimpleNode {
 

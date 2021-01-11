@@ -16,8 +16,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * A type of rating.
  *
- * @since 26.04.2015
  * @author Titus Kruse
+ * @since 26.04.2015
  */
 @Entity
 @NamedQueries({ @NamedQuery(name = RatingType.NQ_FIND_ALL, query = "SELECT o FROM RatingType o"),

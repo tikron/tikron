@@ -15,8 +15,8 @@ import de.tikron.persistence.model.user.RoleId;
 /**
  * Converter used as an interface between primary key and entity.
  * 
- * @since 27.11.2011
  * @author Titus Kruse
+ * @since 27.11.2011
  * @author BalusC
  * 
  * @see http://balusc.blogspot.com/2011/09/communication-in-jsf-20.html

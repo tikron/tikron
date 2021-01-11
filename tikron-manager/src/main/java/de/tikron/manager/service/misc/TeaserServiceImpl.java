@@ -17,8 +17,8 @@ import de.tikron.persistence.model.misc.Teaser;
 /**
  * Default implementation of TeaserService.
  *
- * @since 29.05.2015
  * @author Titus Kruse
+ * @since 29.05.2015
  */
 @Service("teaserService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

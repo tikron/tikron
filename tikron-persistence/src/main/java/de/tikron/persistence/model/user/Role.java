@@ -16,8 +16,8 @@ import de.tikru.commons.jpa.domain.EnumeratedKeyEntity;
 /**
  * A single role. Each role determines application permissions for users. A user can have none, one or multiple roles.
  * 
- * @since 01.04.2015
  * @author Titus Kruse
+ * @since 01.04.2015
  */
 @Entity
 @NamedQueries({ @NamedQuery(name = Role.NQ_FIND_ALL, query = "SELECT o FROM Role o"),

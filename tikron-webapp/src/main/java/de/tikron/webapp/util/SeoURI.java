@@ -11,8 +11,8 @@ import de.tikron.webapp.util.URIBuilder.NameValuePair;
 /**
  * URI with view name and request parameters. Parameter values of type String will be converter in a search engine optimized form.
  *
- * @since 28.01.2015
  * @author Titus Kruse
+ * @since 28.01.2015
  */
 public class SeoURI {
 	

@@ -22,8 +22,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 /**
  * Stellt Methoden für den Zugang zum Image Server bereit (ibase).
  *
- * @since 12.03.2012
  * @author Titus Kruse
+ * @since 12.03.2012
  */
 @Service("imageService")
 public class ImageServiceImpl implements ImageService {

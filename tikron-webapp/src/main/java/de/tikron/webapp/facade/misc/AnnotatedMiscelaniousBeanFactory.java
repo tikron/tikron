@@ -19,8 +19,8 @@ import de.tikron.webapp.model.misc.WebRecommendationEntityBean;
 /**
  * An implementation of MiscelaniuosBeanFactory configured with Spring annotations.
  *
- * @since 19.03.2015
  * @author Titus Kruse
+ * @since 19.03.2015
  */
 @Configuration
 public class AnnotatedMiscelaniousBeanFactory implements MiscelaniuosBeanFactory {

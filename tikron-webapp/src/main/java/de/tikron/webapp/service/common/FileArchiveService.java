@@ -8,8 +8,8 @@ import java.net.URL;
 /**
  * Stellt Methoden für den Zugang zum File Archive bereit.
  *
- * @since 17.09.2012
  * @author Titus Kruse
+ * @since 17.09.2012
  */
 public interface FileArchiveService {
 

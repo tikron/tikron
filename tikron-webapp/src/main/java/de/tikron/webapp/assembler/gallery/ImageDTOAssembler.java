@@ -16,8 +16,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * Component class mapping from/to data transfer objects of type Image. 
  *
- * @since 02.01.2015
  * @author Titus Kruse
+ * @since 02.01.2015
  */
 @Component
 public class ImageDTOAssembler {

@@ -10,8 +10,8 @@ import de.tikron.persistence.model.misc.WebRecommendation;
 /**
  * Service for web recommendations. 
  *
- * @since 21.03.2015
  * @author Titus Kruse
+ * @since 21.03.2015
  */
 public interface WebRecommendationService {
 	

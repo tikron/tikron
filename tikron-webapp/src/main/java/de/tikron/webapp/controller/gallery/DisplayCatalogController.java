@@ -29,8 +29,8 @@ import de.tikron.webapp.util.SeoURI;
 /**
  * Zeigt einen Katalog an.
  * 
- * @since 02.01.2013
  * @author Titus Kruse
+ * @since 02.01.2013
  */
 @Controller
 @RequestMapping("/gallery/displayCatalog.html")

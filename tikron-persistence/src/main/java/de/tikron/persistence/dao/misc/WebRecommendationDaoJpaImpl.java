@@ -16,8 +16,8 @@ import de.tikru.commons.jpa.dao.GenericJpaDao;
 /**
  * JPA implementation of web recommendation DAO.
  *
- * @since 21.03.2015
  * @author Titus Kruse
+ * @since 21.03.2015
  */
 public class WebRecommendationDaoJpaImpl extends GenericJpaDao<WebRecommendation, Long> implements WebRecommendationDao {
 	

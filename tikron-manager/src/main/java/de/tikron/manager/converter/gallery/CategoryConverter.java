@@ -14,8 +14,8 @@ import de.tikron.persistence.model.gallery.Category;
 /**
  * Converter used as an interface between primary key and entity.
  * 
- * @since 12.02.2012
  * @author Titus Kruse
+ * @since 12.02.2012
  */
 @ManagedBean
 @ApplicationScoped

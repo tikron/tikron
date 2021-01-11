@@ -39,8 +39,8 @@ import de.tikron.webapp.util.SeoUtils;
 /**
  * Zeigt ein Bild an.
  * 
- * @since 02.01.2013
  * @author Titus Kruse
+ * @since 02.01.2013
  */
 @Controller
 @RequestMapping("/gallery/displayPicture*.html")

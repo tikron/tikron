@@ -12,8 +12,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 /**
  * Helper class to build URIs.
  *
- * @since 08.04.2014
  * @author Titus Kruse
+ * @since 08.04.2014
  */
 public class URIBuilder {
 	

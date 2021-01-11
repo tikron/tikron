@@ -10,8 +10,8 @@ import de.tikru.commons.jpa.dao.GenericDao;
 /**
  * DAO für Kommentartypen.
  *
- * @since 27.03.2012
  * @author Titus Kruse
+ * @since 27.03.2012
  */
 public interface CommentTypeDao extends GenericDao<CommentType, CommentTypeId> {
 

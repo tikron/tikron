@@ -24,8 +24,8 @@ import de.tikru.commons.faces.util.Message;
 /**
  * Managed bean providing the navigation tree for comments and associated children.
  *
- * @since 04.02.2012
  * @author Titus Kruse
+ * @since 04.02.2012
  */
 @ManagedBean
 @SessionScoped

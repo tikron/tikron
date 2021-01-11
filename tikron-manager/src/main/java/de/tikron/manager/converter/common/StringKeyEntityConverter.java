@@ -9,8 +9,8 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Generic faces convert to convert to/from entity with primary key of type String.
  *
- * @since 29.05.2015
  * @author Titus Kruse
+ * @since 29.05.2015
  */
 public abstract class StringKeyEntityConverter<T extends Entity<String>> extends AbstractEntityConverter<T, String> {
 

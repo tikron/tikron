@@ -15,8 +15,8 @@ import de.tikron.persistence.model.misc.Clip;
 /**
  * Default implementation of ClipService.
  *
- * @since 16.03.2015
  * @author Titus Kruse
+ * @since 16.03.2015
  */
 @Service("clipService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

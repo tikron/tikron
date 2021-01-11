@@ -11,8 +11,8 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Abstract base controller for all servlets containing full page content.
  *
- * @since 27.12.2012
  * @author Titus Kruse
+ * @since 27.12.2012
  */
 public abstract class AbstractPageController extends AbstractController {
 

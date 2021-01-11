@@ -16,8 +16,8 @@ import de.tikron.persistence.model.user.RatingResult;
 /**
  * Service for rating publications. 
  *
- * @since 26.04.2015
  * @author Titus Kruse
+ * @since 26.04.2015
  */
 public interface RatingService {
 	

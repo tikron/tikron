@@ -13,8 +13,8 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Zeigt das Impressum an.
  * 
- * @since 28.12.2012
  * @author Titus Kruse
+ * @since 28.12.2012
  */
 @Controller
 @RequestMapping("/displayImprint.html")

@@ -10,8 +10,8 @@ import de.tikru.commons.jpa.dao.GenericDao;
 /**
  * DAO for category types.
  *
- * @since 05.04.2015
  * @author Titus Kruse
+ * @since 05.04.2015
  */
 public interface CategoryTypeDao extends GenericDao<CategoryType, CategoryTypeId> {
 

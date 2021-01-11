@@ -23,8 +23,8 @@ import de.tikru.commons.jpa.validation.ValidationConstants;
  * constraints had to be pulled up into this DTO. The only currently known alternatives are @Valid on service layer or
  * programmatically validation of domain model bean in controller/service.
  *
- * @since 03.01.2015
  * @author Titus Kruse
+ * @since 03.01.2015
  */
 public class CommentForm implements Serializable {
 

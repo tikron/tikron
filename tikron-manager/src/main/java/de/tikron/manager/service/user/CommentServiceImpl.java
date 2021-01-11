@@ -19,8 +19,8 @@ import de.tikron.persistence.model.user.Comment;
 /**
  * Default-Implementation des CommentService.
  *
- * @since 26.03.2009
  * @author Titus Kruse
+ * @since 26.03.2009
  */
 @Service("commentService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

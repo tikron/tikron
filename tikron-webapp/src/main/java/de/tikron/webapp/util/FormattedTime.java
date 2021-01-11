@@ -10,8 +10,8 @@ import java.time.temporal.TemporalAccessor;
 /**
  * A class representing a formatted time according to the given localization context.
  *
- * @since 01.07.2017
  * @author Titus Kruse
+ * @since 01.07.2017
  */
 public class FormattedTime extends AbstractFormattedDateTime {
 	

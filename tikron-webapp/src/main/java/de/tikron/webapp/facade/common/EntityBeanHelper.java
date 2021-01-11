@@ -22,8 +22,8 @@ import de.tikru.commons.jpa.domain.Entity;
 /**
  * Helper class providing usefull methods for entity beans.
  *
- * @since 31.03.2014
  * @author Titus
+ * @since 31.03.2014
  */
 @Service
 public class EntityBeanHelper {

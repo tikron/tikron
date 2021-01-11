@@ -19,8 +19,8 @@ import de.tikron.persistence.model.gallery.Picture;
 /**
  * Ein Bild-Kommentar.
  *
- * @since 29.03.2012
  * @author Titus Kruse
+ * @since 29.03.2012
  */
 @Entity
 @DiscriminatorValue("PICTURE")

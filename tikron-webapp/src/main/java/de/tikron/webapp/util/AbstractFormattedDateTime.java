@@ -10,8 +10,8 @@ import java.time.temporal.TemporalAccessor;
 /**
  * Base class for Dates and Times representing a human readable format. 
  *
- * @since 01.07.2017
  * @author Titus Kruse
+ * @since 01.07.2017
  */
 public abstract class AbstractFormattedDateTime {
 

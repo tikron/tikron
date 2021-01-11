@@ -23,8 +23,8 @@ import de.tikru.commons.jpa.domain.ShowableEntity;
 /**
  * A teaser storing site related information to be shown as an eye catcher on the home page.  
  * 
- * @since 29.05.2015
  * @author Titus Kruse
+ * @since 29.05.2015
  */
 @Entity
 @NamedQueries({

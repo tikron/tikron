@@ -33,8 +33,8 @@ import de.tikru.commons.spring.MailService;
 /**
  * Standard-Implementation des Service für Benutzer.
  *
- * @since 23.03.2012
  * @author Titus Kruse
+ * @since 23.03.2012
  */
 @Service("userService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -33,8 +33,8 @@ import de.tikron.webapp.service.gallery.GalleryService;
 /**
  * Prepares some information shown on the main navigation menu.
  *
- * @since 06.01.2013
  * @author Titus Kruse
+ * @since 06.01.2013
  */
 @Component
 public class MainNavigationInterceptor extends AbstractInterceptor implements ApplicationContextAware {

@@ -24,8 +24,8 @@ import de.tikron.persistence.model.user.Role;
 /**
  * Implementaion of UserDetailsService.
  *
- * @since 09.12.2010
  * @author Titus Kruse
+ * @since 09.12.2010
  */
 @Service("userDetailsService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

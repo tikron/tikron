@@ -20,8 +20,8 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Shows a list of web recommendations.
  *
- * @since 30.12.2012
  * @author Titus Kruse
+ * @since 30.12.2012
  */
 @Controller
 @RequestMapping("/webRecommendations/displayEntries.html")

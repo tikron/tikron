@@ -22,8 +22,8 @@ import de.tikron.webapp.service.common.TrackingService;
 /**
  * Interceptor checking for enabled user tracking.
  *
- * @since 17.01.2013
  * @author Titus Kruse
+ * @since 17.01.2013
  */
 @Component
 public class TrackingInterceptor extends HandlerInterceptorAdapter {

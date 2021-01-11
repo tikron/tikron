@@ -12,8 +12,8 @@ import de.tikru.commons.jpa.domain.Entity;
  * 
  * @param <E> Type of entity.
  *
- * @since 31.03.2014
  * @author Titus Kruse
+ * @since 31.03.2014
  */
 public interface EntityBean<E extends Entity<?>> extends Serializable {
 

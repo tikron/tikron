@@ -14,8 +14,8 @@ import de.tikron.webapp.util.RobotsDirective;
 /**
  * Zeigt die Historie an.
  * 
- * @since 28.12.2012
  * @author Titus Kruse
+ * @since 28.12.2012
  */
 @Controller
 @RequestMapping("/displayLog.html")

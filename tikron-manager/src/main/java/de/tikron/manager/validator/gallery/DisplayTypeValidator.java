@@ -18,8 +18,8 @@ import de.tikron.persistence.model.gallery.DisplayType;
 /**
  * Validates the display type of a category. 
  *
- * @since 07.04.2015
  * @author Titus Kruse
+ * @since 07.04.2015
  */
 @FacesValidator(value="displayTypeValidator")
 public class DisplayTypeValidator implements Validator {

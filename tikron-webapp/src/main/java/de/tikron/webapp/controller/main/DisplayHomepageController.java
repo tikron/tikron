@@ -19,8 +19,8 @@ import de.tikron.webapp.service.misc.TeaserService;
 /**
  * Startseite.
  *
- * @since 27.12.2012
  * @author Titus Kruse
+ * @since 27.12.2012
  */
 @Controller
 @RequestMapping("/displayHomepage.html")

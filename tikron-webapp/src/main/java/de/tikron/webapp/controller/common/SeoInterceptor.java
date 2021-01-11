@@ -23,8 +23,8 @@ import de.tikron.webapp.util.SeoURI;
 /**
  * Prepares default SEO data for views.
  *
- * @since 06.04.2014
  * @author Titus Kruse
+ * @since 06.04.2014
  */
 @Component
 public class SeoInterceptor extends AbstractInterceptor {
