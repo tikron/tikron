@@ -3,7 +3,7 @@
  */
 package de.tikron.webapp.controller.main;
 
-import java.util.Locale;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -26,6 +26,7 @@ import de.tikron.webapp.controller.common.SuccessResponse;
 import de.tikron.webapp.controller.common.ViewConstants;
 import de.tikron.webapp.model.main.ContactMessage;
 import de.tikron.webapp.service.common.GeoLocationService;
+import de.tikron.webapp.service.common.GeoLocationServiceException;
 import de.tikron.webapp.util.RobotsDirective;
 import de.tikru.commons.spring.MailService;
 
@@ -39,6 +40,9 @@ import de.tikru.commons.spring.MailService;
 public class SendContactMessageController extends AbstractFormController {
 
 	private static Logger logger = LoggerFactory.getLogger(SendContactMessageController.class);
+	
+	// TODO Allowed countries shall be configurable
+	private static final Set<String> allowedCountries = Set.of("DE", "AT", "CH");
 
 	private MailService mailService;
 	
@@ -68,9 +72,10 @@ public class SendContactMessageController extends AbstractFormController {
 	 */
 	@RequestMapping(value = "/sendContactMessage.json", method = RequestMethod.POST)
 	public @ResponseBody AjaxResponse processSubmit(@ModelAttribute(ContactMessage.NAME) ContactMessage contactMessage, BindingResult result) {
-		String countryIsoCode = geoLocationService.getCountryIsoCode(getHttpServletRequest());
-		if (countryIsoCode != null && !countryIsoCode.equals(Locale.GERMANY.getCountry())) {
-			logger.warn("Contact message submitted by user from invalid country {}.", countryIsoCode);
+		String remoteAddr = getHttpServletRequest().getRemoteAddr();
+		String countryIsoCode = retrieveGeoLocation(remoteAddr);
+		if (countryIsoCode != null && !allowedCountries.contains(countryIsoCode)) {
+			logger.warn("Contact message submitted by user from unauthorized country {}.", countryIsoCode);
 			return new ErrorResponse("sendContactMessage.error.invalidCountry", localizationContext);
 		}
 		validator.validate(contactMessage, result);
@@ -85,6 +90,19 @@ public class SendContactMessageController extends AbstractFormController {
 			return new SuccessResponse(localizationContext.getMessage("sendContactMessage.confirmation.success", new Object[]{}));
 		} else {
 			return new ErrorResponse(result, getLocalizationContext());
+		}
+	}
+	
+	private String retrieveGeoLocation(String remoteAddress) {
+		try {
+			String countryIsoCode = geoLocationService.getCountryIsoCode(remoteAddress);
+			if (countryIsoCode == null) {
+				logger.warn("No country code found for address {} by Geo IP lookup.", remoteAddress);
+			}
+			return countryIsoCode;
+		} catch (GeoLocationServiceException e) {
+			logger.error("Exception occurred in Geo IP lookup: ", e);
+			return null;
 		}
 	}
 

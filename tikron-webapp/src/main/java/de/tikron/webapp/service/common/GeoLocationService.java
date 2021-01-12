@@ -3,12 +3,12 @@
  */
 package de.tikron.webapp.service.common;
 
-import javax.servlet.http.HttpServletRequest;
+import java.net.InetAddress;
 
 /**
- * Geo-Location Service providing information about the site users earth location based on HTTP servlet request
+ * Geo-Location Service providing information about the site users earth location based on remote IP address.
  * 
- * Note: For simplification currently coutry only
+ * Note: For simplification currently country only
  *
  * @author Titus Kruse
  * @since 29.03.2019
@@ -16,12 +16,25 @@ import javax.servlet.http.HttpServletRequest;
 public interface GeoLocationService {
 	
 	/**
-	 * Returns country ISO code.
+	 * Tries to identify users home country ISO code based on the given IP address (ipv4 or ipv6).
 	 * 
-	 * @param request The HTTP servlet request
+	 * @param ipAddress The IP address.
 	 * 
 	 * @return The country ISO code or null, if unknown
+	 * 
+	 * @throws GeoLocationServiceException Thrown on error in Geo IP lookup. 
 	 */
-	public String getCountryIsoCode(HttpServletRequest request);
+	public String getCountryIsoCode(InetAddress ipAddress) throws GeoLocationServiceException;
+	
+	/**
+	 * Tries to identify users home country ISO code based on the given IP address (ipv4 or ipv6).
+	 * 
+	 * @param ipAddress The IP address as string.
+	 * 
+	 * @return The country ISO code or null, if unknown
+	 * 
+	 * @throws GeoLocationServiceException Thrown on error in Geo IP lookup. 
+	 */
+	public String getCountryIsoCode(String ipAddress) throws GeoLocationServiceException;
 
 }

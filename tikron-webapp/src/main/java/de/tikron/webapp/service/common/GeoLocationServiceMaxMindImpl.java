@@ -5,10 +5,10 @@ package de.tikron.webapp.service.common;
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Objects;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,27 +46,33 @@ public class GeoLocationServiceMaxMindImpl implements GeoLocationService {
 	}
 
 	@Override
-	public String getCountryIsoCode(HttpServletRequest request) {
+	public String getCountryIsoCode(InetAddress ipAddress) throws GeoLocationServiceException {
+		Objects.requireNonNull(ipAddress, "Parameter ipAddress must nor be null");
 		try {
-			String remoteAddress = request.getRemoteAddr();
-			// remoteAddress = "185.93.182.142";
-			if (remoteAddress != null && !remoteAddress.isEmpty()) {
-				InetAddress ipAddress = InetAddress.getByName(remoteAddress);
-				// Lookup database
-				logger.debug("Geo location lookup for IPv4 address {}.", ipAddress);
-				CountryResponse response = databaseReader.country(ipAddress);
-				Country country = response.getCountry();
-				logger.debug("Geo location lookup country result {}.", country);
-				return country.getIsoCode();
-			}
+			logger.debug("Geo location lookup for IPv4 address {}.", ipAddress);
+			CountryResponse response = databaseReader.country(ipAddress);
+			Country country = response.getCountry();
+			logger.debug("Geo location lookup country result {}.", country);
+			return country.getIsoCode();
 		} catch(AddressNotFoundException e) {
 			return null;
 		} catch(IOException e) {
-			e.printStackTrace();
+			throw new GeoLocationServiceException(e);
 		} catch (GeoIp2Exception e) {
-			e.printStackTrace();
+			throw new GeoLocationServiceException(e);
 		}
-		return null;
 	}
 
+	@Override
+	public String getCountryIsoCode(String ipAddress) throws GeoLocationServiceException {
+		try {
+			if (ipAddress != null && !ipAddress.isEmpty()) {
+				InetAddress inetAddress = InetAddress.getByName(ipAddress);
+				return getCountryIsoCode(inetAddress);
+			}
+			return null;
+		} catch (UnknownHostException e) {
+			throw new GeoLocationServiceException(e);
+		}
+	}
 }
