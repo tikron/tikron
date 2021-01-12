@@ -101,31 +101,6 @@
 			<artifactId>javax.annotation-api</artifactId>
 		</dependency>
 		<!-- END -->
-   		<dependency>
-			<groupId>com.octo.captcha</groupId>
-			<artifactId>jcaptcha-all</artifactId>
-			<version>1.0-RC6</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>ehcache</artifactId>
-					<groupId>net.sf.ehcache</groupId>
-				</exclusion>
-				<!-- Excluded for conflict with usage in antisamy -->
-				<exclusion>
-					<groupId>xerces</groupId>
-					<artifactId>xercesImpl</artifactId>
-				</exclusion>
-				<!-- Excluded for conflict with usage in antisamy -->
-				<exclusion>
-					<groupId>xml-apis</groupId>
-					<artifactId>xml-apis</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 <!-- 		<dependency> -->
 <!-- 			<groupId>org.owasp.esapi</groupId> -->
 <!-- 			<artifactId>esapi</artifactId> -->

@@ -76,6 +76,7 @@ public class SendContactMessageController extends AbstractFormController {
 		validator.validate(contactMessage, result);
 		if (!result.hasErrors()) {
 			String emailSubject = getMessage("sendContactMessage.email.subject");
+			// TODO Should be send async to avoid user waiting for SMTP communication
 			if (!mailService.send(contactMessage.getEmail(), contactMessage.getName(), null, emailSubject,
 					contactMessage.getMessage())) {
 				logger.warn("Error occured sending contact message.");

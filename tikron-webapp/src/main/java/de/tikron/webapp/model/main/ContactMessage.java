@@ -23,8 +23,6 @@ public class ContactMessage implements Serializable {
 
 	private String message;
 
-	private String captchaCode;
-
 	public ContactMessage(String name, String email, String message) {
 		this.name = name;
 		this.email = email;
@@ -57,13 +55,4 @@ public class ContactMessage implements Serializable {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
-	public String getCaptchaCode() {
-		return captchaCode;
-	}
-
-	public void setCaptchaCode(String captchaCode) {
-		this.captchaCode = captchaCode;
-	}
-
 }

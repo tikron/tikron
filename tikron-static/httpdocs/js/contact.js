@@ -1,5 +1,5 @@
 /**
- * Tikron javascript module for handling of so called rating stars. 
+ * Tikron javascript module for handling of contact message form. 
  * 
  * Copyright 2015 by Titus Kruse
  */
@@ -11,7 +11,6 @@ function TikronContact(options) {
 	var _ui;
 
   this.config = $.extend({
-  	'reloadCaptcha': function(){},
     'msg': {}
   }, options);
 
@@ -38,7 +37,6 @@ function TikronContact(options) {
 				success: function(response) {
 					var $form = $(this);
 					tikronUtil.resetErrors($form);
-					_cfg.reloadCaptcha();
 					if (response.status == 'ERROR') {
 						tikronUtil.showErrors($form, response);
 					} else {

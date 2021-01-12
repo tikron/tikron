@@ -8,14 +8,12 @@
 <%@ include file="/WEB-INF/jsp/include/title.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/head.jspf" %>
 <link rel="stylesheet" type="text/css" href="/css/main.css${contentVersionParam}" />
-<script type="text/javascript" src="/js/captcha.js" ></script>
 <script type="text/javascript" src="/js/contact.js" ></script>
 <%@ include file="/WEB-INF/jsp/include/htmlhead_end.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/htmlbody_start.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/header.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/nav_main.jspf" %>
 <c:url var="sendContactMessageUrl" value="/sendContactMessage.json" />
-<c:url var="captchaImageUrl" value="/captchaImage.html"><c:param name="random" /></c:url>
 <div id="content">
 	<div class="contact row">
 		<div class="col-lg-9 col-md-9 col-xs-12">
@@ -52,20 +50,6 @@
 								<form:textarea path="message" rows="5" cols="60" /><span class="error"><form:errors path="message" /></span>
 							</div>
 						</div>
-						<div class="row inner captchaImage">
-						</div>
-						<div class="row inner form-control captchaCode" id="captchaCode">
-							<div class="col-lg-4 col-md-4 col-xs-12">
-								<form:label path="captchaCode"><spring:message code="captchaCode.label" arguments="*"/></form:label>
-							</div>
-							<div class="col-lg-4 col-md-4 col-xs-12 captchaInput">
-								<form:input path="captchaCode" /><span class="error"><form:errors path="captchaCode" /></span>
-							</div>
-							<div class="col-lg-4 col-md-6 col-xs-12 captchaImage">
-								<img src="${captchaImageUrl}" alt="<spring:message code="captchaCode.image.alt" />" />
-								<a href="#0" rel="nofollow" class="arrow" title="<spring:message code='captchaCode.link.reload.description' />"><spring:message code="captchaCode.link.reload" /></a>
-							</div>
-						</div>
 						<div class="row inner">
 							<div class="col-lg-4 col-md-4 col-xs-12">
 							</div>
@@ -86,9 +70,7 @@
 <%@ include file="/WEB-INF/jsp/include/htmlbody_end.jspf" %>
 <script type="text/javascript">
 	$(document).ready(function() {
-		var tikronCaptcha = new TikronCaptcha({'captchaImageUrl': '${captchaImageUrl}'});
-		tikronCaptcha.init();
-		var tikronContact = new TikronContact({'reloadCaptcha' : tikronCaptcha.reloadImage});
+		var tikronContact = new TikronContact({});
 		tikronContact.init();
 	});
  </script>

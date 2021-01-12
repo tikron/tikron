@@ -86,7 +86,6 @@
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
-			<mvc:exclude-mapping path="/captchaImage.html" />
 			<mvc:exclude-mapping path="/displayUnsupportedLanguage.html" />
 			<ref bean="localeInterceptor" />
 		</mvc:interceptor>
@@ -94,19 +93,16 @@
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
-			<mvc:exclude-mapping path="/captchaImage.html" />
 			<ref bean="mainNavigationInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
-			<mvc:exclude-mapping path="/captchaImage.html" />
 			<ref bean="seoInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/contentNotFound.html" />
-			<mvc:exclude-mapping path="/captchaImage.html" />
 			<ref bean="trackingInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
@@ -120,27 +116,6 @@
 
 	<!-- view resolver to redirect without model attributes -->
 	<bean id="redirectViewResolver" class="de.tikru.commons.spring.RedirectViewResolver">
-	</bean>
-
-	<!-- Add captchaImageController to handler mapping here since @RequestMapping will not found by Spring (since upgrade to Spring 3.2) -->
-	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-	   <property name="mappings">
-	      <props>
-	         <prop key="/captchaImage.html">captchaImageController</prop>
-	      </props>
-	   </property>
-	</bean>
-
-	<!-- view resolver for custom views (like Captcha image)-->
-	<bean id="customViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
-		<property name="order" value="0" />
-		<property name="location" value="/WEB-INF/tikron-views.xml" />
-	</bean>
-	
-	<!-- Controller generating a Captcha image -->
-	<bean id="captchaImageController" class="de.tikron.webapp.controller.common.CaptchaImageController">
-		<property name="contentType" value="image/jpeg" />
-		<property name="viewName" value="byteContentView" />
 	</bean>
 	
 	<!-- Set validators for input form controllers -->
