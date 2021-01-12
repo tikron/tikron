@@ -8,11 +8,11 @@
 		<relativePath>../tikron-parent</relativePath>
 	</parent>
 	<groupId>de.tikron</groupId>
-	<artifactId>tikron-galleryimport</artifactId>
-	<version>3.2</version>
+	<artifactId>galleryimport</artifactId>
+	<version>3.2.1</version>
 	<name>Tikron Website Gallery Import Tool</name>
 	<build>
-		<finalName>galleryimport</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
