@@ -13,7 +13,6 @@ import org.hibernate.jpa.QueryHints;
 import de.tikron.persistence.model.gallery.Catalog;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikru.commons.jpa.dao.GenericJpaDao;
-import de.tikru.commons.jpa.dao.JpaUtil;
 
 /**
  * JPA implementation of {@link CategoryDao}.
@@ -82,21 +81,4 @@ public class CategoryDaoJpaImpl extends GenericJpaDao<Category, Long> implements
 		query.setHint(QueryHints.HINT_CACHEABLE, Boolean.TRUE);
 		return query.getResultList();
 	}
-
-	@Override
-	public Category insert(Category entity) {
-		if (JpaUtil.isLoaded(entityManager, entity.getCatalog().getCategories())) {
-			entity.getCatalog().addCategory(entity);
-		}
-		return super.insert(entity);
-	}
-
-	@Override
-	public void delete(Category entity) {
-		if (JpaUtil.isLoaded(entityManager, entity.getCatalog().getCategories())) {
-			entity.getCatalog().removeCategory(entity);
-		}
-		super.delete(entity);
-	}
-
 }

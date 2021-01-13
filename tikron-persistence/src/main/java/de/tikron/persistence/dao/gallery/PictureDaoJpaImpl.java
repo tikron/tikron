@@ -13,7 +13,6 @@ import org.hibernate.jpa.QueryHints;
 import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
 import de.tikru.commons.jpa.dao.GenericJpaDao;
-import de.tikru.commons.jpa.dao.JpaUtil;
 
 /**
  * JPA implementation of {@link PictureDao}.
@@ -93,21 +92,4 @@ public class PictureDaoJpaImpl extends GenericJpaDao<Picture, Long> implements P
 		query.setMaxResults(1);
 		return firstResult(query);
 	}
-
-	@Override
-	public Picture insert(Picture entity) {
-		if (JpaUtil.isLoaded(entityManager, entity.getCategory().getPictures())) {
-			entity.getCategory().addPicture(entity);
-		}
-		return super.insert(entity);
-	}
-
-	@Override
-	public void delete(Picture entity) {
-		if (JpaUtil.isLoaded(entityManager, entity.getCategory().getPictures())) {
-			entity.getCategory().removePicture(entity);
-		}
-		super.delete(entity);
-	}
-
 }
