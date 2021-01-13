@@ -113,7 +113,7 @@ public class GalleryImport {
 					entityManagerFactory.close();
 			}
 		} else {
-			logger.info("Usage: java -jar \"galleryimport.jar\" \"<path to archive>/gallery/<category name>/\" <category name> <db host[:port]> <schema> <user> <password>");
+			logger.info("Usage: java -jar galleryimport.jar <filesystem path to ibase> <category name> <db host[:port]> <schema> <user> <password>");
 			return;
 		}
 	}
