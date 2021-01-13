@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>de.tikron</groupId>
 	<artifactId>galleryimport</artifactId>
-	<version>3.2.1</version>
+	<version>3.2.2</version>
 	<name>Tikron Website Gallery Import Tool</name>
 	<build>
 		<finalName>${project.artifactId}</finalName>

@@ -4,6 +4,8 @@
 package de.tikron.galleryimport;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -23,7 +25,10 @@ import de.tikron.persistence.model.gallery.Category;
 import de.tikron.persistence.model.gallery.Picture;
 
 /**
- * Importiert die Metadaten einer mit Photoshop erstellten Web-Fotogallerie in die Freakworm-Gallerie.
+ * Reads the image files of a directory in the image archive and updates the associated category in the archive database.
+ * This adds, updates or removes entries in the database.
+ * 
+ * This application will not be developed anymore. Fixes and compatibility changes only.
  * 
  * @author Titus Kruse
  * @since 26.09.2008
@@ -55,7 +60,7 @@ public class GalleryImport {
 			try {
 				// Parameter übersetzen
 				// String indexFileName = args[0];
-				String directoryPath = args[0];
+				String ibasePath = args[0];
 				String categoryName = args[1];
 				String dbHost = args[2];
 				String dbSchema = args[3];
@@ -79,8 +84,7 @@ public class GalleryImport {
 				logger.info(String.format("Fetching category properties for %s.", categoryName));
 				Category category = getCategory(categoryName);
 				if (category != null) {
-					// log.info(String.format("Parsing HTML-Document \"%s.\"", indexFileName);
-					// Map<String, BufferedPicture> pictureBuffer = parseIndexPage(indexFileName);
+					Path directoryPath = Paths.get(ibasePath, "archive", "gallery", categoryName);
 					logger.info(String.format("Scanning directory \"%s\".", directoryPath));
 					Map<String, BufferedPicture> pictureBuffer = scanDirectory(directoryPath);
 					logger.info(String.format("Removing old pictures from category %d.", category.getId()));
@@ -99,14 +103,7 @@ public class GalleryImport {
 			} catch (NumberFormatException e) {
 				rollback();
 				logger.error("Invalid parameter.");
-			}
-			// Indicates a well-formedness error
-			// catch (SAXException e) {
-			// rollback();
-			// log.info(String.format("%s is not well-formed.", args[0]);
-			// log.error(e.getMessage());
-			// } catch (Exception e) {
-			catch (Exception e) {
+			}	catch (Exception e) {
 				rollback();
 				throw e;
 			} finally {
@@ -116,7 +113,7 @@ public class GalleryImport {
 					entityManagerFactory.close();
 			}
 		} else {
-			logger.info("Usage: java GalleryImport <URL to pictures directory> <category name> <database host> <schema> <user> <password>");
+			logger.info("Usage: java -jar \"galleryimport.jar\" \"<path to archive>/gallery/<category name>/\" <category name> <db host[:port]> <schema> <user> <password>");
 			return;
 		}
 	}
@@ -124,12 +121,12 @@ public class GalleryImport {
 	/**
 	 * Scans a directory in the file system for files and returs a map of pictures.
 	 * 
-	 * @param directoryPath The directory path name.
+	 * @param path The directory path name.
 	 * @return The Map of image names and associated buffered pictures.
 	 */
-	private static Map<String, BufferedPicture> scanDirectory(String directoryPath) {
+	private static Map<String, BufferedPicture> scanDirectory(Path path) {
 		Map<String, BufferedPicture> pictureBuffer = new TreeMap<String, BufferedPicture>();
-		File dir = new File(directoryPath);
+		File dir = path.toFile();
 		if (dir.isDirectory()) {
 			File[] files = dir.listFiles();
 			for (File file : files) {
