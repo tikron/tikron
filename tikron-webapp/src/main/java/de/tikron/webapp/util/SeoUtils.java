@@ -29,6 +29,8 @@ public class SeoUtils {
 	}
 
 	public String adjustRequestParameterValue(final String value) {
+		if (value == null)
+			return null;
 		String outStr = value.toLowerCase();
 		outStr = outStr.replaceAll(" - ", "-");
 		outStr = StringUtils.replaceEach(outStr, FROM_STRINGS, TO_STRINGS);
