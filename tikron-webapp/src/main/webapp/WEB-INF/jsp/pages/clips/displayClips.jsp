@@ -8,8 +8,10 @@
 <%@ include file="/WEB-INF/jsp/include/htmlhead_start.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/title.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/head.jspf" %>
+<%-- 
 <script src="/lib/jRate.min.js" ></script>
 <script src="/js/rating.js" ></script>
+--%>
 <link rel="stylesheet" type="text/css" href="/css/clips.css${contentVersionParam}" />
 <%@ include file="/WEB-INF/jsp/include/htmlhead_end.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/htmlbody_start.jspf" %>
@@ -53,8 +55,10 @@
 									<span class="date"><time datetime="${dateRecordedHtml}">${tikron:formatLocalizedDate(clip.dateRecorded, "MMM. yyyy", pageContext.response.locale)}</time></span>
 								</header>
 								<p><c:out value="${clip.shortDescription}" /></p>
+								<%--
 								<c:set var="rating" value="${ratings[clip.id]}" />
 								<%@ include file="/WEB-INF/jsp/pages/user/include/addRating.jspf" %>
+								--%>
 							</div>
 						</article>
 						<c:remove var="displayClipUrl"/>
@@ -67,6 +71,7 @@
 </div>
 <%@ include file="/WEB-INF/jsp/include/footer.jspf" %>
 <%@ include file="/WEB-INF/jsp/include/htmlbody_end.jspf" %>
+<%--
 <c:if test="${not browserLowerIE9}">
 <c:url var="addRatingUrl" value="/clips/addClipRating.json"><c:param name="clipId" value=""/><c:param name="ratingValue" value=""/></c:url>
 <spring:message code="rating.count" var="msgRatingCount"/>
@@ -79,4 +84,5 @@
 	});
 </script>
 </c:if>
+ --%>
 <%@ include file="/WEB-INF/jsp/include/html_end.jspf" %>

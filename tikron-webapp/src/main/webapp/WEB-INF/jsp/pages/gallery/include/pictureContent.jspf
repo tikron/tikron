@@ -7,10 +7,12 @@
 <c:url var="addCommentUrl" value="/gallery/addComment.html">
 	<c:param name="pictureId" value="${picture.id}"/>
 </c:url>
+<%-- 
 <c:url var="addRatingUrl" value="/gallery/addPictureRating.json">
 	<c:param name="pictureId" value=""/>
 	<c:param name="ratingValue" value=""/>
 </c:url>
+--%>
 <c:set var="imgClass" value="lazy" />
 <c:if test="${picture.category.name eq 'flyer'}"><c:set var="imgClass" value="${imgClass} auto-height" /></c:if>
 	<div class="row base-line">
@@ -56,9 +58,11 @@
 					</p>
 				</article>
 				<div id="galleryControls">
+					<%-- 
 					<c:if test="${picture.category.rateable and not browserLowerIE9}">
 					<%@ include file="/WEB-INF/jsp/pages/user/include/addRating.jspf" %>
 					</c:if>
+					--%>
 					<%-- <%@ include file="include/picturePager.jspf" %> --%>
 					<ul class="buttonBar vt">
 						<li><a href="${displayCategoryUrl}" class="button button_green" title="<spring:message code='button.allPictures.description'/>"><i class="fa fa-hand-o-right"></i><spring:message code="button.allPictures"/></a></li>
