@@ -5,6 +5,7 @@ package de.tikron.manager.service.common;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,7 +13,6 @@ import java.net.URL;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -104,14 +104,10 @@ public class ImageServiceIBaseImpl implements ImageService {
 	 */
 	private boolean addImage(String name, byte[] image) {
 		boolean success = false;
-		InputStream inputStream = null;
-		try {
-			inputStream = new BufferedInputStream(new ByteArrayInputStream(image));
+		try (InputStream inputStream = new BufferedInputStream(new ByteArrayInputStream(image))) {
 			success = iBaseClient.putSourceImage(name, inputStream);
-		} catch (IBaseClientException e) {
+		} catch (IOException | IBaseClientException e) {
 			e.printStackTrace();
-		} finally {
-			IOUtils.closeQuietly(inputStream);
 		}
 		return success;
 	}

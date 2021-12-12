@@ -57,6 +57,7 @@
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
+	<!-- Unused since album play lists won't be uploaded anymore.
 	<filter>
 		<filter-name>MyFacesExtensionsFilter</filter-name>
 		<filter-class>org.apache.myfaces.webapp.filter.ExtensionsFilter</filter-class>
@@ -77,6 +78,7 @@
 		<filter-name>MyFacesExtensionsFilter</filter-name>
 		<url-pattern>/faces/myFacesExtensionResource/*</url-pattern>
 	</filter-mapping>
+	 -->
 	<!-- Enable Spring Security -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>

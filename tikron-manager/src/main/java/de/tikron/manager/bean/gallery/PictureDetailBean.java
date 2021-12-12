@@ -3,6 +3,7 @@
  */
 package de.tikron.manager.bean.gallery;
 
+import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -90,12 +91,12 @@ public class PictureDetailBean extends AbstractDetailBean<Picture> {
 		FacesContext context = FacesContext.getCurrentInstance();
 		Map<String, List<String>> parameters = new HashMap<String, List<String>>();
 		parameters.put("pictureId", Arrays.asList(picture.getId().toString()));
-		// TODO HTTP port missing in redirect URL! Redirect failed for URL like //10.8.0.1:8011/webman/pages/...
-		String redirectUrl = FacesUtil.getServerURI()
-				+ context.getApplication().getViewHandler().getRedirectURL(context, "/pages/common/uploadPictureImageConfirm.html", parameters, false);
+		String redirectURL = context.getApplication().getViewHandler().getRedirectURL(context, "/pages/common/uploadPictureImageConfirm.html", parameters, false);
+		// Add host FQDN and port to get back from image server to my one web application
+		URL absoluteRedirectUrl = FacesUtil.buildURL(redirectURL);
 		// Pass picture image path and redirect URL to common image upload view
 		FacesParameter.setSessionMapValue("imagePath", this.pictureImageBean.getPictureImagePath(picture.getCategory()));
-		FacesParameter.setSessionMapValue("redirectUrl", redirectUrl);
+		FacesParameter.setSessionMapValue("redirectUrl", absoluteRedirectUrl);
 		return "/pages/common/uploadImage.xhtml";
 	}
 

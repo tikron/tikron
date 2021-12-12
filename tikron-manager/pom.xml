@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>de.tikron</groupId>
 	<artifactId>tikron-manager</artifactId>
-	<version>3.2.2</version>
+	<version>3.2.3</version>
 	<packaging>war</packaging>
 	<name>Tikron Website Management Tool</name>
 	<build>
@@ -84,16 +84,13 @@
 			<artifactId>javax.faces</artifactId>
 			<version>${jsf.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.5</version>
-		</dependency>
+		<!-- Unused since album play lists won't be uploaded anymore.
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.4</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -117,6 +114,7 @@
 			<version>3.0.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Unused since album play lists won't be uploaded anymore.  
 		<dependency>
 			<groupId>org.apache.myfaces.tomahawk</groupId>
 			<artifactId>tomahawk20</artifactId>
@@ -129,6 +127,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		 -->
 		<dependency>
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
@@ -137,12 +136,12 @@
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-faces</artifactId>
-			<version>3.3</version>
+			<version>3.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
 			<artifactId>tikru-commons-spring</artifactId>
-			<version>3.4</version>
+			<version>3.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>de.tikru.commons</groupId>
