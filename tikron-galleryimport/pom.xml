@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>de.tikron</groupId>
 	<artifactId>galleryimport</artifactId>
-	<version>3.2.2</version>
+	<version>3.2.3</version>
 	<name>Tikron Website Gallery Import Tool</name>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -66,11 +66,6 @@
 			<groupId>de.tikron</groupId>
 			<artifactId>tikron-persistence</artifactId>
 			<version>3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>de.tikru.commons</groupId>
-			<artifactId>tikru-commons-util</artifactId>
-			<version>3.5</version>
 		</dependency>
 	</dependencies>
 </project>
